@@ -19,18 +19,18 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcElectricalDomain
 {
-	[Guid("c73600ec-1ac8-4862-9271-cd7396feb1e0")]
+	[Guid("17ee14f4-7e67-43ec-be56-10db55263226")]
 	public partial class IfcLampType : IfcFlowTerminalType
 	{
 		[DataMember(Order = 0)] 
 		[XmlAttribute]
-		[Description("<p>Identifies the predefined types of lamp from which the type required may be set.</p>")]
+		[Description("Identifies the predefined types of lamp from which the type required may be set.")]
 		[Required()]
 		public IfcLampTypeEnum PredefinedType { get; set; }
 	
 	
-		public IfcLampType(IfcGloballyUniqueId globalId, IfcLampTypeEnum predefinedType)
-			: base(globalId)
+		public IfcLampType(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcLampTypeEnum predefinedType)
+			: base(globalId, ownerHistory)
 		{
 			this.PredefinedType = predefinedType;
 		}

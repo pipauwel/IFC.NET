@@ -17,11 +17,10 @@ using BuildingSmart.IFC.IfcProfileResource;
 
 namespace BuildingSmart.IFC.IfcGeometricModelResource
 {
-	[Guid("d92abdea-e3e3-4799-9cb5-39b1c40f03aa")]
+	[Guid("f983e827-d10e-48bb-9fc1-9be6d240852c")]
 	public partial class IfcSectionedSpine : IfcGeometricRepresentationItem
 	{
 		[DataMember(Order = 0)] 
-		[XmlElement]
 		[Description("A single composite curve, that defines the spine curve. Each of the composite curve segments correspond to the part between two cross-sections.")]
 		[Required()]
 		public IfcCompositeCurve SpineCurve { get; set; }

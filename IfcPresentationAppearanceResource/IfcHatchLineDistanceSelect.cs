@@ -13,7 +13,7 @@ using System.Xml.Serialization;
 
 namespace BuildingSmart.IFC.IfcPresentationAppearanceResource
 {
-	[Guid("95905ecc-b883-4200-8384-7915a54c30ca")]
+	[Guid("3c1114af-9210-4f2d-be72-26a87dff405d")]
 	public interface IfcHatchLineDistanceSelect
 	{
 	}

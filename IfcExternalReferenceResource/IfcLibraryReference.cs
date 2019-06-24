@@ -10,40 +10,25 @@ using System.Runtime.InteropServices;
 using System.Runtime.Serialization;
 using System.Xml.Serialization;
 
-using BuildingSmart.IFC.IfcKernel;
 using BuildingSmart.IFC.IfcMeasureResource;
 using BuildingSmart.IFC.IfcPresentationOrganizationResource;
 using BuildingSmart.IFC.IfcPropertyResource;
 
 namespace BuildingSmart.IFC.IfcExternalReferenceResource
 {
-	[Guid("739c22f8-9791-4f05-b25d-70ddc3ed443f")]
+	[Guid("cfdbc669-8a34-4570-ad57-0939f779948e")]
 	public partial class IfcLibraryReference : IfcExternalReference,
 		IfcLibrarySelect
 	{
-		[DataMember(Order = 0)] 
-		[XmlAttribute]
-		[Description("Additional description provided for the library reference.  <blockquote class=\"change-ifc2x4\">    IFC4 CHANGE&nbsp; New attribute added at the end of the attribute list.  </blockquote>")]
-		public IfcText? Description { get; set; }
-	
-		[DataMember(Order = 1)] 
-		[XmlAttribute]
-		[Description("The language in which a library reference is expressed.  <blockquote class=\"change-ifc2x4\">    IFC4 CHANGE&nbsp; New attribute added at the end of the attribute list.  </blockquote>")]
-		public IfcLanguageId? Language { get; set; }
-	
-		[DataMember(Order = 2)] 
-		[XmlElement]
+		[InverseProperty("LibraryReference")] 
 		[Description("The library information that is being referenced.")]
-		public IfcLibraryInformation ReferencedLibrary { get; set; }
-	
-		[InverseProperty("RelatingLibrary")] 
-		[Description("The library reference with which objects are associated.  <blockquote class=\"change-ifc2x4\">    IFC4 CHANGE&nbsp; New inverse attribute.  </blockquote>")]
-		public ISet<IfcRelAssociatesLibrary> LibraryRefForObjects { get; protected set; }
+		[MaxLength(1)]
+		public ISet<IfcLibraryInformation> ReferenceIntoLibrary { get; protected set; }
 	
 	
 		public IfcLibraryReference()
 		{
-			this.LibraryRefForObjects = new HashSet<IfcRelAssociatesLibrary>();
+			this.ReferenceIntoLibrary = new HashSet<IfcLibraryInformation>();
 		}
 	
 	

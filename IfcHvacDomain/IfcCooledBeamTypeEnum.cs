@@ -13,21 +13,15 @@ using System.Xml.Serialization;
 
 namespace BuildingSmart.IFC.IfcHvacDomain
 {
-	[Guid("f8c4b1a5-7e46-4206-a91a-15928a2d6a09")]
+	[Guid("1132e9be-6385-429b-b477-515566663958")]
 	public enum IfcCooledBeamTypeEnum
 	{
-		[Description("An active or ventilated cooled beam provides cooling (and heating) but can also f" +
-	    "unction as an air terminal in a ventilation system.")]
 		ACTIVE = 1,
 	
-		[Description("A passive or static cooled beam provides cooling (and heating) to a room or zone." +
-	    "")]
 		PASSIVE = 2,
 	
-		[Description("User-defined cooled beam type.")]
 		USERDEFINED = -1,
 	
-		[Description("Undefined cooled beam type.")]
 		NOTDEFINED = 0,
 	
 	}

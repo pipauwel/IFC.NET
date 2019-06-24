@@ -20,17 +20,12 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcSharedBldgElements
 {
-	[Guid("7f07946e-f8d2-4f0f-a25c-5bae7d67f92a")]
+	[Guid("287584a9-91c1-480f-83dd-cf2275ffc1e2")]
 	public partial class IfcBeam : IfcBuildingElement
 	{
-		[DataMember(Order = 0)] 
-		[XmlAttribute]
-		[Description("Predefined generic type for a beam that is specified in an enumeration. There may be a property set given specificly for the predefined types.  <blockquote class=\"note\">NOTE&nbsp; The <em>PredefinedType</em> shall only be used, if no <em>IfcBeamType</em> is assigned, providing its own <em>IfcBeamType.PredefinedType</em>.</blockquote>  <blockquote class=\"change-ifc2x4\">IFC4 CHANGE  The attribute has been added at the end of the entity definition.</blockquote>")]
-		public IfcBeamTypeEnum? PredefinedType { get; set; }
 	
-	
-		public IfcBeam(IfcGloballyUniqueId globalId)
-			: base(globalId)
+		public IfcBeam(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory)
+			: base(globalId, ownerHistory)
 		{
 		}
 	

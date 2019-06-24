@@ -10,7 +10,6 @@ using System.Runtime.InteropServices;
 using System.Runtime.Serialization;
 using System.Xml.Serialization;
 
-using BuildingSmart.IFC.IfcGeometricConstraintResource;
 using BuildingSmart.IFC.IfcGeometryResource;
 using BuildingSmart.IFC.IfcPresentationAppearanceResource;
 using BuildingSmart.IFC.IfcPresentationOrganizationResource;
@@ -18,24 +17,24 @@ using BuildingSmart.IFC.IfcProfileResource;
 
 namespace BuildingSmart.IFC.IfcGeometricModelResource
 {
-	[Guid("1bfb8302-5211-4de4-a3b9-20e200cf1097")]
+	[Guid("70a1a18c-674c-4d22-a114-cac92992372f")]
 	public abstract partial class IfcSweptAreaSolid : IfcSolidModel
 	{
 		[DataMember(Order = 0)] 
-		[XmlElement]
 		[Description("The surface defining the area to be swept. It is given as a profile definition within the xy plane of the position coordinate system.")]
 		[Required()]
 		public IfcProfileDef SweptArea { get; set; }
 	
 		[DataMember(Order = 1)] 
-		[XmlElement]
-		[Description("Position coordinate system for the resulting swept solid of the sweeping operation. The position coordinate system allows for re-positioning of the swept solid. If not provided, the swept solid remains within the position as determined by the cross section or by the directrix used for the sweeping operation.  <blockquote class=\"change-ifc2x4\">IFC4 CHANGE&nbsp; The attribute has been changed to OPTIONAL with upward compatibility for file-based exchange.</blockquote>")]
+		[Description("Position coordinate system for the swept area.")]
+		[Required()]
 		public IfcAxis2Placement3D Position { get; set; }
 	
 	
-		protected IfcSweptAreaSolid(IfcProfileDef sweptArea)
+		protected IfcSweptAreaSolid(IfcProfileDef sweptArea, IfcAxis2Placement3D position)
 		{
 			this.SweptArea = sweptArea;
+			this.Position = position;
 		}
 	
 	

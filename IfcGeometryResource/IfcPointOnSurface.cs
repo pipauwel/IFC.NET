@@ -18,11 +18,10 @@ using BuildingSmart.IFC.IfcPresentationOrganizationResource;
 
 namespace BuildingSmart.IFC.IfcGeometryResource
 {
-	[Guid("a7b0a4ed-3952-415a-b428-67b95e5273cd")]
+	[Guid("d40729e6-25f2-4bc4-81e9-9c4ce234abfd")]
 	public partial class IfcPointOnSurface : IfcPoint
 	{
 		[DataMember(Order = 0)] 
-		[XmlElement]
 		[Description("The surface to which the parameter values relate.")]
 		[Required()]
 		public IfcSurface BasisSurface { get; set; }

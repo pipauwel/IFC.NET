@@ -10,14 +10,12 @@ using System.Runtime.InteropServices;
 using System.Runtime.Serialization;
 using System.Xml.Serialization;
 
-using BuildingSmart.IFC.IfcExternalReferenceResource;
 using BuildingSmart.IFC.IfcMeasureResource;
 
 namespace BuildingSmart.IFC.IfcActorResource
 {
-	[Guid("82b7f4e9-c9c0-41a2-a7e4-2b02f8a377c3")]
-	public partial class IfcActorRole :
-		BuildingSmart.IFC.IfcExternalReferenceResource.IfcResourceObjectSelect
+	[Guid("9adbf974-1f10-42f4-bd17-f909754b6a5e")]
+	public partial class IfcActorRole
 	{
 		[DataMember(Order = 0)] 
 		[XmlAttribute]
@@ -35,15 +33,10 @@ namespace BuildingSmart.IFC.IfcActorResource
 		[Description("A textual description relating the nature of the role played by an actor.")]
 		public IfcText? Description { get; set; }
 	
-		[InverseProperty("RelatedResourceObjects")] 
-		[Description("Reference to external information, e.g. library, classification, or document information, which is associated with the actor role.  <blockquote class=\"change-ifc2x4\">IFC4 CHANGE&nbsp; New inverse attribute.</blockquote>")]
-		public ISet<IfcExternalReferenceRelationship> HasExternalReference { get; protected set; }
-	
 	
 		public IfcActorRole(IfcRoleEnum role)
 		{
 			this.Role = role;
-			this.HasExternalReference = new HashSet<IfcExternalReferenceRelationship>();
 		}
 	
 	

@@ -14,11 +14,11 @@ using BuildingSmart.IFC.IfcMeasureResource;
 
 namespace BuildingSmart.IFC.IfcRepresentationResource
 {
-	[Guid("d0b09671-0848-4353-9710-4312d56ffea7")]
+	[Guid("e010e022-29f6-49b5-9da8-d0e33e9c4046")]
 	public partial class IfcShapeAspect
 	{
 		[DataMember(Order = 0)] 
-		[Description("List of <strike>shape</strike> representations. Each member defines a valid representation of a particular type within a particular representation context as being an aspect (or part) of a product definition.  <blockquote class=\"change-ifc2x3\">IFC2x3 CHANGE&nbsp; The data type has been changed from <em>IfcShapeRepresentation</em> to <em>IfcShapeModel</em> with upward compatibility </blockquote>")]
+		[Description("<EPM-HTML>List of <strike>shape</strike> representations. Each member defines a valid representation of a particular type within a particular representation context as being an aspect (or part) of a product definition.  <blockquote><small><font color=\"#FF0000\">IFC2x Edition 3 CHANGE&nbsp; The data type has been changed from <i>IfcShapeRepresentation</i> to <i>IfcShapeModel</i> with upward compatibility </font></small></blockquote>  </EPM-HTML>")]
 		[Required()]
 		[MinLength(1)]
 		public IList<IfcShapeModel> ShapeRepresentations { get; protected set; }
@@ -34,21 +34,21 @@ namespace BuildingSmart.IFC.IfcRepresentationResource
 		public IfcText? Description { get; set; }
 	
 		[DataMember(Order = 3)] 
-		[XmlAttribute]
 		[Description("An indication that the shape aspect is on the physical boundary of the product definition shape. If the value of this attribute is TRUE, it shall be asserted that the shape aspect being identified is on such a boundary. If the value is FALSE, it shall be asserted that the shape aspect being identified is not on such a boundary. If the value is UNKNOWN, it shall be asserted that it is not known whether or not the shape aspect being identified is on such a boundary.   ---  EXAMPLE: Would be FALSE for a center line, identified as shape aspect; would be TRUE for a cantilever.  ---")]
 		[Required()]
-		public IfcLogical ProductDefinitional { get; set; }
+		public Boolean? ProductDefinitional { get; set; }
 	
 		[DataMember(Order = 4)] 
-		[XmlIgnore]
-		[Description("Reference to the <em>IfcProductDefinitionShape</em> or the <em>IfcRepresentationMap</em> of which this shape is an aspect.  <blockquote class=\"change-ifc2x4\">  IFC4 CHANGE&nbsp; Data type modified to be <em>IfcProductRepresentationSelect</em> allowing the assignment also to <em>IfcRepresentationMap</em>.  </blockquote>")]
-		public IfcProductRepresentationSelect PartOfProductDefinitionShape { get; set; }
+		[Description("Reference to the product definition shape of which this class is an aspect.")]
+		[Required()]
+		public IfcProductDefinitionShape PartOfProductDefinitionShape { get; set; }
 	
 	
-		public IfcShapeAspect(IfcShapeModel[] shapeRepresentations, IfcLogical productDefinitional)
+		public IfcShapeAspect(IfcShapeModel[] shapeRepresentations, Boolean? productDefinitional, IfcProductDefinitionShape partOfProductDefinitionShape)
 		{
 			this.ShapeRepresentations = new List<IfcShapeModel>(shapeRepresentations);
 			this.ProductDefinitional = productDefinitional;
+			this.PartOfProductDefinitionShape = partOfProductDefinitionShape;
 		}
 	
 	

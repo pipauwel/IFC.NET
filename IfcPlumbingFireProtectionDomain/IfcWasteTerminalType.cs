@@ -19,18 +19,18 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcPlumbingFireProtectionDomain
 {
-	[Guid("a41c4b68-c443-4fc5-a984-4eae4fc24095")]
+	[Guid("b995b43e-8b4f-435d-839b-152e1b8fbeee")]
 	public partial class IfcWasteTerminalType : IfcFlowTerminalType
 	{
 		[DataMember(Order = 0)] 
 		[XmlAttribute]
-		[Description("<p>Identifies the predefined types of waste terminal from which the type required may be set.</p>")]
+		[Description("Identifies the predefined types of waste terminal from which the type required may be set.")]
 		[Required()]
 		public IfcWasteTerminalTypeEnum PredefinedType { get; set; }
 	
 	
-		public IfcWasteTerminalType(IfcGloballyUniqueId globalId, IfcWasteTerminalTypeEnum predefinedType)
-			: base(globalId)
+		public IfcWasteTerminalType(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcWasteTerminalTypeEnum predefinedType)
+			: base(globalId, ownerHistory)
 		{
 			this.PredefinedType = predefinedType;
 		}

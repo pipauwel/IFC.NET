@@ -13,12 +13,11 @@ using System.Xml.Serialization;
 
 namespace BuildingSmart.IFC.IfcMeasureResource
 {
-	[Guid("feff0f85-92ea-4f67-8748-661f27621758")]
+	[Guid("6ff23b49-a35e-4a04-83fd-dec58e1caa68")]
 	public abstract partial class IfcNamedUnit :
 		IfcUnit
 	{
 		[DataMember(Order = 0)] 
-		[XmlElement]
 		[Description("The dimensional exponents of the SI base units by which the named unit is defined.")]
 		[Required()]
 		public IfcDimensionalExponents Dimensions { get; set; }

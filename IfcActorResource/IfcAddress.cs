@@ -15,7 +15,7 @@ using BuildingSmart.IFC.IfcPropertyResource;
 
 namespace BuildingSmart.IFC.IfcActorResource
 {
-	[Guid("a2354718-4c92-40a9-b220-50e7c23e5faf")]
+	[Guid("d5a5c728-7f2b-4914-844e-bfbbaff3d598")]
 	public abstract partial class IfcAddress :
 		BuildingSmart.IFC.IfcPropertyResource.IfcObjectReferenceSelect
 	{

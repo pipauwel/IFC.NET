@@ -17,12 +17,12 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcProductExtension
 {
-	[Guid("f1e9cf21-4f13-485c-a608-e1f0beac34f7")]
-	public partial class IfcElementQuantity : IfcQuantitySet
+	[Guid("a7b07360-a4d7-4991-b1f5-b9a68def1659")]
+	public partial class IfcElementQuantity : IfcPropertySetDefinition
 	{
 		[DataMember(Order = 0)] 
 		[XmlAttribute]
-		[Description("Name of the method of measurement used to calculate the element quantity. The method of measurement attribute has to be made recognizable by further agreements.    <blockquote class=\"change-ifc2x2\">IFC2x2 Addendum 1 change: The attribute has been changed to be optional </blockquote>")]
+		[Description("<EPM-HTML>Name of the method of measurement used to calculate the element quantity. The method of measurement attribute has to be made recognizable by further agreements.    <BLOCKQUOTE> <FONT COLOR=\"#FF0000\" SIZE=\"-1\">IFC2x2 Addendum 1 change: The attribute has been changed to be optional </FONT></BLOCKQUOTE>  </EPM-HTML>")]
 		public IfcLabel? MethodOfMeasurement { get; set; }
 	
 		[DataMember(Order = 1)] 
@@ -32,8 +32,8 @@ namespace BuildingSmart.IFC.IfcProductExtension
 		public ISet<IfcPhysicalQuantity> Quantities { get; protected set; }
 	
 	
-		public IfcElementQuantity(IfcGloballyUniqueId globalId, IfcPhysicalQuantity[] quantities)
-			: base(globalId)
+		public IfcElementQuantity(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcPhysicalQuantity[] quantities)
+			: base(globalId, ownerHistory)
 		{
 			this.Quantities = new HashSet<IfcPhysicalQuantity>(quantities);
 		}

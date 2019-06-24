@@ -13,10 +13,9 @@ using System.Xml.Serialization;
 
 namespace BuildingSmart.IFC.IfcMeasureResource
 {
-	[Guid("b071348d-3e08-4ae1-a193-ba601f2ab26a")]
+	[Guid("ae93fb0f-25aa-4fb3-8339-d3e089fa5951")]
 	public partial struct IfcRotationalStiffnessMeasure :
-		IfcDerivedMeasureValue,
-		BuildingSmart.IFC.IfcStructuralLoadResource.IfcRotationalStiffnessSelect
+		IfcDerivedMeasureValue
 	{
 		[XmlText]
 		public Double Value { get; private set; }

@@ -15,18 +15,17 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcKernel
 {
-	[Guid("142af641-3046-4e25-8652-dbf0d05c61da")]
+	[Guid("5b27a097-629c-4e3c-9109-7fea67812949")]
 	public partial class IfcRelAssignsToControl : IfcRelAssigns
 	{
 		[DataMember(Order = 0)] 
-		[XmlElement]
-		[Description("Reference to the <em>IfcControl</em> that applies a control upon objects.")]
+		[Description("Reference to the control that applies an control about objects.")]
 		[Required()]
 		public IfcControl RelatingControl { get; set; }
 	
 	
-		public IfcRelAssignsToControl(IfcGloballyUniqueId globalId, IfcObjectDefinition[] relatedObjects, IfcControl relatingControl)
-			: base(globalId, relatedObjects)
+		public IfcRelAssignsToControl(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcObjectDefinition[] relatedObjects, IfcControl relatingControl)
+			: base(globalId, ownerHistory, relatedObjects)
 		{
 			this.RelatingControl = relatingControl;
 		}

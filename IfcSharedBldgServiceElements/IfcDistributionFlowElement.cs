@@ -15,13 +15,12 @@ using BuildingSmart.IFC.IfcKernel;
 using BuildingSmart.IFC.IfcMeasureResource;
 using BuildingSmart.IFC.IfcProductExtension;
 using BuildingSmart.IFC.IfcRepresentationResource;
-using BuildingSmart.IFC.IfcSharedBldgElements;
 using BuildingSmart.IFC.IfcStructuralAnalysisDomain;
 using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcSharedBldgServiceElements
 {
-	[Guid("63ee3d6e-fbeb-4c25-a0a5-13c7bceed367")]
+	[Guid("c0389382-3fc5-4f9f-9179-be2e3984f463")]
 	public partial class IfcDistributionFlowElement : IfcDistributionElement
 	{
 		[InverseProperty("RelatingFlowElement")] 
@@ -30,8 +29,8 @@ namespace BuildingSmart.IFC.IfcSharedBldgServiceElements
 		public ISet<IfcRelFlowControlElements> HasControlElements { get; protected set; }
 	
 	
-		public IfcDistributionFlowElement(IfcGloballyUniqueId globalId)
-			: base(globalId)
+		public IfcDistributionFlowElement(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory)
+			: base(globalId, ownerHistory)
 		{
 			this.HasControlElements = new HashSet<IfcRelFlowControlElements>();
 		}

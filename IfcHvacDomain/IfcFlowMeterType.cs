@@ -19,7 +19,7 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcHvacDomain
 {
-	[Guid("daef9a4b-19fd-4e45-9d4d-4a12b58209b5")]
+	[Guid("39992bc8-4723-4b2c-b1bc-1a02c1402fa7")]
 	public partial class IfcFlowMeterType : IfcFlowControllerType
 	{
 		[DataMember(Order = 0)] 
@@ -29,8 +29,8 @@ namespace BuildingSmart.IFC.IfcHvacDomain
 		public IfcFlowMeterTypeEnum PredefinedType { get; set; }
 	
 	
-		public IfcFlowMeterType(IfcGloballyUniqueId globalId, IfcFlowMeterTypeEnum predefinedType)
-			: base(globalId)
+		public IfcFlowMeterType(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcFlowMeterTypeEnum predefinedType)
+			: base(globalId, ownerHistory)
 		{
 			this.PredefinedType = predefinedType;
 		}

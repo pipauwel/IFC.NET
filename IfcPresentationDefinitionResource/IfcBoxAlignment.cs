@@ -14,7 +14,7 @@ using BuildingSmart.IFC.IfcMeasureResource;
 
 namespace BuildingSmart.IFC.IfcPresentationDefinitionResource
 {
-	[Guid("0b2a355f-5bc6-4926-8828-c5be74ed5763")]
+	[Guid("1c75ac11-6420-4057-9787-48ceb2a433d9")]
 	public partial struct IfcBoxAlignment
 	{
 		[XmlText]

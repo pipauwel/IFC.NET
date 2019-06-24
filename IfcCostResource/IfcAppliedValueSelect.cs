@@ -13,7 +13,7 @@ using System.Xml.Serialization;
 
 namespace BuildingSmart.IFC.IfcCostResource
 {
-	[Guid("24072442-9a47-4e97-ba45-6a5cb86a46af")]
+	[Guid("8cfe28d2-e9f9-4d3d-8083-9691a2310526")]
 	public interface IfcAppliedValueSelect
 	{
 	}

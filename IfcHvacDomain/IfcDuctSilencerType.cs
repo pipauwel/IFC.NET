@@ -19,7 +19,7 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcHvacDomain
 {
-	[Guid("b6e2b5f0-ba5e-4c1d-8134-0a940db3ccec")]
+	[Guid("2f1dc4c5-4ebd-4780-9983-7c1c2904aaf0")]
 	public partial class IfcDuctSilencerType : IfcFlowTreatmentDeviceType
 	{
 		[DataMember(Order = 0)] 
@@ -29,8 +29,8 @@ namespace BuildingSmart.IFC.IfcHvacDomain
 		public IfcDuctSilencerTypeEnum PredefinedType { get; set; }
 	
 	
-		public IfcDuctSilencerType(IfcGloballyUniqueId globalId, IfcDuctSilencerTypeEnum predefinedType)
-			: base(globalId)
+		public IfcDuctSilencerType(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcDuctSilencerTypeEnum predefinedType)
+			: base(globalId, ownerHistory)
 		{
 			this.PredefinedType = predefinedType;
 		}

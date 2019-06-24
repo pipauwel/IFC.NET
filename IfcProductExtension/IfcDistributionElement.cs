@@ -14,24 +14,18 @@ using BuildingSmart.IFC.IfcGeometricConstraintResource;
 using BuildingSmart.IFC.IfcKernel;
 using BuildingSmart.IFC.IfcMeasureResource;
 using BuildingSmart.IFC.IfcRepresentationResource;
-using BuildingSmart.IFC.IfcSharedBldgElements;
 using BuildingSmart.IFC.IfcStructuralAnalysisDomain;
 using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcProductExtension
 {
-	[Guid("8672f3a9-df18-46b2-9783-ede9bc362146")]
+	[Guid("60a5c847-5a45-47f7-b1bc-6b0075c2a0dc")]
 	public partial class IfcDistributionElement : IfcElement
 	{
-		[InverseProperty("RelatedElement")] 
-		[Description("Reference to the element to port connection relationship. The relationship then refers to the port which is contained in this element.    <blockquote class=\"change-ifc2x4\">  IFC4 CHANGE&nbsp; The inverse attribute is deprecated. Relationship to ports, contained within the <em>IfcDistributionElement</em> is now realized by the inverse relationship <em>NestedBy</em> referencing <em>IfcRelNests</em>.  </blockquote>")]
-		public ISet<IfcRelConnectsPortToElement> HasPorts { get; protected set; }
 	
-	
-		public IfcDistributionElement(IfcGloballyUniqueId globalId)
-			: base(globalId)
+		public IfcDistributionElement(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory)
+			: base(globalId, ownerHistory)
 		{
-			this.HasPorts = new HashSet<IfcRelConnectsPortToElement>();
 		}
 	
 	

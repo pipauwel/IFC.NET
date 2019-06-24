@@ -10,13 +10,12 @@ using System.Runtime.InteropServices;
 using System.Runtime.Serialization;
 using System.Xml.Serialization;
 
-using BuildingSmart.IFC.IfcMeasureResource;
 using BuildingSmart.IFC.IfcPresentationAppearanceResource;
 using BuildingSmart.IFC.IfcPresentationOrganizationResource;
 
 namespace BuildingSmart.IFC.IfcGeometryResource
 {
-	[Guid("8151008e-da2b-4181-80dc-d2cdf2bc502f")]
+	[Guid("c19af08b-7c2a-43da-af36-f179667c4b1b")]
 	public partial class IfcCartesianTransformationOperator2D : IfcCartesianTransformationOperator
 	{
 	

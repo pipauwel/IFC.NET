@@ -13,7 +13,7 @@ using System.Xml.Serialization;
 
 namespace BuildingSmart.IFC.IfcPresentationAppearanceResource
 {
-	[Guid("4c44d8df-27a6-4b48-b0e2-9a07efd6e642")]
+	[Guid("e7115d92-04c1-4f17-8823-3b90ddad5416")]
 	public partial struct IfcTextDecoration
 	{
 		[XmlText]

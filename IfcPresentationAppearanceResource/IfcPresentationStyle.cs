@@ -14,13 +14,12 @@ using BuildingSmart.IFC.IfcMeasureResource;
 
 namespace BuildingSmart.IFC.IfcPresentationAppearanceResource
 {
-	[Guid("ab926025-a25c-40a8-9608-000b0b34210c")]
-	public abstract partial class IfcPresentationStyle :
-		IfcStyleAssignmentSelect
+	[Guid("13062bbe-3eb5-4570-80f9-3b50915a6fea")]
+	public abstract partial class IfcPresentationStyle
 	{
 		[DataMember(Order = 0)] 
 		[XmlAttribute]
-		[Description("Name of the presentation style.")]
+		[Description("<EPM-HTML>  Name of the presentation style.  </EPM-HTML>")]
 		public IfcLabel? Name { get; set; }
 	
 	

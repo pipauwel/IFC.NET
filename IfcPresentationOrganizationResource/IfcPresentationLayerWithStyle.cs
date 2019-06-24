@@ -15,40 +15,37 @@ using BuildingSmart.IFC.IfcPresentationAppearanceResource;
 
 namespace BuildingSmart.IFC.IfcPresentationOrganizationResource
 {
-	[Guid("d58d8ae7-e309-454d-b3f1-2b58ce4d583d")]
+	[Guid("f5035d0f-eddb-4069-b0c6-f085cd5fec1f")]
 	public partial class IfcPresentationLayerWithStyle : IfcPresentationLayerAssignment
 	{
 		[DataMember(Order = 0)] 
-		[XmlAttribute]
 		[Description("A logical setting, TRUE indicates that the layer is set to 'On', FALSE that the layer is set to 'Off', UNKNOWN that such information is not available.")]
 		[Required()]
-		public IfcLogical LayerOn { get; set; }
+		public Boolean? LayerOn { get; set; }
 	
 		[DataMember(Order = 1)] 
-		[XmlAttribute]
 		[Description("A logical setting, TRUE indicates that the layer is set to 'Frozen', FALSE that the layer is set to 'Not frozen', UNKNOWN that such information is not available.")]
 		[Required()]
-		public IfcLogical LayerFrozen { get; set; }
+		public Boolean? LayerFrozen { get; set; }
 	
 		[DataMember(Order = 2)] 
-		[XmlAttribute]
 		[Description("A logical setting, TRUE indicates that the layer is set to 'Blocked', FALSE that the layer is set to 'Not blocked', UNKNOWN that such information is not available.")]
 		[Required()]
-		public IfcLogical LayerBlocked { get; set; }
+		public Boolean? LayerBlocked { get; set; }
 	
 		[DataMember(Order = 3)] 
-		[Description("Assignment of presentation styles to the layer to provide a default style for representation items.  <blockquote class=\"note\">NOTE&nbsp; In most cases the assignment of styles to a layer is restricted to an <em>IfcCurveStyle</em> representing the layer curve colour, layer curve thickness, and layer curve type.    </blockquote>    <blockquote class=\"change-ifc2x4\">  IFC4 CHANGE&nbsp; The data type has been changed from <em>IfcPresentationStyleSelect</em> (now deprecated) to <em>IfcPresentationStyle</em>.  </blockquote>")]
+		[Description("<EPM-HTML>  Assignment of presentation styles to the layer to provide a default style for representation items.  <blockquote><small>  NOTE&nbsp; In most cases the assignment of styles to a layer is restricted to an <i>IfcCurveStyle</i> representing the layer curve colour, layer curve thickness, and layer curve type.  </small></blockquote>  </EPM-HTML>")]
 		[Required()]
-		public ISet<IfcPresentationStyle> LayerStyles { get; protected set; }
+		public ISet<IfcPresentationStyleSelect> LayerStyles { get; protected set; }
 	
 	
-		public IfcPresentationLayerWithStyle(IfcLabel name, IfcLayeredItem[] assignedItems, IfcLogical layerOn, IfcLogical layerFrozen, IfcLogical layerBlocked, IfcPresentationStyle[] layerStyles)
+		public IfcPresentationLayerWithStyle(IfcLabel name, IfcLayeredItem[] assignedItems, Boolean? layerOn, Boolean? layerFrozen, Boolean? layerBlocked, IfcPresentationStyleSelect[] layerStyles)
 			: base(name, assignedItems)
 		{
 			this.LayerOn = layerOn;
 			this.LayerFrozen = layerFrozen;
 			this.LayerBlocked = layerBlocked;
-			this.LayerStyles = new HashSet<IfcPresentationStyle>(layerStyles);
+			this.LayerStyles = new HashSet<IfcPresentationStyleSelect>(layerStyles);
 		}
 	
 	

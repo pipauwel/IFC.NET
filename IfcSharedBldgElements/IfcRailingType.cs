@@ -18,7 +18,7 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcSharedBldgElements
 {
-	[Guid("9f5e37e7-709e-46f6-aa16-7ce984b35c92")]
+	[Guid("efeee47e-fde8-45ad-84dc-7d6f01e9e748")]
 	public partial class IfcRailingType : IfcBuildingElementType
 	{
 		[DataMember(Order = 0)] 
@@ -28,8 +28,8 @@ namespace BuildingSmart.IFC.IfcSharedBldgElements
 		public IfcRailingTypeEnum PredefinedType { get; set; }
 	
 	
-		public IfcRailingType(IfcGloballyUniqueId globalId, IfcRailingTypeEnum predefinedType)
-			: base(globalId)
+		public IfcRailingType(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcRailingTypeEnum predefinedType)
+			: base(globalId, ownerHistory)
 		{
 			this.PredefinedType = predefinedType;
 		}

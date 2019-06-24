@@ -15,65 +15,70 @@ using BuildingSmart.IFC.IfcKernel;
 using BuildingSmart.IFC.IfcMeasureResource;
 using BuildingSmart.IFC.IfcProductExtension;
 using BuildingSmart.IFC.IfcRepresentationResource;
-using BuildingSmart.IFC.IfcSharedBldgElements;
-using BuildingSmart.IFC.IfcSharedComponentElements;
 using BuildingSmart.IFC.IfcStructuralAnalysisDomain;
 using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcStructuralElementsDomain
 {
-	[Guid("60c27225-1396-4914-94fa-e4ace351eb81")]
+	[Guid("f1b23e5d-c76d-4754-8b04-ea3d52f51a16")]
 	public partial class IfcReinforcingMesh : IfcReinforcingElement
 	{
 		[DataMember(Order = 0)] 
 		[XmlAttribute]
-		[Description("Deprecated.    <blockquote class=\"change-ifc2x4\">IFC4 CHANGE&nbsp; Attribute deprecated.  Use respective attribute at <em>IfcReinforcingMeshType</em> instead.</blockquote>")]
+		[Description("The overall length of the mesh measured in its longitudinal direction.")]
 		public IfcPositiveLengthMeasure? MeshLength { get; set; }
 	
 		[DataMember(Order = 1)] 
 		[XmlAttribute]
-		[Description("Deprecated.    <blockquote class=\"change-ifc2x4\">IFC4 CHANGE&nbsp; Attribute deprecated.  Use respective attribute at <em>IfcReinforcingMeshType</em> instead.</blockquote>")]
+		[Description("The overall width of the mesh measured in its transversal direction.")]
 		public IfcPositiveLengthMeasure? MeshWidth { get; set; }
 	
 		[DataMember(Order = 2)] 
 		[XmlAttribute]
-		[Description("Deprecated.    <blockquote class=\"change-ifc2x4\">IFC4 CHANGE&nbsp; Attribute made optional and deprecated.  Use respective attribute at <em>IfcReinforcingMeshType</em> instead.</blockquote>")]
-		public IfcPositiveLengthMeasure? LongitudinalBarNominalDiameter { get; set; }
+		[Description("The nominal diameter denoting the cross-section size of the longitudinal bars.")]
+		[Required()]
+		public IfcPositiveLengthMeasure LongitudinalBarNominalDiameter { get; set; }
 	
 		[DataMember(Order = 3)] 
 		[XmlAttribute]
-		[Description("Deprecated.    <blockquote class=\"change-ifc2x4\">IFC4 CHANGE&nbsp; Attribute made optional and deprecated.  Use respective attribute at <em>IfcReinforcingMeshType</em> instead.</blockquote>")]
-		public IfcPositiveLengthMeasure? TransverseBarNominalDiameter { get; set; }
+		[Description("The nominal diameter denoting the cross-section size of the transverse bars.")]
+		[Required()]
+		public IfcPositiveLengthMeasure TransverseBarNominalDiameter { get; set; }
 	
 		[DataMember(Order = 4)] 
 		[XmlAttribute]
-		[Description("Deprecated.    <blockquote class=\"change-ifc2x4\">IFC4 CHANGE&nbsp; Attribute made optional and deprecated.  Use respective attribute at <em>IfcReinforcingMeshType</em> instead.</blockquote>")]
-		public IfcAreaMeasure? LongitudinalBarCrossSectionArea { get; set; }
+		[Description("The effective cross-section area of the longitudinal bars of the mesh.")]
+		[Required()]
+		public IfcAreaMeasure LongitudinalBarCrossSectionArea { get; set; }
 	
 		[DataMember(Order = 5)] 
 		[XmlAttribute]
-		[Description("Deprecated.    <blockquote class=\"change-ifc2x4\">IFC4 CHANGE&nbsp; Attribute made optional and deprecated.  Use respective attribute at <em>IfcReinforcingMeshType</em> instead.</blockquote>")]
-		public IfcAreaMeasure? TransverseBarCrossSectionArea { get; set; }
+		[Description("The effective cross-section area of the transverse bars of the mesh.")]
+		[Required()]
+		public IfcAreaMeasure TransverseBarCrossSectionArea { get; set; }
 	
 		[DataMember(Order = 6)] 
 		[XmlAttribute]
-		[Description("Deprecated.    <blockquote class=\"change-ifc2x4\">IFC4 CHANGE&nbsp; Attribute made optional and deprecated.  Use respective attribute at <em>IfcReinforcingMeshType</em> instead.</blockquote>")]
-		public IfcPositiveLengthMeasure? LongitudinalBarSpacing { get; set; }
+		[Description("The spacing between the longitudinal bars. Note: an even distribution of bars is presumed; other cases are handled by Psets.")]
+		[Required()]
+		public IfcPositiveLengthMeasure LongitudinalBarSpacing { get; set; }
 	
 		[DataMember(Order = 7)] 
 		[XmlAttribute]
-		[Description("Deprecated.    <blockquote class=\"change-ifc2x4\">IFC4 CHANGE&nbsp; Attribute made optional and deprecated.  Use respective attribute at <em>IfcReinforcingMeshType</em> instead.</blockquote>")]
-		public IfcPositiveLengthMeasure? TransverseBarSpacing { get; set; }
-	
-		[DataMember(Order = 8)] 
-		[XmlAttribute]
-		[Description("Kind of mesh.")]
-		public IfcReinforcingMeshTypeEnum? PredefinedType { get; set; }
+		[Description("The spacing between the transverse bars. Note: an even distribution of bars is presumed; other cases are handled by Psets.")]
+		[Required()]
+		public IfcPositiveLengthMeasure TransverseBarSpacing { get; set; }
 	
 	
-		public IfcReinforcingMesh(IfcGloballyUniqueId globalId)
-			: base(globalId)
+		public IfcReinforcingMesh(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcPositiveLengthMeasure longitudinalBarNominalDiameter, IfcPositiveLengthMeasure transverseBarNominalDiameter, IfcAreaMeasure longitudinalBarCrossSectionArea, IfcAreaMeasure transverseBarCrossSectionArea, IfcPositiveLengthMeasure longitudinalBarSpacing, IfcPositiveLengthMeasure transverseBarSpacing)
+			: base(globalId, ownerHistory)
 		{
+			this.LongitudinalBarNominalDiameter = longitudinalBarNominalDiameter;
+			this.TransverseBarNominalDiameter = transverseBarNominalDiameter;
+			this.LongitudinalBarCrossSectionArea = longitudinalBarCrossSectionArea;
+			this.TransverseBarCrossSectionArea = transverseBarCrossSectionArea;
+			this.LongitudinalBarSpacing = longitudinalBarSpacing;
+			this.TransverseBarSpacing = transverseBarSpacing;
 		}
 	
 	

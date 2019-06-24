@@ -15,21 +15,16 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcKernel
 {
-	[Guid("5cc95018-83bd-4c3b-ba54-1475cf5cbdb7")]
+	[Guid("a489edd2-988b-4611-b523-8dfabdd442b8")]
 	public abstract partial class IfcControl : IfcObject
 	{
-		[DataMember(Order = 0)] 
-		[XmlAttribute]
-		[Description("An identifying designation given to a control      It is the identifier at the occurrence level.       <blockquote class=\"change-ifc2x4\">IFC4 CHANGE  Attribute unified by promoting from various subtypes of <em>IfcControl</em>.   </blockquote>")]
-		public IfcIdentifier? Identification { get; set; }
-	
 		[InverseProperty("RelatingControl")] 
 		[Description("Reference to the relationship that associates the control to the object(s) being controlled.")]
 		public ISet<IfcRelAssignsToControl> Controls { get; protected set; }
 	
 	
-		protected IfcControl(IfcGloballyUniqueId globalId)
-			: base(globalId)
+		protected IfcControl(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory)
+			: base(globalId, ownerHistory)
 		{
 			this.Controls = new HashSet<IfcRelAssignsToControl>();
 		}

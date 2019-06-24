@@ -19,13 +19,18 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcStructuralAnalysisDomain
 {
-	[Guid("f0e940ad-cfed-49d8-a850-023bd268a88a")]
+	[Guid("6430b90a-bc13-49fa-90e0-254576ac9316")]
 	public abstract partial class IfcStructuralReaction : IfcStructuralActivity
 	{
+		[InverseProperty("CausedBy")] 
+		[Description("Optional reference to instances of IfcStructuralAction which directly depend on this reaction. This reference is only needed if dependencies between structural analysis models must be captured.")]
+		public ISet<IfcStructuralAction> Causes { get; protected set; }
 	
-		protected IfcStructuralReaction(IfcGloballyUniqueId globalId, IfcStructuralLoad appliedLoad, IfcGlobalOrLocalEnum globalOrLocal)
-			: base(globalId, appliedLoad, globalOrLocal)
+	
+		protected IfcStructuralReaction(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcStructuralLoad appliedLoad, IfcGlobalOrLocalEnum globalOrLocal)
+			: base(globalId, ownerHistory, appliedLoad, globalOrLocal)
 		{
+			this.Causes = new HashSet<IfcStructuralAction>();
 		}
 	
 	

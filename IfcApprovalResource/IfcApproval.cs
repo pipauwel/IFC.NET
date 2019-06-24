@@ -10,74 +10,56 @@ using System.Runtime.InteropServices;
 using System.Runtime.Serialization;
 using System.Xml.Serialization;
 
-using BuildingSmart.IFC.IfcActorResource;
-using BuildingSmart.IFC.IfcControlExtension;
 using BuildingSmart.IFC.IfcDateTimeResource;
-using BuildingSmart.IFC.IfcExternalReferenceResource;
 using BuildingSmart.IFC.IfcMeasureResource;
 
 namespace BuildingSmart.IFC.IfcApprovalResource
 {
-	[Guid("76476d02-0061-4539-81cf-c606a2acbe13")]
-	public partial class IfcApproval :
-		BuildingSmart.IFC.IfcExternalReferenceResource.IfcResourceObjectSelect
+	[Guid("df06df2c-a1d7-499a-ba49-f955ceae5f1a")]
+	public partial class IfcApproval
 	{
 		[DataMember(Order = 0)] 
-		[XmlAttribute]
-		[Description("A computer interpretable identifier by which the approval is known.")]
-		public IfcIdentifier? Identifier { get; set; }
-	
-		[DataMember(Order = 1)] 
-		[XmlAttribute]
-		[Description("A human readable name given to an approval.")]
-		public IfcLabel? Name { get; set; }
-	
-		[DataMember(Order = 2)] 
 		[XmlAttribute]
 		[Description("A general textual description of a design, work task, plan, etc. that is being approved for.")]
 		public IfcText? Description { get; set; }
 	
+		[DataMember(Order = 1)] 
+		[Description("Date and time when the result of the approval process is produced.")]
+		[Required()]
+		public IfcDateTimeSelect ApprovalDateTime { get; set; }
+	
+		[DataMember(Order = 2)] 
+		[XmlAttribute]
+		[Description("The result or current status of the approval, e.g. Requested, Processed, Approved, Not Approved.")]
+		public IfcLabel? ApprovalStatus { get; set; }
+	
 		[DataMember(Order = 3)] 
 		[XmlAttribute]
-		[Description("Date and time when the result of the approval process is produced.  <blockquote class=\"change-ifc2x4\">IFC4 CHANGE&nbsp; Attribute data type changed to <em>IfcDateTime</em> using ISO 8601 representation, renamed from ApprovalDateTime and made OPTIONAL.</blockquote>")]
-		public IfcDateTime? TimeOfApproval { get; set; }
+		[Description("Level of the approval e.g. Draft v.s. Completed design.")]
+		public IfcLabel? ApprovalLevel { get; set; }
 	
 		[DataMember(Order = 4)] 
 		[XmlAttribute]
-		[Description("The result or current status of the approval, e.g. Requested, Processed, Approved, Not Approved.")]
-		public IfcLabel? Status { get; set; }
+		[Description("Textual description of special constraints or conditions for the approval.")]
+		public IfcText? ApprovalQualifier { get; set; }
 	
 		[DataMember(Order = 5)] 
 		[XmlAttribute]
-		[Description("Level of the approval e.g. Draft v.s. Completed design.")]
-		public IfcLabel? Level { get; set; }
+		[Description("A human readable name given to an approval.")]
+		[Required()]
+		public IfcLabel Name { get; set; }
 	
 		[DataMember(Order = 6)] 
 		[XmlAttribute]
-		[Description("Textual description of special constraints or conditions for the approval.")]
-		public IfcText? Qualifier { get; set; }
+		[Description("A computer interpretable identifier by which the approval is known.")]
+		[Required()]
+		public IfcIdentifier Identifier { get; set; }
 	
-		[DataMember(Order = 7)] 
-		[Description("The actor that is acting in the role specified at <em>IfcOrganization</em> or individually at <em>IfcPerson</em> and requesting an approval.  <blockquote class=\"change-ifc2x4\">IFC4 CHANGE&nbsp; New attribute for approval request replacing IfcApprovalActorRelationship (being deleted).</blockquote>")]
-		public IfcActorSelect RequestingApproval { get; set; }
+		[InverseProperty("Approval")] 
+		[Description("The set of relationships by which the actors acting in specified roles on this approval are known.")]
+		public ISet<IfcApprovalActorRelationship> Actors { get; protected set; }
 	
-		[DataMember(Order = 8)] 
-		[Description("The actor that is acting in the role specified at <em>IfcOrganization</em> or individually at <em>IfcPerson</em> and giving an approval.  <blockquote class=\"change-ifc2x4\">IFC4 CHANGE&nbsp; New attribute for approval provision replacing IfcApprovalActorRelationship (being deleted).</blockquote>")]
-		public IfcActorSelect GivingApproval { get; set; }
-	
-		[InverseProperty("RelatedResourceObjects")] 
-		[Description("Reference to external references, e.g. library, classification, or document information, that are associated to the Approval.  <blockquote class=\"change-ifc2x4\">IFC4 CHANGE&nbsp; New inverse attribute.</blockquote>")]
-		public ISet<IfcExternalReferenceRelationship> HasExternalReferences { get; protected set; }
-	
-		[InverseProperty("RelatingApproval")] 
-		[Description("Reference to the <em>IfcRelAssociatesApproval</em> instances associating this approval to objects (subtypes of <em>IfcRoot</em>")]
-		public ISet<IfcRelAssociatesApproval> ApprovedObjects { get; protected set; }
-	
-		[InverseProperty("RelatingApproval")] 
-		[Description("The set of relationships by which resource objects that are are approved by this approval are known.")]
-		public ISet<IfcResourceApprovalRelationship> ApprovedResources { get; protected set; }
-	
-		[InverseProperty("RelatedApprovals")] 
+		[InverseProperty("RelatedApproval")] 
 		[Description("The set of relationships by which this approval is related to others.")]
 		public ISet<IfcApprovalRelationship> IsRelatedWith { get; protected set; }
 	
@@ -86,11 +68,12 @@ namespace BuildingSmart.IFC.IfcApprovalResource
 		public ISet<IfcApprovalRelationship> Relates { get; protected set; }
 	
 	
-		public IfcApproval()
+		public IfcApproval(IfcDateTimeSelect approvalDateTime, IfcLabel name, IfcIdentifier identifier)
 		{
-			this.HasExternalReferences = new HashSet<IfcExternalReferenceRelationship>();
-			this.ApprovedObjects = new HashSet<IfcRelAssociatesApproval>();
-			this.ApprovedResources = new HashSet<IfcResourceApprovalRelationship>();
+			this.ApprovalDateTime = approvalDateTime;
+			this.Name = name;
+			this.Identifier = identifier;
+			this.Actors = new HashSet<IfcApprovalActorRelationship>();
 			this.IsRelatedWith = new HashSet<IfcApprovalRelationship>();
 			this.Relates = new HashSet<IfcApprovalRelationship>();
 		}

@@ -10,24 +10,23 @@ using System.Runtime.InteropServices;
 using System.Runtime.Serialization;
 using System.Xml.Serialization;
 
-using BuildingSmart.IFC.IfcExternalReferenceResource;
 using BuildingSmart.IFC.IfcGeometryResource;
 using BuildingSmart.IFC.IfcMeasureResource;
 
 namespace BuildingSmart.IFC.IfcProfileResource
 {
-	[Guid("ac8317b8-fdef-4d3d-afd6-b168298be8c3")]
+	[Guid("a7f8d89b-9a5d-4857-9cfa-98f261296a6f")]
 	public partial class IfcLShapeProfileDef : IfcParameterizedProfileDef
 	{
 		[DataMember(Order = 0)] 
 		[XmlAttribute]
-		[Description("Leg length, see illustration above (= h). Same as the overall depth.")]
+		[Description("Leg length, see illustration above (= h).")]
 		[Required()]
 		public IfcPositiveLengthMeasure Depth { get; set; }
 	
 		[DataMember(Order = 1)] 
 		[XmlAttribute]
-		[Description("Leg length, see illustration above (= b). Same as the overall width. This attribute is formally optional for historic reasons only. Whenever the width is known, it shall be provided by value.")]
+		[Description("Leg length, see illustration above (= b). If not given, the value of the Depth attribute is applied to Width.")]
 		public IfcPositiveLengthMeasure? Width { get; set; }
 	
 		[DataMember(Order = 2)] 
@@ -38,22 +37,32 @@ namespace BuildingSmart.IFC.IfcProfileResource
 	
 		[DataMember(Order = 3)] 
 		[XmlAttribute]
-		[Description("Fillet radius according the above illustration (= r1).")]
-		public IfcNonNegativeLengthMeasure? FilletRadius { get; set; }
+		[Description("Fillet radius according the above illustration (= r1). If it is not given, zero is assumed.")]
+		public IfcPositiveLengthMeasure? FilletRadius { get; set; }
 	
 		[DataMember(Order = 4)] 
 		[XmlAttribute]
-		[Description("Edge radius according the above illustration (= r2).")]
-		public IfcNonNegativeLengthMeasure? EdgeRadius { get; set; }
+		[Description("Edge radius according the above illustration (= r2). If it is not given, zero is assumed.")]
+		public IfcPositiveLengthMeasure? EdgeRadius { get; set; }
 	
 		[DataMember(Order = 5)] 
 		[XmlAttribute]
-		[Description("Slope of the inner face of each leg of the profile.")]
+		[Description("Slope of leg of the profile. If it is not given, zero is assumed.")]
 		public IfcPlaneAngleMeasure? LegSlope { get; set; }
 	
+		[DataMember(Order = 6)] 
+		[XmlAttribute]
+		[Description("<EPM-HTML> Location of centre of gravity along the x axis measured from the center of the bounding box.     <blockquote> <small><font color=\"#ff0000\">  IFC2x Edition 2 Addendum 2 CHANGE The attribute <i>CentreOfGravityInX</i> has been made optional. Upward compatibility for file based exchange is guaranteed.    </font></small></blockquote>  </EPM-HTML>")]
+		public IfcPositiveLengthMeasure? CentreOfGravityInX { get; set; }
 	
-		public IfcLShapeProfileDef(IfcProfileTypeEnum profileType, IfcPositiveLengthMeasure depth, IfcPositiveLengthMeasure thickness)
-			: base(profileType)
+		[DataMember(Order = 7)] 
+		[XmlAttribute]
+		[Description("<EPM-HTML> Location of centre of gravity along the Y axis measured from the center of the bounding box.     <blockquote> <small><font color=\"#ff0000\">  IFC2x Edition 2 Addendum 2 CHANGE The attribute <i>CentreOfGravityInY</i> has been made optional. Upward compatibility for file based exchange is guaranteed.    </font></small></blockquote>  </EPM-HTML>")]
+		public IfcPositiveLengthMeasure? CentreOfGravityInY { get; set; }
+	
+	
+		public IfcLShapeProfileDef(IfcProfileTypeEnum profileType, IfcAxis2Placement2D position, IfcPositiveLengthMeasure depth, IfcPositiveLengthMeasure thickness)
+			: base(profileType, position)
 		{
 			this.Depth = depth;
 			this.Thickness = thickness;

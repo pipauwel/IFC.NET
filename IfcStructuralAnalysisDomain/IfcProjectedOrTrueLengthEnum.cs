@@ -13,7 +13,7 @@ using System.Xml.Serialization;
 
 namespace BuildingSmart.IFC.IfcStructuralAnalysisDomain
 {
-	[Guid("910e9007-48c6-48d5-bc09-c771d8fc9440")]
+	[Guid("cdaa538a-23dc-4932-90d3-4d4ed94a3236")]
 	public enum IfcProjectedOrTrueLengthEnum
 	{
 		PROJECTED_LENGTH = 1,

@@ -16,7 +16,7 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcSharedBldgServiceElements
 {
-	[Guid("e5a4f246-e6c4-40b9-85b6-af71acb30b68")]
+	[Guid("beedc2df-a5bb-4bb2-830c-6b59b3d3f29f")]
 	public partial class IfcRelFlowControlElements : IfcRelConnects
 	{
 		[DataMember(Order = 0)] 
@@ -26,14 +26,13 @@ namespace BuildingSmart.IFC.IfcSharedBldgServiceElements
 		public ISet<IfcDistributionControlElement> RelatedControlElements { get; protected set; }
 	
 		[DataMember(Order = 1)] 
-		[XmlElement]
 		[Description("Relationship to a distribution flow element")]
 		[Required()]
 		public IfcDistributionFlowElement RelatingFlowElement { get; set; }
 	
 	
-		public IfcRelFlowControlElements(IfcGloballyUniqueId globalId, IfcDistributionControlElement[] relatedControlElements, IfcDistributionFlowElement relatingFlowElement)
-			: base(globalId)
+		public IfcRelFlowControlElements(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcDistributionControlElement[] relatedControlElements, IfcDistributionFlowElement relatingFlowElement)
+			: base(globalId, ownerHistory)
 		{
 			this.RelatedControlElements = new HashSet<IfcDistributionControlElement>(relatedControlElements);
 			this.RelatingFlowElement = relatingFlowElement;

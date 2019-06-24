@@ -15,22 +15,21 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcKernel
 {
-	[Guid("2b84a703-2870-4982-b755-d5e128989509")]
+	[Guid("61204dbc-e9f6-40ab-aaaf-0c7f854fa124")]
 	public partial class IfcRelAssignsToProcess : IfcRelAssigns
 	{
 		[DataMember(Order = 0)] 
-		[Description("Reference to the process to which the objects are assigned to.  <blockquote class=\"change-ifc2x4\">IFC4 CHANGE Datatype expanded to include <em>IfcProcess</em> and <em>IfcTypeProcess</em>.</blockquote>")]
+		[Description("Reference to the process to which the objects are assigned to.")]
 		[Required()]
-		public IfcProcessSelect RelatingProcess { get; set; }
+		public IfcProcess RelatingProcess { get; set; }
 	
 		[DataMember(Order = 1)] 
-		[XmlElement]
 		[Description("Quantity of the object specific for the operation by this process.")]
 		public IfcMeasureWithUnit QuantityInProcess { get; set; }
 	
 	
-		public IfcRelAssignsToProcess(IfcGloballyUniqueId globalId, IfcObjectDefinition[] relatedObjects, IfcProcessSelect relatingProcess)
-			: base(globalId, relatedObjects)
+		public IfcRelAssignsToProcess(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcObjectDefinition[] relatedObjects, IfcProcess relatingProcess)
+			: base(globalId, ownerHistory, relatedObjects)
 		{
 			this.RelatingProcess = relatingProcess;
 		}

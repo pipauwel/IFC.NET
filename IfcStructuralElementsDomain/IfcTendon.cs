@@ -15,30 +15,31 @@ using BuildingSmart.IFC.IfcKernel;
 using BuildingSmart.IFC.IfcMeasureResource;
 using BuildingSmart.IFC.IfcProductExtension;
 using BuildingSmart.IFC.IfcRepresentationResource;
-using BuildingSmart.IFC.IfcSharedBldgElements;
-using BuildingSmart.IFC.IfcSharedComponentElements;
 using BuildingSmart.IFC.IfcStructuralAnalysisDomain;
 using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcStructuralElementsDomain
 {
-	[Guid("33cccfc5-2da4-42df-8cac-9c14b6d955a6")]
+	[Guid("1b518a02-392f-43e1-b4e1-0135ac1adc2b")]
 	public partial class IfcTendon : IfcReinforcingElement
 	{
 		[DataMember(Order = 0)] 
 		[XmlAttribute]
-		[Description("Predefined generic types for a tendon.    <blockquote class=\"change-ifc2x4\">IFC4 CHANGE&nbsp; Attribute made optional.</blockquote>")]
-		public IfcTendonTypeEnum? PredefinedType { get; set; }
+		[Description("Predefined generic types for a tendon.")]
+		[Required()]
+		public IfcTendonTypeEnum PredefinedType { get; set; }
 	
 		[DataMember(Order = 1)] 
 		[XmlAttribute]
-		[Description("The nominal diameter defining the cross-section size of the tendon.    <blockquote class=\"change-ifc2x4\">IFC4 CHANGE&nbsp; Attribute made optional and deprecated.  Use respective attribute at <em>IfcTendonType</em> instead.</blockquote>")]
-		public IfcPositiveLengthMeasure? NominalDiameter { get; set; }
+		[Description("The nominal diameter defining the cross-section size of the tendon.")]
+		[Required()]
+		public IfcPositiveLengthMeasure NominalDiameter { get; set; }
 	
 		[DataMember(Order = 2)] 
 		[XmlAttribute]
-		[Description("The effective cross-section area of the tendon.    <blockquote class=\"change-ifc2x4\">IFC4 CHANGE&nbsp; Attribute made optional and deprecated.  Use respective attribute at <em>IfcTendonType</em> instead.</blockquote>")]
-		public IfcAreaMeasure? CrossSectionArea { get; set; }
+		[Description("The effective cross-section area of the tendon.")]
+		[Required()]
+		public IfcAreaMeasure CrossSectionArea { get; set; }
 	
 		[DataMember(Order = 3)] 
 		[XmlAttribute]
@@ -52,7 +53,7 @@ namespace BuildingSmart.IFC.IfcStructuralElementsDomain
 	
 		[DataMember(Order = 5)] 
 		[XmlAttribute]
-		[Description("The friction coefficient between tendon and tendon sheet while the tendon is unbonded.")]
+		[Description("The friction coefficient for the bond between the tendon and the surrounding concrete.")]
 		public IfcNormalisedRatioMeasure? FrictionCoefficient { get; set; }
 	
 		[DataMember(Order = 6)] 
@@ -66,9 +67,12 @@ namespace BuildingSmart.IFC.IfcStructuralElementsDomain
 		public IfcPositiveLengthMeasure? MinCurvatureRadius { get; set; }
 	
 	
-		public IfcTendon(IfcGloballyUniqueId globalId)
-			: base(globalId)
+		public IfcTendon(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcTendonTypeEnum predefinedType, IfcPositiveLengthMeasure nominalDiameter, IfcAreaMeasure crossSectionArea)
+			: base(globalId, ownerHistory)
 		{
+			this.PredefinedType = predefinedType;
+			this.NominalDiameter = nominalDiameter;
+			this.CrossSectionArea = crossSectionArea;
 		}
 	
 	

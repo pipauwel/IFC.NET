@@ -10,12 +10,11 @@ using System.Runtime.InteropServices;
 using System.Runtime.Serialization;
 using System.Xml.Serialization;
 
-using BuildingSmart.IFC.IfcExternalReferenceResource;
 using BuildingSmart.IFC.IfcMeasureResource;
 
 namespace BuildingSmart.IFC.IfcQuantityResource
 {
-	[Guid("f137f056-3756-4b10-8243-deee1ffa7d9d")]
+	[Guid("619066ad-d580-4d0b-8d39-b41023bc4584")]
 	public partial class IfcQuantityTime : IfcPhysicalSimpleQuantity
 	{
 		[DataMember(Order = 0)] 
@@ -23,11 +22,6 @@ namespace BuildingSmart.IFC.IfcQuantityResource
 		[Description("Time measure value of this quantity.")]
 		[Required()]
 		public IfcTimeMeasure TimeValue { get; set; }
-	
-		[DataMember(Order = 1)] 
-		[XmlAttribute]
-		[Description("A formula by which the quantity has been calculated. It can be assigned in addition to the actual value of the quantity. Formulas could be mathematic calculations (like width x height), database links, or a combination. The formula is for informational purposes only.  <blockquote class=\"change-ifc2x4\">IFC4 CHANGE  Attribute added to the end of the attribute list.</blockquote>")]
-		public IfcLabel? Formula { get; set; }
 	
 	
 		public IfcQuantityTime(IfcLabel name, IfcTimeMeasure timeValue)

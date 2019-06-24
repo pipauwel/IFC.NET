@@ -10,22 +10,20 @@ using System.Runtime.InteropServices;
 using System.Runtime.Serialization;
 using System.Xml.Serialization;
 
-using BuildingSmart.IFC.IfcExternalReferenceResource;
 using BuildingSmart.IFC.IfcMeasureResource;
 using BuildingSmart.IFC.IfcPropertyResource;
 
 namespace BuildingSmart.IFC.IfcActorResource
 {
-	[Guid("93c06606-4886-4b0b-9ed6-d883d74c46fd")]
+	[Guid("374ac51a-70a0-4e6e-934b-ba7a965eb472")]
 	public partial class IfcOrganization :
 		IfcActorSelect,
-		BuildingSmart.IFC.IfcPropertyResource.IfcObjectReferenceSelect,
-		BuildingSmart.IFC.IfcExternalReferenceResource.IfcResourceObjectSelect
+		BuildingSmart.IFC.IfcPropertyResource.IfcObjectReferenceSelect
 	{
 		[DataMember(Order = 0)] 
 		[XmlAttribute]
 		[Description("Identification of the organization.")]
-		public IfcIdentifier? Identification { get; set; }
+		public IfcIdentifier? Id { get; set; }
 	
 		[DataMember(Order = 1)] 
 		[XmlAttribute]
@@ -44,7 +42,7 @@ namespace BuildingSmart.IFC.IfcActorResource
 		public IList<IfcActorRole> Roles { get; protected set; }
 	
 		[DataMember(Order = 4)] 
-		[Description("Postal and telecom addresses of an organization.  <blockquote class=\"note\">NOTE&nbsp; There may be several addresses related to an organization.</blockquote>")]
+		[Description("Postal and telecom addresses of an organization.  <EPM-HTML>  <BLOCKQUOTE><FONT SIZE=\"-1\">NOTE: There may be several addresses related to an organization.  </FONT></BLOCKQUOTE>  </EPM-HTML>")]
 		[MinLength(1)]
 		public IList<IfcAddress> Addresses { get; protected set; }
 	

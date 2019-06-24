@@ -18,7 +18,7 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcProductExtension
 {
-	[Guid("34d6582a-8218-4a4c-9073-fdbe06d6d40a")]
+	[Guid("75ae2131-56ed-42b5-9e52-3b0346c0d442")]
 	public partial class IfcAnnotation : IfcProduct
 	{
 		[InverseProperty("RelatedElements")] 
@@ -27,8 +27,8 @@ namespace BuildingSmart.IFC.IfcProductExtension
 		public ISet<IfcRelContainedInSpatialStructure> ContainedInStructure { get; protected set; }
 	
 	
-		public IfcAnnotation(IfcGloballyUniqueId globalId)
-			: base(globalId)
+		public IfcAnnotation(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory)
+			: base(globalId, ownerHistory)
 		{
 			this.ContainedInStructure = new HashSet<IfcRelContainedInSpatialStructure>();
 		}

@@ -13,10 +13,11 @@ using System.Xml.Serialization;
 using BuildingSmart.IFC.IfcGeometryResource;
 using BuildingSmart.IFC.IfcMeasureResource;
 using BuildingSmart.IFC.IfcPresentationAppearanceResource;
+using BuildingSmart.IFC.IfcPresentationResource;
 
 namespace BuildingSmart.IFC.IfcPresentationOrganizationResource
 {
-	[Guid("78a1fa33-c4d1-4c69-9137-f32a6c56f59e")]
+	[Guid("fa331a24-f876-4715-a223-e547aa215200")]
 	public partial class IfcLightSourceAmbient : IfcLightSource
 	{
 	

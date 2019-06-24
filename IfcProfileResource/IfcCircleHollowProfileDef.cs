@@ -10,13 +10,12 @@ using System.Runtime.InteropServices;
 using System.Runtime.Serialization;
 using System.Xml.Serialization;
 
-using BuildingSmart.IFC.IfcExternalReferenceResource;
 using BuildingSmart.IFC.IfcGeometryResource;
 using BuildingSmart.IFC.IfcMeasureResource;
 
 namespace BuildingSmart.IFC.IfcProfileResource
 {
-	[Guid("ec4ff7c3-e1f8-4480-956f-983ac59dd757")]
+	[Guid("2d8e8f4a-8947-49ca-b146-77ad07842c99")]
 	public partial class IfcCircleHollowProfileDef : IfcCircleProfileDef
 	{
 		[DataMember(Order = 0)] 
@@ -26,8 +25,8 @@ namespace BuildingSmart.IFC.IfcProfileResource
 		public IfcPositiveLengthMeasure WallThickness { get; set; }
 	
 	
-		public IfcCircleHollowProfileDef(IfcProfileTypeEnum profileType, IfcPositiveLengthMeasure radius, IfcPositiveLengthMeasure wallThickness)
-			: base(profileType, radius)
+		public IfcCircleHollowProfileDef(IfcProfileTypeEnum profileType, IfcAxis2Placement2D position, IfcPositiveLengthMeasure radius, IfcPositiveLengthMeasure wallThickness)
+			: base(profileType, position, radius)
 		{
 			this.WallThickness = wallThickness;
 		}

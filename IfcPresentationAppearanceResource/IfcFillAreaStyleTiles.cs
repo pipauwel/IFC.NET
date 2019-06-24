@@ -16,22 +16,20 @@ using BuildingSmart.IFC.IfcPresentationOrganizationResource;
 
 namespace BuildingSmart.IFC.IfcPresentationAppearanceResource
 {
-	[Guid("94e16249-95c6-4654-92c9-5cfac4e1e234")]
+	[Guid("8ab654a3-24e1-46b6-8dfd-39758b74dc21")]
 	public partial class IfcFillAreaStyleTiles : IfcGeometricRepresentationItem,
 		IfcFillStyleSelect
 	{
 		[DataMember(Order = 0)] 
-		[Description("A two direction repeat factor defining the shape and relative positioning of the tiles.  <blockquote class=\"change-ifc2x4\">IFC4 CHANGE&nbsp; The attribute type has changed to directly reference two <em>IfcVector</em>'s.</blockquote>")]
+		[Description("A two direction repeat factor defining the shape and relative positioning of the tiles.")]
 		[Required()]
-		[MinLength(2)]
-		[MaxLength(2)]
-		public IList<IfcVector> TilingPattern { get; protected set; }
+		public IfcOneDirectionRepeatFactor TilingPattern { get; set; }
 	
 		[DataMember(Order = 1)] 
-		[Description("A set of constituents of the tile being a styled item that is used as the annotation symbol for tiling the filled area.  <blockquote class=\"change-ifc2x4\">IFC4 CHANGE  The data type has been changed to <em>IfcStyledItem</em>.</blockquote>  <blockquote class=\"note\">NOTE&nbsp; Only <em>IfcStyleItem</em>'s that refer to a compatible geometric representation item and presentation style shall be used.</blockquote>")]
+		[Description("A set of constituents of the tile.")]
 		[Required()]
 		[MinLength(1)]
-		public ISet<IfcStyledItem> Tiles { get; protected set; }
+		public ISet<IfcFillAreaStyleTileShapeSelect> Tiles { get; protected set; }
 	
 		[DataMember(Order = 2)] 
 		[XmlAttribute]
@@ -40,10 +38,10 @@ namespace BuildingSmart.IFC.IfcPresentationAppearanceResource
 		public IfcPositiveRatioMeasure TilingScale { get; set; }
 	
 	
-		public IfcFillAreaStyleTiles(IfcVector[] tilingPattern, IfcStyledItem[] tiles, IfcPositiveRatioMeasure tilingScale)
+		public IfcFillAreaStyleTiles(IfcOneDirectionRepeatFactor tilingPattern, IfcFillAreaStyleTileShapeSelect[] tiles, IfcPositiveRatioMeasure tilingScale)
 		{
-			this.TilingPattern = new List<IfcVector>(tilingPattern);
-			this.Tiles = new HashSet<IfcStyledItem>(tiles);
+			this.TilingPattern = tilingPattern;
+			this.Tiles = new HashSet<IfcFillAreaStyleTileShapeSelect>(tiles);
 			this.TilingScale = tilingScale;
 		}
 	

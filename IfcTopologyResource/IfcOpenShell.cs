@@ -16,7 +16,7 @@ using BuildingSmart.IFC.IfcPresentationOrganizationResource;
 
 namespace BuildingSmart.IFC.IfcTopologyResource
 {
-	[Guid("08cf6c24-bc6e-48f6-9489-b299eb1c08e2")]
+	[Guid("5a0e614f-5c60-4d62-b2da-00267227bd50")]
 	public partial class IfcOpenShell : IfcConnectedFaceSet,
 		IfcShell
 	{

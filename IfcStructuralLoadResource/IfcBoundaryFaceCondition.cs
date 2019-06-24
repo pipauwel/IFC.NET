@@ -14,20 +14,23 @@ using BuildingSmart.IFC.IfcMeasureResource;
 
 namespace BuildingSmart.IFC.IfcStructuralLoadResource
 {
-	[Guid("fa24f0f1-91ba-46b3-a264-4ec1679a4bce")]
+	[Guid("4ba2918e-ce3b-4abc-85e7-561cd722c1c2")]
 	public partial class IfcBoundaryFaceCondition : IfcBoundaryCondition
 	{
 		[DataMember(Order = 0)] 
-		[Description("Translational stiffness value in x-direction of the coordinate system defined by the instance which uses this resource object.")]
-		public IfcModulusOfSubgradeReactionSelect TranslationalStiffnessByAreaX { get; set; }
+		[XmlAttribute]
+		[Description("Linear stiffness value in x-direction of the coordinate system defined by the instance which uses this resource object.")]
+		public IfcModulusOfSubgradeReactionMeasure? LinearStiffnessByAreaX { get; set; }
 	
 		[DataMember(Order = 1)] 
-		[Description("Translational stiffness value in y-direction of the coordinate system defined by the instance which uses this resource object.")]
-		public IfcModulusOfSubgradeReactionSelect TranslationalStiffnessByAreaY { get; set; }
+		[XmlAttribute]
+		[Description("Linear stiffness value in y-direction of the coordinate system defined by the instance which uses this resource object.")]
+		public IfcModulusOfSubgradeReactionMeasure? LinearStiffnessByAreaY { get; set; }
 	
 		[DataMember(Order = 2)] 
-		[Description("Translational stiffness value in z-direction of the coordinate system defined by the instance which uses this resource object.")]
-		public IfcModulusOfSubgradeReactionSelect TranslationalStiffnessByAreaZ { get; set; }
+		[XmlAttribute]
+		[Description("Linear stiffness value in z-direction of the coordinate system defined by the instance which uses this resource object.")]
+		public IfcModulusOfSubgradeReactionMeasure? LinearStiffnessByAreaZ { get; set; }
 	
 	
 		public IfcBoundaryFaceCondition()

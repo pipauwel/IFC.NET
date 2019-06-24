@@ -19,12 +19,11 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcStructuralAnalysisDomain
 {
-	[Guid("d4640db1-7b55-4f79-8ba6-05b016369801")]
+	[Guid("d51c7f76-137f-4445-9406-c987d9f4cf65")]
 	public abstract partial class IfcStructuralConnection : IfcStructuralItem
 	{
 		[DataMember(Order = 0)] 
-		[XmlElement]
-		[Description("Optional boundary conditions which define support conditions of this connection object, given in local coordinate directions of the connection object.  If left unspecified, the connection object is assumed to have no supports besides being connected with members.")]
+		[Description("Optional reference to an instance of IfcBoundaryCondition which defines the support condition of this 'connection'.")]
 		public IfcBoundaryCondition AppliedCondition { get; set; }
 	
 		[InverseProperty("RelatedStructuralConnection")] 
@@ -33,8 +32,8 @@ namespace BuildingSmart.IFC.IfcStructuralAnalysisDomain
 		public ISet<IfcRelConnectsStructuralMember> ConnectsStructuralMembers { get; protected set; }
 	
 	
-		protected IfcStructuralConnection(IfcGloballyUniqueId globalId)
-			: base(globalId)
+		protected IfcStructuralConnection(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory)
+			: base(globalId, ownerHistory)
 		{
 			this.ConnectsStructuralMembers = new HashSet<IfcRelConnectsStructuralMember>();
 		}

@@ -19,18 +19,18 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcElectricalDomain
 {
-	[Guid("d3bb6ca8-fe8d-4d85-a6a2-319d9ca0ca47")]
+	[Guid("181fa07d-7f8b-4c37-bbc5-87e4ef5bf265")]
 	public partial class IfcOutletType : IfcFlowTerminalType
 	{
 		[DataMember(Order = 0)] 
 		[XmlAttribute]
-		[Description("<p>Identifies the predefined types of outlet from which the type required may be set.</p>")]
+		[Description("Identifies the predefined types of outlet from which the type required may be set.")]
 		[Required()]
 		public IfcOutletTypeEnum PredefinedType { get; set; }
 	
 	
-		public IfcOutletType(IfcGloballyUniqueId globalId, IfcOutletTypeEnum predefinedType)
-			: base(globalId)
+		public IfcOutletType(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcOutletTypeEnum predefinedType)
+			: base(globalId, ownerHistory)
 		{
 			this.PredefinedType = predefinedType;
 		}

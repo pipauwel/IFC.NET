@@ -19,13 +19,20 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcStructuralAnalysisDomain
 {
-	[Guid("5b95095d-4d9c-4dd1-a2ae-b405d104fffe")]
-	public partial class IfcStructuralPlanarAction : IfcStructuralSurfaceAction
+	[Guid("96689b85-5ea5-4eee-8eef-57a2e8f5c7bb")]
+	public partial class IfcStructuralPlanarAction : IfcStructuralAction
 	{
+		[DataMember(Order = 0)] 
+		[XmlAttribute]
+		[Description("Defines if the load values are given by using the length of the member on which they act (true length) or by using the projected length resulting from the loaded member and the global project coordinate system. It is only considered if the global project coordinate system is used, and if the action is of type IfcStructuralLinearAction or IfcStructuralPlanarAction.")]
+		[Required()]
+		public IfcProjectedOrTrueLengthEnum ProjectedOrTrue { get; set; }
 	
-		public IfcStructuralPlanarAction(IfcGloballyUniqueId globalId, IfcStructuralLoad appliedLoad, IfcGlobalOrLocalEnum globalOrLocal, IfcStructuralSurfaceActivityTypeEnum predefinedType)
-			: base(globalId, appliedLoad, globalOrLocal, predefinedType)
+	
+		public IfcStructuralPlanarAction(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcStructuralLoad appliedLoad, IfcGlobalOrLocalEnum globalOrLocal, Boolean destabilizingLoad, IfcProjectedOrTrueLengthEnum projectedOrTrue)
+			: base(globalId, ownerHistory, appliedLoad, globalOrLocal, destabilizingLoad)
 		{
+			this.ProjectedOrTrue = projectedOrTrue;
 		}
 	
 	

@@ -18,50 +18,64 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcProcessExtension
 {
-	[Guid("d247df5b-2f6d-4ef6-bca1-19a0283512e0")]
+	[Guid("414eeb02-3011-42cf-96ea-f319b3328e17")]
 	public abstract partial class IfcWorkControl : IfcControl
 	{
 		[DataMember(Order = 0)] 
 		[XmlAttribute]
-		[Description("The date that the plan is created.")]
+		[Description("Identifier of the work plan, given by user.")]
 		[Required()]
-		public IfcDateTime CreationDate { get; set; }
+		public IfcIdentifier Identifier { get; set; }
 	
 		[DataMember(Order = 1)] 
+		[Description("The date that the plan is created.")]
+		[Required()]
+		public IfcDateTimeSelect CreationDate { get; set; }
+	
+		[DataMember(Order = 2)] 
 		[Description("The authors of the work plan.")]
 		[MinLength(1)]
 		public ISet<IfcPerson> Creators { get; protected set; }
 	
-		[DataMember(Order = 2)] 
+		[DataMember(Order = 3)] 
 		[XmlAttribute]
 		[Description("A description of the purpose of the work schedule.")]
 		public IfcLabel? Purpose { get; set; }
 	
-		[DataMember(Order = 3)] 
-		[XmlAttribute]
-		[Description("The total duration of the entire work schedule.")]
-		public IfcDuration? Duration { get; set; }
-	
 		[DataMember(Order = 4)] 
 		[XmlAttribute]
-		[Description("The total time float of the entire work schedule.")]
-		public IfcDuration? TotalFloat { get; set; }
+		[Description("The total duration of the entire work schedule.")]
+		public IfcTimeMeasure? Duration { get; set; }
 	
 		[DataMember(Order = 5)] 
 		[XmlAttribute]
-		[Description("The start time of the schedule.")]
-		[Required()]
-		public IfcDateTime StartTime { get; set; }
+		[Description("The total time float of the entire work schedule.")]
+		public IfcTimeMeasure? TotalFloat { get; set; }
 	
 		[DataMember(Order = 6)] 
-		[XmlAttribute]
+		[Description("The start time of the schedule.")]
+		[Required()]
+		public IfcDateTimeSelect StartTime { get; set; }
+	
+		[DataMember(Order = 7)] 
 		[Description("The finish time of the schedule.")]
-		public IfcDateTime? FinishTime { get; set; }
+		public IfcDateTimeSelect FinishTime { get; set; }
+	
+		[DataMember(Order = 8)] 
+		[XmlAttribute]
+		[Description("Predefined work control types from which that required may be set.")]
+		public IfcWorkControlTypeEnum? WorkControlType { get; set; }
+	
+		[DataMember(Order = 9)] 
+		[XmlAttribute]
+		[Description("A user defined work control type.")]
+		public IfcLabel? UserDefinedControlType { get; set; }
 	
 	
-		protected IfcWorkControl(IfcGloballyUniqueId globalId, IfcDateTime creationDate, IfcDateTime startTime)
-			: base(globalId)
+		protected IfcWorkControl(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcIdentifier identifier, IfcDateTimeSelect creationDate, IfcDateTimeSelect startTime)
+			: base(globalId, ownerHistory)
 		{
+			this.Identifier = identifier;
 			this.CreationDate = creationDate;
 			this.Creators = new HashSet<IfcPerson>();
 			this.StartTime = startTime;

@@ -19,7 +19,7 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcHvacDomain
 {
-	[Guid("540199dc-befa-4477-9a3c-18a376ec1a11")]
+	[Guid("7b849964-3035-4c02-a538-ef49c8650633")]
 	public partial class IfcTankType : IfcFlowStorageDeviceType
 	{
 		[DataMember(Order = 0)] 
@@ -29,8 +29,8 @@ namespace BuildingSmart.IFC.IfcHvacDomain
 		public IfcTankTypeEnum PredefinedType { get; set; }
 	
 	
-		public IfcTankType(IfcGloballyUniqueId globalId, IfcTankTypeEnum predefinedType)
-			: base(globalId)
+		public IfcTankType(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcTankTypeEnum predefinedType)
+			: base(globalId, ownerHistory)
 		{
 			this.PredefinedType = predefinedType;
 		}

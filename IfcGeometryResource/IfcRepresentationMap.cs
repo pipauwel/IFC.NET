@@ -14,9 +14,8 @@ using BuildingSmart.IFC.IfcRepresentationResource;
 
 namespace BuildingSmart.IFC.IfcGeometryResource
 {
-	[Guid("3968ca44-8f3e-43f2-ab19-855d7709487b")]
-	public partial class IfcRepresentationMap :
-		BuildingSmart.IFC.IfcRepresentationResource.IfcProductRepresentationSelect
+	[Guid("380d19f2-c934-472a-9c62-ffcfbdd23698")]
+	public partial class IfcRepresentationMap
 	{
 		[DataMember(Order = 0)] 
 		[Description("An axis2 placement that defines the position about which the mapped  representation is mapped.")]
@@ -24,14 +23,9 @@ namespace BuildingSmart.IFC.IfcGeometryResource
 		public IfcAxis2Placement MappingOrigin { get; set; }
 	
 		[DataMember(Order = 1)] 
-		[XmlElement]
 		[Description("A representation that is mapped to at least one mapped item.")]
 		[Required()]
 		public IfcRepresentation MappedRepresentation { get; set; }
-	
-		[InverseProperty("PartOfProductDefinitionShape")] 
-		[Description("Reference to the shape aspect that represents part of the shape or its feature distinctively.  <blockquote class=\"change-ifc2x4\">  IFC4 CHANGE&nbsp; Inverse attribute added.  </blockquote>")]
-		public ISet<IfcShapeAspect> HasShapeAspects { get; protected set; }
 	
 		[InverseProperty("MappingSource")] 
 		public ISet<IfcMappedItem> MapUsage { get; protected set; }
@@ -41,7 +35,6 @@ namespace BuildingSmart.IFC.IfcGeometryResource
 		{
 			this.MappingOrigin = mappingOrigin;
 			this.MappedRepresentation = mappedRepresentation;
-			this.HasShapeAspects = new HashSet<IfcShapeAspect>();
 			this.MapUsage = new HashSet<IfcMappedItem>();
 		}
 	

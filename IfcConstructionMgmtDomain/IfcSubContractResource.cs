@@ -10,26 +10,28 @@ using System.Runtime.InteropServices;
 using System.Runtime.Serialization;
 using System.Xml.Serialization;
 
-using BuildingSmart.IFC.IfcCostResource;
-using BuildingSmart.IFC.IfcDateTimeResource;
+using BuildingSmart.IFC.IfcActorResource;
 using BuildingSmart.IFC.IfcKernel;
 using BuildingSmart.IFC.IfcMeasureResource;
-using BuildingSmart.IFC.IfcQuantityResource;
 using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcConstructionMgmtDomain
 {
-	[Guid("43fbb978-b475-40b1-8fa8-494040d73aa4")]
+	[Guid("7a371b2d-09e6-44c0-9083-384d74318393")]
 	public partial class IfcSubContractResource : IfcConstructionResource
 	{
 		[DataMember(Order = 0)] 
+		[Description("The actor performing the role of the subcontracted resource.")]
+		public IfcActorSelect SubContractor { get; set; }
+	
+		[DataMember(Order = 1)] 
 		[XmlAttribute]
-		[Description("Defines types of subcontract resources.  <blockquote class=\"change-ifc2x4\">IFC4 New attribute.</blockquote>")]
-		public IfcSubContractResourceTypeEnum? PredefinedType { get; set; }
+		[Description("The description of the jobs that this subcontract should complete.")]
+		public IfcText? JobDescription { get; set; }
 	
 	
-		public IfcSubContractResource(IfcGloballyUniqueId globalId)
-			: base(globalId)
+		public IfcSubContractResource(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory)
+			: base(globalId, ownerHistory)
 		{
 		}
 	

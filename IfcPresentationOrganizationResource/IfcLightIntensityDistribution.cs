@@ -13,7 +13,7 @@ using System.Xml.Serialization;
 
 namespace BuildingSmart.IFC.IfcPresentationOrganizationResource
 {
-	[Guid("bb394b9d-6446-4af5-b07e-add47d8c8b54")]
+	[Guid("4ac4c177-7e04-43cd-a011-14392fb9d2ba")]
 	public partial class IfcLightIntensityDistribution :
 		IfcLightDistributionDataSourceSelect
 	{
@@ -24,7 +24,7 @@ namespace BuildingSmart.IFC.IfcPresentationOrganizationResource
 		public IfcLightDistributionCurveEnum LightDistributionCurve { get; set; }
 	
 		[DataMember(Order = 1)] 
-		[Description("<p>Light distribution data applied to the light source. It is defined by a list of main plane angles (B or C according to the light distribution curve chosen) that includes (for each B or C angle) a second list of secondary plane angles (the &#946; or &#947; angles) and the according luminous intensity distribution measures.  </p>")]
+		[Description("<EPM-HTML>  <P>Light distribution data applied to the light source. It is defined by a list of main plane angles (B or C according to the light distribution curve chosen) that includes (for each B or C angle) a second list of secondary plane angles (the &#946; or &#947; angles) and the according luminous intensity distribution measures.  </P>  </EPM-HTML>")]
 		[Required()]
 		[MinLength(1)]
 		public IList<IfcLightDistributionData> DistributionData { get; protected set; }

@@ -14,7 +14,7 @@ using BuildingSmart.IFC.IfcMeasureResource;
 
 namespace BuildingSmart.IFC.IfcPresentationOrganizationResource
 {
-	[Guid("cffe9f24-4de2-4238-8448-856d95446876")]
+	[Guid("6e5eec53-9a7f-489f-8154-fdda55c43978")]
 	public partial class IfcLightDistributionData
 	{
 		[DataMember(Order = 0)] 
@@ -25,7 +25,7 @@ namespace BuildingSmart.IFC.IfcPresentationOrganizationResource
 	
 		[DataMember(Order = 1)] 
 		[XmlAttribute]
-		[Description("<p>The list of secondary plane angles (the &#945;, &#946; or &#947; angles) according to the light distribution curve chosen.  </p>  <blockquote class=\"note\">NOTE&nbsp; The <em>SecondaryPlaneAngle</em> and <em>LuminousIntensity</em> lists are corresponding lists.  </blockquote>")]
+		[Description("<EPM-HTML>  <P>The list of secondary plane angles (the &#945;, &#946; or &#947; angles) according to the light distribution curve chosen.  </P>  <BLOCKQUOTE>NOTE: The <I>SecondaryPlaneAngle</I> and <I>LuminousIntensity</I> lists are corresponding lists.  </BLOCKQUOTE>  </EPM-HTML>")]
 		[Required()]
 		[MinLength(1)]
 		public IList<IfcPlaneAngleMeasure> SecondaryPlaneAngle { get; protected set; }

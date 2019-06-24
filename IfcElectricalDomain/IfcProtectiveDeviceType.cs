@@ -19,18 +19,18 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcElectricalDomain
 {
-	[Guid("42a11802-b62b-451b-b13b-bbbd59194027")]
+	[Guid("5c09b341-15c0-4b44-a57d-c5393518736c")]
 	public partial class IfcProtectiveDeviceType : IfcFlowControllerType
 	{
 		[DataMember(Order = 0)] 
 		[XmlAttribute]
-		[Description("<p>Identifies the predefined types of protective device from which the type required may be set.</p>")]
+		[Description("Identifies the predefined types of protective device from which the type required may be set.")]
 		[Required()]
 		public IfcProtectiveDeviceTypeEnum PredefinedType { get; set; }
 	
 	
-		public IfcProtectiveDeviceType(IfcGloballyUniqueId globalId, IfcProtectiveDeviceTypeEnum predefinedType)
-			: base(globalId)
+		public IfcProtectiveDeviceType(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcProtectiveDeviceTypeEnum predefinedType)
+			: base(globalId, ownerHistory)
 		{
 			this.PredefinedType = predefinedType;
 		}

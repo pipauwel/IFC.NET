@@ -15,29 +15,30 @@ using BuildingSmart.IFC.IfcKernel;
 using BuildingSmart.IFC.IfcMeasureResource;
 using BuildingSmart.IFC.IfcProductExtension;
 using BuildingSmart.IFC.IfcRepresentationResource;
-using BuildingSmart.IFC.IfcSharedBldgElements;
 using BuildingSmart.IFC.IfcStructuralAnalysisDomain;
 using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcStructuralElementsDomain
 {
-	[Guid("986bf516-0c1c-465d-992a-2150e7aabe95")]
+	[Guid("aa9e82e6-aecd-486e-91f7-de1a0685c8c0")]
 	public partial class IfcPile : IfcBuildingElement
 	{
 		[DataMember(Order = 0)] 
 		[XmlAttribute]
-		[Description("The predefined generic type of the pile according to function.    <blockquote class=\"change-ifc2x4\">IFC4 CHANGE&nbsp; Attribute made optional.  Type information can be provided by <em>IfcRelDefinesByType</em> and <em>IfcPileType</em>.</blockquote>")]
-		public IfcPileTypeEnum? PredefinedType { get; set; }
+		[Description("The predefined generic type of the pile according to function.")]
+		[Required()]
+		public IfcPileTypeEnum PredefinedType { get; set; }
 	
 		[DataMember(Order = 1)] 
 		[XmlAttribute]
-		[Description("Deprecated.    <blockquote class=\"change-ifc2x4\">IFC4 CHANGE&nbsp; Material profile association capability by means of <em>IfcRelAssociatesMaterial</em> has been added.  The attribute <em>ConstructionType</em> should not be used whenever its information can be provided by a material profile set, either associated with the <em>IfcPile</em> object or, if present, with a corresponding instance of <em>IfcPileType</em>.</blockquote>")]
+		[Description("General designator for how the pile is constructed.")]
 		public IfcPileConstructionEnum? ConstructionType { get; set; }
 	
 	
-		public IfcPile(IfcGloballyUniqueId globalId)
-			: base(globalId)
+		public IfcPile(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcPileTypeEnum predefinedType)
+			: base(globalId, ownerHistory)
 		{
+			this.PredefinedType = predefinedType;
 		}
 	
 	

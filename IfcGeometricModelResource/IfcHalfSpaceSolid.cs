@@ -11,30 +11,27 @@ using System.Runtime.Serialization;
 using System.Xml.Serialization;
 
 using BuildingSmart.IFC.IfcGeometryResource;
-using BuildingSmart.IFC.IfcMeasureResource;
 using BuildingSmart.IFC.IfcPresentationAppearanceResource;
 using BuildingSmart.IFC.IfcPresentationOrganizationResource;
 
 namespace BuildingSmart.IFC.IfcGeometricModelResource
 {
-	[Guid("c9679787-14e8-44ff-b62a-a511bb58005d")]
+	[Guid("fdc6a245-73d0-49ab-af10-8bcd9e75d397")]
 	public partial class IfcHalfSpaceSolid : IfcGeometricRepresentationItem,
 		IfcBooleanOperand
 	{
 		[DataMember(Order = 0)] 
-		[XmlElement]
 		[Description("Surface defining side of half space.")]
 		[Required()]
 		public IfcSurface BaseSurface { get; set; }
 	
 		[DataMember(Order = 1)] 
-		[XmlAttribute]
 		[Description("The agreement flag is TRUE if the normal to the BaseSurface points away from the material of the IfcHalfSpaceSolid. Otherwise it is FALSE.")]
 		[Required()]
-		public IfcBoolean AgreementFlag { get; set; }
+		public Boolean AgreementFlag { get; set; }
 	
 	
-		public IfcHalfSpaceSolid(IfcSurface baseSurface, IfcBoolean agreementFlag)
+		public IfcHalfSpaceSolid(IfcSurface baseSurface, Boolean agreementFlag)
 		{
 			this.BaseSurface = baseSurface;
 			this.AgreementFlag = agreementFlag;

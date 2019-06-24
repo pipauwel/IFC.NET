@@ -10,13 +10,12 @@ using System.Runtime.InteropServices;
 using System.Runtime.Serialization;
 using System.Xml.Serialization;
 
-using BuildingSmart.IFC.IfcExternalReferenceResource;
 using BuildingSmart.IFC.IfcGeometryResource;
 using BuildingSmart.IFC.IfcMeasureResource;
 
 namespace BuildingSmart.IFC.IfcProfileResource
 {
-	[Guid("9e129693-172e-4ea1-b3bb-cb7763385cb0")]
+	[Guid("9eb1ca9f-610e-42b2-b171-654fb6926722")]
 	public partial class IfcTrapeziumProfileDef : IfcParameterizedProfileDef
 	{
 		[DataMember(Order = 0)] 
@@ -44,8 +43,8 @@ namespace BuildingSmart.IFC.IfcProfileResource
 		public IfcLengthMeasure TopXOffset { get; set; }
 	
 	
-		public IfcTrapeziumProfileDef(IfcProfileTypeEnum profileType, IfcPositiveLengthMeasure bottomXDim, IfcPositiveLengthMeasure topXDim, IfcPositiveLengthMeasure yDim, IfcLengthMeasure topXOffset)
-			: base(profileType)
+		public IfcTrapeziumProfileDef(IfcProfileTypeEnum profileType, IfcAxis2Placement2D position, IfcPositiveLengthMeasure bottomXDim, IfcPositiveLengthMeasure topXDim, IfcPositiveLengthMeasure yDim, IfcLengthMeasure topXOffset)
+			: base(profileType, position)
 		{
 			this.BottomXDim = bottomXDim;
 			this.TopXDim = topXDim;

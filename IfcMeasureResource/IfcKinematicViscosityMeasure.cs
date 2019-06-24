@@ -13,7 +13,7 @@ using System.Xml.Serialization;
 
 namespace BuildingSmart.IFC.IfcMeasureResource
 {
-	[Guid("e3299706-7a2b-4061-b892-2367a0b2f9cd")]
+	[Guid("6a11114f-e464-4458-a7c9-0171ddd60dc4")]
 	public partial struct IfcKinematicViscosityMeasure :
 		IfcDerivedMeasureValue
 	{

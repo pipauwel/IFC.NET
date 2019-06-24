@@ -17,18 +17,18 @@ using BuildingSmart.IFC.IfcPresentationOrganizationResource;
 
 namespace BuildingSmart.IFC.IfcGeometricModelResource
 {
-	[Guid("211a7b82-6217-476c-8ecd-feaed2e8b2b9")]
+	[Guid("df38acbf-c70a-45d4-965d-4f328a31a361")]
 	public partial class IfcRightCircularCone : IfcCsgPrimitive3D
 	{
 		[DataMember(Order = 0)] 
 		[XmlAttribute]
-		[Description("The distance between the base of the cone and the apex.")]
+		[Description("<EPM-HTML>  </EPM-HTML>")]
 		[Required()]
 		public IfcPositiveLengthMeasure Height { get; set; }
 	
 		[DataMember(Order = 1)] 
 		[XmlAttribute]
-		[Description("The radius of the cone at the base.")]
+		[Description("<EPM-HTML>  </EPM-HTML>")]
 		[Required()]
 		public IfcPositiveLengthMeasure BottomRadius { get; set; }
 	

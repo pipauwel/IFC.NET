@@ -18,7 +18,7 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcProductExtension
 {
-	[Guid("dfb6beda-5c7c-4df8-bbc6-b101ce4006f3")]
+	[Guid("7a0321d6-98bb-4c1d-8c3f-197847d7fc5e")]
 	public partial class IfcGrid : IfcProduct
 	{
 		[DataMember(Order = 0)] 
@@ -41,19 +41,14 @@ namespace BuildingSmart.IFC.IfcProductExtension
 		[MinLength(1)]
 		public IList<IfcGridAxis> WAxes { get; protected set; }
 	
-		[DataMember(Order = 3)] 
-		[XmlAttribute]
-		[Description("Predefined types to define the particular type of the grid.  <blockquote class=\"change-ifc2x4\">IFC4 CHANGE&nbsp; New attribute.  </blockquote>")]
-		public IfcGridTypeEnum? PredefinedType { get; set; }
-	
 		[InverseProperty("RelatedElements")] 
-		[Description("Relationship to a spatial structure element, to which the grid is primarily associated.  <blockquote class=\"change-ifc2x\">IFC2x CHANGE&nbsp; The inverse relationship has been added to <em>IfcGrid</em> with upward compatibility</blockquote>")]
+		[Description("<EPM-HTML>  Relationship to a spatial structure element, to which the grid is primarily associated.  <blockquote><small><font color=\"#FF0000\">IFC2x PLATFORM CHANGE&nbsp; The inverse relationship has been added to <I>IfcGrid</I> with upward compatibility</font>  </small></blockquote>  </EPM-HTML>")]
 		[MaxLength(1)]
 		public ISet<IfcRelContainedInSpatialStructure> ContainedInStructure { get; protected set; }
 	
 	
-		public IfcGrid(IfcGloballyUniqueId globalId, IfcGridAxis[] uAxes, IfcGridAxis[] vAxes)
-			: base(globalId)
+		public IfcGrid(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcGridAxis[] uAxes, IfcGridAxis[] vAxes)
+			: base(globalId, ownerHistory)
 		{
 			this.UAxes = new List<IfcGridAxis>(uAxes);
 			this.VAxes = new List<IfcGridAxis>(vAxes);

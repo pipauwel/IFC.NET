@@ -17,23 +17,18 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcProductExtension
 {
-	[Guid("e7fcbf9c-f9a1-43ab-b15f-56f0e33af740")]
+	[Guid("5918be21-23fb-417c-bf05-65f1d12ea348")]
 	public partial class IfcSpaceType : IfcSpatialStructureElementType
 	{
 		[DataMember(Order = 0)] 
 		[XmlAttribute]
-		[Description("Predefined types to define the particular type of space. There may be property set definitions available for each predefined type.")]
+		[Description("<EPM-HTML>  Predefined types to define the particular type of space. There may be property set definitions available for each predefined type.  </EPM-HTML>")]
 		[Required()]
 		public IfcSpaceTypeEnum PredefinedType { get; set; }
 	
-		[DataMember(Order = 1)] 
-		[XmlAttribute]
-		[Description("Long name for a space type, used for informal purposes. It should be used, if available, in conjunction with the inherited <em>Name</em> attribute.  <blockquote class=\"note\">    NOTE&nbsp; In many scenarios the <em>Name</em> attribute refers to the short name or number of a space type, and the <em>LongName</em> refers to the full descriptive name.  </blockquote>  <blockquote class=\"change-ifc2x4\">    IFC4 CHANGE&nbsp; New attribute added at the end of entity definition.  </blockquote>")]
-		public IfcLabel? LongName { get; set; }
 	
-	
-		public IfcSpaceType(IfcGloballyUniqueId globalId, IfcSpaceTypeEnum predefinedType)
-			: base(globalId)
+		public IfcSpaceType(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcSpaceTypeEnum predefinedType)
+			: base(globalId, ownerHistory)
 		{
 			this.PredefinedType = predefinedType;
 		}

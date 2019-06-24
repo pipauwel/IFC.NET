@@ -12,13 +12,12 @@ using System.Xml.Serialization;
 
 using BuildingSmart.IFC.IfcGeometricConstraintResource;
 using BuildingSmart.IFC.IfcGeometricModelResource;
-using BuildingSmart.IFC.IfcMeasureResource;
 using BuildingSmart.IFC.IfcPresentationAppearanceResource;
 using BuildingSmart.IFC.IfcPresentationOrganizationResource;
 
 namespace BuildingSmart.IFC.IfcGeometryResource
 {
-	[Guid("ebd15e62-e09c-44c3-8e9c-7f8840bebed8")]
+	[Guid("7477f705-8ade-4050-a55f-60869e05b1f6")]
 	public partial class IfcCompositeCurve : IfcBoundedCurve
 	{
 		[DataMember(Order = 0)] 
@@ -28,21 +27,20 @@ namespace BuildingSmart.IFC.IfcGeometryResource
 		public IList<IfcCompositeCurveSegment> Segments { get; protected set; }
 	
 		[DataMember(Order = 1)] 
-		[XmlAttribute]
 		[Description("Indication of whether the curve intersects itself or not; this is for information only.")]
 		[Required()]
-		public IfcLogical SelfIntersect { get; set; }
+		public Boolean? SelfIntersect { get; set; }
 	
 	
-		public IfcCompositeCurve(IfcCompositeCurveSegment[] segments, IfcLogical selfIntersect)
+		public IfcCompositeCurve(IfcCompositeCurveSegment[] segments, Boolean? selfIntersect)
 		{
 			this.Segments = new List<IfcCompositeCurveSegment>(segments);
 			this.SelfIntersect = selfIntersect;
 		}
 	
-		public new IfcInteger NSegments { get { return new IfcInteger(); } }
+		public new Int64 NSegments { get { return null; } }
 	
-		public new IfcLogical ClosedCurve { get { return new IfcLogical(); } }
+		public new Boolean? ClosedCurve { get { return null; } }
 	
 	
 	}

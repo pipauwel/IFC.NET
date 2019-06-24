@@ -10,19 +10,15 @@ using System.Runtime.InteropServices;
 using System.Runtime.Serialization;
 using System.Xml.Serialization;
 
-using BuildingSmart.IFC.IfcApprovalResource;
-using BuildingSmart.IFC.IfcConstraintResource;
-using BuildingSmart.IFC.IfcExternalReferenceResource;
-using BuildingSmart.IFC.IfcKernel;
 using BuildingSmart.IFC.IfcMeasureResource;
 
 namespace BuildingSmart.IFC.IfcPropertyResource
 {
-	[Guid("6283d4e3-23ff-4d09-b4a2-a0fb4f925aed")]
+	[Guid("f8a2ecb3-b33b-4e48-a3a3-3e232f14a986")]
 	public partial class IfcPropertySingleValue : IfcSimpleProperty
 	{
 		[DataMember(Order = 0)] 
-		[Description("Value and measure type of this property.   <blockquote class=\"note\">NOTE&nbsp; By virtue of the defined data type, that is selected from the SELECT <em>IfcValue</em>, the appropriate unit can be found within the <em>IfcUnitAssignment</em>, defined for the project if no value for the unit attribute is given.</blockquote>  <blockquote class=\"note\">IFC2x3 CHANGE&nbsp; The attribute has been made optional with upward compatibility for file based exchange.</blockquote>")]
+		[Description("<EPM-HTML>  Value and measure type of this property.   <blockquote><small>  NOTE&nbsp; By virtue of the defined data type, that is selected from the SELECT <i>IfcValue</i>, the appropriate unit can be found within the <i>IfcUnitAssignment</i>, defined for the project if no value for the unit attribute is given.<br>  <font color=\"#ff0000\">  IFC2x Edition 3 CHANGE&nbsp; The attribute has been made optional with upward compatibility for file based exchange.  </font>  </small></blockquote>  </EPM-HTML>")]
 		public IfcValue NominalValue { get; set; }
 	
 		[DataMember(Order = 1)] 

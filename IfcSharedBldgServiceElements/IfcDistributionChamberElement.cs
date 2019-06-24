@@ -15,22 +15,17 @@ using BuildingSmart.IFC.IfcKernel;
 using BuildingSmart.IFC.IfcMeasureResource;
 using BuildingSmart.IFC.IfcProductExtension;
 using BuildingSmart.IFC.IfcRepresentationResource;
-using BuildingSmart.IFC.IfcSharedBldgElements;
 using BuildingSmart.IFC.IfcStructuralAnalysisDomain;
 using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcSharedBldgServiceElements
 {
-	[Guid("0ed9ba24-3b80-425e-989f-171cef0fce7a")]
+	[Guid("791ca7e4-028c-479b-b649-eff50714aefd")]
 	public partial class IfcDistributionChamberElement : IfcDistributionFlowElement
 	{
-		[DataMember(Order = 0)] 
-		[XmlAttribute]
-		public IfcDistributionChamberElementTypeEnum? PredefinedType { get; set; }
 	
-	
-		public IfcDistributionChamberElement(IfcGloballyUniqueId globalId)
-			: base(globalId)
+		public IfcDistributionChamberElement(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory)
+			: base(globalId, ownerHistory)
 		{
 		}
 	

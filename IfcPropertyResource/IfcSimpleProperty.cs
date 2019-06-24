@@ -10,15 +10,11 @@ using System.Runtime.InteropServices;
 using System.Runtime.Serialization;
 using System.Xml.Serialization;
 
-using BuildingSmart.IFC.IfcApprovalResource;
-using BuildingSmart.IFC.IfcConstraintResource;
-using BuildingSmart.IFC.IfcExternalReferenceResource;
-using BuildingSmart.IFC.IfcKernel;
 using BuildingSmart.IFC.IfcMeasureResource;
 
 namespace BuildingSmart.IFC.IfcPropertyResource
 {
-	[Guid("6754d0f9-1ae8-4653-bbab-f9aa6b1e5206")]
+	[Guid("4e9ac214-8d2c-46f4-834e-50100692246b")]
 	public abstract partial class IfcSimpleProperty : IfcProperty
 	{
 	

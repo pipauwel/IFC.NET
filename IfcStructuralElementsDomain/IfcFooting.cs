@@ -15,24 +15,25 @@ using BuildingSmart.IFC.IfcKernel;
 using BuildingSmart.IFC.IfcMeasureResource;
 using BuildingSmart.IFC.IfcProductExtension;
 using BuildingSmart.IFC.IfcRepresentationResource;
-using BuildingSmart.IFC.IfcSharedBldgElements;
 using BuildingSmart.IFC.IfcStructuralAnalysisDomain;
 using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcStructuralElementsDomain
 {
-	[Guid("0664744b-65e2-41ea-9b44-6b0a1749f000")]
+	[Guid("9614dcf4-032d-4497-84c7-8fe1081fd341")]
 	public partial class IfcFooting : IfcBuildingElement
 	{
 		[DataMember(Order = 0)] 
 		[XmlAttribute]
-		[Description("The generic type of the footing.    <blockquote class=\"change-ifc2x4\">IFC4 CHANGE&nbsp; Attribute made optional.  Type information can be provided by <em>IfcRelDefinesByType</em> and <em>IfcFootingType</em>.</font></blockquote>")]
-		public IfcFootingTypeEnum? PredefinedType { get; set; }
+		[Description("The generic type of the footing.")]
+		[Required()]
+		public IfcFootingTypeEnum PredefinedType { get; set; }
 	
 	
-		public IfcFooting(IfcGloballyUniqueId globalId)
-			: base(globalId)
+		public IfcFooting(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcFootingTypeEnum predefinedType)
+			: base(globalId, ownerHistory)
 		{
+			this.PredefinedType = predefinedType;
 		}
 	
 	

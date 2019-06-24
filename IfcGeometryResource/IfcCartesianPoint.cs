@@ -18,7 +18,7 @@ using BuildingSmart.IFC.IfcPresentationOrganizationResource;
 
 namespace BuildingSmart.IFC.IfcGeometryResource
 {
-	[Guid("2ddee6ae-615d-41ff-baa2-ba51d50e78c2")]
+	[Guid("a7b35010-4a44-4a36-bb3c-6aa6300f33bf")]
 	public partial class IfcCartesianPoint : IfcPoint,
 		IfcTrimmingSelect
 	{

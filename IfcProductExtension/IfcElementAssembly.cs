@@ -14,13 +14,12 @@ using BuildingSmart.IFC.IfcGeometricConstraintResource;
 using BuildingSmart.IFC.IfcKernel;
 using BuildingSmart.IFC.IfcMeasureResource;
 using BuildingSmart.IFC.IfcRepresentationResource;
-using BuildingSmart.IFC.IfcSharedBldgElements;
 using BuildingSmart.IFC.IfcStructuralAnalysisDomain;
 using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcProductExtension
 {
-	[Guid("80060d73-7260-4e2d-8f9b-46819d547abe")]
+	[Guid("42319f70-e8d2-4b5b-8920-101a38252ebe")]
 	public partial class IfcElementAssembly : IfcElement
 	{
 		[DataMember(Order = 0)] 
@@ -30,13 +29,15 @@ namespace BuildingSmart.IFC.IfcProductExtension
 	
 		[DataMember(Order = 1)] 
 		[XmlAttribute]
-		[Description("Predefined generic types for a element assembly that are specified in an enumeration. There might be property sets defined specifically for each predefined type.  <blockquote class=\"change-ifc2x4\">IFC4 CHANGE&nbsp; The attribute has been changed to be optional.</blockquote>")]
-		public IfcElementAssemblyTypeEnum? PredefinedType { get; set; }
+		[Description("Predefined generic types for a element assembly that are specified in an enumeration.")]
+		[Required()]
+		public IfcElementAssemblyTypeEnum PredefinedType { get; set; }
 	
 	
-		public IfcElementAssembly(IfcGloballyUniqueId globalId)
-			: base(globalId)
+		public IfcElementAssembly(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcElementAssemblyTypeEnum predefinedType)
+			: base(globalId, ownerHistory)
 		{
+			this.PredefinedType = predefinedType;
 		}
 	
 	

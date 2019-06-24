@@ -15,27 +15,16 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcKernel
 {
-	[Guid("7d23ec63-a69d-48c1-9db7-f4089326e1f2")]
-	public abstract partial class IfcResource : IfcObject,
-		IfcResourceSelect
+	[Guid("b8350f31-1606-49d5-a710-ffec9f84a7a8")]
+	public abstract partial class IfcResource : IfcObject
 	{
-		[DataMember(Order = 0)] 
-		[XmlAttribute]
-		[Description("An identifying designation given to a resource.      It is the identifier at the occurrence level.       <blockquote class=\"change-ifc2x4\">IFC4 CHANGE  Attribute promoted from subtype <em>IfcConstructionResource</em>.</blockquote>")]
-		public IfcIdentifier? Identification { get; set; }
-	
-		[DataMember(Order = 1)] 
-		[XmlAttribute]
-		[Description("A detailed description of the resource (e.g. the skillset for a labor resource).    <blockquote class=\"change-ifc2x4\">IFC4 CHANGE&nbsp; The attribute <em>LongDescription</em> is added replacing the <em>ResourceGroup</em> attribute at subtype <em>IfcConstructionResource</em>.</blockquote>")]
-		public IfcText? LongDescription { get; set; }
-	
 		[InverseProperty("RelatingResource")] 
-		[Description("Set of relationships to other objects, e.g. products, processes, controls, resources or actors, for which this resource object is a resource.")]
+		[Description("Reference to the IfcRelAssignsToResource relationship and thus pointing to those objects, which are used as resources.")]
 		public ISet<IfcRelAssignsToResource> ResourceOf { get; protected set; }
 	
 	
-		protected IfcResource(IfcGloballyUniqueId globalId)
-			: base(globalId)
+		protected IfcResource(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory)
+			: base(globalId, ownerHistory)
 		{
 			this.ResourceOf = new HashSet<IfcRelAssignsToResource>();
 		}

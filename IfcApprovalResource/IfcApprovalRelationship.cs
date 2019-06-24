@@ -10,31 +10,40 @@ using System.Runtime.InteropServices;
 using System.Runtime.Serialization;
 using System.Xml.Serialization;
 
-using BuildingSmart.IFC.IfcExternalReferenceResource;
 using BuildingSmart.IFC.IfcMeasureResource;
 
 namespace BuildingSmart.IFC.IfcApprovalResource
 {
-	[Guid("a303f452-ac6e-4cf8-aec2-92da14dd6675")]
-	public partial class IfcApprovalRelationship : IfcResourceLevelRelationship
+	[Guid("3ccb6ea3-b6eb-4134-b8a4-b738ae3f3001")]
+	public partial class IfcApprovalRelationship
 	{
 		[DataMember(Order = 0)] 
-		[XmlElement]
+		[Description("The approval that relates to another approval")]
+		[Required()]
+		public IfcApproval RelatedApproval { get; set; }
+	
+		[DataMember(Order = 1)] 
 		[Description("The approval that other approval is related to.")]
 		[Required()]
 		public IfcApproval RelatingApproval { get; set; }
 	
-		[DataMember(Order = 1)] 
-		[Description("The approvals that are related to another (relating) approval.<blockquote class=\"change-ifc2x4\">IFC4 CHANGE&nbsp; The cardinality of this attribute has been changed to SET.</blockquote>")]
+		[DataMember(Order = 2)] 
+		[XmlAttribute]
+		[Description("Textual description explaining the relationship between approvals.")]
+		public IfcText? Description { get; set; }
+	
+		[DataMember(Order = 3)] 
+		[XmlAttribute]
+		[Description("The human readable name given to the relationship between the approvals.")]
 		[Required()]
-		[MinLength(1)]
-		public ISet<IfcApproval> RelatedApprovals { get; protected set; }
+		public IfcLabel Name { get; set; }
 	
 	
-		public IfcApprovalRelationship(IfcApproval relatingApproval, IfcApproval[] relatedApprovals)
+		public IfcApprovalRelationship(IfcApproval relatedApproval, IfcApproval relatingApproval, IfcLabel name)
 		{
+			this.RelatedApproval = relatedApproval;
 			this.RelatingApproval = relatingApproval;
-			this.RelatedApprovals = new HashSet<IfcApproval>(relatedApprovals);
+			this.Name = name;
 		}
 	
 	

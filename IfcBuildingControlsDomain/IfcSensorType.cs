@@ -19,18 +19,18 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcBuildingControlsDomain
 {
-	[Guid("a5b36357-2503-452f-8599-ce8a92a3ec72")]
+	[Guid("eb6b454c-8195-4ab0-993e-b5e16ba7d928")]
 	public partial class IfcSensorType : IfcDistributionControlElementType
 	{
 		[DataMember(Order = 0)] 
 		[XmlAttribute]
-		[Description("<p>Identifies the predefined types of sensor from which the type required may be set.</p>")]
+		[Description("Identifies the predefined types of sensor from which the type required may be set.")]
 		[Required()]
 		public IfcSensorTypeEnum PredefinedType { get; set; }
 	
 	
-		public IfcSensorType(IfcGloballyUniqueId globalId, IfcSensorTypeEnum predefinedType)
-			: base(globalId)
+		public IfcSensorType(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcSensorTypeEnum predefinedType)
+			: base(globalId, ownerHistory)
 		{
 			this.PredefinedType = predefinedType;
 		}

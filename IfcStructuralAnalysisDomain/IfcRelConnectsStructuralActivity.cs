@@ -16,23 +16,22 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcStructuralAnalysisDomain
 {
-	[Guid("d755201f-41e5-41f3-b37c-30c473853a22")]
+	[Guid("f788d9ab-8d24-4c35-8520-678d52de6938")]
 	public partial class IfcRelConnectsStructuralActivity : IfcRelConnects
 	{
 		[DataMember(Order = 0)] 
-		[Description("Reference to a structural item or element to which the specified activity is applied.")]
+		[Description("Reference to an instance of IfcStructuralItem or IfcBuildingElement (or its subclasses) to which the specified action is applied.")]
 		[Required()]
 		public IfcStructuralActivityAssignmentSelect RelatingElement { get; set; }
 	
 		[DataMember(Order = 1)] 
-		[XmlElement]
-		[Description("Reference to a structural activity which is acting upon the specified structural item or element.")]
+		[Description("Reference to an instance of IfcStructuralActivity (or its subclasses) which is acting upon the specified structural element (represented by a respective structural representation entity).")]
 		[Required()]
 		public IfcStructuralActivity RelatedStructuralActivity { get; set; }
 	
 	
-		public IfcRelConnectsStructuralActivity(IfcGloballyUniqueId globalId, IfcStructuralActivityAssignmentSelect relatingElement, IfcStructuralActivity relatedStructuralActivity)
-			: base(globalId)
+		public IfcRelConnectsStructuralActivity(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcStructuralActivityAssignmentSelect relatingElement, IfcStructuralActivity relatedStructuralActivity)
+			: base(globalId, ownerHistory)
 		{
 			this.RelatingElement = relatingElement;
 			this.RelatedStructuralActivity = relatedStructuralActivity;

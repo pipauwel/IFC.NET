@@ -15,23 +15,17 @@ using BuildingSmart.IFC.IfcKernel;
 using BuildingSmart.IFC.IfcMeasureResource;
 using BuildingSmart.IFC.IfcProductExtension;
 using BuildingSmart.IFC.IfcRepresentationResource;
-using BuildingSmart.IFC.IfcSharedBldgElements;
 using BuildingSmart.IFC.IfcStructuralAnalysisDomain;
 using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcSharedComponentElements
 {
-	[Guid("f7f5c079-1ef8-4a9e-a64c-86800f526d37")]
+	[Guid("8db2f7eb-6866-4c47-bd51-004aa7848caa")]
 	public partial class IfcFastener : IfcElementComponent
 	{
-		[DataMember(Order = 0)] 
-		[XmlAttribute]
-		[Description("Subtype of fastener")]
-		public IfcFastenerTypeEnum? PredefinedType { get; set; }
 	
-	
-		public IfcFastener(IfcGloballyUniqueId globalId)
-			: base(globalId)
+		public IfcFastener(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory)
+			: base(globalId, ownerHistory)
 		{
 		}
 	

@@ -13,16 +13,13 @@ using System.Xml.Serialization;
 
 namespace BuildingSmart.IFC.IfcHvacDomain
 {
-	[Guid("da914699-aa20-4a68-b767-58a09fbd06ed")]
+	[Guid("5f85acc3-db79-4285-aef3-4ca2333e1808")]
 	public enum IfcTubeBundleTypeEnum
 	{
-		[Description("Finned tube bundle type.")]
 		FINNED = 1,
 	
-		[Description("User-defined tube bundle type.")]
 		USERDEFINED = -1,
 	
-		[Description("Undefined tube bundle type.")]
 		NOTDEFINED = 0,
 	
 	}

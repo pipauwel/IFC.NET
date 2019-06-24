@@ -19,7 +19,7 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcHvacDomain
 {
-	[Guid("13691192-2383-4c23-ab6a-c8a9a2b8c1ba")]
+	[Guid("b42b8dd2-904a-4c7e-a212-cca8c3fb2d24")]
 	public partial class IfcFanType : IfcFlowMovingDeviceType
 	{
 		[DataMember(Order = 0)] 
@@ -29,8 +29,8 @@ namespace BuildingSmart.IFC.IfcHvacDomain
 		public IfcFanTypeEnum PredefinedType { get; set; }
 	
 	
-		public IfcFanType(IfcGloballyUniqueId globalId, IfcFanTypeEnum predefinedType)
-			: base(globalId)
+		public IfcFanType(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcFanTypeEnum predefinedType)
+			: base(globalId, ownerHistory)
 		{
 			this.PredefinedType = predefinedType;
 		}

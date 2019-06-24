@@ -19,18 +19,18 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcElectricalDomain
 {
-	[Guid("a34fc9d6-d1c8-402c-817e-feb3a9c9e7a1")]
+	[Guid("4f982772-824d-4859-9aa3-c86459f1a6df")]
 	public partial class IfcLightFixtureType : IfcFlowTerminalType
 	{
 		[DataMember(Order = 0)] 
 		[XmlAttribute]
-		[Description("<p>Identifies the predefined types of light fixture from which the type required may be set.</p>")]
+		[Description("Identifies the predefined types of light fixture from which the type required may be set.")]
 		[Required()]
 		public IfcLightFixtureTypeEnum PredefinedType { get; set; }
 	
 	
-		public IfcLightFixtureType(IfcGloballyUniqueId globalId, IfcLightFixtureTypeEnum predefinedType)
-			: base(globalId)
+		public IfcLightFixtureType(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcLightFixtureTypeEnum predefinedType)
+			: base(globalId, ownerHistory)
 		{
 			this.PredefinedType = predefinedType;
 		}

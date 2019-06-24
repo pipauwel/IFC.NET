@@ -15,18 +15,17 @@ using BuildingSmart.IFC.IfcMeasureResource;
 
 namespace BuildingSmart.IFC.IfcRepresentationResource
 {
-	[Guid("2e4bdfcf-4532-4cf3-b45f-4372edb5bfb3")]
+	[Guid("44f28476-02ef-4526-9ddf-ac07ffc148d8")]
 	public partial class IfcGeometricRepresentationSubContext : IfcGeometricRepresentationContext
 	{
 		[DataMember(Order = 0)] 
-		[XmlIgnore]
 		[Description("Parent context from which the sub context derives its world coordinate system, precision, space coordinate dimension and true north.")]
 		[Required()]
 		public IfcGeometricRepresentationContext ParentContext { get; set; }
 	
 		[DataMember(Order = 1)] 
 		[XmlAttribute]
-		[Description("The target <font color=\"#ff0000\">plot</font> scale of the representation   to which this representation context applies.  <blockquote class=\"note\">NOTE&nbsp; Scale indicates the target plot scale for  the representation sub context, all annotation styles are given in plot  dimensions according to this target plot scale.<br>  If multiple instances of <em>IfcGeometricRepresentationSubContext</em>  are given having the same <em>TargetView</em> value, the target plot scale   applies up to the next smaller scale, or up to unlimited small scale.</blockquote>    <blockquote class=\"note\">NOTE&nbsp; Scale 1:100 (given as 0.01 within <em>TargetScale</em>)  is bigger then 1:200 (given as 0.005 within <em>TargetScale</em>).</blockquote>")]
+		[Description("<EPM-HTML>  The target <font color=\"#ff0000\">plot</font> scale of the representation   to which this representation context applies.  <blockquote> <font size=\"-1\"> Scale indicates the target plot scale for  the representation sub context, all annotation styles are given in plot  dimensions according to this target plot scale.<br>  If multiple instances of <i>IfcGeometricRepresentationSubContext</i>  are given having the same <i>TargetView</i> value, the target plot scale   applies up to the next smaller scale, or up to unlimited small scale.    <br>    <br>  Note: Scale 1:100 (given as 0.01 within <i>TargetScale</i>)  is bigger then 1:200 (given as 0.005 within <i>TargetScale</i>).    </font></blockquote>  </EPM-HTML>")]
 		public IfcPositiveRatioMeasure? TargetScale { get; set; }
 	
 		[DataMember(Order = 2)] 
@@ -54,7 +53,7 @@ namespace BuildingSmart.IFC.IfcRepresentationResource
 	
 		public new IfcDirection TrueNorth { get { return null; } }
 	
-		public new IfcReal Precision { get { return new IfcReal(); } }
+		public new Double Precision { get { return null; } }
 	
 	
 	}

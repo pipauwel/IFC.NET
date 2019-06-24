@@ -15,24 +15,22 @@ using BuildingSmart.IFC.IfcKernel;
 using BuildingSmart.IFC.IfcMeasureResource;
 using BuildingSmart.IFC.IfcProductExtension;
 using BuildingSmart.IFC.IfcRepresentationResource;
-using BuildingSmart.IFC.IfcSharedBldgElements;
-using BuildingSmart.IFC.IfcSharedComponentElements;
 using BuildingSmart.IFC.IfcStructuralAnalysisDomain;
 using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcStructuralElementsDomain
 {
-	[Guid("ca6074f0-a8aa-4b5b-a402-931d20010f8b")]
-	public abstract partial class IfcReinforcingElement : IfcElementComponent
+	[Guid("0bb46add-edf1-4a43-98f9-99b82f3b893a")]
+	public abstract partial class IfcReinforcingElement : IfcBuildingElementComponent
 	{
 		[DataMember(Order = 0)] 
 		[XmlAttribute]
-		[Description("Deprecated.    <blockquote class=\"change-ifc2x4\">IFC4 CHANGE&nbsp; Attribute deprecated.  Use material association at <em>IfcReinforcingElementType</em> instead.</blockquote>")]
+		[Description("The nominal steel grade defined according to local standards.")]
 		public IfcLabel? SteelGrade { get; set; }
 	
 	
-		protected IfcReinforcingElement(IfcGloballyUniqueId globalId)
-			: base(globalId)
+		protected IfcReinforcingElement(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory)
+			: base(globalId, ownerHistory)
 		{
 		}
 	

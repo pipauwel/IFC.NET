@@ -13,7 +13,7 @@ using System.Xml.Serialization;
 
 namespace BuildingSmart.IFC.IfcActorResource
 {
-	[Guid("72a03b09-9278-4eea-95b0-a9cdb0a96904")]
+	[Guid("4b889c23-c366-4065-914b-131accb4da76")]
 	public interface IfcActorSelect
 	{
 	}

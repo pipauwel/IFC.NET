@@ -16,7 +16,7 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcStructuralAnalysisDomain
 {
-	[Guid("744fe291-2e62-4a6f-b0a4-1ead956bee5c")]
+	[Guid("3dad840c-ea0d-49bf-a545-52ea60ed4fc7")]
 	public partial class IfcStructuralResultGroup : IfcGroup
 	{
 		[DataMember(Order = 0)] 
@@ -26,15 +26,13 @@ namespace BuildingSmart.IFC.IfcStructuralAnalysisDomain
 		public IfcAnalysisTheoryTypeEnum TheoryType { get; set; }
 	
 		[DataMember(Order = 1)] 
-		[XmlElement]
 		[Description("Reference to an instance of IfcStructuralLoadGroup for which this instance represents the result.")]
 		public IfcStructuralLoadGroup ResultForLoadGroup { get; set; }
 	
 		[DataMember(Order = 2)] 
-		[XmlAttribute]
-		[Description("This value allows to easily recognize whether a linear analysis has been applied (allowing the superposition of analysis results).")]
+		[Description("This Boolean value allows to easily recognize if a linear analysis has been applied (allowing the superposition of analysis results), or vice versa.")]
 		[Required()]
-		public IfcBoolean IsLinear { get; set; }
+		public Boolean IsLinear { get; set; }
 	
 		[InverseProperty("HasResults")] 
 		[Description("Reference to an instance of IfcStructuralAnalysisModel for which this instance captures a result.")]
@@ -42,8 +40,8 @@ namespace BuildingSmart.IFC.IfcStructuralAnalysisDomain
 		public ISet<IfcStructuralAnalysisModel> ResultGroupFor { get; protected set; }
 	
 	
-		public IfcStructuralResultGroup(IfcGloballyUniqueId globalId, IfcAnalysisTheoryTypeEnum theoryType, IfcBoolean isLinear)
-			: base(globalId)
+		public IfcStructuralResultGroup(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcAnalysisTheoryTypeEnum theoryType, Boolean isLinear)
+			: base(globalId, ownerHistory)
 		{
 			this.TheoryType = theoryType;
 			this.IsLinear = isLinear;

@@ -13,12 +13,12 @@ using System.Xml.Serialization;
 
 namespace BuildingSmart.IFC.IfcMeasureResource
 {
-	[Guid("6b63cdf3-e884-464a-b95f-0d11f0ec118d")]
+	[Guid("d04cfc70-6990-4fa0-97ee-21ef68d32ca6")]
 	public partial struct IfcLabel :
+		BuildingSmart.IFC.IFCFACILITIESMGMTDOMAIN.IfcConditionCriterionSelect,
 		IfcSimpleValue
 	{
 		[XmlText]
-		[MaxLength(255)]
 		public String Value { get; private set; }
 	
 		public IfcLabel(String value) : this()

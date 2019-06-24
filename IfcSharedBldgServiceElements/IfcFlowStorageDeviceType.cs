@@ -18,12 +18,12 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcSharedBldgServiceElements
 {
-	[Guid("25158c53-9901-40fe-94b2-121825d6599e")]
+	[Guid("12ba8659-4583-4141-a459-66b62bbd5c56")]
 	public abstract partial class IfcFlowStorageDeviceType : IfcDistributionFlowElementType
 	{
 	
-		protected IfcFlowStorageDeviceType(IfcGloballyUniqueId globalId)
-			: base(globalId)
+		protected IfcFlowStorageDeviceType(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory)
+			: base(globalId, ownerHistory)
 		{
 		}
 	

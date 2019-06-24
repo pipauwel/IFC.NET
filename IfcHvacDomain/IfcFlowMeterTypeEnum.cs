@@ -13,26 +13,23 @@ using System.Xml.Serialization;
 
 namespace BuildingSmart.IFC.IfcHvacDomain
 {
-	[Guid("2f69b657-d03a-4095-b2f0-593ecc080ae7")]
+	[Guid("54c86ec7-5ca4-4962-97cb-4600bb10c399")]
 	public enum IfcFlowMeterTypeEnum
 	{
-		[Description("An electric meter or energy meter is a device that measures the amount of electri" +
-	    "cal energy supplied to or produced by a residence, business or machine.")]
-		ENERGYMETER = 1,
+		ELECTRICMETER = 1,
 	
-		[Description("A device that measures the quantity of a gas or fuel.")]
-		GASMETER = 2,
+		ENERGYMETER = 2,
 	
-		[Description("A device that measures the quantity of oil.")]
-		OILMETER = 3,
+		FLOWMETER = 3,
 	
-		[Description("A device that measures the quantity of water.")]
-		WATERMETER = 4,
+		GASMETER = 4,
 	
-		[Description("User-defined meter type")]
+		OILMETER = 5,
+	
+		WATERMETER = 6,
+	
 		USERDEFINED = -1,
 	
-		[Description("Undefined meter type")]
 		NOTDEFINED = 0,
 	
 	}

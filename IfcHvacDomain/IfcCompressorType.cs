@@ -19,7 +19,7 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcHvacDomain
 {
-	[Guid("7da5429d-8a3e-4380-bd61-3b719dbfeebd")]
+	[Guid("51c0fcf6-3956-4c6e-b077-4419532c5e74")]
 	public partial class IfcCompressorType : IfcFlowMovingDeviceType
 	{
 		[DataMember(Order = 0)] 
@@ -29,8 +29,8 @@ namespace BuildingSmart.IFC.IfcHvacDomain
 		public IfcCompressorTypeEnum PredefinedType { get; set; }
 	
 	
-		public IfcCompressorType(IfcGloballyUniqueId globalId, IfcCompressorTypeEnum predefinedType)
-			: base(globalId)
+		public IfcCompressorType(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcCompressorTypeEnum predefinedType)
+			: base(globalId, ownerHistory)
 		{
 			this.PredefinedType = predefinedType;
 		}

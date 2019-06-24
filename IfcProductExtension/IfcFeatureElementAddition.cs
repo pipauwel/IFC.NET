@@ -14,22 +14,21 @@ using BuildingSmart.IFC.IfcGeometricConstraintResource;
 using BuildingSmart.IFC.IfcKernel;
 using BuildingSmart.IFC.IfcMeasureResource;
 using BuildingSmart.IFC.IfcRepresentationResource;
-using BuildingSmart.IFC.IfcSharedBldgElements;
 using BuildingSmart.IFC.IfcStructuralAnalysisDomain;
 using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcProductExtension
 {
-	[Guid("818c820c-139e-4825-96bc-6c16e6f606d4")]
+	[Guid("6fc15ef2-60b4-4c45-a80f-88e9e7f1c2fe")]
 	public abstract partial class IfcFeatureElementAddition : IfcFeatureElement
 	{
 		[InverseProperty("RelatedFeatureElement")] 
-		[Description("Reference to the <em>IfcRelProjectsElement</em> relationship that uses this <em>IfcFeatureElementAddition</em> to create a volume addition at an element. The <em>IfcFeatureElementAddition</em> can only be used to create a single addition at a single element using Boolean addition operation.")]
+		[Description("<EPM-HTML>  Reference to the <I>IfcRelProjectsElement</I> relationship that uses this <I>IfcFeatureElementAddition</I> to create a volume addition at an element. The <I>IfcFeatureElementAddition</I> can only be used to create a single addition at a single element using Boolean addition operation.  </EPM-HTML>")]
 		public IfcRelProjectsElement ProjectsElements { get; set; }
 	
 	
-		protected IfcFeatureElementAddition(IfcGloballyUniqueId globalId)
-			: base(globalId)
+		protected IfcFeatureElementAddition(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory)
+			: base(globalId, ownerHistory)
 		{
 		}
 	

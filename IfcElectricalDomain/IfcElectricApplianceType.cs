@@ -19,18 +19,18 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcElectricalDomain
 {
-	[Guid("d3f313a8-e9d6-4123-ae8c-91cb74d1eb3a")]
+	[Guid("be19a872-6f1f-4092-bda3-2eb40ffddb3a")]
 	public partial class IfcElectricApplianceType : IfcFlowTerminalType
 	{
 		[DataMember(Order = 0)] 
 		[XmlAttribute]
-		[Description("<p>Identifies the predefined types of electrical appliance from which the type required may be set.</p>")]
+		[Description("Identifies the predefined types of electrical appliance from which the type required may be set.")]
 		[Required()]
 		public IfcElectricApplianceTypeEnum PredefinedType { get; set; }
 	
 	
-		public IfcElectricApplianceType(IfcGloballyUniqueId globalId, IfcElectricApplianceTypeEnum predefinedType)
-			: base(globalId)
+		public IfcElectricApplianceType(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcElectricApplianceTypeEnum predefinedType)
+			: base(globalId, ownerHistory)
 		{
 			this.PredefinedType = predefinedType;
 		}

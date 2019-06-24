@@ -13,32 +13,19 @@ using System.Xml.Serialization;
 
 namespace BuildingSmart.IFC.IfcHvacDomain
 {
-	[Guid("0a504ed5-8edd-4a12-8260-4384fc0af250")]
+	[Guid("97f64034-cd57-4114-8d94-da076147f694")]
 	public enum IfcUnitaryEquipmentTypeEnum
 	{
-		[Description("A unitary air handling unit typically containing a fan, economizer, and coils.")]
 		AIRHANDLER = 1,
 	
-		[Description("A unitary packaged air-conditioning unit typically used in residential or light c" +
-	    "ommercial applications.")]
 		AIRCONDITIONINGUNIT = 2,
 	
-		[Description("A unitary packaged dehumidification unit.  Note: units supporting multiple modes " +
-	    "(dehumidification, cooling, and/or heating) should use AIRCONDITIONINGUNIT.")]
-		DEHUMIDIFIER = 3,
+		SPLITSYSTEM = 3,
 	
-		[Description("A system which separates the compressor from the evaporator, but acts as a unitar" +
-	    "y component typically within residential or light commercial applications.")]
-		SPLITSYSTEM = 4,
+		ROOFTOPUNIT = 4,
 	
-		[Description("A packaged assembly that is either field-erected or manufactured atop the roof of" +
-	    " a large residential or commercial building and acts as a unitary component.")]
-		ROOFTOPUNIT = 5,
-	
-		[Description("User-defined unitary equipment type.")]
 		USERDEFINED = -1,
 	
-		[Description("Undefined unitary equipment type.")]
 		NOTDEFINED = 0,
 	
 	}

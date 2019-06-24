@@ -10,7 +10,6 @@ using System.Runtime.InteropServices;
 using System.Runtime.Serialization;
 using System.Xml.Serialization;
 
-using BuildingSmart.IFC.IfcGeometricConstraintResource;
 using BuildingSmart.IFC.IfcGeometryResource;
 using BuildingSmart.IFC.IfcMeasureResource;
 using BuildingSmart.IFC.IfcPresentationAppearanceResource;
@@ -19,24 +18,23 @@ using BuildingSmart.IFC.IfcProfileResource;
 
 namespace BuildingSmart.IFC.IfcGeometricModelResource
 {
-	[Guid("81970f2f-c63e-4133-adaf-c74d522cb449")]
+	[Guid("7da3601b-9ac2-4100-91e3-d883f16a8be8")]
 	public partial class IfcRevolvedAreaSolid : IfcSweptAreaSolid
 	{
 		[DataMember(Order = 0)] 
-		[XmlElement]
 		[Description("Axis about which revolution will take place.")]
 		[Required()]
 		public IfcAxis1Placement Axis { get; set; }
 	
 		[DataMember(Order = 1)] 
 		[XmlAttribute]
-		[Description("The angle through which the sweep will be made. This angle is measured from the plane of the swept area provided by the XY plane of the position coordinate system.")]
+		[Description("Angle through which the sweep will be made. This angle is measured from the plane of the sweep.")]
 		[Required()]
 		public IfcPlaneAngleMeasure Angle { get; set; }
 	
 	
-		public IfcRevolvedAreaSolid(IfcProfileDef sweptArea, IfcAxis1Placement axis, IfcPlaneAngleMeasure angle)
-			: base(sweptArea)
+		public IfcRevolvedAreaSolid(IfcProfileDef sweptArea, IfcAxis2Placement3D position, IfcAxis1Placement axis, IfcPlaneAngleMeasure angle)
+			: base(sweptArea, position)
 		{
 			this.Axis = axis;
 			this.Angle = angle;

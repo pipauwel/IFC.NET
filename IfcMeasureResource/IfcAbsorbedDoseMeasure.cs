@@ -13,7 +13,7 @@ using System.Xml.Serialization;
 
 namespace BuildingSmart.IFC.IfcMeasureResource
 {
-	[Guid("305f4271-ce1e-49a5-9d16-74691a858544")]
+	[Guid("ce296b71-fa6e-407c-9edc-ff71cf209692")]
 	public partial struct IfcAbsorbedDoseMeasure :
 		IfcDerivedMeasureValue
 	{

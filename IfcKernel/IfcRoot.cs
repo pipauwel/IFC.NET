@@ -15,7 +15,7 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcKernel
 {
-	[Guid("f8efd3b8-d3ea-429a-95d6-d19264324999")]
+	[Guid("573a9f55-5906-4592-af57-a0b4b630765d")]
 	public abstract partial class IfcRoot
 	{
 		[DataMember(Order = 0)] 
@@ -25,8 +25,8 @@ namespace BuildingSmart.IFC.IfcKernel
 		public IfcGloballyUniqueId GlobalId { get; set; }
 	
 		[DataMember(Order = 1)] 
-		[XmlElement]
-		[Description("Assignment of the information about the current ownership of that object, including owning actor, application, local identification and information captured about the recent changes of the object,     <blockquote class=\"note\">NOTE&nbsp; only the last modification in stored - either as addition, deletion or modification.</blockquote>  <blockquote class=\"change-ifc2x4\">IFC4 CHANGE&nbsp; The attribute has been changed to be OPTIONAL.</blockquote>")]
+		[Description("Assignment of the information about the current ownership of that object, including owning actor, application, local identification and information captured about the recent changes of the object, NOTE: only the last modification in stored.")]
+		[Required()]
 		public IfcOwnerHistory OwnerHistory { get; set; }
 	
 		[DataMember(Order = 2)] 
@@ -40,9 +40,10 @@ namespace BuildingSmart.IFC.IfcKernel
 		public IfcText? Description { get; set; }
 	
 	
-		protected IfcRoot(IfcGloballyUniqueId globalId)
+		protected IfcRoot(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory)
 		{
 			this.GlobalId = globalId;
+			this.OwnerHistory = ownerHistory;
 		}
 	
 	

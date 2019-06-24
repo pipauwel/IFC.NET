@@ -10,13 +10,12 @@ using System.Runtime.InteropServices;
 using System.Runtime.Serialization;
 using System.Xml.Serialization;
 
-using BuildingSmart.IFC.IfcExternalReferenceResource;
 using BuildingSmart.IFC.IfcGeometryResource;
 using BuildingSmart.IFC.IfcMeasureResource;
 
 namespace BuildingSmart.IFC.IfcProfileResource
 {
-	[Guid("76426990-f6c8-4462-b489-68361df1c390")]
+	[Guid("f2c31cff-899c-4273-805a-2c951a82489d")]
 	public partial class IfcRectangleProfileDef : IfcParameterizedProfileDef
 	{
 		[DataMember(Order = 0)] 
@@ -32,8 +31,8 @@ namespace BuildingSmart.IFC.IfcProfileResource
 		public IfcPositiveLengthMeasure YDim { get; set; }
 	
 	
-		public IfcRectangleProfileDef(IfcProfileTypeEnum profileType, IfcPositiveLengthMeasure xDim, IfcPositiveLengthMeasure yDim)
-			: base(profileType)
+		public IfcRectangleProfileDef(IfcProfileTypeEnum profileType, IfcAxis2Placement2D position, IfcPositiveLengthMeasure xDim, IfcPositiveLengthMeasure yDim)
+			: base(profileType, position)
 		{
 			this.XDim = xDim;
 			this.YDim = yDim;

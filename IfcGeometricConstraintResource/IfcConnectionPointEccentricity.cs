@@ -14,22 +14,22 @@ using BuildingSmart.IFC.IfcMeasureResource;
 
 namespace BuildingSmart.IFC.IfcGeometricConstraintResource
 {
-	[Guid("bdf3901b-3ab4-45b6-805b-4eebca105729")]
+	[Guid("d6a01043-67e3-44ca-af7e-8083992016d5")]
 	public partial class IfcConnectionPointEccentricity : IfcConnectionPointGeometry
 	{
 		[DataMember(Order = 0)] 
 		[XmlAttribute]
-		[Description("Distance in x direction between the two points (or vertex points) engaged in the point connection.")]
+		[Description("<EPM-HTML>  Distance in x direction between the two points (or vertex points) engaged in the point connection.  </EPM-HTML>")]
 		public IfcLengthMeasure? EccentricityInX { get; set; }
 	
 		[DataMember(Order = 1)] 
 		[XmlAttribute]
-		[Description("Distance in y direction between the two points (or vertex points) engaged in the point connection.")]
+		[Description("<EPM-HTML>  Distance in y direction between the two points (or vertex points) engaged in the point connection.  </EPM-HTML>")]
 		public IfcLengthMeasure? EccentricityInY { get; set; }
 	
 		[DataMember(Order = 2)] 
 		[XmlAttribute]
-		[Description("Distance in z direction between the two points (or vertex points) engaged in the point connection.")]
+		[Description("<EPM-HTML>  Distance in z direction between the two points (or vertex points) engaged in the point connection.  </EPM-HTML>")]
 		public IfcLengthMeasure? EccentricityInZ { get; set; }
 	
 	

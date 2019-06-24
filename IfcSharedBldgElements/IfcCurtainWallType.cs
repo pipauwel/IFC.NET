@@ -18,18 +18,18 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcSharedBldgElements
 {
-	[Guid("668a688f-c24c-4c94-8950-a3a03b3a8bfc")]
+	[Guid("5484decd-a80c-4019-8b76-cc59db3482f7")]
 	public partial class IfcCurtainWallType : IfcBuildingElementType
 	{
 		[DataMember(Order = 0)] 
 		[XmlAttribute]
-		[Description("Identifies the predefined types of a curtain wall element from which the type required may be set.")]
+		[Description("<EPM-HTML>  Identifies the predefined types of a curtain wall element from which the type required may be set.  </EPM-HTML>")]
 		[Required()]
 		public IfcCurtainWallTypeEnum PredefinedType { get; set; }
 	
 	
-		public IfcCurtainWallType(IfcGloballyUniqueId globalId, IfcCurtainWallTypeEnum predefinedType)
-			: base(globalId)
+		public IfcCurtainWallType(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcCurtainWallTypeEnum predefinedType)
+			: base(globalId, ownerHistory)
 		{
 			this.PredefinedType = predefinedType;
 		}

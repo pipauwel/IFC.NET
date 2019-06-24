@@ -15,11 +15,10 @@ using BuildingSmart.IFC.IfcKernel;
 
 namespace BuildingSmart.IFC.IfcGeometricConstraintResource
 {
-	[Guid("ca6001c7-db80-4168-bd0d-32259a34d423")]
+	[Guid("3e280a95-bfac-412d-9286-ef85f0043a46")]
 	public partial class IfcLocalPlacement : IfcObjectPlacement
 	{
 		[DataMember(Order = 0)] 
-		[XmlElement]
 		[Description("Reference to Object that provides the relative placement by its local coordinate system. If it is omitted, then the local placement is given to the WCS, established by the geometric representation context.")]
 		public IfcObjectPlacement PlacementRelTo { get; set; }
 	

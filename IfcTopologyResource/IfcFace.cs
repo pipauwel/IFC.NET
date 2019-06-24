@@ -16,7 +16,7 @@ using BuildingSmart.IFC.IfcPresentationOrganizationResource;
 
 namespace BuildingSmart.IFC.IfcTopologyResource
 {
-	[Guid("30261543-34bc-4fcc-bd68-c6643fc090c9")]
+	[Guid("61ff97f0-9e99-4209-8421-359d954df9dd")]
 	public partial class IfcFace : IfcTopologicalRepresentationItem
 	{
 		[DataMember(Order = 0)] 
@@ -25,14 +25,10 @@ namespace BuildingSmart.IFC.IfcTopologyResource
 		[MinLength(1)]
 		public ISet<IfcFaceBound> Bounds { get; protected set; }
 	
-		[InverseProperty("MappedTo")] 
-		public ISet<IfcTextureMap> HasTextureMaps { get; protected set; }
-	
 	
 		public IfcFace(IfcFaceBound[] bounds)
 		{
 			this.Bounds = new HashSet<IfcFaceBound>(bounds);
-			this.HasTextureMaps = new HashSet<IfcTextureMap>();
 		}
 	
 	

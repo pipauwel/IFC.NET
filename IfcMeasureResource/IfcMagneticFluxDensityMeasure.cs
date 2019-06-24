@@ -13,7 +13,7 @@ using System.Xml.Serialization;
 
 namespace BuildingSmart.IFC.IfcMeasureResource
 {
-	[Guid("68195c29-3d06-445c-9a17-4a7d0520126a")]
+	[Guid("921f5e74-c47c-455a-8a11-74018d4deb93")]
 	public partial struct IfcMagneticFluxDensityMeasure :
 		IfcDerivedMeasureValue
 	{

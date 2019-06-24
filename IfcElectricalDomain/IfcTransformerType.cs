@@ -19,18 +19,18 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcElectricalDomain
 {
-	[Guid("de3e3892-9754-4be7-babc-a9101067d69a")]
+	[Guid("b5a429ce-e245-4f12-bf73-a345969cdcc0")]
 	public partial class IfcTransformerType : IfcEnergyConversionDeviceType
 	{
 		[DataMember(Order = 0)] 
 		[XmlAttribute]
-		[Description("<p>Identifies the predefined types of transformer from which the type required may be set.</p>")]
+		[Description("Identifies the predefined types of transformer from which the type required may be set.")]
 		[Required()]
 		public IfcTransformerTypeEnum PredefinedType { get; set; }
 	
 	
-		public IfcTransformerType(IfcGloballyUniqueId globalId, IfcTransformerTypeEnum predefinedType)
-			: base(globalId)
+		public IfcTransformerType(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcTransformerTypeEnum predefinedType)
+			: base(globalId, ownerHistory)
 		{
 			this.PredefinedType = predefinedType;
 		}

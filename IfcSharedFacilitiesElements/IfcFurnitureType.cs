@@ -18,22 +18,18 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcSharedFacilitiesElements
 {
-	[Guid("a8b69ebd-a055-4b49-b99d-0de94f4c7d81")]
+	[Guid("d636dd65-b443-495a-995e-34f24f651c38")]
 	public partial class IfcFurnitureType : IfcFurnishingElementType
 	{
 		[DataMember(Order = 0)] 
 		[XmlAttribute]
-		[Description("<p>A designation of where the assembly is intended to take place. A selection of alternatives s provided in an enumerated list.</p>")]
+		[Description("A designation of where the assembly is intended to take place defined by an Enum.")]
 		[Required()]
 		public IfcAssemblyPlaceEnum AssemblyPlace { get; set; }
 	
-		[DataMember(Order = 1)] 
-		[XmlAttribute]
-		public IfcFurnitureTypeEnum? PredefinedType { get; set; }
 	
-	
-		public IfcFurnitureType(IfcGloballyUniqueId globalId, IfcAssemblyPlaceEnum assemblyPlace)
-			: base(globalId)
+		public IfcFurnitureType(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcAssemblyPlaceEnum assemblyPlace)
+			: base(globalId, ownerHistory)
 		{
 			this.AssemblyPlace = assemblyPlace;
 		}

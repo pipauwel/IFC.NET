@@ -16,17 +16,17 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcProductExtension
 {
-	[Guid("dffb2f7f-2ba0-4b5f-88e4-bde0fa72fa1d")]
+	[Guid("cc7be996-d1ea-43ef-8969-e97b06238a34")]
 	public partial class IfcSystem : IfcGroup
 	{
 		[InverseProperty("RelatingSystem")] 
-		[Description("Reference to the <strike>building</strike> spatial structure via the objectified relationship <em>IfcRelServicesBuildings</em>, which is serviced by the system.")]
+		[Description("<EPM-HTML>Reference to the <strike>building</strike> spatial structure via the objectified relationship <i>IfcRelServicesBuildings</i>, which is serviced by the system.  </EPM-HTML>")]
 		[MaxLength(1)]
 		public ISet<IfcRelServicesBuildings> ServicesBuildings { get; protected set; }
 	
 	
-		public IfcSystem(IfcGloballyUniqueId globalId)
-			: base(globalId)
+		public IfcSystem(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory)
+			: base(globalId, ownerHistory)
 		{
 			this.ServicesBuildings = new HashSet<IfcRelServicesBuildings>();
 		}

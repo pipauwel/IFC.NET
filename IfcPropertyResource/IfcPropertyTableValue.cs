@@ -10,25 +10,23 @@ using System.Runtime.InteropServices;
 using System.Runtime.Serialization;
 using System.Xml.Serialization;
 
-using BuildingSmart.IFC.IfcApprovalResource;
-using BuildingSmart.IFC.IfcConstraintResource;
-using BuildingSmart.IFC.IfcExternalReferenceResource;
-using BuildingSmart.IFC.IfcKernel;
 using BuildingSmart.IFC.IfcMeasureResource;
 
 namespace BuildingSmart.IFC.IfcPropertyResource
 {
-	[Guid("e3c26a8d-a8eb-45a1-ae3b-cf89be51902e")]
+	[Guid("e2eafe97-cfcc-4816-951d-b06cbb579702")]
 	public partial class IfcPropertyTableValue : IfcSimpleProperty
 	{
 		[DataMember(Order = 0)] 
-		[Description("List of defining values, which determine the defined values. This list shall have unique values only.  <blockquote class=\"change-ifc2x4\">IFC4 CHANGE&nbsp; The attribute has been made optional with upward compatibility for file based exchange.</blockquote>")]
+		[Description("List of defining values, which determine the defined values.")]
+		[Required()]
 		[CustomValidation(typeof(IfcPropertyTableValue), "Unique")]
 		[MinLength(1)]
 		public IList<IfcValue> DefiningValues { get; protected set; }
 	
 		[DataMember(Order = 1)] 
-		[Description("Defined values which are applicable for the scope as defined by the defining values.  <blockquote class=\"change-ifc2x4\">IFC4 CHANGE&nbsp; The attribute has been made optional with upward compatibility for file based exchange.</blockquote>")]
+		[Description("Defined values which are applicable for the scope as defined by the defining values.")]
+		[Required()]
 		[MinLength(1)]
 		public IList<IfcValue> DefinedValues { get; protected set; }
 	
@@ -45,17 +43,12 @@ namespace BuildingSmart.IFC.IfcPropertyResource
 		[Description("Unit for the defined values, if not given, the default value for the measure type (given by the TYPE of the defined values) is used as defined by the global unit assignment at IfcProject.")]
 		public IfcUnit DefinedUnit { get; set; }
 	
-		[DataMember(Order = 5)] 
-		[XmlAttribute]
-		[Description("Interpolation of the curve between two defining and defined values that are provided. if not provided a linear interpolation is assumed.  <blockquote class=\"change-ifc2x4\">IFC4 CHANGE&nbsp; The attribute has been added at the end of the attribute list.</blockquote>")]
-		public IfcCurveInterpolationEnum? CurveInterpolation { get; set; }
 	
-	
-		public IfcPropertyTableValue(IfcIdentifier name)
+		public IfcPropertyTableValue(IfcIdentifier name, IfcValue[] definingValues, IfcValue[] definedValues)
 			: base(name)
 		{
-			this.DefiningValues = new List<IfcValue>();
-			this.DefinedValues = new List<IfcValue>();
+			this.DefiningValues = new List<IfcValue>(definingValues);
+			this.DefinedValues = new List<IfcValue>(definedValues);
 		}
 	
 	

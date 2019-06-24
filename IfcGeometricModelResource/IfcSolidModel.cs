@@ -10,17 +10,15 @@ using System.Runtime.InteropServices;
 using System.Runtime.Serialization;
 using System.Xml.Serialization;
 
-using BuildingSmart.IFC.IfcGeometricConstraintResource;
 using BuildingSmart.IFC.IfcGeometryResource;
 using BuildingSmart.IFC.IfcPresentationAppearanceResource;
 using BuildingSmart.IFC.IfcPresentationOrganizationResource;
 
 namespace BuildingSmart.IFC.IfcGeometricModelResource
 {
-	[Guid("6a71ad06-e92c-4e8d-bb08-441d03da182e")]
+	[Guid("8a2b232a-e59e-41c9-bc59-6e1d05e12b55")]
 	public abstract partial class IfcSolidModel : IfcGeometricRepresentationItem,
-		IfcBooleanOperand,
-		BuildingSmart.IFC.IfcGeometricConstraintResource.IfcSolidOrShell
+		IfcBooleanOperand
 	{
 	
 		protected IfcSolidModel()

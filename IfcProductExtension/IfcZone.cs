@@ -16,17 +16,12 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcProductExtension
 {
-	[Guid("297645fa-0024-45cd-8573-d15fd241897a")]
-	public partial class IfcZone : IfcSystem
+	[Guid("15d374da-6490-463c-a0ff-1f750bd3e1a8")]
+	public partial class IfcZone : IfcGroup
 	{
-		[DataMember(Order = 0)] 
-		[XmlAttribute]
-		[Description("Long name for a zone, used for informal purposes. It should be used, if available, in conjunction with the inherited <em>Name</em> attribute.  <blockquote class=\"note\">NOTE&nbsp; In many scenarios the <em>Name</em> attribute refers to the short name or number of a zone, and the <em>LongName</em> refers to the full name.    </blockquote>  </br>    <blockquote class=\"change-ifc2x4\">IFC4 CHANGE The attribute has been added at the end of the entity definition.</blockquote>")]
-		public IfcLabel? LongName { get; set; }
 	
-	
-		public IfcZone(IfcGloballyUniqueId globalId)
-			: base(globalId)
+		public IfcZone(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory)
+			: base(globalId, ownerHistory)
 		{
 		}
 	

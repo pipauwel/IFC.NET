@@ -16,14 +16,13 @@ using BuildingSmart.IFC.IfcPresentationOrganizationResource;
 
 namespace BuildingSmart.IFC.IfcGeometricModelResource
 {
-	[Guid("538f2550-e0fc-4704-97f7-66d555de1ae4")]
+	[Guid("d3e186ee-a556-43ee-af1a-e7dcdeba8bf0")]
 	public abstract partial class IfcCsgPrimitive3D : IfcGeometricRepresentationItem,
 		IfcBooleanOperand,
 		IfcCsgSelect
 	{
 		[DataMember(Order = 0)] 
-		[XmlElement]
-		[Description("The placement coordinate system to which the parameters of each individual CSG primitive apply.")]
+		[Description("<EPM-HTML>  The placement coordinate system to which the parameters of each individual CSG primitive apply.  </EPM-HTML>")]
 		[Required()]
 		public IfcAxis2Placement3D Position { get; set; }
 	

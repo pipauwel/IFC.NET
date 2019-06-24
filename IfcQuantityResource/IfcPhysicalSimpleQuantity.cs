@@ -10,16 +10,14 @@ using System.Runtime.InteropServices;
 using System.Runtime.Serialization;
 using System.Xml.Serialization;
 
-using BuildingSmart.IFC.IfcExternalReferenceResource;
 using BuildingSmart.IFC.IfcMeasureResource;
 
 namespace BuildingSmart.IFC.IfcQuantityResource
 {
-	[Guid("cd63ae14-6967-4acf-b92c-2b33caddf894")]
+	[Guid("a22516ac-defc-4721-8199-3c41ac139b8f")]
 	public abstract partial class IfcPhysicalSimpleQuantity : IfcPhysicalQuantity
 	{
 		[DataMember(Order = 0)] 
-		[XmlElement]
 		[Description("Optional assignment of a unit. If no unit is given, then the global unit assignment, as established at the IfcProject, applies to the quantity measures.")]
 		public IfcNamedUnit Unit { get; set; }
 	

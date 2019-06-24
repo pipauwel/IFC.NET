@@ -18,7 +18,7 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcSharedBldgElements
 {
-	[Guid("7116fa64-a466-426e-84ce-c82bc9a1a8c4")]
+	[Guid("c4bf6c1f-1ed6-4a3a-bf42-db1c1b6c05f2")]
 	public partial class IfcStairFlightType : IfcBuildingElementType
 	{
 		[DataMember(Order = 0)] 
@@ -28,8 +28,8 @@ namespace BuildingSmart.IFC.IfcSharedBldgElements
 		public IfcStairFlightTypeEnum PredefinedType { get; set; }
 	
 	
-		public IfcStairFlightType(IfcGloballyUniqueId globalId, IfcStairFlightTypeEnum predefinedType)
-			: base(globalId)
+		public IfcStairFlightType(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcStairFlightTypeEnum predefinedType)
+			: base(globalId, ownerHistory)
 		{
 			this.PredefinedType = predefinedType;
 		}

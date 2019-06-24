@@ -13,19 +13,25 @@ using System.Xml.Serialization;
 
 namespace BuildingSmart.IFC.IfcHvacDomain
 {
-	[Guid("c7c48d26-0ead-43f8-ab77-83379d78d75c")]
+	[Guid("713522b9-27e1-4403-967c-93bcbeb9e902")]
 	public enum IfcSpaceHeaterTypeEnum
 	{
-		[Description("A heat-distributing unit that operates with gravity-circulated air.")]
-		CONVECTOR = 1,
+		SECTIONALRADIATOR = 1,
 	
-		[Description("A heat-distributing unit that operates with thermal radiation.")]
-		RADIATOR = 2,
+		PANELRADIATOR = 2,
 	
-		[Description("User-defined space heater type.")]
+		TUBULARRADIATOR = 3,
+	
+		CONVECTOR = 4,
+	
+		BASEBOARDHEATER = 5,
+	
+		FINNEDTUBEUNIT = 6,
+	
+		UNITHEATER = 7,
+	
 		USERDEFINED = -1,
 	
-		[Description("Undefined space heater type.")]
 		NOTDEFINED = 0,
 	
 	}

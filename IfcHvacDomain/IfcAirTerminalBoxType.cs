@@ -19,7 +19,7 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcHvacDomain
 {
-	[Guid("bc242f20-3f8e-4532-91aa-3cc02ab65da4")]
+	[Guid("41818906-f93c-465b-b7ab-c30dbe86d46d")]
 	public partial class IfcAirTerminalBoxType : IfcFlowControllerType
 	{
 		[DataMember(Order = 0)] 
@@ -29,8 +29,8 @@ namespace BuildingSmart.IFC.IfcHvacDomain
 		public IfcAirTerminalBoxTypeEnum PredefinedType { get; set; }
 	
 	
-		public IfcAirTerminalBoxType(IfcGloballyUniqueId globalId, IfcAirTerminalBoxTypeEnum predefinedType)
-			: base(globalId)
+		public IfcAirTerminalBoxType(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcAirTerminalBoxTypeEnum predefinedType)
+			: base(globalId, ownerHistory)
 		{
 			this.PredefinedType = predefinedType;
 		}

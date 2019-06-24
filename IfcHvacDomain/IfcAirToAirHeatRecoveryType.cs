@@ -19,7 +19,7 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcHvacDomain
 {
-	[Guid("85f459a0-3831-4b34-b397-56bb368682cd")]
+	[Guid("98b5f617-b56a-4842-be77-1bfaca351b93")]
 	public partial class IfcAirToAirHeatRecoveryType : IfcEnergyConversionDeviceType
 	{
 		[DataMember(Order = 0)] 
@@ -29,8 +29,8 @@ namespace BuildingSmart.IFC.IfcHvacDomain
 		public IfcAirToAirHeatRecoveryTypeEnum PredefinedType { get; set; }
 	
 	
-		public IfcAirToAirHeatRecoveryType(IfcGloballyUniqueId globalId, IfcAirToAirHeatRecoveryTypeEnum predefinedType)
-			: base(globalId)
+		public IfcAirToAirHeatRecoveryType(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcAirToAirHeatRecoveryTypeEnum predefinedType)
+			: base(globalId, ownerHistory)
 		{
 			this.PredefinedType = predefinedType;
 		}

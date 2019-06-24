@@ -18,12 +18,12 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcSharedBldgServiceElements
 {
-	[Guid("f7823efc-7635-4958-9275-86f733317c9b")]
+	[Guid("1dc3510c-37d7-4402-b26f-038ca2f3f692")]
 	public abstract partial class IfcFlowFittingType : IfcDistributionFlowElementType
 	{
 	
-		protected IfcFlowFittingType(IfcGloballyUniqueId globalId)
-			: base(globalId)
+		protected IfcFlowFittingType(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory)
+			: base(globalId, ownerHistory)
 		{
 		}
 	

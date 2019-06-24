@@ -10,13 +10,12 @@ using System.Runtime.InteropServices;
 using System.Runtime.Serialization;
 using System.Xml.Serialization;
 
-using BuildingSmart.IFC.IfcExternalReferenceResource;
 using BuildingSmart.IFC.IfcGeometryResource;
 using BuildingSmart.IFC.IfcMeasureResource;
 
 namespace BuildingSmart.IFC.IfcProfileResource
 {
-	[Guid("c5e6f97d-9889-46a6-bcbb-63e9cbb0b1c4")]
+	[Guid("e7028a5d-f3f9-4577-8884-c816a99f9e9f")]
 	public partial class IfcTShapeProfileDef : IfcParameterizedProfileDef
 	{
 		[DataMember(Order = 0)] 
@@ -45,32 +44,37 @@ namespace BuildingSmart.IFC.IfcProfileResource
 	
 		[DataMember(Order = 4)] 
 		[XmlAttribute]
-		[Description("Fillet radius according the above illustration (= r1).")]
-		public IfcNonNegativeLengthMeasure? FilletRadius { get; set; }
+		[Description("Fillet radius according the above illustration (= r1). If it is not given, zero is assumed.")]
+		public IfcPositiveLengthMeasure? FilletRadius { get; set; }
 	
 		[DataMember(Order = 5)] 
 		[XmlAttribute]
-		[Description("Edge radius according the above illustration (= r2).")]
-		public IfcNonNegativeLengthMeasure? FlangeEdgeRadius { get; set; }
+		[Description("Edge radius according the above illustration (= r2). If it is not given, zero is assumed.")]
+		public IfcPositiveLengthMeasure? FlangeEdgeRadius { get; set; }
 	
 		[DataMember(Order = 6)] 
 		[XmlAttribute]
-		[Description("Edge radius according the above illustration (= r3).")]
-		public IfcNonNegativeLengthMeasure? WebEdgeRadius { get; set; }
+		[Description("Edge radius according the above illustration (= r3). If it is not given, zero is assumed.")]
+		public IfcPositiveLengthMeasure? WebEdgeRadius { get; set; }
 	
 		[DataMember(Order = 7)] 
 		[XmlAttribute]
-		[Description("Slope of flange of the profile.")]
+		[Description("Slope of flange of the profile. If it is not given, zero is assumed.")]
 		public IfcPlaneAngleMeasure? WebSlope { get; set; }
 	
 		[DataMember(Order = 8)] 
 		[XmlAttribute]
-		[Description("Slope of web of the profile.")]
+		[Description("Slope of web of the profile. If it is not given, zero is assumed.")]
 		public IfcPlaneAngleMeasure? FlangeSlope { get; set; }
 	
+		[DataMember(Order = 9)] 
+		[XmlAttribute]
+		[Description("<EPM-HTML> Location of centre of gravity along the x axis measured from the center of the bounding box.     <blockquote> <small><font color=\"#ff0000\">  IFC2x Edition 2 Addendum 2 CHANGE The attribute <i>CentreOfGravityInX</i> has been made optional. Upward compatibility for file based exchange is guaranteed.    </font></small></blockquote>  </EPM-HTML>")]
+		public IfcPositiveLengthMeasure? CentreOfGravityInY { get; set; }
 	
-		public IfcTShapeProfileDef(IfcProfileTypeEnum profileType, IfcPositiveLengthMeasure depth, IfcPositiveLengthMeasure flangeWidth, IfcPositiveLengthMeasure webThickness, IfcPositiveLengthMeasure flangeThickness)
-			: base(profileType)
+	
+		public IfcTShapeProfileDef(IfcProfileTypeEnum profileType, IfcAxis2Placement2D position, IfcPositiveLengthMeasure depth, IfcPositiveLengthMeasure flangeWidth, IfcPositiveLengthMeasure webThickness, IfcPositiveLengthMeasure flangeThickness)
+			: base(profileType, position)
 		{
 			this.Depth = depth;
 			this.FlangeWidth = flangeWidth;

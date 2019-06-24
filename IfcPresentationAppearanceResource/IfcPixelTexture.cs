@@ -12,46 +12,44 @@ using System.Xml.Serialization;
 
 using BuildingSmart.IFC.IfcGeometryResource;
 using BuildingSmart.IFC.IfcMeasureResource;
-using BuildingSmart.IFC.IfcPresentationDefinitionResource;
 
 namespace BuildingSmart.IFC.IfcPresentationAppearanceResource
 {
-	[Guid("13c24361-dbc0-44fd-93e3-7772371d47b4")]
+	[Guid("d67c6683-c658-451a-82b2-833d8e0ed253")]
 	public partial class IfcPixelTexture : IfcSurfaceTexture
 	{
 		[DataMember(Order = 0)] 
 		[XmlAttribute]
-		[Description("The number of pixels in width (S) direction.")]
+		[Description("<EPM-HTML>  The number of pixels in width (S) direction.  </EPM-HTML>")]
 		[Required()]
 		public IfcInteger Width { get; set; }
 	
 		[DataMember(Order = 1)] 
 		[XmlAttribute]
-		[Description("The number of pixels in height (T) direction.")]
+		[Description("<EPM-HTML>  The number of pixels in height (T) direction.  </EPM-HTML>")]
 		[Required()]
 		public IfcInteger Height { get; set; }
 	
 		[DataMember(Order = 2)] 
 		[XmlAttribute]
-		[Description("Indication whether the pixel values contain a 1, 2, 3, or 4 colour component.")]
+		[Description("<EPM-HTML>Indication whether the pixel values contain a 1, 2, 3, or 4 colour component.  </EPM-HTML>")]
 		[Required()]
 		public IfcInteger ColourComponents { get; set; }
 	
 		[DataMember(Order = 3)] 
-		[XmlAttribute]
-		[Description("Flat list of hexadecimal values, each describing one pixel by 1, 2, 3, or 4 components.  <blockquote class=\"change-ifc2x3\">IFC2x3 CHANGE&nbsp; The data type has been changed from STRING to BINARY.</blockquote>")]
+		[Description("<EPM-HTML>  Flat list of hexadecimal values, each describing one pixel by 1, 2, 3, or 4 components.  <blockquote><small><font color\"#ff0000\">  IFC2x Edition 3 CHANGE&nbsp; The data type has been changed from STRING to BINARY.  </font></small></blockquote>  </EPM-HTML>")]
 		[Required()]
 		[MinLength(1)]
-		public IList<IfcBinary> Pixel { get; protected set; }
+		public IList<BINARY (32)> Pixel { get; protected set; }
 	
 	
-		public IfcPixelTexture(IfcBoolean repeatS, IfcBoolean repeatT, IfcInteger width, IfcInteger height, IfcInteger colourComponents, IfcBinary[] pixel)
-			: base(repeatS, repeatT)
+		public IfcPixelTexture(Boolean repeatS, Boolean repeatT, IfcSurfaceTextureEnum textureType, IfcInteger width, IfcInteger height, IfcInteger colourComponents, BINARY (32)[] pixel)
+			: base(repeatS, repeatT, textureType)
 		{
 			this.Width = width;
 			this.Height = height;
 			this.ColourComponents = colourComponents;
-			this.Pixel = new List<IfcBinary>(pixel);
+			this.Pixel = new List<BINARY (32)>(pixel);
 		}
 	
 	

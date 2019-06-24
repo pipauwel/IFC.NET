@@ -19,7 +19,7 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcProductExtension
 {
-	[Guid("417b2868-1e1e-4b5e-b73a-84dec52d9767")]
+	[Guid("eade5642-82aa-489b-a89f-fc5a1c9022f0")]
 	public partial class IfcBuilding : IfcSpatialStructureElement
 	{
 		[DataMember(Order = 0)] 
@@ -33,13 +33,12 @@ namespace BuildingSmart.IFC.IfcProductExtension
 		public IfcLengthMeasure? ElevationOfTerrain { get; set; }
 	
 		[DataMember(Order = 2)] 
-		[XmlElement]
 		[Description("Address given to the building for postal purposes.")]
 		public IfcPostalAddress BuildingAddress { get; set; }
 	
 	
-		public IfcBuilding(IfcGloballyUniqueId globalId)
-			: base(globalId)
+		public IfcBuilding(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcElementCompositionEnum compositionType)
+			: base(globalId, ownerHistory, compositionType)
 		{
 		}
 	

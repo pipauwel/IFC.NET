@@ -11,7 +11,6 @@ using System.Runtime.Serialization;
 using System.Xml.Serialization;
 
 using BuildingSmart.IFC.IfcGeometricConstraintResource;
-using BuildingSmart.IFC.IfcGeometryResource;
 using BuildingSmart.IFC.IfcKernel;
 using BuildingSmart.IFC.IfcMeasureResource;
 using BuildingSmart.IFC.IfcRepresentationResource;
@@ -19,12 +18,12 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcStructuralAnalysisDomain
 {
-	[Guid("4e0d2a97-7485-4958-a7af-66da7c2d8c31")]
+	[Guid("d39530b5-8c0d-4562-9116-4b7d38714ec8")]
 	public partial class IfcStructuralCurveMemberVarying : IfcStructuralCurveMember
 	{
 	
-		public IfcStructuralCurveMemberVarying(IfcGloballyUniqueId globalId, IfcStructuralCurveMemberTypeEnum predefinedType, IfcDirection axis)
-			: base(globalId, predefinedType, axis)
+		public IfcStructuralCurveMemberVarying(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcStructuralCurveTypeEnum predefinedType)
+			: base(globalId, ownerHistory, predefinedType)
 		{
 		}
 	

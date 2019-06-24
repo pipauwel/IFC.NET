@@ -18,7 +18,7 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcSharedBldgElements
 {
-	[Guid("e99d4f9c-26f3-48bf-81bc-dcadc07e58a4")]
+	[Guid("6ff5bdfd-4fd2-4dfb-96f6-cfb5d9a87c9d")]
 	public partial class IfcColumnType : IfcBuildingElementType
 	{
 		[DataMember(Order = 0)] 
@@ -28,8 +28,8 @@ namespace BuildingSmart.IFC.IfcSharedBldgElements
 		public IfcColumnTypeEnum PredefinedType { get; set; }
 	
 	
-		public IfcColumnType(IfcGloballyUniqueId globalId, IfcColumnTypeEnum predefinedType)
-			: base(globalId)
+		public IfcColumnType(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcColumnTypeEnum predefinedType)
+			: base(globalId, ownerHistory)
 		{
 			this.PredefinedType = predefinedType;
 		}

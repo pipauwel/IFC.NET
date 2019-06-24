@@ -16,13 +16,36 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcKernel
 {
-	[Guid("eff34c4d-41a1-48b3-badc-950cf6816a7b")]
-	public partial class IfcProject : IfcContext
+	[Guid("969c4ab6-0ebd-4847-b70b-76d4d371d4f0")]
+	public partial class IfcProject : IfcObject
 	{
+		[DataMember(Order = 0)] 
+		[XmlAttribute]
+		[Description("Long name for the project as used for reference purposes.")]
+		public IfcLabel? LongName { get; set; }
 	
-		public IfcProject(IfcGloballyUniqueId globalId)
-			: base(globalId)
+		[DataMember(Order = 1)] 
+		[XmlAttribute]
+		[Description("Current project phase, open to interpretation for all project partner, therefore given as IfcString.")]
+		public IfcLabel? Phase { get; set; }
+	
+		[DataMember(Order = 2)] 
+		[Description("Context of the representations used within the project. When the project includes shape representations for its components, one or several geometric representation contexts need to be included that define e.g. the world coordinate system, the coordinate space dimensions, and/or the precision factor.")]
+		[Required()]
+		[MinLength(1)]
+		public ISet<IfcRepresentationContext> RepresentationContexts { get; protected set; }
+	
+		[DataMember(Order = 3)] 
+		[Description("Units globally assigned to measure types used within the context of this project.")]
+		[Required()]
+		public IfcUnitAssignment UnitsInContext { get; set; }
+	
+	
+		public IfcProject(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcRepresentationContext[] representationContexts, IfcUnitAssignment unitsInContext)
+			: base(globalId, ownerHistory)
 		{
+			this.RepresentationContexts = new HashSet<IfcRepresentationContext>(representationContexts);
+			this.UnitsInContext = unitsInContext;
 		}
 	
 	

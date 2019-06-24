@@ -14,7 +14,7 @@ using BuildingSmart.IFC.IfcMeasureResource;
 
 namespace BuildingSmart.IFC.IfcPresentationAppearanceResource
 {
-	[Guid("359b755a-e87c-418d-bb14-8b2fd007e3ba")]
+	[Guid("974b693a-e0b3-47bc-86c8-0a6f07bec617")]
 	public partial class IfcSurfaceStyle : IfcPresentationStyle,
 		IfcPresentationStyleSelect
 	{

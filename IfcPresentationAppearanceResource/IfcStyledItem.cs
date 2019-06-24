@@ -16,19 +16,18 @@ using BuildingSmart.IFC.IfcPresentationOrganizationResource;
 
 namespace BuildingSmart.IFC.IfcPresentationAppearanceResource
 {
-	[Guid("03067245-b9da-400b-8de8-c6189fa9b928")]
+	[Guid("be4e92f1-7f15-46b5-ba75-b48d48f504bb")]
 	public partial class IfcStyledItem : IfcRepresentationItem
 	{
 		[DataMember(Order = 0)] 
-		[XmlIgnore]
-		[Description("A geometric representation item to which the style is assigned.    <blockquote class=\"change-ifc2x2\">IFC2x2 Add2 CHANGE The attribute <em>Item</em> has been made optional. Upward compatibility for file based exchange is guaranteed.</blockquote>")]
+		[Description("<EPM-HTML>  A geometric representation item to which the style is assigned.    <blockquote> <font size=\"-1\" color=\"#0000ff\">  IFC2x Edition 2 Addendum 2 CHANGE The attribute <i>Item</i> has been made optional. Upward compatibility for file based exchange is guaranteed.    </font></blockquote>  </EPM-HTML>")]
 		public IfcRepresentationItem Item { get; set; }
 	
 		[DataMember(Order = 1)] 
-		[Description("Representation styles which are assigned, either to an geometric representation item, or to a material definition.  <blockquote class=\"change-ifc2x4\">IFC4 CHANGE  The data type has been changed to <em>IfcStyleAssignmentSelect</em> with upward compatibility   for file based exchange.</blockquote>    <blockquote class=\"note\">NOTE&nbsp; Only the select item <em>IfcPresentationStyle</em> shall be used from IFC4 onwards, the <em>IfcPresentationStyleAssignment</em> has been deprecated.</blockquote>")]
+		[Description("Representation style assignments which are assigned to an item. NOTE: In current IFC release only one presentation style assignment shall be assigned.")]
 		[Required()]
 		[MinLength(1)]
-		public ISet<IfcStyleAssignmentSelect> Styles { get; protected set; }
+		public ISet<IfcPresentationStyleAssignment> Styles { get; protected set; }
 	
 		[DataMember(Order = 2)] 
 		[XmlAttribute]
@@ -36,9 +35,9 @@ namespace BuildingSmart.IFC.IfcPresentationAppearanceResource
 		public IfcLabel? Name { get; set; }
 	
 	
-		public IfcStyledItem(IfcStyleAssignmentSelect[] styles)
+		public IfcStyledItem(IfcPresentationStyleAssignment[] styles)
 		{
-			this.Styles = new HashSet<IfcStyleAssignmentSelect>(styles);
+			this.Styles = new HashSet<IfcPresentationStyleAssignment>(styles);
 		}
 	
 	

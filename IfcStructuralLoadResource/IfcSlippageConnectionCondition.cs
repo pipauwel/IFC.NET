@@ -14,22 +14,22 @@ using BuildingSmart.IFC.IfcMeasureResource;
 
 namespace BuildingSmart.IFC.IfcStructuralLoadResource
 {
-	[Guid("a431388c-2787-440c-aeb1-229142deaf2a")]
+	[Guid("eca9e451-2662-4a57-8f8a-2638170a1b97")]
 	public partial class IfcSlippageConnectionCondition : IfcStructuralConnectionCondition
 	{
 		[DataMember(Order = 0)] 
 		[XmlAttribute]
-		[Description("Slippage in x-direction of the coordinate system defined by the instance which uses this resource object.")]
+		[Description("Slippage of that connection. Defines the maximum displacement in x-direction without any loading applied.")]
 		public IfcLengthMeasure? SlippageX { get; set; }
 	
 		[DataMember(Order = 1)] 
 		[XmlAttribute]
-		[Description("Slippage in y-direction of the coordinate system defined by the instance which uses this resource object.")]
+		[Description("Slippage of that connection. Defines the maximum displacement in y-direction without any loading applied.")]
 		public IfcLengthMeasure? SlippageY { get; set; }
 	
 		[DataMember(Order = 2)] 
 		[XmlAttribute]
-		[Description("Slippage in z-direction of the coordinate system defined by the instance which uses this resource object.")]
+		[Description("Slippage of that connection. Defines the maximum displacement in z-direction without any loading applied.")]
 		public IfcLengthMeasure? SlippageZ { get; set; }
 	
 	

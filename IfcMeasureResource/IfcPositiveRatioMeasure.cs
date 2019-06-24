@@ -13,7 +13,7 @@ using System.Xml.Serialization;
 
 namespace BuildingSmart.IFC.IfcMeasureResource
 {
-	[Guid("0e028f37-2eed-4719-aeca-ab2f49f35a63")]
+	[Guid("fc6f2655-8440-444a-aa02-bd5e874e526c")]
 	public partial struct IfcPositiveRatioMeasure :
 		IfcMeasureValue,
 		BuildingSmart.IFC.IfcPresentationAppearanceResource.IfcSizeSelect

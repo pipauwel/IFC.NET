@@ -17,12 +17,12 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcProductExtension
 {
-	[Guid("e90e5d98-6bfd-4367-a672-781c00f9651b")]
+	[Guid("747498d2-22b1-4532-b577-03812ac8d7bb")]
 	public partial class IfcFurnishingElementType : IfcElementType
 	{
 	
-		public IfcFurnishingElementType(IfcGloballyUniqueId globalId)
-			: base(globalId)
+		public IfcFurnishingElementType(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory)
+			: base(globalId, ownerHistory)
 		{
 		}
 	

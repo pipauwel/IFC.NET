@@ -20,17 +20,17 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcSharedBldgElements
 {
-	[Guid("8f561139-3792-4723-b343-700785092d40")]
+	[Guid("adb61601-11d0-4bfb-903d-555dff1251a1")]
 	public partial class IfcSlab : IfcBuildingElement
 	{
 		[DataMember(Order = 0)] 
 		[XmlAttribute]
-		[Description("Predefined generic type for a slab that is specified in an enumeration. There may be a property set given specifically for the predefined types.  <blockquote class=\"note\">NOTE&nbsp; The <em>PredefinedType</em> shall only be used, if no <em>IfcSlabType</em> is assigned, providing its own <em>IfcSlabType.PredefinedType</em>.</blockquote>  <blockquote  class=\"change-ifc2x\">IFC2x CHANGE The attribute has been changed into an OPTIONAL attribute.</blockquote>")]
+		[Description("<EPM-HTML>  Predefined generic types for a slab that are specified in an enumeration. There may be a property set given for the predefined types.  <BLOCKQUOTE> <FONT SIZE=\"-1\">NOTE: The use of the predefined type directly at the occurrence object level of <I>IfcSlab</I> is only permitted, if no type object <I>IfcSlabType</I> is assigned.</FONT></BLOCKQUOTE>  <BLOCKQUOTE> <FONT COLOR=\"#FF0000\" SIZE=\"-1\">IFC2x PLATFORM CHANGE: The attribute has been changed into an OPTIONAL attribute. </FONT></BLOCKQUOTE>  </EPM-HTML>")]
 		public IfcSlabTypeEnum? PredefinedType { get; set; }
 	
 	
-		public IfcSlab(IfcGloballyUniqueId globalId)
-			: base(globalId)
+		public IfcSlab(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory)
+			: base(globalId, ownerHistory)
 		{
 		}
 	

@@ -13,7 +13,7 @@ using System.Xml.Serialization;
 
 namespace BuildingSmart.IFC.IfcMeasureResource
 {
-	[Guid("fc36c935-aa49-4163-b3d7-a4b0b23f0b37")]
+	[Guid("93332567-8fad-4e0f-914a-6c8d41d4a287")]
 	public enum IfcUnitEnum
 	{
 		ABSORBEDDOSEUNIT = 1,
@@ -74,8 +74,6 @@ namespace BuildingSmart.IFC.IfcMeasureResource
 	
 		VOLUMEUNIT = 29,
 	
-		[Description("User defined unit type. The type of unit is only implied by its name or the usage" +
-	    " context.")]
 		USERDEFINED = -1,
 	
 	}

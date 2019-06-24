@@ -13,7 +13,7 @@ using System.Xml.Serialization;
 
 namespace BuildingSmart.IFC.IfcCostResource
 {
-	[Guid("cfa7de31-c6b2-47a2-9494-e9e9eea12377")]
+	[Guid("1001b61b-cd58-4f64-a63d-9befe7770632")]
 	public enum IfcArithmeticOperatorEnum
 	{
 		ADD = 1,

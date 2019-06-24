@@ -15,17 +15,15 @@ using BuildingSmart.IFC.IfcPresentationOrganizationResource;
 
 namespace BuildingSmart.IFC.IfcGeometryResource
 {
-	[Guid("ffc10785-4b8a-40de-a1a6-87a49ef4ff7f")]
+	[Guid("feda3166-cc81-42b8-92c4-9fa69f91d8af")]
 	public partial class IfcMappedItem : IfcRepresentationItem
 	{
 		[DataMember(Order = 0)] 
-		[XmlElement]
 		[Description("A representation map that is the source of the mapped item. It can be seen as a block (or cell or marco) definition.")]
 		[Required()]
 		public IfcRepresentationMap MappingSource { get; set; }
 	
 		[DataMember(Order = 1)] 
-		[XmlElement]
 		[Description("A representation item that is the target onto which the mapping source is mapped. It is constraint to be a Cartesian transformation operator.")]
 		[Required()]
 		public IfcCartesianTransformationOperator MappingTarget { get; set; }

@@ -14,7 +14,7 @@ using BuildingSmart.IFC.IfcMeasureResource;
 
 namespace BuildingSmart.IFC.IfcPresentationOrganizationResource
 {
-	[Guid("1021fba4-3bfe-4e0a-b0b5-662a3498c052")]
+	[Guid("0ff83e6c-fe39-4dda-8358-567127e601d7")]
 	public partial class IfcPresentationLayerAssignment
 	{
 		[DataMember(Order = 0)] 

@@ -10,42 +10,42 @@ using System.Runtime.InteropServices;
 using System.Runtime.Serialization;
 using System.Xml.Serialization;
 
-using BuildingSmart.IFC.IfcPresentationDefinitionResource;
 
 namespace BuildingSmart.IFC.IfcPresentationAppearanceResource
 {
-	[Guid("59ceb694-4afb-4c76-9a16-127226c2f9f1")]
-	public partial class IfcTextStyleTextModel : IfcPresentationItem
+	[Guid("1381d678-94e6-417d-bf36-57cc610f9189")]
+	public partial class IfcTextStyleTextModel :
+		IfcTextStyleSelect
 	{
 		[DataMember(Order = 0)] 
-		[Description("The property specifies the indentation that appears before the first formatted line.    <blockquote class=\"note\">NOTE&nbsp; It has been introduced for later compliance to full CSS support.</blockquote>")]
+		[Description("<EPM-HTML>  The property specifies the indentation that appears before the first formatted line.    <blockquote> <small>NOTE&nbsp; It has been introduced for later compliance to full CSS1 support.</small></blockquote>  </EPM-HTML>")]
 		public IfcSizeSelect TextIndent { get; set; }
 	
 		[DataMember(Order = 1)] 
 		[XmlAttribute]
-		[Description("This property describes how text is aligned horizontally within the element. The actual justification algorithm used is dependent on the rendering algorithm.")]
+		[Description("<EPM-HTML>  This property describes how text is aligned horizontally within the element. The actual justification algorithm used is dependent on the rendering algorithm.  </EPM-HTML>")]
 		public IfcTextAlignment? TextAlign { get; set; }
 	
 		[DataMember(Order = 2)] 
 		[XmlAttribute]
-		[Description("This property describes decorations that are added to the text of an element.")]
+		[Description("<EPM-HTML>  This property describes decorations that are added to the text of an element.  </EPM-HTML>")]
 		public IfcTextDecoration? TextDecoration { get; set; }
 	
 		[DataMember(Order = 3)] 
-		[Description("The length unit indicates an addition to the default space between characters. Values can be negative, but there may be implementation-specific limits. The importing application is free to select the exact spacing algorithm. The letter spacing may also be influenced by justification (which is a value of the <em>TextAlign</em> attribute).  <blockquote class=\"note\">NOTE&nbsp; The following values are allowed, <em>IfcDescriptiveMeasure</em> with value='normal', <em>IfcRatioMeasure</em>, or <em>IfcLengthMeasure</em>, where the length unit is globally defined at <em>IfcUnitAssignment</em>.</blockquote>")]
+		[Description("<EPM-HTML>  The length unit indicates an addition to the default space between characters. Values can be negative, but there may be implementation-specific limits. The user agent is free to select the exact spacing algorithm. The letter spacing may also be influenced by justification (which is a value of the 'align' property).    <blockquote> <small>NOTE&nbsp; The following values are allowed, <i>IfcDescriptiveMeasure</i> with value='normal', or <i>IfcLengthMeasure<i>, the length unit is globally defined at <i>IfcUnitAssignment</i>.</small></blockquote>  </EPM-HTML>")]
 		public IfcSizeSelect LetterSpacing { get; set; }
 	
 		[DataMember(Order = 4)] 
-		[Description("The length unit indicates an addition to the default space between words. Values can be negative, but there may be implementation-specific limits. The importing application is free to select the exact spacing algorithm. The word spacing may also be influenced by justification (which is a value of the 'text-align' property).    <blockquote class=\"note\">NOTE&nbsp; It has been introduced for later compliance to full CSS support.</blockquote>")]
+		[Description("<EPM-HTML>  The length unit indicates an addition to the default space between words. Values can be negative, but there may be implementation-specific limits. The user agent is free to select the exact spacing algorithm. The word spacing may also be influenced by justification (which is a value of the 'text-align' property).    <blockquote> <small>NOTE&nbsp; It has been introduced for later compliance to full CSS1 support.</small></blockquote>  </EPM-HTML>")]
 		public IfcSizeSelect WordSpacing { get; set; }
 	
 		[DataMember(Order = 5)] 
 		[XmlAttribute]
-		[Description("This property describes how text characters may transform to upper case, lower case, or capitalized case, independent of the character case used in the text literal.    <blockquote class=\"note\">NOTE&nbsp; It has been introduced for later compliance to full CSS support.</blockquote>")]
+		[Description("<EPM-HTML>  This property describes how text characters may transform to upper case, lower case, or capitalized case, independent of the character case used in the text literal.    <blockquote> <small>NOTE&nbsp; It has been introduced for later compliance to full CSS1 support.</small></blockquote>  </EPM-HTML>")]
 		public IfcTextTransformation? TextTransform { get; set; }
 	
 		[DataMember(Order = 6)] 
-		[Description("The property sets the distance between two adjacent lines' baselines.<br>  When a ratio value is specified, the line height is given by the font size of the current element multiplied with the numerical value. A value of 'normal' sets the line height to a reasonable value for the element's font. It is suggested that importing applications set the 'normal' value to be a ratio number in the range of 1.0 to 1.2.    <blockquote class=\"note\">NOTE&nbsp; The following values are allowed: <em>IfcDescriptiveMeasure</em> with value='normal', or   <em>IfcLengthMeasure<em>, with non-negative values, the length unit is globally defined at <em>IfcUnitAssignment</em>, or <em>IfcRatioMeasure</em>.</blockquote>")]
+		[Description("<EPM-HTML>  The property sets the distance between two adjacent lines' baselines.<br>  When a ratio value is specified, the line height is given by the font size of the current element multiplied with the numerical value. A value of 'normal' sets the line height to a reasonable value for the element's font. It is suggested that user agents set the 'normal' value to be a ratio number in the range of 1.0 to 1.2.    <blockquote> <small>NOTE&nbsp; The following values are allowed:<br> <i>IfcDescriptiveMeasure</i> with value='normal', or <br>  <i>IfcLengthMeasure<i>, with non-negative values, the length unit is globally defined at <i>IfcUnitAssignment</i>, or <br><i>IfcRatioMeasure</i>.</small></blockquote>  </EPM-HTML>")]
 		public IfcSizeSelect LineHeight { get; set; }
 	
 	

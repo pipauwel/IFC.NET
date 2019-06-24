@@ -13,19 +13,15 @@ using System.Xml.Serialization;
 
 namespace BuildingSmart.IFC.IfcExternalReferenceResource
 {
-	[Guid("5da7ac6c-0494-4c97-9373-49698ac9372f")]
+	[Guid("b0ff9aaa-eecf-485c-83df-3e92d81e7021")]
 	public enum IfcDocumentStatusEnum
 	{
-		[Description("Document is a draft.")]
 		DRAFT = 1,
 	
-		[Description("Document is a final draft.")]
 		FINALDRAFT = 2,
 	
-		[Description("Document is final.")]
 		FINAL = 3,
 	
-		[Description("Document has undergone revision.")]
 		REVISION = 4,
 	
 		NOTDEFINED = 0,

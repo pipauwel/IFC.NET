@@ -13,25 +13,25 @@ using System.Xml.Serialization;
 
 namespace BuildingSmart.IFC.IfcHvacDomain
 {
-	[Guid("2a1d1a8d-13ee-429e-b316-c186dd2f7bfe")]
+	[Guid("d6aa757d-fa12-4515-9af0-92da24590ad6")]
 	public enum IfcAirTerminalTypeEnum
 	{
-		[Description("An outlet discharging supply air in various directions and planes.")]
-		DIFFUSER = 1,
+		GRILLE = 1,
 	
-		[Description("A covering for any area through which air passes.")]
-		GRILLE = 2,
+		REGISTER = 2,
 	
-		[Description("A rectilinear louvre.")]
-		LOUVRE = 3,
+		DIFFUSER = 3,
 	
-		[Description("A grille typically equipped with a damper or control valve.")]
-		REGISTER = 4,
+		EYEBALL = 4,
 	
-		[Description("User-defined air terminal type.")]
+		IRIS = 5,
+	
+		LINEARGRILLE = 6,
+	
+		LINEARDIFFUSER = 7,
+	
 		USERDEFINED = -1,
 	
-		[Description("Undefined air terminal type.")]
 		NOTDEFINED = 0,
 	
 	}

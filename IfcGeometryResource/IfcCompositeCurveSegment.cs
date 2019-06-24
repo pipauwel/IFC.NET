@@ -10,13 +10,12 @@ using System.Runtime.InteropServices;
 using System.Runtime.Serialization;
 using System.Xml.Serialization;
 
-using BuildingSmart.IFC.IfcMeasureResource;
 using BuildingSmart.IFC.IfcPresentationAppearanceResource;
 using BuildingSmart.IFC.IfcPresentationOrganizationResource;
 
 namespace BuildingSmart.IFC.IfcGeometryResource
 {
-	[Guid("baf231ed-97be-4368-a9f9-10ae70bad78e")]
+	[Guid("fd79e3b5-9d55-4a57-ba6b-1fca7392b523")]
 	public partial class IfcCompositeCurveSegment : IfcGeometricRepresentationItem
 	{
 		[DataMember(Order = 0)] 
@@ -26,13 +25,11 @@ namespace BuildingSmart.IFC.IfcGeometryResource
 		public IfcTransitionCode Transition { get; set; }
 	
 		[DataMember(Order = 1)] 
-		[XmlAttribute]
-		[Description("An indicator of whether or not the sense of the segment agrees with, or opposes, that of the parent curve. If <em>SameSense</em> is false, the point with highest parameter value is taken as the first point of the segment.  <blockquote class=\"note\">NOTE&nbsp; If the datatype of <em>ParentCurve</em> is <em>IfcTrimmedCurve</em>, the value of <em>SameSense</em> overrides the value of <em>IfcTrimmedCurve.SenseAgreement</em></blockquote>")]
+		[Description("An indicator of whether or not the sense of the segment agrees with, or opposes, that of the parent curve. If SameSense is false, the point with highest parameter value is taken as the first point of the segment.")]
 		[Required()]
-		public IfcBoolean SameSense { get; set; }
+		public Boolean SameSense { get; set; }
 	
 		[DataMember(Order = 2)] 
-		[XmlElement]
 		[Description("The bounded curve which defines the geometry of the segment.")]
 		[Required()]
 		public IfcCurve ParentCurve { get; set; }
@@ -43,7 +40,7 @@ namespace BuildingSmart.IFC.IfcGeometryResource
 		public ISet<IfcCompositeCurve> UsingCurves { get; protected set; }
 	
 	
-		public IfcCompositeCurveSegment(IfcTransitionCode transition, IfcBoolean sameSense, IfcCurve parentCurve)
+		public IfcCompositeCurveSegment(IfcTransitionCode transition, Boolean sameSense, IfcCurve parentCurve)
 		{
 			this.Transition = transition;
 			this.SameSense = sameSense;

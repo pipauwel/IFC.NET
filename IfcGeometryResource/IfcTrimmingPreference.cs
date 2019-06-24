@@ -13,16 +13,13 @@ using System.Xml.Serialization;
 
 namespace BuildingSmart.IFC.IfcGeometryResource
 {
-	[Guid("f1d9c4d9-7c65-4bc8-a7d6-81ae500bf591")]
+	[Guid("07402f3c-2511-46e5-a2cd-c31297cbe5e6")]
 	public enum IfcTrimmingPreference
 	{
-		[Description("Indicates that trimming by Cartesian point is preferred.")]
 		CARTESIAN = 1,
 	
-		[Description("Indicates the preference for the parameter value.")]
 		PARAMETER = 2,
 	
-		[Description("Indicates that no preference is communicated.")]
 		UNSPECIFIED = 3,
 	
 	}

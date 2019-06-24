@@ -18,13 +18,12 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcProductExtension
 {
-	[Guid("032e8ec4-b702-496b-b1c7-582032fc9a31")]
+	[Guid("6039b15a-9b36-4f5f-9d66-2c80b0c6ccb9")]
 	public abstract partial class IfcPort : IfcProduct
 	{
 		[InverseProperty("RelatingPort")] 
-		[Description("Reference to the element to port connection relationship. The relationship then refers to the element in which this port is contained.  <blockquote class=\"change-ifc2x4\">  IFC4 CHANGE&nbsp; The cardinality has been changed from 1:1 to 0:1.  IFC4 DEPRECATION&nbsp; The inverse relationship is deprecated for fixed ports due to deprecation of <em>IfcRelConnectsPortToElement</em> for this usage. Use inverse relationship <em>Nests</em> instead.  </blockquote>")]
-		[MaxLength(1)]
-		public ISet<IfcRelConnectsPortToElement> ContainedIn { get; protected set; }
+		[Description("Reference to the element to port connection relationship. The relationship then refers to the element in which this port is contained.")]
+		public IfcRelConnectsPortToElement ContainedIn { get; set; }
 	
 		[InverseProperty("RelatedPort")] 
 		[Description("Reference to a port that is connected by the objectified relationship.")]
@@ -37,10 +36,9 @@ namespace BuildingSmart.IFC.IfcProductExtension
 		public ISet<IfcRelConnectsPorts> ConnectedTo { get; protected set; }
 	
 	
-		protected IfcPort(IfcGloballyUniqueId globalId)
-			: base(globalId)
+		protected IfcPort(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory)
+			: base(globalId, ownerHistory)
 		{
-			this.ContainedIn = new HashSet<IfcRelConnectsPortToElement>();
 			this.ConnectedFrom = new HashSet<IfcRelConnectsPorts>();
 			this.ConnectedTo = new HashSet<IfcRelConnectsPorts>();
 		}

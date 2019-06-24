@@ -18,7 +18,7 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcSharedBldgElements
 {
-	[Guid("598d0f96-6b0f-45f5-90f4-96758e77d64f")]
+	[Guid("7a9d1d5a-1f3f-4774-ae27-e470755a043c")]
 	public partial class IfcWallType : IfcBuildingElementType
 	{
 		[DataMember(Order = 0)] 
@@ -28,8 +28,8 @@ namespace BuildingSmart.IFC.IfcSharedBldgElements
 		public IfcWallTypeEnum PredefinedType { get; set; }
 	
 	
-		public IfcWallType(IfcGloballyUniqueId globalId, IfcWallTypeEnum predefinedType)
-			: base(globalId)
+		public IfcWallType(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcWallTypeEnum predefinedType)
+			: base(globalId, ownerHistory)
 		{
 			this.PredefinedType = predefinedType;
 		}

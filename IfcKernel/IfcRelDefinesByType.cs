@@ -15,26 +15,18 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcKernel
 {
-	[Guid("92a2c20b-4c2f-4ed2-a2f1-5d0591fa26b2")]
+	[Guid("f48dfb4d-c177-4f88-b654-b0d80b6d1908")]
 	public partial class IfcRelDefinesByType : IfcRelDefines
 	{
 		[DataMember(Order = 0)] 
-		[XmlIgnore]
-		[Required()]
-		[MinLength(1)]
-		public ISet<IfcObject> RelatedObjects { get; protected set; }
-	
-		[DataMember(Order = 1)] 
-		[XmlElement]
 		[Description("Reference to the type (or style) information for that object or set of objects.")]
 		[Required()]
 		public IfcTypeObject RelatingType { get; set; }
 	
 	
-		public IfcRelDefinesByType(IfcGloballyUniqueId globalId, IfcObject[] relatedObjects, IfcTypeObject relatingType)
-			: base(globalId)
+		public IfcRelDefinesByType(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcObject[] relatedObjects, IfcTypeObject relatingType)
+			: base(globalId, ownerHistory, relatedObjects)
 		{
-			this.RelatedObjects = new HashSet<IfcObject>(relatedObjects);
 			this.RelatingType = relatingType;
 		}
 	

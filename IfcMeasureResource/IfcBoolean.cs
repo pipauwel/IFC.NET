@@ -13,15 +13,9 @@ using System.Xml.Serialization;
 
 namespace BuildingSmart.IFC.IfcMeasureResource
 {
-	[Guid("6f28babb-8b8b-4b31-a6e3-068bfc20ff6c")]
+	[Guid("a9ff8add-feac-4853-8092-c9d330767399")]
 	public partial struct IfcBoolean :
-		BuildingSmart.IFC.IfcStructuralLoadResource.IfcModulusOfRotationalSubgradeReactionSelect,
-		BuildingSmart.IFC.IfcStructuralLoadResource.IfcModulusOfSubgradeReactionSelect,
-		BuildingSmart.IFC.IfcStructuralLoadResource.IfcModulusOfTranslationalSubgradeReactionSelect,
-		BuildingSmart.IFC.IfcStructuralLoadResource.IfcRotationalStiffnessSelect,
-		IfcSimpleValue,
-		BuildingSmart.IFC.IfcStructuralLoadResource.IfcTranslationalStiffnessSelect,
-		BuildingSmart.IFC.IfcStructuralLoadResource.IfcWarpingStiffnessSelect
+		IfcSimpleValue
 	{
 		[XmlText]
 		public Boolean Value { get; private set; }

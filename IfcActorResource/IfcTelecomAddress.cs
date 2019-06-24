@@ -10,13 +10,12 @@ using System.Runtime.InteropServices;
 using System.Runtime.Serialization;
 using System.Xml.Serialization;
 
-using BuildingSmart.IFC.IfcExternalReferenceResource;
 using BuildingSmart.IFC.IfcMeasureResource;
 using BuildingSmart.IFC.IfcPropertyResource;
 
 namespace BuildingSmart.IFC.IfcActorResource
 {
-	[Guid("dd829d63-2572-480c-8a2d-ccbe3578cd7e")]
+	[Guid("59fd10bd-08d3-457d-a2c7-4ae58c749ed2")]
 	public partial class IfcTelecomAddress : IfcAddress
 	{
 		[DataMember(Order = 0)] 
@@ -44,14 +43,8 @@ namespace BuildingSmart.IFC.IfcActorResource
 	
 		[DataMember(Order = 4)] 
 		[XmlAttribute]
-		[Description("The world wide web address at which the preliminary page of information for the person or organization can be located.  <blockquote class=\"note\">NOTE&nbsp; Information on the world wide web for a person or organization may be separated   into a number of pages and across a number of host sites, all of which may be linked together. It is assumed that   all such information may be referenced from a single page that is termed the home page for that person or organization.</blockquote>")]
-		public IfcURIReference? WWWHomePageURL { get; set; }
-	
-		[DataMember(Order = 5)] 
-		[XmlAttribute]
-		[Description("IDs or addresses for any other means of telecommunication, for example instant messaging, voice-over-IP, or file transfer protocols. The communication protocol is indicated by the URI value with scheme designations such as irc:, sip:, or ftp:.")]
-		[MinLength(1)]
-		public IList<IfcURIReference> MessagingIDs { get; protected set; }
+		[Description("The world wide web address at which the preliminary page of information for the person or organization can be located.  <EPM-HTML>  <BLOCKQUOTE><FONT SIZE=\"-1\">NOTE: Information on the world wide web for a person or organization may be separated   into a number of pages and across a number of host sites, all of which may be linked together. It is assumed that   all such information may be referenced from a single page that is termed the home page for that person or organization.  </FONT></BLOCKQUOTE>  </EPM-HTML>")]
+		public IfcLabel? WWWHomePageURL { get; set; }
 	
 	
 		public IfcTelecomAddress()
@@ -59,7 +52,6 @@ namespace BuildingSmart.IFC.IfcActorResource
 			this.TelephoneNumbers = new List<IfcLabel>();
 			this.FacsimileNumbers = new List<IfcLabel>();
 			this.ElectronicMailAddresses = new List<IfcLabel>();
-			this.MessagingIDs = new List<IfcURIReference>();
 		}
 	
 	

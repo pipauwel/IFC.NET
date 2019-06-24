@@ -11,13 +11,12 @@ using System.Runtime.Serialization;
 using System.Xml.Serialization;
 
 using BuildingSmart.IFC.IfcGeometryResource;
-using BuildingSmart.IFC.IfcMeasureResource;
 using BuildingSmart.IFC.IfcPresentationAppearanceResource;
 using BuildingSmart.IFC.IfcPresentationOrganizationResource;
 
 namespace BuildingSmart.IFC.IfcTopologyResource
 {
-	[Guid("1642dee1-9c3d-416b-86a9-db23ccf926ae")]
+	[Guid("e82ce556-c7d7-4d71-80e1-f4a2a7af3ec0")]
 	public partial class IfcEdgeLoop : IfcLoop
 	{
 		[DataMember(Order = 0)] 
@@ -32,7 +31,7 @@ namespace BuildingSmart.IFC.IfcTopologyResource
 			this.EdgeList = new List<IfcOrientedEdge>(edgeList);
 		}
 	
-		public new IfcInteger Ne { get { return new IfcInteger(); } }
+		public new Int64 Ne { get { return null; } }
 	
 	
 	}

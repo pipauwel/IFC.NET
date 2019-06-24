@@ -13,12 +13,11 @@ using System.Xml.Serialization;
 
 namespace BuildingSmart.IFC.IfcMeasureResource
 {
-	[Guid("bd364cd7-2838-47de-a013-ccdbbc4e57c5")]
+	[Guid("c8b5fa3f-462a-4041-b3fb-2bc28c491abd")]
 	public partial struct IfcIdentifier :
 		IfcSimpleValue
 	{
 		[XmlText]
-		[MaxLength(255)]
 		public String Value { get; private set; }
 	
 		public IfcIdentifier(String value) : this()

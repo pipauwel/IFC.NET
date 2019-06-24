@@ -13,7 +13,7 @@ using System.Xml.Serialization;
 
 namespace BuildingSmart.IFC.IfcMeasureResource
 {
-	[Guid("40cd7167-2011-405e-82f9-f6af73ed3182")]
+	[Guid("69d44c42-bcae-4b9a-858e-97f4d46a97ec")]
 	public partial struct IfcPositivePlaneAngleMeasure :
 		IfcMeasureValue
 	{

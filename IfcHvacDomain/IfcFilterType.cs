@@ -19,7 +19,7 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcHvacDomain
 {
-	[Guid("e531750b-2617-4ede-a937-600436a845d0")]
+	[Guid("a07e519b-a38a-44c2-b3aa-2fb700d47528")]
 	public partial class IfcFilterType : IfcFlowTreatmentDeviceType
 	{
 		[DataMember(Order = 0)] 
@@ -29,8 +29,8 @@ namespace BuildingSmart.IFC.IfcHvacDomain
 		public IfcFilterTypeEnum PredefinedType { get; set; }
 	
 	
-		public IfcFilterType(IfcGloballyUniqueId globalId, IfcFilterTypeEnum predefinedType)
-			: base(globalId)
+		public IfcFilterType(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcFilterTypeEnum predefinedType)
+			: base(globalId, ownerHistory)
 		{
 			this.PredefinedType = predefinedType;
 		}

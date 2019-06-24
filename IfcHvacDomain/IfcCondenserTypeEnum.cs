@@ -13,38 +13,23 @@ using System.Xml.Serialization;
 
 namespace BuildingSmart.IFC.IfcHvacDomain
 {
-	[Guid("bdc6c4e2-1bc4-4f7b-935f-2ff8a71a6ab9")]
+	[Guid("570846fb-0d79-4289-a95b-dd7e45a802d9")]
 	public enum IfcCondenserTypeEnum
 	{
-		[Description("A condenser in which heat is transferred to an air-stream.")]
-		AIRCOOLED = 1,
+		WATERCOOLEDSHELLTUBE = 1,
 	
-		[Description("A condenser that is cooled evaporatively.")]
-		EVAPORATIVECOOLED = 2,
+		WATERCOOLEDSHELLCOIL = 2,
 	
-		[Description("Water-cooled condenser with unspecified operation.")]
-		WATERCOOLED = 3,
+		WATERCOOLEDTUBEINTUBE = 3,
 	
-		[Description("Water-cooled condenser with plates brazed together to form an assembly of separat" +
-	    "e channels.")]
 		WATERCOOLEDBRAZEDPLATE = 4,
 	
-		[Description("Water-cooled condenser with cooling water circulated through one or more continuo" +
-	    "us or assembled coils contained within the shell.")]
-		WATERCOOLEDSHELLCOIL = 5,
+		AIRCOOLED = 5,
 	
-		[Description("Water-cooled condenser with cooling water circulated through one or more tubes co" +
-	    "ntained within the shell.")]
-		WATERCOOLEDSHELLTUBE = 6,
+		EVAPORATIVECOOLED = 6,
 	
-		[Description("Water-cooled condenser consisting of one or more assemblies of two tubes, one wit" +
-	    "hin the other.")]
-		WATERCOOLEDTUBEINTUBE = 7,
-	
-		[Description("User-defined condenser type.")]
 		USERDEFINED = -1,
 	
-		[Description("Undefined condenser type.")]
 		NOTDEFINED = 0,
 	
 	}

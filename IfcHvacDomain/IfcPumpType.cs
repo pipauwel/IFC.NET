@@ -19,7 +19,7 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcHvacDomain
 {
-	[Guid("fd42c2cc-cf4e-429b-adc8-a92410ba4fcb")]
+	[Guid("2ecc46c3-2d1e-498b-8bbb-5c075c5d0c9d")]
 	public partial class IfcPumpType : IfcFlowMovingDeviceType
 	{
 		[DataMember(Order = 0)] 
@@ -29,8 +29,8 @@ namespace BuildingSmart.IFC.IfcHvacDomain
 		public IfcPumpTypeEnum PredefinedType { get; set; }
 	
 	
-		public IfcPumpType(IfcGloballyUniqueId globalId, IfcPumpTypeEnum predefinedType)
-			: base(globalId)
+		public IfcPumpType(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcPumpTypeEnum predefinedType)
+			: base(globalId, ownerHistory)
 		{
 			this.PredefinedType = predefinedType;
 		}

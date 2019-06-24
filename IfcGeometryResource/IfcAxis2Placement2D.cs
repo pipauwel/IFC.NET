@@ -15,13 +15,12 @@ using BuildingSmart.IFC.IfcPresentationOrganizationResource;
 
 namespace BuildingSmart.IFC.IfcGeometryResource
 {
-	[Guid("0110d280-1722-46bf-b12c-0b81868564a8")]
+	[Guid("b776074c-fd25-4516-a5ee-d3d6a692e772")]
 	public partial class IfcAxis2Placement2D : IfcPlacement,
 		IfcAxis2Placement
 	{
 		[DataMember(Order = 0)] 
-		[XmlElement]
-		[Description("The direction used to determine the direction of the local X axis. If a value is omited that it defaults to [1.0, 0.0.].  </HTML>")]
+		[Description("The direction used to determine the direction of the local X Axis.")]
 		public IfcDirection RefDirection { get; set; }
 	
 	

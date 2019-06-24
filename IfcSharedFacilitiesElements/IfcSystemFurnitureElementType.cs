@@ -18,16 +18,12 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcSharedFacilitiesElements
 {
-	[Guid("c8109093-505d-450a-871d-6a67de192b17")]
+	[Guid("b466fff2-048a-403d-868c-f00cad22db29")]
 	public partial class IfcSystemFurnitureElementType : IfcFurnishingElementType
 	{
-		[DataMember(Order = 0)] 
-		[XmlAttribute]
-		public IfcSystemFurnitureElementTypeEnum? PredefinedType { get; set; }
 	
-	
-		public IfcSystemFurnitureElementType(IfcGloballyUniqueId globalId)
-			: base(globalId)
+		public IfcSystemFurnitureElementType(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory)
+			: base(globalId, ownerHistory)
 		{
 		}
 	

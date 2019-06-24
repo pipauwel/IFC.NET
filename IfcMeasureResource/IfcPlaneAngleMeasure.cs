@@ -13,10 +13,10 @@ using System.Xml.Serialization;
 
 namespace BuildingSmart.IFC.IfcMeasureResource
 {
-	[Guid("d81e9c4a-ace7-4741-8aca-d40d3fca27b2")]
+	[Guid("2a0a31c3-599a-4a77-a001-daa5b627e73f")]
 	public partial struct IfcPlaneAngleMeasure :
-		BuildingSmart.IFC.IfcStructuralElementsDomain.IfcBendingParameterSelect,
-		IfcMeasureValue
+		IfcMeasureValue,
+		BuildingSmart.IFC.IfcStructuralAnalysisDomain.IfcOrientationSelect
 	{
 		[XmlText]
 		public Double Value { get; private set; }

@@ -13,10 +13,9 @@ using System.Xml.Serialization;
 
 namespace BuildingSmart.IFC.IfcMeasureResource
 {
-	[Guid("f872b6a3-ff4e-4d55-948f-780502e4b939")]
+	[Guid("390dca1c-dafb-4f6b-a7ce-ea43a6af6075")]
 	public partial struct IfcModulusOfRotationalSubgradeReactionMeasure :
-		IfcDerivedMeasureValue,
-		BuildingSmart.IFC.IfcStructuralLoadResource.IfcModulusOfRotationalSubgradeReactionSelect
+		IfcDerivedMeasureValue
 	{
 		[XmlText]
 		public Double Value { get; private set; }

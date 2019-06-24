@@ -13,7 +13,7 @@ using System.Xml.Serialization;
 
 namespace BuildingSmart.IFC.IfcGeometricConstraintResource
 {
-	[Guid("299f7c01-fd85-42b2-bb92-90838a8c75f8")]
+	[Guid("cd89f938-533c-4735-9880-9d5c7c04988d")]
 	public interface IfcPointOrVertexPoint
 	{
 	}

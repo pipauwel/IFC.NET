@@ -17,12 +17,12 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcProductExtension
 {
-	[Guid("89b1d186-ab55-4cd1-888c-3e1a0b84d6f7")]
-	public abstract partial class IfcSpatialStructureElementType : IfcSpatialElementType
+	[Guid("506b9555-927d-4b7f-81f6-a5bb2b5609e0")]
+	public abstract partial class IfcSpatialStructureElementType : IfcElementType
 	{
 	
-		protected IfcSpatialStructureElementType(IfcGloballyUniqueId globalId)
-			: base(globalId)
+		protected IfcSpatialStructureElementType(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory)
+			: base(globalId, ownerHistory)
 		{
 		}
 	

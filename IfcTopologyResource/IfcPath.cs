@@ -16,7 +16,7 @@ using BuildingSmart.IFC.IfcPresentationOrganizationResource;
 
 namespace BuildingSmart.IFC.IfcTopologyResource
 {
-	[Guid("ae69801c-7451-4fd5-9784-4dba6d6e1616")]
+	[Guid("cb8b2846-1db8-4b76-80d3-837703e962d7")]
 	public partial class IfcPath : IfcTopologicalRepresentationItem
 	{
 		[DataMember(Order = 0)] 

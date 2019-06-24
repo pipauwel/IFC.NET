@@ -14,7 +14,7 @@ using BuildingSmart.IFC.IfcMeasureResource;
 
 namespace BuildingSmart.IFC.IfcPresentationAppearanceResource
 {
-	[Guid("8495cfb3-40da-4a4e-8481-67e0000fb8d2")]
+	[Guid("fd3317d3-182e-4997-ac65-2a24e7894912")]
 	public partial class IfcFillAreaStyle : IfcPresentationStyle,
 		IfcPresentationStyleSelect
 	{
@@ -23,11 +23,6 @@ namespace BuildingSmart.IFC.IfcPresentationAppearanceResource
 		[Required()]
 		[MinLength(1)]
 		public ISet<IfcFillStyleSelect> FillStyles { get; protected set; }
-	
-		[DataMember(Order = 1)] 
-		[XmlAttribute]
-		[Description("Indication whether the length measures provided for the presentation style are model based, or draughting based.  <blockquote class=\"change-ifc2x4\">IFC4 CHANGE&nbsp; New attribute.  </blockquote>")]
-		public IfcBoolean? ModelorDraughting { get; set; }
 	
 	
 		public IfcFillAreaStyle(IfcFillStyleSelect[] fillStyles)

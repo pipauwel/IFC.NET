@@ -19,18 +19,18 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcPlumbingFireProtectionDomain
 {
-	[Guid("61aa9c11-fe11-4bd6-b0d1-5cec357310f0")]
+	[Guid("967e8ab8-c881-4099-afbe-4c61bd073e84")]
 	public partial class IfcFireSuppressionTerminalType : IfcFlowTerminalType
 	{
 		[DataMember(Order = 0)] 
 		[XmlAttribute]
-		[Description("<p>Identifies the predefined types of fire suppression terminal from which the type required may be set.</p>")]
+		[Description("Identifies the predefined types of fire suppression terminal from which the type required may be set.")]
 		[Required()]
 		public IfcFireSuppressionTerminalTypeEnum PredefinedType { get; set; }
 	
 	
-		public IfcFireSuppressionTerminalType(IfcGloballyUniqueId globalId, IfcFireSuppressionTerminalTypeEnum predefinedType)
-			: base(globalId)
+		public IfcFireSuppressionTerminalType(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcFireSuppressionTerminalTypeEnum predefinedType)
+			: base(globalId, ownerHistory)
 		{
 			this.PredefinedType = predefinedType;
 		}

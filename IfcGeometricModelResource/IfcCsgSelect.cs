@@ -13,7 +13,7 @@ using System.Xml.Serialization;
 
 namespace BuildingSmart.IFC.IfcGeometricModelResource
 {
-	[Guid("32b1bcf4-3c3f-404e-a6f6-9cff7d3aa503")]
+	[Guid("16f7bb2e-e185-45ed-a33c-ff27f60299f2")]
 	public interface IfcCsgSelect
 	{
 	}

@@ -13,7 +13,7 @@ using System.Xml.Serialization;
 
 namespace BuildingSmart.IFC.IfcPresentationAppearanceResource
 {
-	[Guid("fc2c7f30-6c0c-4fd2-8b10-75c158637472")]
+	[Guid("931a1d04-6df0-49dc-b109-b851701ae79d")]
 	public interface IfcSurfaceStyleElementSelect
 	{
 	}

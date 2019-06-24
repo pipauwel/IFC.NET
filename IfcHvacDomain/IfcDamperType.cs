@@ -19,7 +19,7 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcHvacDomain
 {
-	[Guid("b8de85d0-242c-4557-ad69-4310a1b46caa")]
+	[Guid("77097c0f-6909-4f7b-a3fe-e1735588cefc")]
 	public partial class IfcDamperType : IfcFlowControllerType
 	{
 		[DataMember(Order = 0)] 
@@ -29,8 +29,8 @@ namespace BuildingSmart.IFC.IfcHvacDomain
 		public IfcDamperTypeEnum PredefinedType { get; set; }
 	
 	
-		public IfcDamperType(IfcGloballyUniqueId globalId, IfcDamperTypeEnum predefinedType)
-			: base(globalId)
+		public IfcDamperType(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcDamperTypeEnum predefinedType)
+			: base(globalId, ownerHistory)
 		{
 			this.PredefinedType = predefinedType;
 		}

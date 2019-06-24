@@ -17,7 +17,7 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcProductExtension
 {
-	[Guid("006b5d7c-0365-48b1-85a4-b7cc46bfe68e")]
+	[Guid("d323c3ef-322b-43ec-85c2-f5eab3b2ec47")]
 	public partial class IfcRelConnectsWithRealizingElements : IfcRelConnectsElements
 	{
 		[DataMember(Order = 0)] 
@@ -32,8 +32,8 @@ namespace BuildingSmart.IFC.IfcProductExtension
 		public IfcLabel? ConnectionType { get; set; }
 	
 	
-		public IfcRelConnectsWithRealizingElements(IfcGloballyUniqueId globalId, IfcElement relatingElement, IfcElement relatedElement, IfcElement[] realizingElements)
-			: base(globalId, relatingElement, relatedElement)
+		public IfcRelConnectsWithRealizingElements(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcElement relatingElement, IfcElement relatedElement, IfcElement[] realizingElements)
+			: base(globalId, ownerHistory, relatingElement, relatedElement)
 		{
 			this.RealizingElements = new HashSet<IfcElement>(realizingElements);
 		}

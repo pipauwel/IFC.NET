@@ -11,11 +11,11 @@ using System.Runtime.Serialization;
 using System.Xml.Serialization;
 
 using BuildingSmart.IFC.IfcMeasureResource;
-using BuildingSmart.IFC.IfcPresentationDefinitionResource;
+using BuildingSmart.IFC.IfcPresentationResource;
 
 namespace BuildingSmart.IFC.IfcPresentationAppearanceResource
 {
-	[Guid("9d0506f4-1626-4bd0-8b81-426609d1f6c0")]
+	[Guid("571d69df-1dc0-4915-a86e-4798da613d70")]
 	public abstract partial class IfcPreDefinedCurveFont : IfcPreDefinedItem,
 		IfcCurveStyleFontSelect
 	{

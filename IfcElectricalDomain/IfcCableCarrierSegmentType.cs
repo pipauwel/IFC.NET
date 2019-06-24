@@ -19,18 +19,18 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcElectricalDomain
 {
-	[Guid("70c2a9af-9e6c-46ee-a672-009025453926")]
+	[Guid("70b829ec-4e14-492c-bbe1-78594515f638")]
 	public partial class IfcCableCarrierSegmentType : IfcFlowSegmentType
 	{
 		[DataMember(Order = 0)] 
 		[XmlAttribute]
-		[Description("<p>Identifies the predefined types of cable carrier segment from which the type required may be set.</p>")]
+		[Description("Identifies the predefined types of cable carrier segment from which the type required may be set.")]
 		[Required()]
 		public IfcCableCarrierSegmentTypeEnum PredefinedType { get; set; }
 	
 	
-		public IfcCableCarrierSegmentType(IfcGloballyUniqueId globalId, IfcCableCarrierSegmentTypeEnum predefinedType)
-			: base(globalId)
+		public IfcCableCarrierSegmentType(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcCableCarrierSegmentTypeEnum predefinedType)
+			: base(globalId, ownerHistory)
 		{
 			this.PredefinedType = predefinedType;
 		}

@@ -18,18 +18,17 @@ using BuildingSmart.IFC.IfcProfileResource;
 
 namespace BuildingSmart.IFC.IfcGeometryResource
 {
-	[Guid("89fd5813-f37e-4602-a4ad-8cdb9bf8869c")]
+	[Guid("bca3ce42-f3a2-4965-829c-1a3206e6adb3")]
 	public partial class IfcSurfaceOfRevolution : IfcSweptSurface
 	{
 		[DataMember(Order = 0)] 
-		[XmlElement]
 		[Description("A point on the axis of revolution and the direction of the axis of revolution.")]
 		[Required()]
 		public IfcAxis1Placement AxisPosition { get; set; }
 	
 	
-		public IfcSurfaceOfRevolution(IfcProfileDef sweptCurve, IfcAxis1Placement axisPosition)
-			: base(sweptCurve)
+		public IfcSurfaceOfRevolution(IfcProfileDef sweptCurve, IfcAxis2Placement3D position, IfcAxis1Placement axisPosition)
+			: base(sweptCurve, position)
 		{
 			this.AxisPosition = axisPosition;
 		}

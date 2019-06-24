@@ -17,24 +17,24 @@ using BuildingSmart.IFC.IfcPresentationOrganizationResource;
 
 namespace BuildingSmart.IFC.IfcGeometricModelResource
 {
-	[Guid("1ad16494-b844-40aa-bd8c-42b28ea6cf30")]
+	[Guid("ea72903a-e218-4de1-961b-c00824a4625c")]
 	public partial class IfcRectangularPyramid : IfcCsgPrimitive3D
 	{
 		[DataMember(Order = 0)] 
 		[XmlAttribute]
-		[Description("The length of the base measured along the placement X axis. It is provided by the inherited axis placement through <em>SELF\\IfcCsgPrimitive3D.Position.P[1]</em>.")]
+		[Description("<EPM-HTML>  The length of the base measured along the placement X axis. It is provided by the inherited axis placement through <i>SELF\\IfcCsgPrimitive3D.Position.P[1]</i>.  </EPM-HTML>")]
 		[Required()]
 		public IfcPositiveLengthMeasure XLength { get; set; }
 	
 		[DataMember(Order = 1)] 
 		[XmlAttribute]
-		[Description("The length of the base measured along the placement Y axis. It is provided by the inherited axis placement through <em>SELF\\IfcCsgPrimitive3D.Position.P[2]</em>.")]
+		[Description("<EPM-HTML>  The length of the base measured along the placement Y axis. It is provided by the inherited axis placement through <i>SELF\\IfcCsgPrimitive3D.Position.P[2]</i>.  </EPM-HTML>")]
 		[Required()]
 		public IfcPositiveLengthMeasure YLength { get; set; }
 	
 		[DataMember(Order = 2)] 
 		[XmlAttribute]
-		[Description("The height of the apex above the plane of the base, measured in the direction of the placement Z axis, the <em>SELF\\IfcCsgPrimitive3D.Position.P[2]</em>.")]
+		[Description("<EPM-HTML>  The height of the apex above the plane of the base, measured in the direction of the placement Z axis, the <i>SELF\\IfcCsgPrimitive3D.Position.P[2]</i>.  </EPM-HTML>")]
 		[Required()]
 		public IfcPositiveLengthMeasure Height { get; set; }
 	

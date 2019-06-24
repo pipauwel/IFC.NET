@@ -20,17 +20,12 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcSharedBldgElements
 {
-	[Guid("b752e035-e86a-47fe-9596-26982071dd71")]
+	[Guid("fff35c3b-235a-4de9-8aa4-d376729359bd")]
 	public partial class IfcMember : IfcBuildingElement
 	{
-		[DataMember(Order = 0)] 
-		[XmlAttribute]
-		[Description("Predefined generic type for a member that is specified in an enumeration. There may be a property set given for the predefined types.  <blockquote class=\"note\">NOTE&nbsp; The <em>PredefinedType</em> shall only be used, if no <em>IfcMemberType</em> is assigned, providing its own <em>IfcMemberType.PredefinedType</em>.</blockquote>  <blockquote class=\"change-ifc2x4\">IFC4 CHANGE  The attribute has been added at the end of the entity definition.</blockquote>")]
-		public IfcMemberTypeEnum? PredefinedType { get; set; }
 	
-	
-		public IfcMember(IfcGloballyUniqueId globalId)
-			: base(globalId)
+		public IfcMember(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory)
+			: base(globalId, ownerHistory)
 		{
 		}
 	

@@ -16,17 +16,17 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcKernel
 {
-	[Guid("4bd9bd82-20ff-4504-bb85-feccfdfe7377")]
+	[Guid("b9fd35c3-2f14-479b-b837-b8d959214bef")]
 	public partial class IfcRelAssociatesClassification : IfcRelAssociates
 	{
 		[DataMember(Order = 0)] 
 		[Description("Classification applied to the objects.")]
 		[Required()]
-		public IfcClassificationSelect RelatingClassification { get; set; }
+		public IfcClassificationNotationSelect RelatingClassification { get; set; }
 	
 	
-		public IfcRelAssociatesClassification(IfcGloballyUniqueId globalId, IfcDefinitionSelect[] relatedObjects, IfcClassificationSelect relatingClassification)
-			: base(globalId, relatedObjects)
+		public IfcRelAssociatesClassification(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcRoot[] relatedObjects, IfcClassificationNotationSelect relatingClassification)
+			: base(globalId, ownerHistory, relatedObjects)
 		{
 			this.RelatingClassification = relatingClassification;
 		}

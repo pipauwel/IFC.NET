@@ -19,18 +19,17 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcElectricalDomain
 {
-	[Guid("9022a034-602f-4405-bb14-2e18d8a865db")]
+	[Guid("36231551-863d-412e-9977-03a196cf6537")]
 	public partial class IfcElectricFlowStorageDeviceType : IfcFlowStorageDeviceType
 	{
 		[DataMember(Order = 0)] 
 		[XmlAttribute]
-		[Description("<p>Identifies the predefined types of electric flow storage devices from which the type required may be set.</p>")]
 		[Required()]
 		public IfcElectricFlowStorageDeviceTypeEnum PredefinedType { get; set; }
 	
 	
-		public IfcElectricFlowStorageDeviceType(IfcGloballyUniqueId globalId, IfcElectricFlowStorageDeviceTypeEnum predefinedType)
-			: base(globalId)
+		public IfcElectricFlowStorageDeviceType(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcElectricFlowStorageDeviceTypeEnum predefinedType)
+			: base(globalId, ownerHistory)
 		{
 			this.PredefinedType = predefinedType;
 		}

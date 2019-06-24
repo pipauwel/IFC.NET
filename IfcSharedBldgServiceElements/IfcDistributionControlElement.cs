@@ -15,23 +15,27 @@ using BuildingSmart.IFC.IfcKernel;
 using BuildingSmart.IFC.IfcMeasureResource;
 using BuildingSmart.IFC.IfcProductExtension;
 using BuildingSmart.IFC.IfcRepresentationResource;
-using BuildingSmart.IFC.IfcSharedBldgElements;
 using BuildingSmart.IFC.IfcStructuralAnalysisDomain;
 using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcSharedBldgServiceElements
 {
-	[Guid("f29818b8-d9e0-49fc-a593-993420817803")]
+	[Guid("ad545ffd-432b-4bf8-8746-16d492c4ee6d")]
 	public partial class IfcDistributionControlElement : IfcDistributionElement
 	{
+		[DataMember(Order = 0)] 
+		[XmlAttribute]
+		[Description("The ControlElement Point Identification assigned to this control element by the Building Automation System.")]
+		public IfcIdentifier? ControlElementId { get; set; }
+	
 		[InverseProperty("RelatedControlElements")] 
 		[Description("Reference through the relationship object to related distribution flow elements.")]
 		[MaxLength(1)]
 		public ISet<IfcRelFlowControlElements> AssignedToFlowElement { get; protected set; }
 	
 	
-		public IfcDistributionControlElement(IfcGloballyUniqueId globalId)
-			: base(globalId)
+		public IfcDistributionControlElement(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory)
+			: base(globalId, ownerHistory)
 		{
 			this.AssignedToFlowElement = new HashSet<IfcRelFlowControlElements>();
 		}

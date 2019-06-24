@@ -17,7 +17,7 @@ using BuildingSmart.IFC.IfcPropertyResource;
 
 namespace BuildingSmart.IFC.IfcPresentationAppearanceResource
 {
-	[Guid("9bf6cd70-4dbe-474d-bb1a-3f558ec186b6")]
+	[Guid("73ae901c-5bb5-4d7f-b59d-a681116104cf")]
 	public partial class IfcExternallyDefinedHatchStyle : IfcExternalReference,
 		IfcFillStyleSelect
 	{

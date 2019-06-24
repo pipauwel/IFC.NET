@@ -10,31 +10,27 @@ using System.Runtime.InteropServices;
 using System.Runtime.Serialization;
 using System.Xml.Serialization;
 
-using BuildingSmart.IFC.IfcExternalReferenceResource;
 using BuildingSmart.IFC.IfcPropertyResource;
 
 namespace BuildingSmart.IFC.IfcActorResource
 {
-	[Guid("52b0207c-cc6a-42c8-a632-c3d63a70b2a5")]
+	[Guid("22436df9-b9a1-47b7-872f-e3d35caded50")]
 	public partial class IfcPersonAndOrganization :
 		IfcActorSelect,
-		BuildingSmart.IFC.IfcPropertyResource.IfcObjectReferenceSelect,
-		BuildingSmart.IFC.IfcExternalReferenceResource.IfcResourceObjectSelect
+		BuildingSmart.IFC.IfcPropertyResource.IfcObjectReferenceSelect
 	{
 		[DataMember(Order = 0)] 
-		[XmlElement]
 		[Description("The person who is related to the organization.")]
 		[Required()]
 		public IfcPerson ThePerson { get; set; }
 	
 		[DataMember(Order = 1)] 
-		[XmlElement]
 		[Description("The organization to which the person is related.")]
 		[Required()]
 		public IfcOrganization TheOrganization { get; set; }
 	
 		[DataMember(Order = 2)] 
-		[Description("Roles played by the person within the context of an organization.  These may differ from the roles in <em>ThePerson.Roles</em> which may be asserted without organizational context.")]
+		[Description("Roles played by the person within the context of an organization.")]
 		[MinLength(1)]
 		public IList<IfcActorRole> Roles { get; protected set; }
 	

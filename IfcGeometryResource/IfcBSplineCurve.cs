@@ -12,20 +12,18 @@ using System.Xml.Serialization;
 
 using BuildingSmart.IFC.IfcGeometricConstraintResource;
 using BuildingSmart.IFC.IfcGeometricModelResource;
-using BuildingSmart.IFC.IfcMeasureResource;
 using BuildingSmart.IFC.IfcPresentationAppearanceResource;
 using BuildingSmart.IFC.IfcPresentationOrganizationResource;
 
 namespace BuildingSmart.IFC.IfcGeometryResource
 {
-	[Guid("b9435164-1687-4e0f-8afc-85feadf601cd")]
+	[Guid("693040e6-1419-4534-8da8-c9b5f860d52b")]
 	public abstract partial class IfcBSplineCurve : IfcBoundedCurve
 	{
 		[DataMember(Order = 0)] 
-		[XmlAttribute]
 		[Description("The algebraic degree of the basis functions.")]
 		[Required()]
-		public IfcInteger Degree { get; set; }
+		public Int64 Degree { get; set; }
 	
 		[DataMember(Order = 1)] 
 		[Description("The list of control points for the curve.")]
@@ -40,19 +38,17 @@ namespace BuildingSmart.IFC.IfcGeometryResource
 		public IfcBSplineCurveForm CurveForm { get; set; }
 	
 		[DataMember(Order = 3)] 
-		[XmlAttribute]
 		[Description("Indication of whether the curve is closed; it is for information only.")]
 		[Required()]
-		public IfcLogical ClosedCurve { get; set; }
+		public Boolean? ClosedCurve { get; set; }
 	
 		[DataMember(Order = 4)] 
-		[XmlAttribute]
 		[Description("Indication whether the curve self-intersects or not; it is for information only.")]
 		[Required()]
-		public IfcLogical SelfIntersect { get; set; }
+		public Boolean? SelfIntersect { get; set; }
 	
 	
-		protected IfcBSplineCurve(IfcInteger degree, IfcCartesianPoint[] controlPointsList, IfcBSplineCurveForm curveForm, IfcLogical closedCurve, IfcLogical selfIntersect)
+		protected IfcBSplineCurve(Int64 degree, IfcCartesianPoint[] controlPointsList, IfcBSplineCurveForm curveForm, Boolean? closedCurve, Boolean? selfIntersect)
 		{
 			this.Degree = degree;
 			this.ControlPointsList = new List<IfcCartesianPoint>(controlPointsList);
@@ -61,9 +57,9 @@ namespace BuildingSmart.IFC.IfcGeometryResource
 			this.SelfIntersect = selfIntersect;
 		}
 	
-		public new IfcInteger UpperIndexOnControlPoints { get { return new IfcInteger(); } }
-	
 		public new IfcCartesianPoint ControlPoints { get { return null; } }
+	
+		public new Int64 UpperIndexOnControlPoints { get { return null; } }
 	
 	
 	}

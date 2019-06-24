@@ -16,7 +16,7 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcControlExtension
 {
-	[Guid("e8ca45f2-cf0b-4a93-84ca-ea3c10c7b27e")]
+	[Guid("be13e443-b031-4314-a1ca-5054984b82c8")]
 	public partial class IfcPerformanceHistory : IfcControl
 	{
 		[DataMember(Order = 0)] 
@@ -25,14 +25,9 @@ namespace BuildingSmart.IFC.IfcControlExtension
 		[Required()]
 		public IfcLabel LifeCyclePhase { get; set; }
 	
-		[DataMember(Order = 1)] 
-		[XmlAttribute]
-		[Description("Predefined generic type for a performace history that is specified in an enumeration.  <blockquote class=\"change-ifc2x4\">IFC4 CHANGE  The attribute has been added at the end of the entity definition.</blockquote>")]
-		public IfcPerformanceHistoryTypeEnum? PredefinedType { get; set; }
 	
-	
-		public IfcPerformanceHistory(IfcGloballyUniqueId globalId, IfcLabel lifeCyclePhase)
-			: base(globalId)
+		public IfcPerformanceHistory(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcLabel lifeCyclePhase)
+			: base(globalId, ownerHistory)
 		{
 			this.LifeCyclePhase = lifeCyclePhase;
 		}

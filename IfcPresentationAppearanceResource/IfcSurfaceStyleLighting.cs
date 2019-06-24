@@ -10,35 +10,31 @@ using System.Runtime.InteropServices;
 using System.Runtime.Serialization;
 using System.Xml.Serialization;
 
-using BuildingSmart.IFC.IfcPresentationDefinitionResource;
+using BuildingSmart.IFC.IfcPresentationResource;
 
 namespace BuildingSmart.IFC.IfcPresentationAppearanceResource
 {
-	[Guid("5c51bae3-8ace-443a-9e9b-d416bb389d95")]
-	public partial class IfcSurfaceStyleLighting : IfcPresentationItem,
+	[Guid("c4fa116c-ba8d-4406-9e9f-3f501e807022")]
+	public partial class IfcSurfaceStyleLighting :
 		IfcSurfaceStyleElementSelect
 	{
 		[DataMember(Order = 0)] 
-		[XmlElement]
-		[Description("The degree of diffusion of the transmitted light. In the case of completely transparent materials there is no diffusion. The greater the diffusing power, the smaller the direct component of the transmitted light, up to the point where only diffuse light is produced. A value of 1 means totally diffuse for that colour part of the light.  <blockquote class=\"note\">NOTE&nbsp; The factor can be measured physically and has three ratios for the red, green and blue part of the light.</blockquote>")]
+		[Description("<EPM-HTML>  The degree of diffusion of the transmitted light. In the case of completely transparent materials there is no diffusion. The greater the diffusing power, the smaller the direct component of the transmitted light, up to the point where only diffuse light is produced.A value of 1 means totally diffuse for that colour part of the light.  <blockquote><small>The factor can be measured physically and has three ratios for the red, green and blue part of the light.  </small></blockquote>  </EPM-HTML>")]
 		[Required()]
 		public IfcColourRgb DiffuseTransmissionColour { get; set; }
 	
 		[DataMember(Order = 1)] 
-		[XmlElement]
-		[Description("The degree of diffusion of the reflected light. In the case of specular surfaces there is no diffusion. The greater the diffusing power of the reflecting surface, the smaller the specular component of the reflected light, up to the point where only diffuse light is produced. A value of 1 means totally diffuse for that colour part of the light.   <blockquote class=\"note\">NOTE&nbsp; The factor can be measured physically and has three ratios for the red, green and blue part of the light.</blockquote>")]
+		[Description("<EPM-HTML>  The degree of diffusion of the reflected light. In the case of specular surfaces there is no diffusion. The greater the diffusing power of the reflecting surface, the smaller the specular component of the reflected light, up to the point where only diffuse light is produced. A value of 1 means totally diffuse for that colour part of the light.   <blockquote><small>The factor can be measured physically and has three ratios for the red, green and blue part of the light.  </small></blockquote>  </EPM-HTML>")]
 		[Required()]
 		public IfcColourRgb DiffuseReflectionColour { get; set; }
 	
 		[DataMember(Order = 2)] 
-		[XmlElement]
-		[Description("Describes how the light falling on a body is totally or partially transmitted.   <blockquote class=\"note\">The factor can be measured physically and has three ratios for the red, green and blue part of the light.</blockquote>")]
+		[Description("<EPM-HTML>  Describes how the light falling on a body is totally or partially transmitted.   <blockquote><small>The factor can be measured physically and has three ratios for the red, green and blue part of the light.  </small></blockquote>  </EPM-HTML>")]
 		[Required()]
 		public IfcColourRgb TransmissionColour { get; set; }
 	
 		[DataMember(Order = 3)] 
-		[XmlElement]
-		[Description("A coefficient that determines the extent that the light falling onto a surface is fully or partially reflected.   <blockquote class=\"note\">NOTE&nbsp; The factor can be measured physically and has three ratios for the red, green and blue part of the light.</blockquote>")]
+		[Description("<EPM-HTML>  A coefficient that determines the extent that the light falling onto a surface is fully or partially reflected.   <blockquote><small>The factor can be measured physically and has three ratios for the red, green and blue part of the light.  </small></blockquote>  </EPM-HTML>")]
 		[Required()]
 		public IfcColourRgb ReflectanceColour { get; set; }
 	

@@ -19,18 +19,18 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcElectricalDomain
 {
-	[Guid("ec824845-e28c-4abc-a57a-8c95bf556dc8")]
+	[Guid("888de9b2-69b5-44cc-90cc-590e46952de1")]
 	public partial class IfcMotorConnectionType : IfcEnergyConversionDeviceType
 	{
 		[DataMember(Order = 0)] 
 		[XmlAttribute]
-		[Description("<p>Identifies the predefined types of motor connection from which the type required may be set.</p>")]
+		[Description("Identifies the predefined types of motor connection from which the type required may be set.")]
 		[Required()]
 		public IfcMotorConnectionTypeEnum PredefinedType { get; set; }
 	
 	
-		public IfcMotorConnectionType(IfcGloballyUniqueId globalId, IfcMotorConnectionTypeEnum predefinedType)
-			: base(globalId)
+		public IfcMotorConnectionType(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcMotorConnectionTypeEnum predefinedType)
+			: base(globalId, ownerHistory)
 		{
 			this.PredefinedType = predefinedType;
 		}

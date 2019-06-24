@@ -17,12 +17,12 @@ using BuildingSmart.IFC.IfcPresentationOrganizationResource;
 
 namespace BuildingSmart.IFC.IfcGeometricModelResource
 {
-	[Guid("6868acf7-18b5-4d39-9a9f-70d45e418223")]
+	[Guid("2e1c7174-c57a-4525-90a6-8582724967bc")]
 	public partial class IfcSphere : IfcCsgPrimitive3D
 	{
 		[DataMember(Order = 0)] 
 		[XmlAttribute]
-		[Description("The radius of the sphere.")]
+		[Description("<EPM-HTML>  </EPM-HTML>")]
 		[Required()]
 		public IfcPositiveLengthMeasure Radius { get; set; }
 	

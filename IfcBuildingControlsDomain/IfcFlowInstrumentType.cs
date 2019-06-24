@@ -19,18 +19,18 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcBuildingControlsDomain
 {
-	[Guid("92253df9-2c74-4a77-9837-72f4f240f459")]
+	[Guid("b42d336a-f4c7-4dfc-9c57-81a1df4bc608")]
 	public partial class IfcFlowInstrumentType : IfcDistributionControlElementType
 	{
 		[DataMember(Order = 0)] 
 		[XmlAttribute]
-		[Description("<p>Identifies the predefined types of flow instrument from which the type required may be set.</p>")]
+		[Description("Identifies the predefined types of flow instrument from which the type required may be set.")]
 		[Required()]
 		public IfcFlowInstrumentTypeEnum PredefinedType { get; set; }
 	
 	
-		public IfcFlowInstrumentType(IfcGloballyUniqueId globalId, IfcFlowInstrumentTypeEnum predefinedType)
-			: base(globalId)
+		public IfcFlowInstrumentType(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcFlowInstrumentTypeEnum predefinedType)
+			: base(globalId, ownerHistory)
 		{
 			this.PredefinedType = predefinedType;
 		}

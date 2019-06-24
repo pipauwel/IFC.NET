@@ -10,27 +10,24 @@ using System.Runtime.InteropServices;
 using System.Runtime.Serialization;
 using System.Xml.Serialization;
 
-using BuildingSmart.IFC.IfcExternalReferenceResource;
 using BuildingSmart.IFC.IfcGeometryResource;
 using BuildingSmart.IFC.IfcMeasureResource;
-using BuildingSmart.IFC.IfcPresentationDefinitionResource;
 
 namespace BuildingSmart.IFC.IfcPresentationAppearanceResource
 {
-	[Guid("e7a73b70-71af-407a-a632-68e2de126223")]
+	[Guid("15e29732-f8d2-4bce-882e-1173c7f66d31")]
 	public partial class IfcImageTexture : IfcSurfaceTexture
 	{
 		[DataMember(Order = 0)] 
 		[XmlAttribute]
-		[Description("Location, provided as an URI, at which the image texture is electronically published.")]
 		[Required()]
-		public IfcURIReference URLReference { get; set; }
+		public IfcIdentifier UrlReference { get; set; }
 	
 	
-		public IfcImageTexture(IfcBoolean repeatS, IfcBoolean repeatT, IfcURIReference uRLReference)
-			: base(repeatS, repeatT)
+		public IfcImageTexture(Boolean repeatS, Boolean repeatT, IfcSurfaceTextureEnum textureType, IfcIdentifier urlReference)
+			: base(repeatS, repeatT, textureType)
 		{
-			this.URLReference = uRLReference;
+			this.UrlReference = urlReference;
 		}
 	
 	

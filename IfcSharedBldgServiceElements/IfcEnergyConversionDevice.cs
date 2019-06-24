@@ -15,18 +15,17 @@ using BuildingSmart.IFC.IfcKernel;
 using BuildingSmart.IFC.IfcMeasureResource;
 using BuildingSmart.IFC.IfcProductExtension;
 using BuildingSmart.IFC.IfcRepresentationResource;
-using BuildingSmart.IFC.IfcSharedBldgElements;
 using BuildingSmart.IFC.IfcStructuralAnalysisDomain;
 using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcSharedBldgServiceElements
 {
-	[Guid("856df463-42b9-4a83-a733-b458ab487012")]
+	[Guid("d09324ea-18fe-4136-9a8b-eb4bbbeb7f53")]
 	public partial class IfcEnergyConversionDevice : IfcDistributionFlowElement
 	{
 	
-		public IfcEnergyConversionDevice(IfcGloballyUniqueId globalId)
-			: base(globalId)
+		public IfcEnergyConversionDevice(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory)
+			: base(globalId, ownerHistory)
 		{
 		}
 	

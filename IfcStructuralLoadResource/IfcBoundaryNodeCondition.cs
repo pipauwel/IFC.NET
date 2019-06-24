@@ -14,32 +14,38 @@ using BuildingSmart.IFC.IfcMeasureResource;
 
 namespace BuildingSmart.IFC.IfcStructuralLoadResource
 {
-	[Guid("0454a0f4-fdfb-4856-bad8-c1a1202137d1")]
+	[Guid("1386f6f9-f668-4418-9168-55d106724177")]
 	public partial class IfcBoundaryNodeCondition : IfcBoundaryCondition
 	{
 		[DataMember(Order = 0)] 
-		[Description("Translational stiffness value in x-direction of the coordinate system defined by the instance which uses this resource object.")]
-		public IfcTranslationalStiffnessSelect TranslationalStiffnessX { get; set; }
+		[XmlAttribute]
+		[Description("Linear stiffness value in x-direction of the coordinate system defined by the instance which uses this resource object.")]
+		public IfcLinearStiffnessMeasure? LinearStiffnessX { get; set; }
 	
 		[DataMember(Order = 1)] 
-		[Description("Translational stiffness value in y-direction of the coordinate system defined by the instance which uses this resource object.")]
-		public IfcTranslationalStiffnessSelect TranslationalStiffnessY { get; set; }
+		[XmlAttribute]
+		[Description("Linear stiffness value in y-direction of the coordinate system defined by the instance which uses this resource object.")]
+		public IfcLinearStiffnessMeasure? LinearStiffnessY { get; set; }
 	
 		[DataMember(Order = 2)] 
-		[Description("Translational stiffness value in z-direction of the coordinate system defined by the instance which uses this resource object.")]
-		public IfcTranslationalStiffnessSelect TranslationalStiffnessZ { get; set; }
+		[XmlAttribute]
+		[Description("Linear stiffness value in z-direction of the coordinate system defined by the instance which uses this resource object.")]
+		public IfcLinearStiffnessMeasure? LinearStiffnessZ { get; set; }
 	
 		[DataMember(Order = 3)] 
+		[XmlAttribute]
 		[Description("Rotational stiffness value about the x-axis of the coordinate system defined by the instance which uses this resource object.")]
-		public IfcRotationalStiffnessSelect RotationalStiffnessX { get; set; }
+		public IfcRotationalStiffnessMeasure? RotationalStiffnessX { get; set; }
 	
 		[DataMember(Order = 4)] 
+		[XmlAttribute]
 		[Description("Rotational stiffness value about the y-axis of the coordinate system defined by the instance which uses this resource object.")]
-		public IfcRotationalStiffnessSelect RotationalStiffnessY { get; set; }
+		public IfcRotationalStiffnessMeasure? RotationalStiffnessY { get; set; }
 	
 		[DataMember(Order = 5)] 
+		[XmlAttribute]
 		[Description("Rotational stiffness value about the z-axis of the coordinate system defined by the instance which uses this resource object.")]
-		public IfcRotationalStiffnessSelect RotationalStiffnessZ { get; set; }
+		public IfcRotationalStiffnessMeasure? RotationalStiffnessZ { get; set; }
 	
 	
 		public IfcBoundaryNodeCondition()

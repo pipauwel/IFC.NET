@@ -10,24 +10,24 @@ using System.Runtime.InteropServices;
 using System.Runtime.Serialization;
 using System.Xml.Serialization;
 
-using BuildingSmart.IFC.IfcExternalReferenceResource;
 using BuildingSmart.IFC.IfcGeometryResource;
 using BuildingSmart.IFC.IfcMeasureResource;
 
 namespace BuildingSmart.IFC.IfcProfileResource
 {
-	[Guid("eddbf896-fef4-49ba-b5c8-5315a44af82c")]
+	[Guid("5f2b33b3-4a09-48ad-858a-b13264839494")]
 	public abstract partial class IfcParameterizedProfileDef : IfcProfileDef
 	{
 		[DataMember(Order = 0)] 
-		[XmlElement]
-		[Description("Position coordinate system of the parameterized profile definition. If unspecified, no translation and no rotation is applied.")]
+		[Description("Position coordinate system of the parameterized profile definition.")]
+		[Required()]
 		public IfcAxis2Placement2D Position { get; set; }
 	
 	
-		protected IfcParameterizedProfileDef(IfcProfileTypeEnum profileType)
+		protected IfcParameterizedProfileDef(IfcProfileTypeEnum profileType, IfcAxis2Placement2D position)
 			: base(profileType)
 		{
+			this.Position = position;
 		}
 	
 	

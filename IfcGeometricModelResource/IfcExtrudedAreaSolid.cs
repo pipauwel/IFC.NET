@@ -10,7 +10,6 @@ using System.Runtime.InteropServices;
 using System.Runtime.Serialization;
 using System.Xml.Serialization;
 
-using BuildingSmart.IFC.IfcGeometricConstraintResource;
 using BuildingSmart.IFC.IfcGeometryResource;
 using BuildingSmart.IFC.IfcMeasureResource;
 using BuildingSmart.IFC.IfcPresentationAppearanceResource;
@@ -19,24 +18,23 @@ using BuildingSmart.IFC.IfcProfileResource;
 
 namespace BuildingSmart.IFC.IfcGeometricModelResource
 {
-	[Guid("f65777d3-6cb6-48f6-8a26-d79b570cdfb2")]
+	[Guid("1d63be08-0548-4ede-bf7c-c2246ea77676")]
 	public partial class IfcExtrudedAreaSolid : IfcSweptAreaSolid
 	{
 		[DataMember(Order = 0)] 
-		[XmlElement]
-		[Description("The direction in which the surface, provided by <em>SweptArea</em> is to be swept.")]
+		[Description("The direction in which the surface is to be swept.")]
 		[Required()]
 		public IfcDirection ExtrudedDirection { get; set; }
 	
 		[DataMember(Order = 1)] 
 		[XmlAttribute]
-		[Description("The distance the surface is to be swept along the <em>ExtrudedDirection</em>.")]
+		[Description("The distance the surface is to be swept.")]
 		[Required()]
 		public IfcPositiveLengthMeasure Depth { get; set; }
 	
 	
-		public IfcExtrudedAreaSolid(IfcProfileDef sweptArea, IfcDirection extrudedDirection, IfcPositiveLengthMeasure depth)
-			: base(sweptArea)
+		public IfcExtrudedAreaSolid(IfcProfileDef sweptArea, IfcAxis2Placement3D position, IfcDirection extrudedDirection, IfcPositiveLengthMeasure depth)
+			: base(sweptArea, position)
 		{
 			this.ExtrudedDirection = extrudedDirection;
 			this.Depth = depth;

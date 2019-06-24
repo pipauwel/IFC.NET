@@ -18,23 +18,23 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcStructuralAnalysisDomain
 {
-	[Guid("98531769-b684-4095-a8e0-843609f7cef0")]
+	[Guid("0220cd79-a55b-4394-b463-e381c4e5129c")]
 	public partial class IfcStructuralSurfaceMember : IfcStructuralMember
 	{
 		[DataMember(Order = 0)] 
 		[XmlAttribute]
-		[Description("Type of member with respect to its load carrying behavior in this analysis idealization.")]
+		[Description("Defines the load carrying behavior of the member, as far as it is taken into account in the analysis.")]
 		[Required()]
-		public IfcStructuralSurfaceMemberTypeEnum PredefinedType { get; set; }
+		public IfcStructuralSurfaceTypeEnum PredefinedType { get; set; }
 	
 		[DataMember(Order = 1)] 
 		[XmlAttribute]
-		[Description("Defines the typically understood thickness of the structural surface member, measured normal to its reference surface.")]
+		[Description("Defines the typically understood thickness of the structural face member, i.e. the smallest spatial dimension of the element.")]
 		public IfcPositiveLengthMeasure? Thickness { get; set; }
 	
 	
-		public IfcStructuralSurfaceMember(IfcGloballyUniqueId globalId, IfcStructuralSurfaceMemberTypeEnum predefinedType)
-			: base(globalId)
+		public IfcStructuralSurfaceMember(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcStructuralSurfaceTypeEnum predefinedType)
+			: base(globalId, ownerHistory)
 		{
 			this.PredefinedType = predefinedType;
 		}

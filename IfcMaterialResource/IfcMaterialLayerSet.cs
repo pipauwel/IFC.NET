@@ -10,31 +10,24 @@ using System.Runtime.InteropServices;
 using System.Runtime.Serialization;
 using System.Xml.Serialization;
 
-using BuildingSmart.IFC.IfcExternalReferenceResource;
 using BuildingSmart.IFC.IfcMeasureResource;
-using BuildingSmart.IFC.IfcProductExtension;
-using BuildingSmart.IFC.IfcPropertyResource;
 
 namespace BuildingSmart.IFC.IfcMaterialResource
 {
-	[Guid("c1a5e8bc-cb6b-4466-8130-d2946ca1f8a0")]
-	public partial class IfcMaterialLayerSet : IfcMaterialDefinition
+	[Guid("f72fc8ce-1ae3-4ab8-abe6-48c801c4cfbb")]
+	public partial class IfcMaterialLayerSet :
+		IfcMaterialSelect
 	{
 		[DataMember(Order = 0)] 
-		[Description("Identification of the <em>IfcMaterialLayer</em>&rsquo;s from which the <em>IfcMaterialLayerSet</em> is composed.")]
+		[Description("Identification of the layers from which the material layer set is composed.")]
 		[Required()]
 		[MinLength(1)]
 		public IList<IfcMaterialLayer> MaterialLayers { get; protected set; }
 	
 		[DataMember(Order = 1)] 
 		[XmlAttribute]
-		[Description("The name by which the <em>IfcMaterialLayerSet</em> is known.")]
+		[Description("The name by which the material layer set is known.")]
 		public IfcLabel? LayerSetName { get; set; }
-	
-		[DataMember(Order = 2)] 
-		[XmlAttribute]
-		[Description("Definition of the <em>IfcMaterialLayerSet</em> in descriptive terms.  <blockquote class=\"change-ifc2x4\">    IFC4 CHANGE&nbsp; The attribute has been added at the end of attribute list.  </blockquote>")]
-		public IfcText? Description { get; set; }
 	
 	
 		public IfcMaterialLayerSet(IfcMaterialLayer[] materialLayers)

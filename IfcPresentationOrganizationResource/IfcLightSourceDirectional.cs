@@ -13,14 +13,14 @@ using System.Xml.Serialization;
 using BuildingSmart.IFC.IfcGeometryResource;
 using BuildingSmart.IFC.IfcMeasureResource;
 using BuildingSmart.IFC.IfcPresentationAppearanceResource;
+using BuildingSmart.IFC.IfcPresentationResource;
 
 namespace BuildingSmart.IFC.IfcPresentationOrganizationResource
 {
-	[Guid("584bad5f-0335-4de5-9c7d-f09eb0a94bf0")]
+	[Guid("9b92d734-c9c0-4a8f-85c1-aaff4b5dacbd")]
 	public partial class IfcLightSourceDirectional : IfcLightSource
 	{
 		[DataMember(Order = 0)] 
-		[XmlElement]
 		[Description("Definition from ISO/CD 10303-46:1992: This direction is the direction of the light source.  Definition from VRML97 - ISO/IEC 14772-1:1997: The direction field specifies the direction vector of the illumination emanating from the light source in the local coordinate system. Light is emitted along parallel rays from an infinite distance away.")]
 		[Required()]
 		public IfcDirection Orientation { get; set; }

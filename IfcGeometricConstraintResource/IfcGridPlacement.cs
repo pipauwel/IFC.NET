@@ -14,18 +14,17 @@ using BuildingSmart.IFC.IfcKernel;
 
 namespace BuildingSmart.IFC.IfcGeometricConstraintResource
 {
-	[Guid("f2e1a6b7-3d7a-4c60-a04a-924b62253b52")]
+	[Guid("ec46e52c-0df8-4d82-b6fc-beb260d50283")]
 	public partial class IfcGridPlacement : IfcObjectPlacement
 	{
 		[DataMember(Order = 0)] 
-		[XmlElement]
-		[Description("Placement of the object coordinate system defined by the intersection of two grid axes.")]
+		[Description("A constraint on one or both ends of the path for an ExtrudedSolid.")]
 		[Required()]
 		public IfcVirtualGridIntersection PlacementLocation { get; set; }
 	
 		[DataMember(Order = 1)] 
-		[Description("Reference to either an explicit direction, or a second grid axis intersection, which defines the orientation of the grid placement.  <blockquote class=\"change-ifc2x4\">IFC4 CHANGE  The select of an explict direction has been added.</blockquote>")]
-		public IfcGridPlacementDirectionSelect PlacementRefDirection { get; set; }
+		[Description("Reference to a second grid axis intersection, which defines the orientation of the grid placement.")]
+		public IfcVirtualGridIntersection PlacementRefDirection { get; set; }
 	
 	
 		public IfcGridPlacement(IfcVirtualGridIntersection placementLocation)

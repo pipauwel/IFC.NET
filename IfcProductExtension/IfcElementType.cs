@@ -17,7 +17,7 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcProductExtension
 {
-	[Guid("08323994-8b0a-4268-8051-2fe6ad76a2b9")]
+	[Guid("afac3ba3-7d8a-41f0-afcb-e94ffbf702ef")]
 	public abstract partial class IfcElementType : IfcTypeProduct
 	{
 		[DataMember(Order = 0)] 
@@ -26,8 +26,8 @@ namespace BuildingSmart.IFC.IfcProductExtension
 		public IfcLabel? ElementType { get; set; }
 	
 	
-		protected IfcElementType(IfcGloballyUniqueId globalId)
-			: base(globalId)
+		protected IfcElementType(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory)
+			: base(globalId, ownerHistory)
 		{
 		}
 	

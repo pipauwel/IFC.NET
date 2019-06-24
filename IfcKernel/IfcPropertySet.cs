@@ -16,7 +16,7 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcKernel
 {
-	[Guid("a6744c81-6540-4918-b206-1d28320b2ee7")]
+	[Guid("cec1f626-7d52-40c1-b081-863946b3bab4")]
 	public partial class IfcPropertySet : IfcPropertySetDefinition
 	{
 		[DataMember(Order = 0)] 
@@ -26,8 +26,8 @@ namespace BuildingSmart.IFC.IfcKernel
 		public ISet<IfcProperty> HasProperties { get; protected set; }
 	
 	
-		public IfcPropertySet(IfcGloballyUniqueId globalId, IfcProperty[] hasProperties)
-			: base(globalId)
+		public IfcPropertySet(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcProperty[] hasProperties)
+			: base(globalId, ownerHistory)
 		{
 			this.HasProperties = new HashSet<IfcProperty>(hasProperties);
 		}

@@ -16,9 +16,8 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcKernel
 {
-	[Guid("de22199b-0d1f-4205-842f-3dea858c822b")]
-	public partial class IfcTypeProduct : IfcTypeObject,
-		IfcProductSelect
+	[Guid("b442e2c7-0333-4c55-8b8b-df240b0d59af")]
+	public partial class IfcTypeProduct : IfcTypeObject
 	{
 		[DataMember(Order = 0)] 
 		[Description("List of unique representation maps. Each representation map describes a block definition of the shape of the product style. By providing more than one representation map, a multi-view block definition can be given.")]
@@ -31,16 +30,11 @@ namespace BuildingSmart.IFC.IfcKernel
 		[Description("The tag (or label) identifier at the particular type of a product, e.g. the article number (like the EAN). It is the identifier at the specific level.")]
 		public IfcLabel? Tag { get; set; }
 	
-		[InverseProperty("RelatingProduct")] 
-		[Description("Reference to the <em>IfcRelAssignsToProduct</em> relationship, by which other products, processes, controls, resources or actors (as subtypes of <em>IfcObjectDefinition</em>) can be related to this product type.  <blockquote class=\"change-ifc2x4\">IFC4 CHANGE&nbsp;  New inverse relationship.</blockquote>")]
-		public ISet<IfcRelAssignsToProduct> ReferencedBy { get; protected set; }
 	
-	
-		public IfcTypeProduct(IfcGloballyUniqueId globalId)
-			: base(globalId)
+		public IfcTypeProduct(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory)
+			: base(globalId, ownerHistory)
 		{
 			this.RepresentationMaps = new List<IfcRepresentationMap>();
-			this.ReferencedBy = new HashSet<IfcRelAssignsToProduct>();
 		}
 	
 	

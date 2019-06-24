@@ -13,7 +13,7 @@ using System.Xml.Serialization;
 
 namespace BuildingSmart.IFC.IfcStructuralAnalysisDomain
 {
-	[Guid("ede8f91b-bb61-47e7-8f34-ed5b8b5bc5ae")]
+	[Guid("99703894-9dc4-48ea-be7f-c74064d2b947")]
 	public enum IfcAnalysisModelTypeEnum
 	{
 		IN_PLANE_LOADING_2D = 1,

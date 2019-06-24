@@ -10,13 +10,12 @@ using System.Runtime.InteropServices;
 using System.Runtime.Serialization;
 using System.Xml.Serialization;
 
-using BuildingSmart.IFC.IfcExternalReferenceResource;
 using BuildingSmart.IFC.IfcMeasureResource;
 
 namespace BuildingSmart.IFC.IfcPropertyResource
 {
-	[Guid("95f63d3d-7d92-449b-89e3-626dfacc0648")]
-	public partial class IfcPropertyEnumeration : IfcPropertyAbstraction
+	[Guid("b0a8d959-6be7-4b37-8bd8-74c971669777")]
+	public partial class IfcPropertyEnumeration
 	{
 		[DataMember(Order = 0)] 
 		[XmlAttribute]

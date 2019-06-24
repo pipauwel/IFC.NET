@@ -17,18 +17,18 @@ using BuildingSmart.IFC.IfcPresentationOrganizationResource;
 
 namespace BuildingSmart.IFC.IfcGeometricModelResource
 {
-	[Guid("1daf3ba6-e5cf-4741-8896-c9448b95f83a")]
+	[Guid("1acc0179-b420-416d-95e1-71185b188860")]
 	public partial class IfcRightCircularCylinder : IfcCsgPrimitive3D
 	{
 		[DataMember(Order = 0)] 
 		[XmlAttribute]
-		[Description("The distance between the planar circular faces of the cylinder.")]
+		[Description("<EPM-HTML>  </EPM-HTML>")]
 		[Required()]
 		public IfcPositiveLengthMeasure Height { get; set; }
 	
 		[DataMember(Order = 1)] 
 		[XmlAttribute]
-		[Description("The radius of the cylinder.")]
+		[Description("<EPM-HTML>  </EPM-HTML>")]
 		[Required()]
 		public IfcPositiveLengthMeasure Radius { get; set; }
 	

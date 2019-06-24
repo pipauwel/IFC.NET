@@ -19,18 +19,18 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcBuildingControlsDomain
 {
-	[Guid("082e1f55-cfe3-44d7-a8e2-234118f81fca")]
+	[Guid("c47f0023-e476-4fdf-baab-b58d3a7980fe")]
 	public partial class IfcControllerType : IfcDistributionControlElementType
 	{
 		[DataMember(Order = 0)] 
 		[XmlAttribute]
-		[Description("<p>Identifies the predefined types of controller from which the type required may be set.</p>")]
+		[Description("Identifies the predefined types of controller from which the type required may be set.")]
 		[Required()]
 		public IfcControllerTypeEnum PredefinedType { get; set; }
 	
 	
-		public IfcControllerType(IfcGloballyUniqueId globalId, IfcControllerTypeEnum predefinedType)
-			: base(globalId)
+		public IfcControllerType(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcControllerTypeEnum predefinedType)
+			: base(globalId, ownerHistory)
 		{
 			this.PredefinedType = predefinedType;
 		}

@@ -12,28 +12,26 @@ using System.Xml.Serialization;
 
 using BuildingSmart.IFC.IfcGeometryResource;
 using BuildingSmart.IFC.IfcMeasureResource;
-using BuildingSmart.IFC.IfcPresentationDefinitionResource;
 
 namespace BuildingSmart.IFC.IfcPresentationAppearanceResource
 {
-	[Guid("6f3625b4-6b27-4ac2-8c49-34b2079baf0c")]
+	[Guid("0678d26b-77f3-482d-89cf-fa958914ac86")]
 	public partial class IfcBlobTexture : IfcSurfaceTexture
 	{
 		[DataMember(Order = 0)] 
 		[XmlAttribute]
-		[Description("The format of the <em>RasterCode</em> often using a compression.")]
+		[Description("<EPM-HTML>  The format of the <i>RasterCode</i> often using a compression.  </EPM-HTML>")]
 		[Required()]
 		public IfcIdentifier RasterFormat { get; set; }
 	
 		[DataMember(Order = 1)] 
-		[XmlAttribute]
-		[Description("Blob, given as a single binary, to capture the texture within one popular file (compression) format. The file format is provided by the <em>RasterFormat</em> attribute.")]
+		[Description("<EPM-HTML>  Blob, given as a single binary, to capture the texture within one popular file (compression) format.  </EPM-HTML>")]
 		[Required()]
-		public IfcBinary RasterCode { get; set; }
+		public Boolean RasterCode { get; set; }
 	
 	
-		public IfcBlobTexture(IfcBoolean repeatS, IfcBoolean repeatT, IfcIdentifier rasterFormat, IfcBinary rasterCode)
-			: base(repeatS, repeatT)
+		public IfcBlobTexture(Boolean repeatS, Boolean repeatT, IfcSurfaceTextureEnum textureType, IfcIdentifier rasterFormat, Boolean rasterCode)
+			: base(repeatS, repeatT, textureType)
 		{
 			this.RasterFormat = rasterFormat;
 			this.RasterCode = rasterCode;

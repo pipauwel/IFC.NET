@@ -20,18 +20,20 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcSharedBldgElements
 {
-	[Guid("21ce7129-20ff-438a-bb0c-04ff211bddf4")]
+	[Guid("537e375f-b293-4782-b530-2121ed518de0")]
 	public partial class IfcRamp : IfcBuildingElement
 	{
 		[DataMember(Order = 0)] 
 		[XmlAttribute]
-		[Description("Predefined generic types for a ramp that are specified in an enumeration. There may be a property set given for the predefined types.  <blockquote class=\"note\">NOTE&nbsp; The <em>PredefinedType</em> shall only be used, if no <em>IfcRampType</em> is assigned, providing its own <em>IfcRampType.PredefinedType</em>.</blockquote>  <blockquote class=\"change-ifc2x4\">IFC4 CHANGE  The attribute has been renamed from ShapeType and changed to be OPTIONAL with upward compatibility for file based exchange.</blockquote>")]
-		public IfcRampTypeEnum? PredefinedType { get; set; }
+		[Description("Predefined shape types for a ramp that are specified in an Enum.")]
+		[Required()]
+		public IfcRampTypeEnum ShapeType { get; set; }
 	
 	
-		public IfcRamp(IfcGloballyUniqueId globalId)
-			: base(globalId)
+		public IfcRamp(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcRampTypeEnum shapeType)
+			: base(globalId, ownerHistory)
 		{
+			this.ShapeType = shapeType;
 		}
 	
 	

@@ -19,7 +19,7 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcHvacDomain
 {
-	[Guid("8eddad0b-39d9-48df-b854-7ff316225c5a")]
+	[Guid("fe997b31-a301-4995-90cf-ec15348e45e1")]
 	public partial class IfcCoilType : IfcEnergyConversionDeviceType
 	{
 		[DataMember(Order = 0)] 
@@ -29,8 +29,8 @@ namespace BuildingSmart.IFC.IfcHvacDomain
 		public IfcCoilTypeEnum PredefinedType { get; set; }
 	
 	
-		public IfcCoilType(IfcGloballyUniqueId globalId, IfcCoilTypeEnum predefinedType)
-			: base(globalId)
+		public IfcCoilType(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcCoilTypeEnum predefinedType)
+			: base(globalId, ownerHistory)
 		{
 			this.PredefinedType = predefinedType;
 		}

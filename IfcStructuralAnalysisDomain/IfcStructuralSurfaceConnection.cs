@@ -19,12 +19,12 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcStructuralAnalysisDomain
 {
-	[Guid("9f450a18-d3f1-43b9-a167-1930b4b4f7d6")]
+	[Guid("519ebda8-22f7-4910-9c8d-81db85051ca6")]
 	public partial class IfcStructuralSurfaceConnection : IfcStructuralConnection
 	{
 	
-		public IfcStructuralSurfaceConnection(IfcGloballyUniqueId globalId)
-			: base(globalId)
+		public IfcStructuralSurfaceConnection(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory)
+			: base(globalId, ownerHistory)
 		{
 		}
 	

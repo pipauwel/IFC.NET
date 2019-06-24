@@ -13,13 +13,11 @@ using System.Xml.Serialization;
 
 namespace BuildingSmart.IFC.IfcProductExtension
 {
-	[Guid("7c8250e0-2413-4beb-a000-a3832f4c8248")]
+	[Guid("f6821c5e-3011-432e-a546-d4f671eee1f9")]
 	public enum IfcAssemblyPlaceEnum
 	{
-		[Description("This assembly is assembled at site.")]
 		SITE = 1,
 	
-		[Description("This assembly is assembled in a factory.")]
 		FACTORY = 2,
 	
 		NOTDEFINED = 0,

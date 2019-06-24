@@ -13,26 +13,27 @@ using System.Xml.Serialization;
 using BuildingSmart.IFC.IfcGeometryResource;
 using BuildingSmart.IFC.IfcPresentationAppearanceResource;
 using BuildingSmart.IFC.IfcPresentationOrganizationResource;
+using BuildingSmart.IFC.IfcPresentationResource;
 
 namespace BuildingSmart.IFC.IfcPresentationDefinitionResource
 {
-	[Guid("fff1fb35-13c2-4e24-92f4-c2bfd5a9ba17")]
+	[Guid("838aa023-edf8-4ede-9db6-6d86aae12e85")]
 	public partial class IfcTextLiteral : IfcGeometricRepresentationItem
 	{
 		[DataMember(Order = 0)] 
 		[XmlAttribute]
-		[Description("The text literal to be presented.")]
+		[Description("<EPM-HTML>  The text literal to be presented.  </EPM-HTML>")]
 		[Required()]
 		public IfcPresentableText Literal { get; set; }
 	
 		[DataMember(Order = 1)] 
-		[Description("An <em>IfcAxis2Placement</em> that determines the placement and orientation of the presented string.")]
+		[Description("<EPM-HTML>  An <i>IfcAxis2Placement</i> that determines the placement and orientation of the presented string.  <blockquote><small>When used with a text style based on <i>IfcTextStyleWithBoxCharacteristics</i> then the y-axis is taken as the reference direction for the box rotation angle and the box slant angle.  </small></blockquote>  </EPM-HTML>")]
 		[Required()]
 		public IfcAxis2Placement Placement { get; set; }
 	
 		[DataMember(Order = 2)] 
 		[XmlAttribute]
-		[Description("The writing direction of the text literal.")]
+		[Description("<EPM-HTML>  The writing direction of the text literal.  </EPM-HTML>")]
 		[Required()]
 		public IfcTextPath Path { get; set; }
 	

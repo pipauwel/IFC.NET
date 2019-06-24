@@ -16,7 +16,7 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcKernel
 {
-	[Guid("463dbc90-5ef6-4411-b9c2-71144e8ed08d")]
+	[Guid("4539d35c-fe44-4f6b-b7b2-db4abe00bb5f")]
 	public partial class IfcActor : IfcObject
 	{
 		[DataMember(Order = 0)] 
@@ -29,8 +29,8 @@ namespace BuildingSmart.IFC.IfcKernel
 		public ISet<IfcRelAssignsToActor> IsActingUpon { get; protected set; }
 	
 	
-		public IfcActor(IfcGloballyUniqueId globalId, IfcActorSelect theActor)
-			: base(globalId)
+		public IfcActor(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcActorSelect theActor)
+			: base(globalId, ownerHistory)
 		{
 			this.TheActor = theActor;
 			this.IsActingUpon = new HashSet<IfcRelAssignsToActor>();

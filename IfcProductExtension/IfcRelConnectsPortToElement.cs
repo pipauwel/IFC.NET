@@ -16,24 +16,22 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcProductExtension
 {
-	[Guid("ade898d9-502a-402f-b2b5-25e8a097c9e9")]
+	[Guid("643ec1cf-e582-48d2-93ed-f5463a3a7f58")]
 	public partial class IfcRelConnectsPortToElement : IfcRelConnects
 	{
 		[DataMember(Order = 0)] 
-		[XmlElement]
 		[Description("Reference to an Port that is connected by the objectified relationship.")]
 		[Required()]
 		public IfcPort RelatingPort { get; set; }
 	
 		[DataMember(Order = 1)] 
-		[XmlElement]
-		[Description("Reference to an <em>IfcDistributionElement</em> that has ports assigned.  <blockquote class=\"change-ifc2x4\">IFC4 CHANGE  Data type restricted to <em>IfcDistributionElement</em>.</blockquote>")]
+		[Description("Reference to an Element that is connected by the objectified relationship.")]
 		[Required()]
-		public IfcDistributionElement RelatedElement { get; set; }
+		public IfcElement RelatedElement { get; set; }
 	
 	
-		public IfcRelConnectsPortToElement(IfcGloballyUniqueId globalId, IfcPort relatingPort, IfcDistributionElement relatedElement)
-			: base(globalId)
+		public IfcRelConnectsPortToElement(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcPort relatingPort, IfcElement relatedElement)
+			: base(globalId, ownerHistory)
 		{
 			this.RelatingPort = relatingPort;
 			this.RelatedElement = relatedElement;

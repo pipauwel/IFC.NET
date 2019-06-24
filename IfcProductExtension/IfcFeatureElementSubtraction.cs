@@ -14,13 +14,12 @@ using BuildingSmart.IFC.IfcGeometricConstraintResource;
 using BuildingSmart.IFC.IfcKernel;
 using BuildingSmart.IFC.IfcMeasureResource;
 using BuildingSmart.IFC.IfcRepresentationResource;
-using BuildingSmart.IFC.IfcSharedBldgElements;
 using BuildingSmart.IFC.IfcStructuralAnalysisDomain;
 using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcProductExtension
 {
-	[Guid("c881faa0-78d9-40af-a83e-a4924a575869")]
+	[Guid("b1f5bb6b-9f49-491a-b274-e457051581d8")]
 	public abstract partial class IfcFeatureElementSubtraction : IfcFeatureElement
 	{
 		[InverseProperty("RelatedOpeningElement")] 
@@ -28,8 +27,8 @@ namespace BuildingSmart.IFC.IfcProductExtension
 		public IfcRelVoidsElement VoidsElements { get; set; }
 	
 	
-		protected IfcFeatureElementSubtraction(IfcGloballyUniqueId globalId)
-			: base(globalId)
+		protected IfcFeatureElementSubtraction(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory)
+			: base(globalId, ownerHistory)
 		{
 		}
 	

@@ -11,29 +11,26 @@ using System.Runtime.Serialization;
 using System.Xml.Serialization;
 
 using BuildingSmart.IFC.IfcGeometryResource;
-using BuildingSmart.IFC.IfcMeasureResource;
 using BuildingSmart.IFC.IfcPresentationAppearanceResource;
 using BuildingSmart.IFC.IfcPresentationOrganizationResource;
 
 namespace BuildingSmart.IFC.IfcGeometricModelResource
 {
-	[Guid("65e9d30b-d646-47b9-a5b5-e3d5e4d6323c")]
+	[Guid("265c053c-a8de-43da-8a2e-ae2adf80fad6")]
 	public partial class IfcPolygonalBoundedHalfSpace : IfcHalfSpaceSolid
 	{
 		[DataMember(Order = 0)] 
-		[XmlElement]
-		[Description("<p>Definition of the position coordinate system for the bounding polyline <STRIKE>and the base surface</STRIKE>.</p>")]
+		[Description("<EPM-HTML>  <P>Definition of the position coordinate system for the bounding polyline <STRIKE>and the base surface</STRIKE>.</P>  </EPM-HTML>")]
 		[Required()]
 		public IfcAxis2Placement3D Position { get; set; }
 	
 		[DataMember(Order = 1)] 
-		[XmlElement]
-		[Description("Two-dimensional <strike>polyline</strike> bounded curve, defined in the xy plane of the position coordinate system.  <blockquote class=\"change-ifc2x3\">IFC2x3 CHANGE&nbsp; The attribute type has been changed from <em>IfcPolyline</em> to its supertype <em>IfcBoundedCurve</em> with upward compatibility for file based exchange.</blockquote>")]
+		[Description("<EPM-HTML>  Two-dimensional <strike>polyline</strike> bounded curve, defined in the xy plane of the position coordinate system.  <blockquote><small><font color=\"#ff0000\">  IFC2x Edition 3 CHANGE&nbsp; The attribute type has been changed from <i>IfcPolyline</i> to its supertype <i>IfcBoundedCurve</i> with upward compatibility for file based exchange.  </font></small></blockquote>  </EPM-HTML>")]
 		[Required()]
 		public IfcBoundedCurve PolygonalBoundary { get; set; }
 	
 	
-		public IfcPolygonalBoundedHalfSpace(IfcSurface baseSurface, IfcBoolean agreementFlag, IfcAxis2Placement3D position, IfcBoundedCurve polygonalBoundary)
+		public IfcPolygonalBoundedHalfSpace(IfcSurface baseSurface, Boolean agreementFlag, IfcAxis2Placement3D position, IfcBoundedCurve polygonalBoundary)
 			: base(baseSurface, agreementFlag)
 		{
 			this.Position = position;

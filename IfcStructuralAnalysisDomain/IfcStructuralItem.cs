@@ -18,7 +18,7 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcStructuralAnalysisDomain
 {
-	[Guid("a309fabc-b0bd-4c8d-a1e7-0a91f255ecce")]
+	[Guid("e4c8ad16-5d37-4592-b106-b37d095e620d")]
 	public abstract partial class IfcStructuralItem : IfcProduct,
 		IfcStructuralActivityAssignmentSelect
 	{
@@ -27,8 +27,8 @@ namespace BuildingSmart.IFC.IfcStructuralAnalysisDomain
 		public ISet<IfcRelConnectsStructuralActivity> AssignedStructuralActivity { get; protected set; }
 	
 	
-		protected IfcStructuralItem(IfcGloballyUniqueId globalId)
-			: base(globalId)
+		protected IfcStructuralItem(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory)
+			: base(globalId, ownerHistory)
 		{
 			this.AssignedStructuralActivity = new HashSet<IfcRelConnectsStructuralActivity>();
 		}

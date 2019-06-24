@@ -13,7 +13,7 @@ using System.Xml.Serialization;
 
 namespace BuildingSmart.IFC.IfcPresentationAppearanceResource
 {
-	[Guid("edeb1de5-4f00-43b2-8746-ad8d66e56e18")]
+	[Guid("d2f159b6-07c8-4270-acd5-45480fa78dde")]
 	public partial struct IfcTextAlignment
 	{
 		[XmlText]

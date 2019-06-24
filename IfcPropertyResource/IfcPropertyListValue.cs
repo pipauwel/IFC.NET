@@ -10,19 +10,16 @@ using System.Runtime.InteropServices;
 using System.Runtime.Serialization;
 using System.Xml.Serialization;
 
-using BuildingSmart.IFC.IfcApprovalResource;
-using BuildingSmart.IFC.IfcConstraintResource;
-using BuildingSmart.IFC.IfcExternalReferenceResource;
-using BuildingSmart.IFC.IfcKernel;
 using BuildingSmart.IFC.IfcMeasureResource;
 
 namespace BuildingSmart.IFC.IfcPropertyResource
 {
-	[Guid("166fb09e-156c-46c0-ae3d-c231cb40cd96")]
+	[Guid("c208d56a-9c19-4967-bdf5-47bb2f46c8f4")]
 	public partial class IfcPropertyListValue : IfcSimpleProperty
 	{
 		[DataMember(Order = 0)] 
-		[Description("List of property values.  <blockquote class=\"change-ifc2x4\">IFC4 CHANGE&nbsp; The attribute has been made optional with upward compatibility for file based exchange.</blockquote>")]
+		[Description("List of values.")]
+		[Required()]
 		[MinLength(1)]
 		public IList<IfcValue> ListValues { get; protected set; }
 	
@@ -31,10 +28,10 @@ namespace BuildingSmart.IFC.IfcPropertyResource
 		public IfcUnit Unit { get; set; }
 	
 	
-		public IfcPropertyListValue(IfcIdentifier name)
+		public IfcPropertyListValue(IfcIdentifier name, IfcValue[] listValues)
 			: base(name)
 		{
-			this.ListValues = new List<IfcValue>();
+			this.ListValues = new List<IfcValue>(listValues);
 		}
 	
 	

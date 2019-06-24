@@ -10,26 +10,23 @@ using System.Runtime.InteropServices;
 using System.Runtime.Serialization;
 using System.Xml.Serialization;
 
-using BuildingSmart.IFC.IfcCostResource;
-using BuildingSmart.IFC.IfcDateTimeResource;
 using BuildingSmart.IFC.IfcKernel;
 using BuildingSmart.IFC.IfcMeasureResource;
-using BuildingSmart.IFC.IfcQuantityResource;
 using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcConstructionMgmtDomain
 {
-	[Guid("21941ff7-cd01-46b8-8e08-fb02ca673e3a")]
+	[Guid("ecfbb944-6746-4a4d-a796-aa4d0ca7fcb9")]
 	public partial class IfcLaborResource : IfcConstructionResource
 	{
 		[DataMember(Order = 0)] 
 		[XmlAttribute]
-		[Description("Defines types of labour resources.  <blockquote class=\"change-ifc2x4\">IFC4 New attribute.</blockquote>")]
-		public IfcLaborResourceTypeEnum? PredefinedType { get; set; }
+		[Description("The skill set required for this type of labor.")]
+		public IfcText? SkillSet { get; set; }
 	
 	
-		public IfcLaborResource(IfcGloballyUniqueId globalId)
-			: base(globalId)
+		public IfcLaborResource(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory)
+			: base(globalId, ownerHistory)
 		{
 		}
 	

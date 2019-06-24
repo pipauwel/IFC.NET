@@ -16,7 +16,7 @@ using BuildingSmart.IFC.IfcPresentationOrganizationResource;
 
 namespace BuildingSmart.IFC.IfcGeometryResource
 {
-	[Guid("e39241f5-7436-4f04-91f5-7a80393f242d")]
+	[Guid("63c943ae-c17f-47dc-a6dd-3471a0fd9b7f")]
 	public abstract partial class IfcCurve : IfcGeometricRepresentationItem,
 		BuildingSmart.IFC.IfcGeometricModelResource.IfcGeometricSetSelect
 	{

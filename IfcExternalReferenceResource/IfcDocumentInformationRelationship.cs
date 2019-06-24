@@ -14,11 +14,10 @@ using BuildingSmart.IFC.IfcMeasureResource;
 
 namespace BuildingSmart.IFC.IfcExternalReferenceResource
 {
-	[Guid("79f322fe-2390-4be9-ac5e-2c79ccbfc1d5")]
-	public partial class IfcDocumentInformationRelationship : IfcResourceLevelRelationship
+	[Guid("5eefb261-6d1c-424f-9b49-7f0129a9954c")]
+	public partial class IfcDocumentInformationRelationship
 	{
 		[DataMember(Order = 0)] 
-		[XmlElement]
 		[Description("The document that acts as the parent, referencing or original document in a relationship.")]
 		[Required()]
 		public IfcDocumentInformation RelatingDocument { get; set; }

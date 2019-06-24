@@ -19,18 +19,17 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcStructuralAnalysisDomain
 {
-	[Guid("a66f70d6-cdc3-47b6-b2a1-9b9c2991e6f5")]
+	[Guid("b3ecec25-6d42-49a2-bd7d-e64a12cc90ea")]
 	public partial class IfcRelConnectsWithEccentricity : IfcRelConnectsStructuralMember
 	{
 		[DataMember(Order = 0)] 
-		[XmlElement]
-		[Description("The connection constraint explicitly states the eccentricity between a structural member and a structural connection by means of two topological objects (vertex and vertex, or edge and edge, or face and face).")]
+		[Description("<EPM-HTML>  The connection constraint explicitly states the eccentricity between a structural element and a structural connection, either given by two point (used to calculate the eccentricity), or by explicit x, y, and z offsets.  </EPM-HTML>")]
 		[Required()]
 		public IfcConnectionGeometry ConnectionConstraint { get; set; }
 	
 	
-		public IfcRelConnectsWithEccentricity(IfcGloballyUniqueId globalId, IfcStructuralMember relatingStructuralMember, IfcStructuralConnection relatedStructuralConnection, IfcConnectionGeometry connectionConstraint)
-			: base(globalId, relatingStructuralMember, relatedStructuralConnection)
+		public IfcRelConnectsWithEccentricity(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcStructuralMember relatingStructuralMember, IfcStructuralConnection relatedStructuralConnection, IfcConnectionGeometry connectionConstraint)
+			: base(globalId, ownerHistory, relatingStructuralMember, relatedStructuralConnection)
 		{
 			this.ConnectionConstraint = connectionConstraint;
 		}

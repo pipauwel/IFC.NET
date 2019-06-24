@@ -14,9 +14,8 @@ using BuildingSmart.IFC.IfcMeasureResource;
 
 namespace BuildingSmart.IFC.IfcGeometricConstraintResource
 {
-	[Guid("f63d89d0-3786-4462-861e-92b27070fde7")]
-	public partial class IfcVirtualGridIntersection :
-		IfcGridPlacementDirectionSelect
+	[Guid("ed00857d-0af6-48ff-a71e-f00c81e1589d")]
+	public partial class IfcVirtualGridIntersection
 	{
 		[DataMember(Order = 0)] 
 		[Description("Two grid axes which intersects at exactly one intersection (see also informal proposition at IfcGrid). If attribute OffsetDistances is omitted, the intersection defines the placement or ref direction of a grid placement directly. If OffsetDistances are given, the intersection is defined by the offset curves to the grid axes.")]

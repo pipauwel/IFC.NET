@@ -18,30 +18,13 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcSharedComponentElements
 {
-	[Guid("acdb4036-7f93-4d13-9988-d382967d60e0")]
-	public partial class IfcMechanicalFastenerType : IfcElementComponentType
+	[Guid("70b336be-8a23-476c-927f-140955a4bbab")]
+	public partial class IfcMechanicalFastenerType : IfcFastenerType
 	{
-		[DataMember(Order = 0)] 
-		[XmlAttribute]
-		[Description("Subtype of mechanical fastener")]
-		[Required()]
-		public IfcMechanicalFastenerTypeEnum PredefinedType { get; set; }
 	
-		[DataMember(Order = 1)] 
-		[XmlAttribute]
-		[Description("The nominal diameter describing the cross-section size of the fastener type.")]
-		public IfcPositiveLengthMeasure? NominalDiameter { get; set; }
-	
-		[DataMember(Order = 2)] 
-		[XmlAttribute]
-		[Description("The nominal length describing the longitudinal dimensions of the fastener type.")]
-		public IfcPositiveLengthMeasure? NominalLength { get; set; }
-	
-	
-		public IfcMechanicalFastenerType(IfcGloballyUniqueId globalId, IfcMechanicalFastenerTypeEnum predefinedType)
-			: base(globalId)
+		public IfcMechanicalFastenerType(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory)
+			: base(globalId, ownerHistory)
 		{
-			this.PredefinedType = predefinedType;
 		}
 	
 	

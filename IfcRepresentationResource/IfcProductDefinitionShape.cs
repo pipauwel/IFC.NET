@@ -15,17 +15,16 @@ using BuildingSmart.IFC.IfcMeasureResource;
 
 namespace BuildingSmart.IFC.IfcRepresentationResource
 {
-	[Guid("ba246ca4-84c8-436f-8964-9d288e492ad4")]
-	public partial class IfcProductDefinitionShape : IfcProductRepresentation,
-		IfcProductRepresentationSelect
+	[Guid("febadfb1-e97e-48d9-92f4-df4dbe98fdde")]
+	public partial class IfcProductDefinitionShape : IfcProductRepresentation
 	{
 		[InverseProperty("Representation")] 
-		[Description("The <em>IfcProductDefinitionShape</em> shall be used to provide a representation for a single instance of <em>IfcProduct</em>.  <blockquote class=\"change-ifc2x3\">IFC2x3 CHANGE New inverse attribute.</blockquote>  <blockquote class=\"change-ifc2x4\">IFC4 CHANGE Inverse relationship cardinality relaxed to be 1:N.</blockquote>")]
+		[Description("<EPM-HTML>  The <i>IfcProductDefinitionShape</i> shall be used to provide a representation for a single instance of <i>IfcProduct</i>.  <blockquote><small>    <font color=\"#FF0000\">IFC2x Edition 3 CHANGE&nbsp; New inverse attribute.</font>  </small></blockquote>  </EPM-HTML>")]
 		[MinLength(1)]
+		[MaxLength(1)]
 		public ISet<IfcProduct> ShapeOfProduct { get; protected set; }
 	
 		[InverseProperty("PartOfProductDefinitionShape")] 
-		[XmlElement("IfcShapeAspect")]
 		[Description("Reference to the shape aspect that represents part of the shape or its feature distinctively.")]
 		public ISet<IfcShapeAspect> HasShapeAspects { get; protected set; }
 	

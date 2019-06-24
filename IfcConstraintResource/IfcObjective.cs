@@ -12,23 +12,20 @@ using System.Xml.Serialization;
 
 using BuildingSmart.IFC.IfcActorResource;
 using BuildingSmart.IFC.IfcDateTimeResource;
-using BuildingSmart.IFC.IfcExternalReferenceResource;
 using BuildingSmart.IFC.IfcMeasureResource;
 
 namespace BuildingSmart.IFC.IfcConstraintResource
 {
-	[Guid("2a23c0f9-203b-4e38-9564-91c5cb3f651d")]
+	[Guid("b0794e67-9191-4c55-a93f-70f1d753d31e")]
 	public partial class IfcObjective : IfcConstraint
 	{
 		[DataMember(Order = 0)] 
-		[Description("A list of nested constraints.    <blockquote class=\"change-ifc2x4\">IFC2X4 CHANGE&nbsp; Modified to be a LIST of nested constraints, which replaces the former <i>IfcConstraintAggregationRelationship</i>.</blockquote>")]
-		[MinLength(1)]
-		public IList<IfcConstraint> BenchmarkValues { get; protected set; }
+		[Description("A list of any benchmark values used for comparison purposes.")]
+		public IfcMetric BenchmarkValues { get; set; }
 	
 		[DataMember(Order = 1)] 
-		[XmlAttribute]
-		[Description("Enumeration that identifies the logical type of aggregation for the benchmark metrics.    <blockquote class=\"change-ifc2x4\">IFC2X4 CHANGE&nbsp; This attribute replaces replaces the former <i>ResultValues</i> attribute and indicates the aggregation behavior formerly defined at <i>IfcConstraintAggregationRelationship</i>.</blockquote>")]
-		public IfcLogicalOperatorEnum? LogicalAggregator { get; set; }
+		[Description("A list of any resultant values used for comparison purposes.")]
+		public IfcMetric ResultValues { get; set; }
 	
 		[DataMember(Order = 2)] 
 		[XmlAttribute]
@@ -38,14 +35,13 @@ namespace BuildingSmart.IFC.IfcConstraintResource
 	
 		[DataMember(Order = 3)] 
 		[XmlAttribute]
-		[Description("A user defined value that qualifies the type of objective constraint when ObjectiveQualifier attribute of type <em>IfcObjectiveEnum</em> has value USERDEFINED.")]
+		[Description("<EPM-HTML>A user defined value that qualifies the type of objective constraint when ObjectiveQualifier attribute of type <I>IfcObjectiveEnum</I> has value USERDEFINED.</EPM-HTML>")]
 		public IfcLabel? UserDefinedQualifier { get; set; }
 	
 	
 		public IfcObjective(IfcLabel name, IfcConstraintEnum constraintGrade, IfcObjectiveEnum objectiveQualifier)
 			: base(name, constraintGrade)
 		{
-			this.BenchmarkValues = new List<IfcConstraint>();
 			this.ObjectiveQualifier = objectiveQualifier;
 		}
 	

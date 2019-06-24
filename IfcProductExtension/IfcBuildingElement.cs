@@ -14,18 +14,17 @@ using BuildingSmart.IFC.IfcGeometricConstraintResource;
 using BuildingSmart.IFC.IfcKernel;
 using BuildingSmart.IFC.IfcMeasureResource;
 using BuildingSmart.IFC.IfcRepresentationResource;
-using BuildingSmart.IFC.IfcSharedBldgElements;
 using BuildingSmart.IFC.IfcStructuralAnalysisDomain;
 using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcProductExtension
 {
-	[Guid("a00e8863-dd67-4f4b-8e83-2c3ee0290740")]
+	[Guid("7aa40e75-ed64-4908-98f4-6bd7f4bc8e6b")]
 	public abstract partial class IfcBuildingElement : IfcElement
 	{
 	
-		protected IfcBuildingElement(IfcGloballyUniqueId globalId)
-			: base(globalId)
+		protected IfcBuildingElement(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory)
+			: base(globalId, ownerHistory)
 		{
 		}
 	

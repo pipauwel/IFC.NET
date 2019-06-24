@@ -19,7 +19,7 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcHvacDomain
 {
-	[Guid("6ff8bb62-5b12-4204-85f9-d8aea8bb8b00")]
+	[Guid("86bda50e-7c18-4972-89f1-276f7945a013")]
 	public partial class IfcPipeSegmentType : IfcFlowSegmentType
 	{
 		[DataMember(Order = 0)] 
@@ -29,8 +29,8 @@ namespace BuildingSmart.IFC.IfcHvacDomain
 		public IfcPipeSegmentTypeEnum PredefinedType { get; set; }
 	
 	
-		public IfcPipeSegmentType(IfcGloballyUniqueId globalId, IfcPipeSegmentTypeEnum predefinedType)
-			: base(globalId)
+		public IfcPipeSegmentType(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcPipeSegmentTypeEnum predefinedType)
+			: base(globalId, ownerHistory)
 		{
 			this.PredefinedType = predefinedType;
 		}

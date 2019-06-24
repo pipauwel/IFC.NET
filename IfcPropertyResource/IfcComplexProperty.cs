@@ -10,20 +10,16 @@ using System.Runtime.InteropServices;
 using System.Runtime.Serialization;
 using System.Xml.Serialization;
 
-using BuildingSmart.IFC.IfcApprovalResource;
-using BuildingSmart.IFC.IfcConstraintResource;
-using BuildingSmart.IFC.IfcExternalReferenceResource;
-using BuildingSmart.IFC.IfcKernel;
 using BuildingSmart.IFC.IfcMeasureResource;
 
 namespace BuildingSmart.IFC.IfcPropertyResource
 {
-	[Guid("c8722acc-8737-44f1-b24d-0eb804a9a4da")]
+	[Guid("a9e45d96-3e40-4160-b12e-12f62f8f869e")]
 	public partial class IfcComplexProperty : IfcProperty
 	{
 		[DataMember(Order = 0)] 
 		[XmlAttribute]
-		[Description("Usage description of the <em>IfcComplexProperty</em> within the property set which references the <em>IfcComplexProperty</em>.  <blockquote class=\"note\">NOTE&nbsp; Consider a complex property for glazing properties. The <em>Name</em> attribute of the <em>IfcComplexProperty</em> could be <em>Pset_GlazingProperties</em>, and the UsageName attribute could be <em>OuterGlazingPane</em>.</blockquote>")]
+		[Description("<EPM-HTML>Usage description of the <I>IfcComplexProperty</I> within the property set which references the <I>IfcComplexProperty</I>.  <BLOCKQUOTE> <FONT SIZE=\"-1\">NOTE: Consider a complex property for glazing properties. The <I>Name</I> attribute of the <I>IfcComplexProperty</I> could be <I>Pset_GlazingProperties</I>, and the UsageName attribute could be <I>OuterGlazingPane</I>.</FONT></BLOCKQUOTE>  </EPM-HTML>")]
 		[Required()]
 		public IfcIdentifier UsageName { get; set; }
 	

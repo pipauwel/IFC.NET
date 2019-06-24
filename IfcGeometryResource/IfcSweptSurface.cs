@@ -18,25 +18,27 @@ using BuildingSmart.IFC.IfcProfileResource;
 
 namespace BuildingSmart.IFC.IfcGeometryResource
 {
-	[Guid("e06621e1-1a92-4dd8-8a42-1bba3e74e221")]
+	[Guid("f2867726-186b-4245-b97b-1107c4d81252")]
 	public abstract partial class IfcSweptSurface : IfcSurface
 	{
 		[DataMember(Order = 0)] 
-		[XmlElement]
 		[Description("The curve to be swept in defining the surface. The curve is defined as a profile within the position coordinate system.")]
 		[Required()]
 		public IfcProfileDef SweptCurve { get; set; }
 	
 		[DataMember(Order = 1)] 
-		[XmlElement]
-		[Description("Position coordinate system for the swept surface, provided by a profile definition within the XY plane of the <em>Position</em> coordinates. If not provided, the position of the profile being swept is determined by the object coordinate system. In this case, the swept surface is not repositioned.  <blockquote class=\"change-ifc2x4\">IFC4 CHANGE&nbsp; The attribute has been changed to OPTIONAL with upward compatibility for file-based exchange.</blockquote>")]
+		[Description("Position coordinate system for the placement of the profile within the xy plane of the axis placement.")]
+		[Required()]
 		public IfcAxis2Placement3D Position { get; set; }
 	
 	
-		protected IfcSweptSurface(IfcProfileDef sweptCurve)
+		protected IfcSweptSurface(IfcProfileDef sweptCurve, IfcAxis2Placement3D position)
 		{
 			this.SweptCurve = sweptCurve;
+			this.Position = position;
 		}
+	
+		public new IfcDimensionCount Dim { get { return new IfcDimensionCount(); } }
 	
 	
 	}

@@ -10,13 +10,12 @@ using System.Runtime.InteropServices;
 using System.Runtime.Serialization;
 using System.Xml.Serialization;
 
-using BuildingSmart.IFC.IfcExternalReferenceResource;
 using BuildingSmart.IFC.IfcGeometryResource;
 using BuildingSmart.IFC.IfcMeasureResource;
 
 namespace BuildingSmart.IFC.IfcProfileResource
 {
-	[Guid("e019e0b0-86e1-4188-85b1-4d934b9a1046")]
+	[Guid("0d852e6d-6ff1-4eea-97d2-cd87836377c1")]
 	public partial class IfcEllipseProfileDef : IfcParameterizedProfileDef
 	{
 		[DataMember(Order = 0)] 
@@ -32,8 +31,8 @@ namespace BuildingSmart.IFC.IfcProfileResource
 		public IfcPositiveLengthMeasure SemiAxis2 { get; set; }
 	
 	
-		public IfcEllipseProfileDef(IfcProfileTypeEnum profileType, IfcPositiveLengthMeasure semiAxis1, IfcPositiveLengthMeasure semiAxis2)
-			: base(profileType)
+		public IfcEllipseProfileDef(IfcProfileTypeEnum profileType, IfcAxis2Placement2D position, IfcPositiveLengthMeasure semiAxis1, IfcPositiveLengthMeasure semiAxis2)
+			: base(profileType, position)
 		{
 			this.SemiAxis1 = semiAxis1;
 			this.SemiAxis2 = semiAxis2;

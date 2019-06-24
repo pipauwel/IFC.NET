@@ -17,29 +17,26 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcProductExtension
 {
-	[Guid("2749c418-fb5d-400d-92ce-0c491a55cbd7")]
+	[Guid("014665cc-d91c-4aeb-b4eb-ae4b758e1172")]
 	public partial class IfcRelConnectsElements : IfcRelConnects
 	{
 		[DataMember(Order = 0)] 
-		[XmlElement]
-		[Description("The geometric shape representation of the connection geometry that is provided in the object coordinate system of the <em>RelatingElement</em> (mandatory) and in the object coordinate system of the <em>RelatedElement</em> (optionally).")]
+		[Description("Relationship to the control class, that provides the geometrical constraints of the connection.")]
 		public IfcConnectionGeometry ConnectionGeometry { get; set; }
 	
 		[DataMember(Order = 1)] 
-		[XmlElement]
-		[Description("Reference to a subtype of <em>IfcElement</em> that is connected by the connection relationship in the role of <em>RelatingElement</em>.")]
+		[Description("Reference to an Element that is connected by the objectified relationship.")]
 		[Required()]
 		public IfcElement RelatingElement { get; set; }
 	
 		[DataMember(Order = 2)] 
-		[XmlElement]
-		[Description("Reference to a subtype of <em>IfcElement</em> that is connected by the connection relationship in the role of <em>RelatedElement</em>.")]
+		[Description("Reference to an Element that is connected by the objectified relationship.")]
 		[Required()]
 		public IfcElement RelatedElement { get; set; }
 	
 	
-		public IfcRelConnectsElements(IfcGloballyUniqueId globalId, IfcElement relatingElement, IfcElement relatedElement)
-			: base(globalId)
+		public IfcRelConnectsElements(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcElement relatingElement, IfcElement relatedElement)
+			: base(globalId, ownerHistory)
 		{
 			this.RelatingElement = relatingElement;
 			this.RelatedElement = relatedElement;

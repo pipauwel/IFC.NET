@@ -13,7 +13,7 @@ using System.Xml.Serialization;
 
 namespace BuildingSmart.IFC.IfcPresentationAppearanceResource
 {
-	[Guid("58cfc3e3-4dc9-442f-8c91-1f6c0533c7e7")]
+	[Guid("52fccee4-ba37-41d6-8b68-affca661ead7")]
 	public enum IfcNullStyle
 	{
 		NULL = 1,

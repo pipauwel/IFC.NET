@@ -10,13 +10,12 @@ using System.Runtime.InteropServices;
 using System.Runtime.Serialization;
 using System.Xml.Serialization;
 
-using BuildingSmart.IFC.IfcExternalReferenceResource;
 using BuildingSmart.IFC.IfcGeometryResource;
 using BuildingSmart.IFC.IfcMeasureResource;
 
 namespace BuildingSmart.IFC.IfcProfileResource
 {
-	[Guid("ebffea85-6601-4032-8540-a094ef46f7cb")]
+	[Guid("62f8cb22-db5c-4493-b485-ee0b7375d721")]
 	public partial class IfcArbitraryProfileDefWithVoids : IfcArbitraryClosedProfileDef
 	{
 		[DataMember(Order = 0)] 

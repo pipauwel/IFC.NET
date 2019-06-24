@@ -15,26 +15,18 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcKernel
 {
-	[Guid("349d602e-d775-4785-ac74-0632e4fdd015")]
+	[Guid("c0bc28d6-264e-4ba4-b40b-911c7ee80584")]
 	public partial class IfcRelDefinesByProperties : IfcRelDefines
 	{
 		[DataMember(Order = 0)] 
-		[XmlIgnore]
-		[Description("Reference to the objects (or single object) to which the property definition applies.  <blockquote class=\"change-ifc2x4\">IFC4 CHANGE&nbsp; Data type promoted from subtype <em>IfcObject</em>.  </blockquote>")]
-		[Required()]
-		[MinLength(1)]
-		public ISet<IfcObjectDefinition> RelatedObjects { get; protected set; }
-	
-		[DataMember(Order = 1)] 
 		[Description("Reference to the property set definition for that object or set of objects.")]
 		[Required()]
-		public IfcPropertySetDefinitionSelect RelatingPropertyDefinition { get; set; }
+		public IfcPropertySetDefinition RelatingPropertyDefinition { get; set; }
 	
 	
-		public IfcRelDefinesByProperties(IfcGloballyUniqueId globalId, IfcObjectDefinition[] relatedObjects, IfcPropertySetDefinitionSelect relatingPropertyDefinition)
-			: base(globalId)
+		public IfcRelDefinesByProperties(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcObject[] relatedObjects, IfcPropertySetDefinition relatingPropertyDefinition)
+			: base(globalId, ownerHistory, relatedObjects)
 		{
-			this.RelatedObjects = new HashSet<IfcObjectDefinition>(relatedObjects);
 			this.RelatingPropertyDefinition = relatingPropertyDefinition;
 		}
 	

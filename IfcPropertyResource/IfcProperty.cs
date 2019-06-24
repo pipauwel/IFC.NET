@@ -10,16 +10,12 @@ using System.Runtime.InteropServices;
 using System.Runtime.Serialization;
 using System.Xml.Serialization;
 
-using BuildingSmart.IFC.IfcApprovalResource;
-using BuildingSmart.IFC.IfcConstraintResource;
-using BuildingSmart.IFC.IfcExternalReferenceResource;
-using BuildingSmart.IFC.IfcKernel;
 using BuildingSmart.IFC.IfcMeasureResource;
 
 namespace BuildingSmart.IFC.IfcPropertyResource
 {
-	[Guid("911b51d0-e3e7-45db-a881-520360ded638")]
-	public abstract partial class IfcProperty : IfcPropertyAbstraction
+	[Guid("f331e745-a4d0-4fa4-90fb-3b8200920cd6")]
+	public abstract partial class IfcProperty
 	{
 		[DataMember(Order = 0)] 
 		[XmlAttribute]
@@ -32,10 +28,6 @@ namespace BuildingSmart.IFC.IfcPropertyResource
 		[Description("Informative text to explain the property.")]
 		public IfcText? Description { get; set; }
 	
-		[InverseProperty("HasProperties")] 
-		[Description("Reference to the <em>IfcPropertySet</em> by which the <em>IfcProperty</em> is referenced.  <blockquote class=\"change-ifc2x4\">IFC4 CHANGE&nbsp; New inverse attribute to navigate from <em>IfcProperty</em> to <em>IfcPropertySet</em> with upward compatibility for file based exchange.</blockquote>")]
-		public ISet<IfcPropertySet> PartOfPset { get; protected set; }
-	
 		[InverseProperty("DependingProperty")] 
 		[Description("The property on whose value that of another property depends.")]
 		public ISet<IfcPropertyDependencyRelationship> PropertyForDependance { get; protected set; }
@@ -45,27 +37,17 @@ namespace BuildingSmart.IFC.IfcPropertyResource
 		public ISet<IfcPropertyDependencyRelationship> PropertyDependsOn { get; protected set; }
 	
 		[InverseProperty("HasProperties")] 
-		[Description("Reference to the <em>IfcComplexProperty</em> in which the <em>IfcProperty</em> is contained.  <blockquote class=\"change-ifc2x4\">IFC4 CHANGE&nbsp; The cardinality has changed to 0..n to allow reuse of instances of <em>IfcProperty</em> in several <em>IfcComplexProperty</em> with upward compatibility for file based exchange.</blockquote>")]
+		[Description("Reference to the IfcComplexProperty in which the IfcProperty is contained.")]
+		[MaxLength(1)]
 		public ISet<IfcComplexProperty> PartOfComplex { get; protected set; }
-	
-		[InverseProperty("RelatedResourceObjects")] 
-		[Description("User-defined constraints for the property.")]
-		public ISet<IfcResourceConstraintRelationship> HasConstraints { get; protected set; }
-	
-		[InverseProperty("RelatedResourceObjects")] 
-		[Description("User-defined approvals for the property.")]
-		public ISet<IfcResourceApprovalRelationship> HasApprovals { get; protected set; }
 	
 	
 		protected IfcProperty(IfcIdentifier name)
 		{
 			this.Name = name;
-			this.PartOfPset = new HashSet<IfcPropertySet>();
 			this.PropertyForDependance = new HashSet<IfcPropertyDependencyRelationship>();
 			this.PropertyDependsOn = new HashSet<IfcPropertyDependencyRelationship>();
 			this.PartOfComplex = new HashSet<IfcComplexProperty>();
-			this.HasConstraints = new HashSet<IfcResourceConstraintRelationship>();
-			this.HasApprovals = new HashSet<IfcResourceApprovalRelationship>();
 		}
 	
 	

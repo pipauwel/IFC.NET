@@ -20,17 +20,12 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcSharedBldgElements
 {
-	[Guid("ba7dd489-a3f1-480d-b133-43f23e616b86")]
+	[Guid("acea3496-c2ad-423e-98c5-768facdb7def")]
 	public partial class IfcColumn : IfcBuildingElement
 	{
-		[DataMember(Order = 0)] 
-		[XmlAttribute]
-		[Description("Predefined generic type for a column that is specified in an enumeration. There may be a property set given specificly for the predefined types.  <blockquote class=\"note\">NOTE&nbsp; The <em>PredefinedType</em> shall only be used, if no <em>IfcColumnType</em> is assigned, providing its own <em>IfcColumnType.PredefinedType</em>.</blockquote>  <blockquote  class=\"change-ifc2x4\">IFC4 CHANGE  The attribute has been added at the end of the entity definition.</blockquote>")]
-		public IfcColumnTypeEnum? PredefinedType { get; set; }
 	
-	
-		public IfcColumn(IfcGloballyUniqueId globalId)
-			: base(globalId)
+		public IfcColumn(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory)
+			: base(globalId, ownerHistory)
 		{
 		}
 	

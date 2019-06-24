@@ -10,88 +10,39 @@ using System.Runtime.InteropServices;
 using System.Runtime.Serialization;
 using System.Xml.Serialization;
 
-using BuildingSmart.IFC.IfcExternalReferenceResource;
 using BuildingSmart.IFC.IfcGeometryResource;
 using BuildingSmart.IFC.IfcMeasureResource;
 
 namespace BuildingSmart.IFC.IfcProfileResource
 {
-	[Guid("a97ad274-6a1b-4db7-b4a9-46725be04471")]
-	public partial class IfcAsymmetricIShapeProfileDef : IfcParameterizedProfileDef
+	[Guid("05390904-1128-43d6-81a1-6662199f18e4")]
+	public partial class IfcAsymmetricIShapeProfileDef : IfcIShapeProfileDef
 	{
 		[DataMember(Order = 0)] 
-		[XmlAttribute]
-		[Description("Extent of the bottom flange, defined parallel to the x axis of the position coordinate system.")]
-		[Required()]
-		public IfcPositiveLengthMeasure BottomFlangeWidth { get; set; }
-	
-		[DataMember(Order = 1)] 
-		[XmlAttribute]
-		[Description("Total extent of the depth, defined parallel to the y axis of the position coordinate system.")]
-		[Required()]
-		public IfcPositiveLengthMeasure OverallDepth { get; set; }
-	
-		[DataMember(Order = 2)] 
-		[XmlAttribute]
-		[Description("Thickness of the web of the I-shape. The web is centred on the x-axis and the y-axis of the position coordinate system.")]
-		[Required()]
-		public IfcPositiveLengthMeasure WebThickness { get; set; }
-	
-		[DataMember(Order = 3)] 
-		[XmlAttribute]
-		[Description("Flange thickness of the bottom flange.")]
-		[Required()]
-		public IfcPositiveLengthMeasure BottomFlangeThickness { get; set; }
-	
-		[DataMember(Order = 4)] 
-		[XmlAttribute]
-		[Description("The fillet between the web and the bottom flange.  0 if sharp-edged, omitted if unknown.")]
-		public IfcNonNegativeLengthMeasure? BottomFlangeFilletRadius { get; set; }
-	
-		[DataMember(Order = 5)] 
 		[XmlAttribute]
 		[Description("Extent of the top flange, defined parallel to the x axis of the position coordinate system.")]
 		[Required()]
 		public IfcPositiveLengthMeasure TopFlangeWidth { get; set; }
 	
-		[DataMember(Order = 6)] 
+		[DataMember(Order = 1)] 
 		[XmlAttribute]
-		[Description("Flange thickness of the top flange. This attribute is formally optional for historic reasons only. Whenever the flange thickness is known, it shall be provided by value.")]
+		[Description("Flange thickness of the top flange of the I-shape. If given, the upper and the lower flanges can have different thicknesses. If not given, the value of the inherited FlangeThickness attribute applies to both, the top and bottom flange thickness.")]
 		public IfcPositiveLengthMeasure? TopFlangeThickness { get; set; }
 	
-		[DataMember(Order = 7)] 
+		[DataMember(Order = 2)] 
 		[XmlAttribute]
-		[Description("The fillet between the web and the top flange.  0 if sharp-edged, omitted if unknown.")]
-		public IfcNonNegativeLengthMeasure? TopFlangeFilletRadius { get; set; }
+		[Description("The fillet between the web and the top flange of the I-shape. If given, the fillet between upper and the lower flanges and the web can be different. If not given, the value of the inherited FilletRadius attribute applies to both, the top and bottom fillet. If the inherited FilletRadius is not given either, no filler is applied.")]
+		public IfcPositiveLengthMeasure? TopFlangeFilletRadius { get; set; }
 	
-		[DataMember(Order = 8)] 
+		[DataMember(Order = 3)] 
 		[XmlAttribute]
-		[Description("Radius of the upper edges of the bottom flange.  0 if sharp-edged, omitted if unknown.")]
-		public IfcNonNegativeLengthMeasure? BottomFlangeEdgeRadius { get; set; }
-	
-		[DataMember(Order = 9)] 
-		[XmlAttribute]
-		[Description("Slope of the upper faces of the bottom flange.  Non-zero in case of of tapered bottom flange, 0 in case of parallel bottom flange, omitted if unknown.")]
-		public IfcPlaneAngleMeasure? BottomFlangeSlope { get; set; }
-	
-		[DataMember(Order = 10)] 
-		[XmlAttribute]
-		[Description("Radius of the lower edges of the top flange.  0 if sharp-edged, omitted if unknown.")]
-		public IfcNonNegativeLengthMeasure? TopFlangeEdgeRadius { get; set; }
-	
-		[DataMember(Order = 11)] 
-		[XmlAttribute]
-		[Description("Slope of the lower faces of the top flange.  Non-zero in case of of tapered top flange, 0 in case of parallel top flange, omitted if unknown.")]
-		public IfcPlaneAngleMeasure? TopFlangeSlope { get; set; }
+		[Description("<EPM-HTML> Location of centre of gravity along the y axis measured from the center of the bounding box.     <blockquote> <small><font color=\"#ff0000\">  IFC2x Edition 2 Addendum 2 CHANGE The attribute <i>CentreOfGravityInY</i> has been made optional. Upward compatibility for file based exchange is guaranteed.    </font></small></blockquote>  </EPM-HTML>")]
+		public IfcPositiveLengthMeasure? CentreOfGravityInY { get; set; }
 	
 	
-		public IfcAsymmetricIShapeProfileDef(IfcProfileTypeEnum profileType, IfcPositiveLengthMeasure bottomFlangeWidth, IfcPositiveLengthMeasure overallDepth, IfcPositiveLengthMeasure webThickness, IfcPositiveLengthMeasure bottomFlangeThickness, IfcPositiveLengthMeasure topFlangeWidth)
-			: base(profileType)
+		public IfcAsymmetricIShapeProfileDef(IfcProfileTypeEnum profileType, IfcAxis2Placement2D position, IfcPositiveLengthMeasure overallWidth, IfcPositiveLengthMeasure overallDepth, IfcPositiveLengthMeasure webThickness, IfcPositiveLengthMeasure flangeThickness, IfcPositiveLengthMeasure topFlangeWidth)
+			: base(profileType, position, overallWidth, overallDepth, webThickness, flangeThickness)
 		{
-			this.BottomFlangeWidth = bottomFlangeWidth;
-			this.OverallDepth = overallDepth;
-			this.WebThickness = webThickness;
-			this.BottomFlangeThickness = bottomFlangeThickness;
 			this.TopFlangeWidth = topFlangeWidth;
 		}
 	

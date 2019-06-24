@@ -13,19 +13,11 @@ using System.Xml.Serialization;
 
 namespace BuildingSmart.IFC.IfcElectricalDomain
 {
-	[Guid("cd1735bb-0caa-46b3-8243-be9ba262cbdd")]
+	[Guid("8bd69f80-c2ce-42f8-9592-de4a05a83751")]
 	public enum IfcJunctionBoxTypeEnum
 	{
-		[Description("Contains cables, outlets, and/or switches for communications use.")]
-		DATA = 1,
-	
-		[Description("Contains cables, outlets, and/or switches for electrical power.")]
-		POWER = 2,
-	
-		[Description("User-defined type.")]
 		USERDEFINED = -1,
 	
-		[Description("Undefined type.")]
 		NOTDEFINED = 0,
 	
 	}

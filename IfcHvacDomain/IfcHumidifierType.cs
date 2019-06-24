@@ -19,7 +19,7 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcHvacDomain
 {
-	[Guid("f1983b1d-26af-43f3-ba7a-06e90feb52c8")]
+	[Guid("ab957511-8aa0-4ba4-8da9-9ffdaf407def")]
 	public partial class IfcHumidifierType : IfcEnergyConversionDeviceType
 	{
 		[DataMember(Order = 0)] 
@@ -29,8 +29,8 @@ namespace BuildingSmart.IFC.IfcHvacDomain
 		public IfcHumidifierTypeEnum PredefinedType { get; set; }
 	
 	
-		public IfcHumidifierType(IfcGloballyUniqueId globalId, IfcHumidifierTypeEnum predefinedType)
-			: base(globalId)
+		public IfcHumidifierType(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcHumidifierTypeEnum predefinedType)
+			: base(globalId, ownerHistory)
 		{
 			this.PredefinedType = predefinedType;
 		}

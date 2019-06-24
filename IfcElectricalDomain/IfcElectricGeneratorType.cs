@@ -19,18 +19,18 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcElectricalDomain
 {
-	[Guid("54734959-8b52-4b23-a9b5-eef44edf8450")]
+	[Guid("d6b2b7ae-8774-4924-a497-d89ba1dcd218")]
 	public partial class IfcElectricGeneratorType : IfcEnergyConversionDeviceType
 	{
 		[DataMember(Order = 0)] 
 		[XmlAttribute]
-		[Description("<p>Identifies the predefined types of electric generators from which the type required may be set.</p>")]
+		[Description("Identifies the predefined types of electric generators from which the type required may be set.")]
 		[Required()]
 		public IfcElectricGeneratorTypeEnum PredefinedType { get; set; }
 	
 	
-		public IfcElectricGeneratorType(IfcGloballyUniqueId globalId, IfcElectricGeneratorTypeEnum predefinedType)
-			: base(globalId)
+		public IfcElectricGeneratorType(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcElectricGeneratorTypeEnum predefinedType)
+			: base(globalId, ownerHistory)
 		{
 			this.PredefinedType = predefinedType;
 		}

@@ -12,18 +12,30 @@ using System.Xml.Serialization;
 
 using BuildingSmart.IFC.IfcConstraintResource;
 using BuildingSmart.IFC.IfcDateTimeResource;
-using BuildingSmart.IFC.IfcExternalReferenceResource;
 using BuildingSmart.IFC.IfcMeasureResource;
 using BuildingSmart.IFC.IfcPropertyResource;
 
 namespace BuildingSmart.IFC.IfcCostResource
 {
-	[Guid("21cab0f5-bca1-4dd1-84b4-11713d9334b1")]
-	public partial class IfcCostValue : IfcAppliedValue
+	[Guid("bf6a8525-e380-47d1-9e85-0eea04bf1bc5")]
+	public partial class IfcCostValue : IfcAppliedValue,
+		BuildingSmart.IFC.IfcConstraintResource.IfcMetricValueSelect
 	{
+		[DataMember(Order = 0)] 
+		[XmlAttribute]
+		[Description("<EPM-HTML>Specification of the type of cost type used.    <BLOCKQUOTE>NOTE: There are many possible types of cost value that may be identified. Whilst there is a broad understanding of the meaning of names that may be assigned to different types of costs, there is no general standard for naming cost types nor are there any broadly defined classifications. To allow for any type of cost value, the IfcLabel datatype is assigned.</BLOCKQUOTE>     In the absence of any well defined standard, it is recommended that local agreements should be made to define allowable and understandable cost value types within a project or region.  </EPM-HTML>")]
+		[Required()]
+		public IfcLabel CostType { get; set; }
 	
-		public IfcCostValue()
+		[DataMember(Order = 1)] 
+		[XmlAttribute]
+		[Description("The condition under which a cost value applies.")]
+		public IfcText? Condition { get; set; }
+	
+	
+		public IfcCostValue(IfcLabel costType)
 		{
+			this.CostType = costType;
 		}
 	
 	

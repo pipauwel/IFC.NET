@@ -16,17 +16,15 @@ using BuildingSmart.IFC.IfcPresentationOrganizationResource;
 
 namespace BuildingSmart.IFC.IfcTopologyResource
 {
-	[Guid("47c088c9-be86-473f-a8d3-cfc2f822e52d")]
+	[Guid("eff397a5-b06c-4b05-bb01-450f0eb9d3fd")]
 	public partial class IfcEdge : IfcTopologicalRepresentationItem
 	{
 		[DataMember(Order = 0)] 
-		[XmlElement]
 		[Description("Start point (vertex) of the edge.")]
 		[Required()]
 		public IfcVertex EdgeStart { get; set; }
 	
 		[DataMember(Order = 1)] 
-		[XmlElement]
 		[Description("End point (vertex) of the edge. The same vertex can be used for both EdgeStart and EdgeEnd.")]
 		[Required()]
 		public IfcVertex EdgeEnd { get; set; }

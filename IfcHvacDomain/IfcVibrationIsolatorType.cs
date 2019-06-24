@@ -19,8 +19,8 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcHvacDomain
 {
-	[Guid("55bfbb42-1d61-499e-857c-b1dd3128361c")]
-	public partial class IfcVibrationIsolatorType : IfcElementComponentType
+	[Guid("114f245e-92ae-4ee8-acb6-f89683165b50")]
+	public partial class IfcVibrationIsolatorType : IfcDiscreteAccessoryType
 	{
 		[DataMember(Order = 0)] 
 		[XmlAttribute]
@@ -29,8 +29,8 @@ namespace BuildingSmart.IFC.IfcHvacDomain
 		public IfcVibrationIsolatorTypeEnum PredefinedType { get; set; }
 	
 	
-		public IfcVibrationIsolatorType(IfcGloballyUniqueId globalId, IfcVibrationIsolatorTypeEnum predefinedType)
-			: base(globalId)
+		public IfcVibrationIsolatorType(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcVibrationIsolatorTypeEnum predefinedType)
+			: base(globalId, ownerHistory)
 		{
 			this.PredefinedType = predefinedType;
 		}

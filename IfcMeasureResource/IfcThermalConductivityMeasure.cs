@@ -13,7 +13,7 @@ using System.Xml.Serialization;
 
 namespace BuildingSmart.IFC.IfcMeasureResource
 {
-	[Guid("76ac30d4-4f7a-4b0f-baa3-842d8322a117")]
+	[Guid("edc2a1c6-19da-49ff-bb23-dd1fa042fed4")]
 	public partial struct IfcThermalConductivityMeasure :
 		IfcDerivedMeasureValue
 	{

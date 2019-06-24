@@ -13,7 +13,7 @@ using System.Xml.Serialization;
 
 namespace BuildingSmart.IFC.IfcStructuralAnalysisDomain
 {
-	[Guid("535c8459-65f0-464d-9424-a360d62bdf33")]
+	[Guid("b48bc165-3a8f-4aa4-a13b-23a398506d9a")]
 	public enum IfcActionTypeEnum
 	{
 		PERMANENT_G = 1,

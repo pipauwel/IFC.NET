@@ -16,24 +16,23 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcProductExtension
 {
-	[Guid("6efcded0-4fa6-4c52-82e9-d250dbb9bcb0")]
+	[Guid("84e20472-51cc-4357-8e9a-6fd9f97f6e03")]
 	public partial class IfcRelReferencedInSpatialStructure : IfcRelConnects
 	{
 		[DataMember(Order = 0)] 
-		[Description("Set of products, which are referenced within this level of the spatial structure hierarchy.  <blockquote class=\"note\">NOTE&nbsp; Referenced elements are contained elsewhere within the spatial structure, they are referenced additionally by this spatial structure element, e.g., because they span several stories.</blockquote>")]
+		[Description("<EPM-HTML>  Set of products, which are referenced within this level of the spatial structure hierarchy.  <blockquote><small>NOTE&nbsp; Referenced elements are contained elsewhere within the spatial structure, they are referenced additionally by this spatial structure element, e.g., because they span several stories.</small>  </blockquote>  </EPM-HTML>")]
 		[Required()]
 		[MinLength(1)]
 		public ISet<IfcProduct> RelatedElements { get; protected set; }
 	
 		[DataMember(Order = 1)] 
-		[XmlIgnore]
-		[Description("Spatial structure element, within which the element is referenced. Any element can be contained within zero, one or many elements of the project spatial and zoning structure.  <blockquote class=\"change-ifc2x4\">IFC4 CHANGE&nbsp; The attribute <em>RelatingStructure</em> as been promoted to the new supertype <em>IfcSpatialElement</em> with upward compatibility for file based exchange.</blockquote>")]
+		[Description("<EPM-HTML>  Spatial structure element, within which the element is referenced. Any element can be contained within zero, one or many elements of the project spatial structure.  </EPM-HTML>")]
 		[Required()]
-		public IfcSpatialElement RelatingStructure { get; set; }
+		public IfcSpatialStructureElement RelatingStructure { get; set; }
 	
 	
-		public IfcRelReferencedInSpatialStructure(IfcGloballyUniqueId globalId, IfcProduct[] relatedElements, IfcSpatialElement relatingStructure)
-			: base(globalId)
+		public IfcRelReferencedInSpatialStructure(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcProduct[] relatedElements, IfcSpatialStructureElement relatingStructure)
+			: base(globalId, ownerHistory)
 		{
 			this.RelatedElements = new HashSet<IfcProduct>(relatedElements);
 			this.RelatingStructure = relatingStructure;

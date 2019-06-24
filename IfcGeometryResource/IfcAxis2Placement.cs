@@ -13,7 +13,7 @@ using System.Xml.Serialization;
 
 namespace BuildingSmart.IFC.IfcGeometryResource
 {
-	[Guid("929012e2-9ea2-4f90-a265-8c380c75ae9b")]
+	[Guid("8a67a4d0-9ffd-4e6c-b8ee-6716300542e2")]
 	public interface IfcAxis2Placement
 	{
 	}

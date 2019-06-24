@@ -18,7 +18,7 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcSharedBldgElements
 {
-	[Guid("030a0c92-14e1-4656-8d65-6fb50f43e9b3")]
+	[Guid("9250e1e1-1837-49b4-a4e4-c6d65e1505a7")]
 	public partial class IfcBeamType : IfcBuildingElementType
 	{
 		[DataMember(Order = 0)] 
@@ -28,8 +28,8 @@ namespace BuildingSmart.IFC.IfcSharedBldgElements
 		public IfcBeamTypeEnum PredefinedType { get; set; }
 	
 	
-		public IfcBeamType(IfcGloballyUniqueId globalId, IfcBeamTypeEnum predefinedType)
-			: base(globalId)
+		public IfcBeamType(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcBeamTypeEnum predefinedType)
+			: base(globalId, ownerHistory)
 		{
 			this.PredefinedType = predefinedType;
 		}

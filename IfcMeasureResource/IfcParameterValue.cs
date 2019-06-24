@@ -13,7 +13,7 @@ using System.Xml.Serialization;
 
 namespace BuildingSmart.IFC.IfcMeasureResource
 {
-	[Guid("f8d91fbf-99fa-41a0-aee1-6c80bbeaf7d0")]
+	[Guid("18b81db8-1d21-43cd-b028-322e743fface")]
 	public partial struct IfcParameterValue :
 		IfcMeasureValue,
 		BuildingSmart.IFC.IfcGeometryResource.IfcTrimmingSelect

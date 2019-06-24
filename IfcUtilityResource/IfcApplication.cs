@@ -15,12 +15,11 @@ using BuildingSmart.IFC.IfcMeasureResource;
 
 namespace BuildingSmart.IFC.IfcUtilityResource
 {
-	[Guid("88190cb4-3569-4c42-9b7d-8778145e179e")]
+	[Guid("a43b33fa-7560-44f0-a028-e14e498b919b")]
 	public partial class IfcApplication
 	{
 		[DataMember(Order = 0)] 
-		[XmlElement]
-		[Description("Name of the application developer.")]
+		[Description("Name of the application developer, being requested to be member of the IAI.")]
 		[Required()]
 		public IfcOrganization ApplicationDeveloper { get; set; }
 	

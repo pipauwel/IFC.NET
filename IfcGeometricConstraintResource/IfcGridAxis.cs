@@ -16,7 +16,7 @@ using BuildingSmart.IFC.IfcProductExtension;
 
 namespace BuildingSmart.IFC.IfcGeometricConstraintResource
 {
-	[Guid("c88238d9-0400-4b8f-846c-03fd460a7fa9")]
+	[Guid("1038acc6-27c4-461c-b25e-99db38043735")]
 	public partial class IfcGridAxis
 	{
 		[DataMember(Order = 0)] 
@@ -25,7 +25,6 @@ namespace BuildingSmart.IFC.IfcGeometricConstraintResource
 		public IfcLabel? AxisTag { get; set; }
 	
 		[DataMember(Order = 1)] 
-		[XmlElement]
 		[Description("Underlying curve which provides the geometry for this grid axis.")]
 		[Required()]
 		public IfcCurve AxisCurve { get; set; }
@@ -37,22 +36,22 @@ namespace BuildingSmart.IFC.IfcGeometricConstraintResource
 		public IfcBoolean SameSense { get; set; }
 	
 		[InverseProperty("WAxes")] 
-		[Description("If provided, the <em>IfcGridAxis</em> is part of the <em>WAxes</em> of <em>IfcGrid</em>.  <blockquote class=\"change-ifc2x3\">IFC2x3 CHANGE&nbsp; New inverse attribute.</blockquote>")]
+		[Description("<EPM-HTML>  If provided, the <i>IfcGridAxis</i> is part of the <i>WAxes</i> of <i>IfcGrid</i>.  <blockquote><small>    <font color=\"#FF0000\">IFC2x Edition 3 CHANGE&nbsp; New inverse attribute.</font>  </small></blockquote>  </EPM-HTML>")]
 		[MaxLength(1)]
 		public ISet<IfcGrid> PartOfW { get; protected set; }
 	
 		[InverseProperty("VAxes")] 
-		[Description("If provided, the <em>IfcGridAxis</em> is part of the <em>VAxes</em> of <em>IfcGrid</em>.  <blockquote class=\"change-ifc2x3\">IFC2x3 CHANGE&nbsp; New inverse attribute.</blockquote>")]
+		[Description("<EPM-HTML>  If provided, the <i>IfcGridAxis</i> is part of the <i>VAxes</i> of <i>IfcGrid</i>.  <blockquote><small>    <font color=\"#FF0000\">IFC2x Edition 3 CHANGE&nbsp; New inverse attribute.</font>  </small></blockquote>  </EPM-HTML>")]
 		[MaxLength(1)]
 		public ISet<IfcGrid> PartOfV { get; protected set; }
 	
 		[InverseProperty("UAxes")] 
-		[Description("If provided, the <em>IfcGridAxis</em> is part of the <em>UAxes</em> of <em>IfcGrid</em>.  <blockquote class=\"change-ifc2x3\">IFC2x3 CHANGE&nbsp; New inverse attribute.</blockquote>")]
+		[Description("<EPM-HTML>  If provided, the <i>IfcGridAxis</i> is part of the <i>UAxes</i> of <i>IfcGrid</i>.  <blockquote><small>    <font color=\"#FF0000\">IFC2x Edition 3 CHANGE&nbsp; New inverse attribute.</font>  </small></blockquote>  </EPM-HTML>")]
 		[MaxLength(1)]
 		public ISet<IfcGrid> PartOfU { get; protected set; }
 	
 		[InverseProperty("IntersectingAxes")] 
-		[Description("The reference to a set of <IfcVirtualGridIntersection</em>'s, that connect other grid axes to this grid axis.  <blockquote class=\"change-ifc2x3\">IFC2x3 CHANGE&nbsp; New inverse attribute.</blockquote>")]
+		[Description("<EPM-HTML>  The reference to a set of <IfcVirtualGridIntersection</i>'s, that connect other grid axes to this grid axis.  <blockquote><small>    <font color=\"#FF0000\">IFC2x3 CHANGE&nbsp; New inverse attribute.</font>  </small></blockquote>  </EPM-HTML>")]
 		public ISet<IfcVirtualGridIntersection> HasIntersections { get; protected set; }
 	
 	

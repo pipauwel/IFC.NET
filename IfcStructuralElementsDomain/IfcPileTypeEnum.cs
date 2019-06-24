@@ -13,31 +13,17 @@ using System.Xml.Serialization;
 
 namespace BuildingSmart.IFC.IfcStructuralElementsDomain
 {
-	[Guid("7cb56ae1-a2b6-4aab-9ea7-f330ae1f6145")]
+	[Guid("6e5bb991-8d97-4b64-b3fe-148e2a63a32e")]
 	public enum IfcPileTypeEnum
 	{
-		[Description("A bore pile.")]
-		BORED = 1,
+		COHESION = 1,
 	
-		[Description("A rammed, vibrated, or otherwise driven pile.")]
-		DRIVEN = 2,
+		FRICTION = 2,
 	
-		[Description("An injected pile-like construction.")]
-		JETGROUTING = 3,
+		SUPPORT = 3,
 	
-		[Description("A cohesion pile.")]
-		COHESION = 4,
-	
-		[Description("A friction pile.")]
-		FRICTION = 5,
-	
-		[Description("A support pile.")]
-		SUPPORT = 6,
-	
-		[Description("The type of pile function is user defined.")]
 		USERDEFINED = -1,
 	
-		[Description("The type of pile function is not defined.")]
 		NOTDEFINED = 0,
 	
 	}

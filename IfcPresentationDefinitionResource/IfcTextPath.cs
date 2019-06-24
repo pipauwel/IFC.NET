@@ -13,7 +13,7 @@ using System.Xml.Serialization;
 
 namespace BuildingSmart.IFC.IfcPresentationDefinitionResource
 {
-	[Guid("df48b7a3-8d4e-44e0-b6d5-1793bcd461c2")]
+	[Guid("8c0719d1-4101-44eb-9525-1e4ec84d56d2")]
 	public enum IfcTextPath
 	{
 		LEFT = 1,

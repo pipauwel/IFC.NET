@@ -13,7 +13,7 @@ using System.Xml.Serialization;
 
 namespace BuildingSmart.IFC.IfcConstraintResource
 {
-	[Guid("811ac9ba-e590-4255-9d68-1c9b72181e07")]
+	[Guid("e467ad2b-e094-4581-ae6c-f0f320258597")]
 	public interface IfcMetricValueSelect
 	{
 	}

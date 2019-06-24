@@ -18,11 +18,10 @@ using BuildingSmart.IFC.IfcPresentationOrganizationResource;
 
 namespace BuildingSmart.IFC.IfcGeometryResource
 {
-	[Guid("25bb1436-242e-4954-a716-597d8e9ba615")]
+	[Guid("a15c5ebd-7a08-41d4-ac69-184ee254821c")]
 	public partial class IfcRectangularTrimmedSurface : IfcBoundedSurface
 	{
 		[DataMember(Order = 0)] 
-		[XmlElement]
 		[Description("Surface being trimmed.")]
 		[Required()]
 		public IfcSurface BasisSurface { get; set; }
@@ -52,19 +51,17 @@ namespace BuildingSmart.IFC.IfcGeometryResource
 		public IfcParameterValue V2 { get; set; }
 	
 		[DataMember(Order = 5)] 
-		[XmlAttribute]
 		[Description("Flag to indicate whether the direction of the first parameter of the trimmed surface agrees with or opposes the sense of u in the basis surface.")]
 		[Required()]
-		public IfcBoolean Usense { get; set; }
+		public Boolean Usense { get; set; }
 	
 		[DataMember(Order = 6)] 
-		[XmlAttribute]
 		[Description("Flag to indicate whether the direction of the second parameter of the trimmed surface agrees with or opposes the sense of v in the basis surface.")]
 		[Required()]
-		public IfcBoolean Vsense { get; set; }
+		public Boolean Vsense { get; set; }
 	
 	
-		public IfcRectangularTrimmedSurface(IfcSurface basisSurface, IfcParameterValue u1, IfcParameterValue v1, IfcParameterValue u2, IfcParameterValue v2, IfcBoolean usense, IfcBoolean vsense)
+		public IfcRectangularTrimmedSurface(IfcSurface basisSurface, IfcParameterValue u1, IfcParameterValue v1, IfcParameterValue u2, IfcParameterValue v2, Boolean usense, Boolean vsense)
 		{
 			this.BasisSurface = basisSurface;
 			this.U1 = u1;
@@ -74,6 +71,8 @@ namespace BuildingSmart.IFC.IfcGeometryResource
 			this.Usense = usense;
 			this.Vsense = vsense;
 		}
+	
+		public new IfcDimensionCount Dim { get { return new IfcDimensionCount(); } }
 	
 	
 	}

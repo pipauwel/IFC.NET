@@ -15,13 +15,26 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcKernel
 {
-	[Guid("4ee02ebb-86ec-4872-a4ca-287681002e36")]
+	[Guid("4a3a5141-fc1b-450b-8bdd-ce1d2ce53d85")]
 	public abstract partial class IfcRelDecomposes : IfcRelationship
 	{
+		[DataMember(Order = 0)] 
+		[Description("The object that represents the nest or aggregation.")]
+		[Required()]
+		public IfcObjectDefinition RelatingObject { get; set; }
 	
-		protected IfcRelDecomposes(IfcGloballyUniqueId globalId)
-			: base(globalId)
+		[DataMember(Order = 1)] 
+		[Description("The objects being nested or aggregated.")]
+		[Required()]
+		[MinLength(1)]
+		public ISet<IfcObjectDefinition> RelatedObjects { get; protected set; }
+	
+	
+		protected IfcRelDecomposes(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcObjectDefinition relatingObject, IfcObjectDefinition[] relatedObjects)
+			: base(globalId, ownerHistory)
 		{
+			this.RelatingObject = relatingObject;
+			this.RelatedObjects = new HashSet<IfcObjectDefinition>(relatedObjects);
 		}
 	
 	

@@ -16,24 +16,23 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcProductExtension
 {
-	[Guid("d85e2968-6220-4d4b-9e5d-3fcf794fea60")]
+	[Guid("c61fb4db-0cf8-48c7-8d8f-aa7dc803cb0c")]
 	public partial class IfcRelContainedInSpatialStructure : IfcRelConnects
 	{
 		[DataMember(Order = 0)] 
-		[Description("Set of products, which are contained within this level of the spatial structure hierarchy.  <blockquote class=\"change-ifc2x\">IFC2x CHANGE&nbsp; The data type has been changed from <em>IfcElement</em> to <em>IfcProduct</em> with upward compatibility</blockquote>")]
+		[Description("<EPM-HTML>  Set of <strike>elements</strike> products, which are contained within this level of the spatial structure hierarchy.  <blockquote><font color=\"#ff0000\"><small>  IFC2x PLATFORM CHANGE&nbsp; The data type has been changed from <i>IfcElement</i> to <i>IfcProduct</i> with upward compatibility  <small></font></blockquote>  </EPM-HTML>")]
 		[Required()]
 		[MinLength(1)]
 		public ISet<IfcProduct> RelatedElements { get; protected set; }
 	
 		[DataMember(Order = 1)] 
-		[XmlIgnore]
-		[Description("Spatial structure element, within which the element is contained. Any element can only be contained within one element of the project spatial structure.  <blockquote class=\"change-ifc2x4\">IFC4 CHANGE&nbsp; The attribute <em>RelatingStructure</em> as been promoted to the new supertype <em>IfcSpatialElement</em> with upward compatibility for file based exchange.</blockquote>")]
+		[Description("<EPM-HTML>  Spatial structure element, within which the element is contained. Any element can only be contained within one element of the project spatial structure.  </EPM-HTML>")]
 		[Required()]
-		public IfcSpatialElement RelatingStructure { get; set; }
+		public IfcSpatialStructureElement RelatingStructure { get; set; }
 	
 	
-		public IfcRelContainedInSpatialStructure(IfcGloballyUniqueId globalId, IfcProduct[] relatedElements, IfcSpatialElement relatingStructure)
-			: base(globalId)
+		public IfcRelContainedInSpatialStructure(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcProduct[] relatedElements, IfcSpatialStructureElement relatingStructure)
+			: base(globalId, ownerHistory)
 		{
 			this.RelatedElements = new HashSet<IfcProduct>(relatedElements);
 			this.RelatingStructure = relatingStructure;

@@ -16,7 +16,7 @@ using BuildingSmart.IFC.IfcPresentationOrganizationResource;
 
 namespace BuildingSmart.IFC.IfcGeometricModelResource
 {
-	[Guid("a6eb852d-2266-484e-b385-16dab2770609")]
+	[Guid("c01775c6-92a1-49ef-8434-510b5db59e84")]
 	public partial class IfcBooleanClippingResult : IfcBooleanResult
 	{
 	

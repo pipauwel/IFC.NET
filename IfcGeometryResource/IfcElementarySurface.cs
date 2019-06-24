@@ -17,11 +17,10 @@ using BuildingSmart.IFC.IfcPresentationOrganizationResource;
 
 namespace BuildingSmart.IFC.IfcGeometryResource
 {
-	[Guid("dab568ba-aad6-4d74-963d-d3f397cfcea1")]
+	[Guid("149afe59-0f09-4d70-8dd0-34fecd2c9dfe")]
 	public abstract partial class IfcElementarySurface : IfcSurface
 	{
 		[DataMember(Order = 0)] 
-		[XmlElement]
 		[Description("The position and orientation of the surface. This attribute is used in the definition of the parameterization of the surface.")]
 		[Required()]
 		public IfcAxis2Placement3D Position { get; set; }
@@ -31,6 +30,8 @@ namespace BuildingSmart.IFC.IfcGeometryResource
 		{
 			this.Position = position;
 		}
+	
+		public new IfcDimensionCount Dim { get { return new IfcDimensionCount(); } }
 	
 	
 	}

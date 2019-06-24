@@ -10,13 +10,12 @@ using System.Runtime.InteropServices;
 using System.Runtime.Serialization;
 using System.Xml.Serialization;
 
-using BuildingSmart.IFC.IfcExternalReferenceResource;
 using BuildingSmart.IFC.IfcGeometryResource;
 using BuildingSmart.IFC.IfcMeasureResource;
 
 namespace BuildingSmart.IFC.IfcProfileResource
 {
-	[Guid("e5fddf04-c0a3-4722-a8bf-d4fce6edec7d")]
+	[Guid("d0f17bd3-c37e-46e7-b03e-b6c0ae3bff08")]
 	public partial class IfcZShapeProfileDef : IfcParameterizedProfileDef
 	{
 		[DataMember(Order = 0)] 
@@ -45,17 +44,17 @@ namespace BuildingSmart.IFC.IfcProfileResource
 	
 		[DataMember(Order = 4)] 
 		[XmlAttribute]
-		[Description("Fillet radius according the above illustration (= r1).")]
-		public IfcNonNegativeLengthMeasure? FilletRadius { get; set; }
+		[Description("Fillet radius according the above illustration (= r1). If it is not given, zero is assumed.")]
+		public IfcPositiveLengthMeasure? FilletRadius { get; set; }
 	
 		[DataMember(Order = 5)] 
 		[XmlAttribute]
-		[Description("Edge radius according the above illustration (= r2).")]
-		public IfcNonNegativeLengthMeasure? EdgeRadius { get; set; }
+		[Description("Edge radius according the above illustration (= r2). If it is not given, zero is assumed.")]
+		public IfcPositiveLengthMeasure? EdgeRadius { get; set; }
 	
 	
-		public IfcZShapeProfileDef(IfcProfileTypeEnum profileType, IfcPositiveLengthMeasure depth, IfcPositiveLengthMeasure flangeWidth, IfcPositiveLengthMeasure webThickness, IfcPositiveLengthMeasure flangeThickness)
-			: base(profileType)
+		public IfcZShapeProfileDef(IfcProfileTypeEnum profileType, IfcAxis2Placement2D position, IfcPositiveLengthMeasure depth, IfcPositiveLengthMeasure flangeWidth, IfcPositiveLengthMeasure webThickness, IfcPositiveLengthMeasure flangeThickness)
+			: base(profileType, position)
 		{
 			this.Depth = depth;
 			this.FlangeWidth = flangeWidth;

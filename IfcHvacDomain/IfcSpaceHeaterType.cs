@@ -19,8 +19,8 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcHvacDomain
 {
-	[Guid("0f52a5c7-5f1e-4406-8e80-801782467a1a")]
-	public partial class IfcSpaceHeaterType : IfcFlowTerminalType
+	[Guid("eb109947-7e16-4899-8dda-b79c12c813aa")]
+	public partial class IfcSpaceHeaterType : IfcEnergyConversionDeviceType
 	{
 		[DataMember(Order = 0)] 
 		[XmlAttribute]
@@ -29,8 +29,8 @@ namespace BuildingSmart.IFC.IfcHvacDomain
 		public IfcSpaceHeaterTypeEnum PredefinedType { get; set; }
 	
 	
-		public IfcSpaceHeaterType(IfcGloballyUniqueId globalId, IfcSpaceHeaterTypeEnum predefinedType)
-			: base(globalId)
+		public IfcSpaceHeaterType(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcSpaceHeaterTypeEnum predefinedType)
+			: base(globalId, ownerHistory)
 		{
 			this.PredefinedType = predefinedType;
 		}

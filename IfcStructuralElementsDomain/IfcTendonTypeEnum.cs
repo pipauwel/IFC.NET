@@ -13,25 +13,19 @@ using System.Xml.Serialization;
 
 namespace BuildingSmart.IFC.IfcStructuralElementsDomain
 {
-	[Guid("a2a1bae2-820c-42dc-87ce-63af87f8b6a0")]
+	[Guid("38e2b96a-4a90-4fc9-a3ce-367eaba2cd76")]
 	public enum IfcTendonTypeEnum
 	{
-		[Description("The tendon is configured as a bar.")]
-		BAR = 1,
+		STRAND = 1,
 	
-		[Description("The tendon is coated.")]
-		COATED = 2,
+		WIRE = 2,
 	
-		[Description("The tendon is a strand.")]
-		STRAND = 3,
+		BAR = 3,
 	
-		[Description("The tendon is a wire.")]
-		WIRE = 4,
+		COATED = 4,
 	
-		[Description("The type of tendon is user defined.")]
 		USERDEFINED = -1,
 	
-		[Description("The type of tendon is not defined.")]
 		NOTDEFINED = 0,
 	
 	}

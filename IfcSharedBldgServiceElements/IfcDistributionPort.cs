@@ -19,7 +19,7 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcSharedBldgServiceElements
 {
-	[Guid("1b957306-e396-43ea-b6ee-e7e28d37f9e9")]
+	[Guid("1197660a-4be7-41c5-8aa2-7a101656b129")]
 	public partial class IfcDistributionPort : IfcPort
 	{
 		[DataMember(Order = 0)] 
@@ -27,18 +27,9 @@ namespace BuildingSmart.IFC.IfcSharedBldgServiceElements
 		[Description("Enumeration that identifies if this port is a Sink (inlet), a Source (outlet) or both a SinkAndSource.")]
 		public IfcFlowDirectionEnum? FlowDirection { get; set; }
 	
-		[DataMember(Order = 1)] 
-		[XmlAttribute]
-		public IfcDistributionPortTypeEnum? PredefinedType { get; set; }
 	
-		[DataMember(Order = 2)] 
-		[XmlAttribute]
-		[Description("Enumeration that identifies the system type.  If a system type is defined, the port may only be connected to other ports having the same system type.")]
-		public IfcDistributionSystemEnum? SystemType { get; set; }
-	
-	
-		public IfcDistributionPort(IfcGloballyUniqueId globalId)
-			: base(globalId)
+		public IfcDistributionPort(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory)
+			: base(globalId, ownerHistory)
 		{
 		}
 	

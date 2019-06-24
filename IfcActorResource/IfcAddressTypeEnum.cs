@@ -13,22 +13,17 @@ using System.Xml.Serialization;
 
 namespace BuildingSmart.IFC.IfcActorResource
 {
-	[Guid("bcc21d65-0771-441d-9a6c-1d8a7e5f4be4")]
+	[Guid("0685e439-0f9f-4945-b2ce-51c213d5112e")]
 	public enum IfcAddressTypeEnum
 	{
-		[Description("An office address.")]
 		OFFICE = 1,
 	
-		[Description("A site address.")]
 		SITE = 2,
 	
-		[Description("A home address.")]
 		HOME = 3,
 	
-		[Description("A postal distribution point address.")]
 		DISTRIBUTIONPOINT = 4,
 	
-		[Description("A user defined address type to be provided.")]
 		USERDEFINED = -1,
 	
 	}

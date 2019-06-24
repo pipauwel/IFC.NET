@@ -17,7 +17,7 @@ using BuildingSmart.IFC.IfcPresentationOrganizationResource;
 
 namespace BuildingSmart.IFC.IfcGeometryResource
 {
-	[Guid("8afd8403-af5d-435e-b2f5-590d21cb0300")]
+	[Guid("b986ea11-24bb-4d48-902b-c8bffba5c89e")]
 	public partial class IfcPlane : IfcElementarySurface
 	{
 	

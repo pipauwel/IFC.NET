@@ -10,47 +10,23 @@ using System.Runtime.InteropServices;
 using System.Runtime.Serialization;
 using System.Xml.Serialization;
 
-using BuildingSmart.IFC.IfcKernel;
 using BuildingSmart.IFC.IfcMeasureResource;
 using BuildingSmart.IFC.IfcPresentationOrganizationResource;
 using BuildingSmart.IFC.IfcPropertyResource;
 
 namespace BuildingSmart.IFC.IfcExternalReferenceResource
 {
-	[Guid("d6845f56-93c2-41ea-bd7e-edbfea1e9068")]
+	[Guid("658c5ceb-e16f-4dd0-9898-734a59492901")]
 	public partial class IfcClassificationReference : IfcExternalReference,
-		IfcClassificationReferenceSelect,
-		IfcClassificationSelect
+		IfcClassificationNotationSelect
 	{
 		[DataMember(Order = 0)] 
-		[XmlIgnore]
-		[Description("The classification system or source that is referenced.  <blockquote class=\"change-ifc2x4\">IFC4 CHANGE&nbsp; Data type changed to <em>IfcClassificationReferenceSelect</em>.</blockquote>")]
-		public IfcClassificationReferenceSelect ReferencedSource { get; set; }
-	
-		[DataMember(Order = 1)] 
-		[XmlAttribute]
-		[Description("Description of the classification reference for informational purposes.  <blockquote class=\"change-ifc2x4\">IFC4 CHANGE&nbsp; New attribute added at the end of the attribute list.</blockquote>")]
-		public IfcText? Description { get; set; }
-	
-		[DataMember(Order = 2)] 
-		[XmlAttribute]
-		[Description("Optional identifier to sort the set of classification references within the referenced source (either a classification facet of higher level, or the classification system itself).  <blockquote class=\"change-ifc2x4\">IFC4 CHANGE&nbsp; New attribute added at the end of the attribute list.</blockquote>")]
-		public IfcIdentifier? Sort { get; set; }
-	
-		[InverseProperty("RelatingClassification")] 
-		[Description("The classification reference with which objects are associated.  <blockquote class=\"change-ifc2x4\">IFC4 CHANGE&nbsp; New inverse attribute.</blockquote>")]
-		public ISet<IfcRelAssociatesClassification> ClassificationRefForObjects { get; protected set; }
-	
-		[InverseProperty("ReferencedSource")] 
-		[XmlElement("IfcClassificationReference")]
-		[Description("The parent classification references to which this child classification reference applies. It can either be the final classification item leaf node, or an intermediate classification item.  <blockquote class=\"change-ifc2x4\">IFC4 CHANGE  New inverse attribute.</blockquote>")]
-		public ISet<IfcClassificationReference> HasReferences { get; protected set; }
+		[Description("The classification system or source that is referenced.")]
+		public IfcClassification ReferencedSource { get; set; }
 	
 	
 		public IfcClassificationReference()
 		{
-			this.ClassificationRefForObjects = new HashSet<IfcRelAssociatesClassification>();
-			this.HasReferences = new HashSet<IfcClassificationReference>();
 		}
 	
 	

@@ -13,7 +13,7 @@ using System.Xml.Serialization;
 
 namespace BuildingSmart.IFC.IfcStructuralAnalysisDomain
 {
-	[Guid("9f0a92c2-e06f-476c-9082-a274a4534f8c")]
+	[Guid("8815fd03-1d0a-4537-9ff0-af06acf761c6")]
 	public interface IfcStructuralActivityAssignmentSelect
 	{
 	}

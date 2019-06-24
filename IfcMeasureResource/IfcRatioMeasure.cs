@@ -13,11 +13,11 @@ using System.Xml.Serialization;
 
 namespace BuildingSmart.IFC.IfcMeasureResource
 {
-	[Guid("bda0f4ee-5054-43de-9687-1cb9f5d258f3")]
+	[Guid("40b33d00-3d4e-461b-ac16-d6b46e44d920")]
 	public partial struct IfcRatioMeasure :
+		BuildingSmart.IFC.IfcCostResource.IfcAppliedValueSelect,
 		IfcMeasureValue,
-		BuildingSmart.IFC.IfcPresentationAppearanceResource.IfcSizeSelect,
-		BuildingSmart.IFC.IfcDateTimeResource.IfcTimeOrRatioSelect
+		BuildingSmart.IFC.IfcPresentationAppearanceResource.IfcSizeSelect
 	{
 		[XmlText]
 		public Double Value { get; private set; }

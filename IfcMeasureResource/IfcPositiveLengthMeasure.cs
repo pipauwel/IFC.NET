@@ -13,7 +13,7 @@ using System.Xml.Serialization;
 
 namespace BuildingSmart.IFC.IfcMeasureResource
 {
-	[Guid("3a9ab3fb-6071-423b-afb3-b5d134501151")]
+	[Guid("476306ae-1d08-4e27-a80e-af066c396aaa")]
 	public partial struct IfcPositiveLengthMeasure :
 		BuildingSmart.IFC.IfcPresentationAppearanceResource.IfcHatchLineDistanceSelect,
 		IfcMeasureValue,

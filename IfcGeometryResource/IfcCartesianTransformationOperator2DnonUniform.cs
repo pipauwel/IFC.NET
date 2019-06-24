@@ -10,19 +10,17 @@ using System.Runtime.InteropServices;
 using System.Runtime.Serialization;
 using System.Xml.Serialization;
 
-using BuildingSmart.IFC.IfcMeasureResource;
 using BuildingSmart.IFC.IfcPresentationAppearanceResource;
 using BuildingSmart.IFC.IfcPresentationOrganizationResource;
 
 namespace BuildingSmart.IFC.IfcGeometryResource
 {
-	[Guid("f45b9882-e0fb-41eb-9b0a-805615a37351")]
+	[Guid("6b283852-794e-461c-8a05-2d7e9a211c85")]
 	public partial class IfcCartesianTransformationOperator2DnonUniform : IfcCartesianTransformationOperator2D
 	{
 		[DataMember(Order = 0)] 
-		[XmlAttribute]
 		[Description("The scaling value specified for the transformation along the axis 2. This is normally the y scale factor.")]
-		public IfcReal? Scale2 { get; set; }
+		public Double? Scale2 { get; set; }
 	
 	
 		public IfcCartesianTransformationOperator2DnonUniform(IfcCartesianPoint localOrigin)
@@ -30,7 +28,7 @@ namespace BuildingSmart.IFC.IfcGeometryResource
 		{
 		}
 	
-		public new IfcReal Scl2 { get { return new IfcReal(); } }
+		public new Double Scl2 { get { return null; } }
 	
 	
 	}

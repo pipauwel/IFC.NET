@@ -16,18 +16,16 @@ using BuildingSmart.IFC.IfcPresentationOrganizationResource;
 
 namespace BuildingSmart.IFC.IfcGeometryResource
 {
-	[Guid("28220f1d-2ef9-48f4-9aa6-198f7af996d8")]
+	[Guid("385df7bd-5ead-42f9-a622-2a0516779bef")]
 	public partial class IfcLine : IfcCurve
 	{
 		[DataMember(Order = 0)] 
-		[XmlElement]
-		[Description("The location of the <em>IfcLine</em>.")]
+		[Description("The location of the line.")]
 		[Required()]
 		public IfcCartesianPoint Pnt { get; set; }
 	
 		[DataMember(Order = 1)] 
-		[XmlElement]
-		[Description("The direction of the <em>IfcLine</em>, the magnitude and units of <em>Dir</em> affect the parameterization of the line.")]
+		[Description("The direction of the line, the magnitude and units of Dir affect the parameterization of the line.")]
 		[Required()]
 		public IfcVector Dir { get; set; }
 	

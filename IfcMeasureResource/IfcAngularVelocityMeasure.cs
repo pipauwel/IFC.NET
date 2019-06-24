@@ -13,7 +13,7 @@ using System.Xml.Serialization;
 
 namespace BuildingSmart.IFC.IfcMeasureResource
 {
-	[Guid("4554a189-ce8f-40dc-8177-186939e12db3")]
+	[Guid("b2ac2bfe-0bb6-4b03-9fab-c94b736ac935")]
 	public partial struct IfcAngularVelocityMeasure :
 		IfcDerivedMeasureValue
 	{

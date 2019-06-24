@@ -17,7 +17,7 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcProductExtension
 {
-	[Guid("b4f9ba21-6b82-4bbb-a406-3aca970b5688")]
+	[Guid("008f35b3-03e3-4145-9666-850e8bad6917")]
 	public partial class IfcTransportElementType : IfcElementType
 	{
 		[DataMember(Order = 0)] 
@@ -27,8 +27,8 @@ namespace BuildingSmart.IFC.IfcProductExtension
 		public IfcTransportElementTypeEnum PredefinedType { get; set; }
 	
 	
-		public IfcTransportElementType(IfcGloballyUniqueId globalId, IfcTransportElementTypeEnum predefinedType)
-			: base(globalId)
+		public IfcTransportElementType(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcTransportElementTypeEnum predefinedType)
+			: base(globalId, ownerHistory)
 		{
 			this.PredefinedType = predefinedType;
 		}

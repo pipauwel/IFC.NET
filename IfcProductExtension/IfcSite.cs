@@ -19,17 +19,17 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcProductExtension
 {
-	[Guid("1208b73f-6d28-45b8-bda4-7dc5d67a886b")]
+	[Guid("5183c1e5-7105-4f4e-9386-5365aa3cd4e2")]
 	public partial class IfcSite : IfcSpatialStructureElement
 	{
 		[DataMember(Order = 0)] 
 		[XmlAttribute]
-		[Description("World Latitude at reference point (most likely defined in legal description). Defined as integer values for degrees, minutes, seconds, and, optionally, millionths of seconds with respect to the world geodetic system WGS84.  <blockquote class=\"note\">NOTE&nbsp; Latitudes are measured relative to the geodetic equator, north of the equator by positive values - from 0 till +90,   south of the equator by negative values - from 0 till  -90.</blockquote>")]
+		[Description("<EPM-HTML>  World Latitude at reference point (most likely defined in legal description). Defined as integer values for degrees, minutes, seconds, and, optionally, millionths of seconds with respect to the world geodetic system WGS84.  <BLOCKQUOTE> <FONT SIZE=\"-1\">Latitudes are measured relative to the geodetic equator, north of the equator by positive values - from 0 till +90,   south of the equator by negative values - from 0 till  -90.</FONT></BLOCKQUOTE>  </EPM-HTML>")]
 		public IfcCompoundPlaneAngleMeasure? RefLatitude { get; set; }
 	
 		[DataMember(Order = 1)] 
 		[XmlAttribute]
-		[Description("World Longitude at reference point (most likely defined in legal description). Defined as integer values for degrees, minutes, seconds, and, optionally, millionths of seconds with respect to the world geodetic system WGS84.  <blockquote class=\"note\">NOTE&nbsp; Longitudes are measured relative to the geodetic zero meridian, nominally the same as the Greenwich prime meridian: longitudes west of the zero meridian have negative values - from 0 till -180, longitudes east of the zero meridian have positive values - from 0 till -180.</blockquote>  <blockquote class=\"example\">EXAMPLE&nbsp; Chicago Harbor Light has according to WGS84 a longitude -87.35.40 (or 87.35.40W) and a latitude 41.53.30 (or 41.53.30N).</blockquote>")]
+		[Description("<EPM-HTML>  World Longitude at reference point (most likely defined in legal description). Defined as integer values for degrees, minutes, seconds, and, optionally, millionths of seconds with respect to the world geodetic system WGS84.  <BLOCKQUOTE> <FONT SIZE=\"-1\">Longitudes are measured relative to the geodetic zero meridian, nominally the same as the Greenwich prime meridian: longitudes west of the zero meridian have positive values - from 0 till +180, longitudes east of the zero meridian have negative values - from 0 till -180.</FONT></BLOCKQUOTE>  </EPM-HTML>")]
 		public IfcCompoundPlaneAngleMeasure? RefLongitude { get; set; }
 	
 		[DataMember(Order = 2)] 
@@ -43,13 +43,12 @@ namespace BuildingSmart.IFC.IfcProductExtension
 		public IfcLabel? LandTitleNumber { get; set; }
 	
 		[DataMember(Order = 4)] 
-		[XmlElement]
 		[Description("Address given to the site for postal purposes.")]
 		public IfcPostalAddress SiteAddress { get; set; }
 	
 	
-		public IfcSite(IfcGloballyUniqueId globalId)
-			: base(globalId)
+		public IfcSite(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcElementCompositionEnum compositionType)
+			: base(globalId, ownerHistory, compositionType)
 		{
 		}
 	

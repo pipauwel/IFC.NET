@@ -17,17 +17,15 @@ using BuildingSmart.IFC.IfcPresentationOrganizationResource;
 
 namespace BuildingSmart.IFC.IfcGeometryResource
 {
-	[Guid("49f23ea3-63e5-4868-bb6d-dc7fe2e9d879")]
+	[Guid("e3f2858e-1dfd-4bcb-b2a8-e0c8e64b4e6a")]
 	public partial class IfcCurveBoundedPlane : IfcBoundedSurface
 	{
 		[DataMember(Order = 0)] 
-		[XmlElement]
 		[Description("The surface to be bound.")]
 		[Required()]
 		public IfcPlane BasisSurface { get; set; }
 	
 		[DataMember(Order = 1)] 
-		[XmlElement]
 		[Description("The outer boundary of the surface.")]
 		[Required()]
 		public IfcCurve OuterBoundary { get; set; }
@@ -44,6 +42,8 @@ namespace BuildingSmart.IFC.IfcGeometryResource
 			this.OuterBoundary = outerBoundary;
 			this.InnerBoundaries = new HashSet<IfcCurve>(innerBoundaries);
 		}
+	
+		public new IfcDimensionCount Dim { get { return new IfcDimensionCount(); } }
 	
 	
 	}

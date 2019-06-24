@@ -19,7 +19,7 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcHvacDomain
 {
-	[Guid("5135d731-a436-4d43-8c92-3f797d30f85e")]
+	[Guid("dbff40dc-2f71-4e72-9684-78cd6d4553a3")]
 	public partial class IfcChillerType : IfcEnergyConversionDeviceType
 	{
 		[DataMember(Order = 0)] 
@@ -29,8 +29,8 @@ namespace BuildingSmart.IFC.IfcHvacDomain
 		public IfcChillerTypeEnum PredefinedType { get; set; }
 	
 	
-		public IfcChillerType(IfcGloballyUniqueId globalId, IfcChillerTypeEnum predefinedType)
-			: base(globalId)
+		public IfcChillerType(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcChillerTypeEnum predefinedType)
+			: base(globalId, ownerHistory)
 		{
 			this.PredefinedType = predefinedType;
 		}

@@ -15,12 +15,12 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcKernel
 {
-	[Guid("d1873043-e605-458b-826d-8e332289ba38")]
+	[Guid("342fb517-d86e-4530-8ae6-5b1d5aeb278b")]
 	public abstract partial class IfcRelConnects : IfcRelationship
 	{
 	
-		protected IfcRelConnects(IfcGloballyUniqueId globalId)
-			: base(globalId)
+		protected IfcRelConnects(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory)
+			: base(globalId, ownerHistory)
 		{
 		}
 	

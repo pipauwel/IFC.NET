@@ -17,18 +17,20 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcSharedFacilitiesElements
 {
-	[Guid("25ccf99a-1eaa-4b97-9f86-66335a753f92")]
+	[Guid("266bce27-12d2-4e1d-b589-b8d2a405ff05")]
 	public partial class IfcOccupant : IfcActor
 	{
 		[DataMember(Order = 0)] 
 		[XmlAttribute]
-		[Description("Predefined occupant types from which that required may be set.    <blockquote class=\"change-ifc2x4\">IFC4 CHANGE Attribute made optional.</blockquote>")]
-		public IfcOccupantTypeEnum? PredefinedType { get; set; }
+		[Description("Predefined occupant types from which that required may be set.")]
+		[Required()]
+		public IfcOccupantTypeEnum PredefinedType { get; set; }
 	
 	
-		public IfcOccupant(IfcGloballyUniqueId globalId, IfcActorSelect theActor)
-			: base(globalId, theActor)
+		public IfcOccupant(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcActorSelect theActor, IfcOccupantTypeEnum predefinedType)
+			: base(globalId, ownerHistory, theActor)
 		{
+			this.PredefinedType = predefinedType;
 		}
 	
 	

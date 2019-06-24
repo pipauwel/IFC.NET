@@ -13,35 +13,25 @@ using System.Xml.Serialization;
 
 namespace BuildingSmart.IFC.IfcSharedFacilitiesElements
 {
-	[Guid("5a756902-dbbc-43fa-9150-58668edc916f")]
+	[Guid("5f4a5ce1-1ce4-4576-b7e3-325a91036fc6")]
 	public enum IfcOccupantTypeEnum
 	{
-		[Description("Actor receiving the assignment of a property agreement from an assignor.")]
 		ASSIGNEE = 1,
 	
-		[Description("Actor assigning a property agreement to an assignor.")]
 		ASSIGNOR = 2,
 	
-		[Description("Actor receiving the lease of a property from a lessor.")]
 		LESSEE = 3,
 	
-		[Description("Actor leasing a property to a lessee.")]
 		LESSOR = 4,
 	
-		[Description("Actor participating in a property agreement on behalf of an owner, lessor or assi" +
-	    "gnor.")]
 		LETTINGAGENT = 5,
 	
-		[Description("Actor that owns a property.")]
 		OWNER = 6,
 	
-		[Description("Actor renting the use of a property fro a period of time.")]
 		TENANT = 7,
 	
-		[Description("User-defined type.")]
 		USERDEFINED = -1,
 	
-		[Description("Undefined type.")]
 		NOTDEFINED = 0,
 	
 	}

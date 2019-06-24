@@ -13,36 +13,23 @@ using System.Xml.Serialization;
 
 namespace BuildingSmart.IFC.IfcHvacDomain
 {
-	[Guid("81999189-d657-4185-891f-44500625d310")]
+	[Guid("2cead977-c89d-43cc-ab52-7fda5d90a523")]
 	public enum IfcCoilTypeEnum
 	{
-		[Description("Cooling coil using a refrigerant to cool the air stream directly.")]
 		DXCOOLINGCOIL = 1,
 	
-		[Description("Heating coil using electricity as a heating source.")]
-		ELECTRICHEATINGCOIL = 2,
+		WATERCOOLINGCOIL = 2,
 	
-		[Description("Heating coil using gas as a heating source.")]
-		GASHEATINGCOIL = 3,
+		STEAMHEATINGCOIL = 3,
 	
-		[Description("Cooling or Heating coil that uses a hydronic fluid as a cooling or heating source" +
-	    ".")]
-		HYDRONICCOIL = 4,
+		WATERHEATINGCOIL = 4,
 	
-		[Description("Heating coil using steam as heating source.")]
-		STEAMHEATINGCOIL = 5,
+		ELECTRICHEATINGCOIL = 5,
 	
-		[Description("Cooling coil using chilled water. HYDRONICCOIL supercedes this enumerator.")]
-		WATERCOOLINGCOIL = 6,
+		GASHEATINGCOIL = 6,
 	
-		[Description("Heating coil using hot water as a heating source. HYDRONICCOIL supercedes this en" +
-	    "umerator.")]
-		WATERHEATINGCOIL = 7,
-	
-		[Description("User-defined coil type.")]
 		USERDEFINED = -1,
 	
-		[Description("Undefined coil type.")]
 		NOTDEFINED = 0,
 	
 	}

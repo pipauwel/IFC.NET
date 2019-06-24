@@ -13,7 +13,7 @@ using System.Xml.Serialization;
 
 namespace BuildingSmart.IFC.IfcActorResource
 {
-	[Guid("c5ed9493-664e-4798-a4a5-b5f406aad4b1")]
+	[Guid("d2b9ea56-3c75-44bd-819d-dcab6aaa5498")]
 	public enum IfcRoleEnum
 	{
 		SUPPLIER = 1,
@@ -46,7 +46,7 @@ namespace BuildingSmart.IFC.IfcActorResource
 	
 		CIVILENGINEER = 15,
 	
-		COMMISSIONINGENGINEER = 16,
+		COMISSIONINGENGINEER = 16,
 	
 		ENGINEER = 17,
 	
@@ -60,7 +60,6 @@ namespace BuildingSmart.IFC.IfcActorResource
 	
 		RESELLER = 22,
 	
-		[Description("User defined value to be provided.")]
 		USERDEFINED = -1,
 	
 	}

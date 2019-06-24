@@ -13,7 +13,7 @@ using System.Xml.Serialization;
 
 namespace BuildingSmart.IFC.IfcExternalReferenceResource
 {
-	[Guid("076db041-50fb-449c-b4d9-37b4deba9ede")]
+	[Guid("653339d2-3261-4038-92ae-a0ed097f0eda")]
 	public interface IfcLibrarySelect
 	{
 	}

@@ -13,17 +13,13 @@ using System.Xml.Serialization;
 
 namespace BuildingSmart.IFC.IfcProductExtension
 {
-	[Guid("b5b9072a-0e79-47df-ae0e-9eee0c4dba38")]
+	[Guid("02db1895-2d73-465d-a2f2-34d7b7583be2")]
 	public enum IfcPhysicalOrVirtualEnum
 	{
-		[Description("The space boundary is provided physically (by a physical element).")]
 		PHYSICAL = 1,
 	
-		[Description("The space boundary is provided virtually (by a logical divider that has no physic" +
-	    "al manifestation).")]
 		VIRTUAL = 2,
 	
-		[Description("No information available.")]
 		NOTDEFINED = 0,
 	
 	}

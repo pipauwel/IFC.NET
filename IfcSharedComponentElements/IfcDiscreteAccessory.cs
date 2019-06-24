@@ -15,23 +15,17 @@ using BuildingSmart.IFC.IfcKernel;
 using BuildingSmart.IFC.IfcMeasureResource;
 using BuildingSmart.IFC.IfcProductExtension;
 using BuildingSmart.IFC.IfcRepresentationResource;
-using BuildingSmart.IFC.IfcSharedBldgElements;
 using BuildingSmart.IFC.IfcStructuralAnalysisDomain;
 using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcSharedComponentElements
 {
-	[Guid("5ba7cc3f-c0c3-42e3-bfe3-f54531a32ef7")]
+	[Guid("42f9c6aa-5b49-4cd4-a52c-d9f2cb92fa55")]
 	public partial class IfcDiscreteAccessory : IfcElementComponent
 	{
-		[DataMember(Order = 0)] 
-		[XmlAttribute]
-		[Description("Subtype of discrete accessory.  If USERDEFINED, the type is further qualified by means of the inherited attribute <em>ObjectType</em>.  Refer to <em>IfcDiscreteAccessoryType</em> for a non-exclusive list of userdefined type designations which are applicable to <em>IfcDiscreteAccessory</em> as well.")]
-		public IfcDiscreteAccessoryTypeEnum? PredefinedType { get; set; }
 	
-	
-		public IfcDiscreteAccessory(IfcGloballyUniqueId globalId)
-			: base(globalId)
+		public IfcDiscreteAccessory(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory)
+			: base(globalId, ownerHistory)
 		{
 		}
 	

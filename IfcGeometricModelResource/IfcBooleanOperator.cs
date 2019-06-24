@@ -13,19 +13,13 @@ using System.Xml.Serialization;
 
 namespace BuildingSmart.IFC.IfcGeometricModelResource
 {
-	[Guid("ef1ca58b-1cf6-4925-9fb7-4144c2729c39")]
+	[Guid("330d92cb-55d9-4709-8afe-d9205eb7766a")]
 	public enum IfcBooleanOperator
 	{
-		[Description("The operation of constructing the regularized set theoretic union of the volumes " +
-	    "defined by two solids.")]
 		UNION = 1,
 	
-		[Description("The operation of constructing the regularised set theoretic intersection of the v" +
-	    "olumes defined by two solids.")]
 		INTERSECTION = 2,
 	
-		[Description("The regularised set theoretic difference between the volumes defined by two solid" +
-	    "s.")]
 		DIFFERENCE = 3,
 	
 	}

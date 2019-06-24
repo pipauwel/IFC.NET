@@ -13,10 +13,11 @@ using System.Xml.Serialization;
 using BuildingSmart.IFC.IfcGeometryResource;
 using BuildingSmart.IFC.IfcMeasureResource;
 using BuildingSmart.IFC.IfcPresentationAppearanceResource;
+using BuildingSmart.IFC.IfcPresentationResource;
 
 namespace BuildingSmart.IFC.IfcPresentationOrganizationResource
 {
-	[Guid("71827db2-742f-4dc0-bf75-f01994ba5b74")]
+	[Guid("3b705245-20db-4ec6-9d25-c59a79898392")]
 	public abstract partial class IfcLightSource : IfcGeometricRepresentationItem
 	{
 		[DataMember(Order = 0)] 
@@ -25,7 +26,6 @@ namespace BuildingSmart.IFC.IfcPresentationOrganizationResource
 		public IfcLabel? Name { get; set; }
 	
 		[DataMember(Order = 1)] 
-		[XmlElement]
 		[Description("Definition from ISO/CD 10303-46:1992: Based on the current lighting model, the colour of the light to be used for shading.  Definition from VRML97 - ISO/IEC 14772-1:1997: The color field specifies the spectral color properties of both the direct and ambient light emission as an RGB value.")]
 		[Required()]
 		public IfcColourRgb LightColour { get; set; }

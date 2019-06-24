@@ -16,7 +16,7 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcKernel
 {
-	[Guid("e5157cca-2d77-44ab-8df1-4977c66acd14")]
+	[Guid("d40d6e07-fca6-44d6-8ff0-7428d418bb6a")]
 	public partial class IfcRelAssociatesDocument : IfcRelAssociates
 	{
 		[DataMember(Order = 0)] 
@@ -25,8 +25,8 @@ namespace BuildingSmart.IFC.IfcKernel
 		public IfcDocumentSelect RelatingDocument { get; set; }
 	
 	
-		public IfcRelAssociatesDocument(IfcGloballyUniqueId globalId, IfcDefinitionSelect[] relatedObjects, IfcDocumentSelect relatingDocument)
-			: base(globalId, relatedObjects)
+		public IfcRelAssociatesDocument(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcRoot[] relatedObjects, IfcDocumentSelect relatingDocument)
+			: base(globalId, ownerHistory, relatedObjects)
 		{
 			this.RelatingDocument = relatingDocument;
 		}

@@ -19,43 +19,47 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcSharedFacilitiesElements
 {
-	[Guid("73471cd5-1296-4091-bcc3-f7f5e32ff3de")]
+	[Guid("b909fc68-c046-4f90-9f4e-6e8916093ebf")]
 	public partial class IfcInventory : IfcGroup
 	{
 		[DataMember(Order = 0)] 
 		[XmlAttribute]
-		[Description("A list of the types of inventories from which that required may be selected.  <blockquote class=\"change-ifc2x4\">IFC4 CHANGE Attribute made optional.</blockquote>")]
-		public IfcInventoryTypeEnum? PredefinedType { get; set; }
+		[Description("A list of the types of inventories from which that required may be selected.")]
+		[Required()]
+		public IfcInventoryTypeEnum InventoryType { get; set; }
 	
 		[DataMember(Order = 1)] 
 		[Description("The organizational unit to which the inventory is applicable.")]
+		[Required()]
 		public IfcActorSelect Jurisdiction { get; set; }
 	
 		[DataMember(Order = 2)] 
 		[Description("Persons who are responsible for the inventory.")]
+		[Required()]
 		[MinLength(1)]
 		public ISet<IfcPerson> ResponsiblePersons { get; protected set; }
 	
 		[DataMember(Order = 3)] 
-		[XmlAttribute]
-		[Description("<p>The date on which the last update of the inventory was carried out.</p>  <blockquote class=\"change-ifc2x4\">IFC4 CHANGE Type changed from IfcDateTimeSelect.</blockquote>")]
-		public IfcDate? LastUpdateDate { get; set; }
+		[Description("The date on which the last update of the inventory was carried out.")]
+		[Required()]
+		public IfcCalendarDate LastUpdateDate { get; set; }
 	
 		[DataMember(Order = 4)] 
-		[XmlElement]
 		[Description("An estimate of the current cost value of the inventory.")]
 		public IfcCostValue CurrentValue { get; set; }
 	
 		[DataMember(Order = 5)] 
-		[XmlElement]
 		[Description("An estimate of the original cost value of the inventory.")]
 		public IfcCostValue OriginalValue { get; set; }
 	
 	
-		public IfcInventory(IfcGloballyUniqueId globalId)
-			: base(globalId)
+		public IfcInventory(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcInventoryTypeEnum inventoryType, IfcActorSelect jurisdiction, IfcPerson[] responsiblePersons, IfcCalendarDate lastUpdateDate)
+			: base(globalId, ownerHistory)
 		{
-			this.ResponsiblePersons = new HashSet<IfcPerson>();
+			this.InventoryType = inventoryType;
+			this.Jurisdiction = jurisdiction;
+			this.ResponsiblePersons = new HashSet<IfcPerson>(responsiblePersons);
+			this.LastUpdateDate = lastUpdateDate;
 		}
 	
 	

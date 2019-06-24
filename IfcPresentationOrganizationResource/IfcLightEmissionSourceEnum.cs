@@ -13,7 +13,7 @@ using System.Xml.Serialization;
 
 namespace BuildingSmart.IFC.IfcPresentationOrganizationResource
 {
-	[Guid("2ea11916-360d-4f64-b04b-8ede4aafd2fb")]
+	[Guid("70354832-2319-4599-87a6-30b99691f1e1")]
 	public enum IfcLightEmissionSourceEnum
 	{
 		COMPACTFLUORESCENT = 1,

@@ -13,7 +13,7 @@ using System.Xml.Serialization;
 
 namespace BuildingSmart.IFC.IfcPresentationAppearanceResource
 {
-	[Guid("9b2496c9-ef73-4fac-af93-f12b7960412f")]
+	[Guid("e44f61cf-91e5-44d7-8947-858516bcfb3e")]
 	public interface IfcCurveFontOrScaledCurveFontSelect
 	{
 	}

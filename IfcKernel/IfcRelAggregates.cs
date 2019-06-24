@@ -15,27 +15,13 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcKernel
 {
-	[Guid("28ae0ad8-279b-405d-9aaf-cdf69a4da9d9")]
+	[Guid("02a680bf-4622-48e0-92eb-9c42ff0f72a1")]
 	public partial class IfcRelAggregates : IfcRelDecomposes
 	{
-		[DataMember(Order = 0)] 
-		[XmlIgnore]
-		[Description("The object definition, either an object type or an object occurrence, that represents the aggregation. It is the whole within the whole/part relationship.    <blockquote class=\"change-ifc2x4\">IFC4 CHANGE&nbsp; The attribute has been demoted from the supertype <em>IfcRelDecomposes</em> and defines the non-ordered aggregation relationship.</blockquote>")]
-		[Required()]
-		public IfcObjectDefinition RelatingObject { get; set; }
 	
-		[DataMember(Order = 1)] 
-		[Description("The object definitions, either object occurrences or object types, that are being aggregated. They are defined as the parts in the whole/part relationship. No order is implied between the parts.    <blockquote class=\"change-ifc2x4\">IFC4 CHANGE&nbsp; The attribute has been demoted from the supertype <em>IfcRelDecomposes</em> and defines the non-ordered set of parts within the aggregation.</blockquote>")]
-		[Required()]
-		[MinLength(1)]
-		public ISet<IfcObjectDefinition> RelatedObjects { get; protected set; }
-	
-	
-		public IfcRelAggregates(IfcGloballyUniqueId globalId, IfcObjectDefinition relatingObject, IfcObjectDefinition[] relatedObjects)
-			: base(globalId)
+		public IfcRelAggregates(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcObjectDefinition relatingObject, IfcObjectDefinition[] relatedObjects)
+			: base(globalId, ownerHistory, relatingObject, relatedObjects)
 		{
-			this.RelatingObject = relatingObject;
-			this.RelatedObjects = new HashSet<IfcObjectDefinition>(relatedObjects);
 		}
 	
 	

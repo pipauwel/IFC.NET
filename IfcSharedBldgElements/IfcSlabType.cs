@@ -18,18 +18,18 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcSharedBldgElements
 {
-	[Guid("c5119b23-0614-4223-839d-d6e3f491a378")]
+	[Guid("c5bd305c-a609-4f45-a996-e7ade1bf936e")]
 	public partial class IfcSlabType : IfcBuildingElementType
 	{
 		[DataMember(Order = 0)] 
 		[XmlAttribute]
-		[Description("Identifies the predefined types of a slab element from which the type required may be set.")]
+		[Description("Type of the slab.")]
 		[Required()]
 		public IfcSlabTypeEnum PredefinedType { get; set; }
 	
 	
-		public IfcSlabType(IfcGloballyUniqueId globalId, IfcSlabTypeEnum predefinedType)
-			: base(globalId)
+		public IfcSlabType(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcSlabTypeEnum predefinedType)
+			: base(globalId, ownerHistory)
 		{
 			this.PredefinedType = predefinedType;
 		}

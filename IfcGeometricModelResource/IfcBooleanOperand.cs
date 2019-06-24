@@ -13,7 +13,7 @@ using System.Xml.Serialization;
 
 namespace BuildingSmart.IFC.IfcGeometricModelResource
 {
-	[Guid("1de4c14b-c3b0-4dab-9526-6208b17404f9")]
+	[Guid("00cf287a-6783-4295-9eff-222f058e2a1d")]
 	public interface IfcBooleanOperand
 	{
 	}

@@ -13,7 +13,7 @@ using System.Xml.Serialization;
 
 namespace BuildingSmart.IFC.IfcPresentationOrganizationResource
 {
-	[Guid("dcdbc355-cbbb-446f-b297-1787b3597d87")]
+	[Guid("c32d587f-aa3b-4576-9a2e-3d0e7a9ebac0")]
 	public interface IfcLightDistributionDataSourceSelect
 	{
 	}

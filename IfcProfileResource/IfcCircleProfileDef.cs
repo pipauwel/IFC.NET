@@ -10,13 +10,12 @@ using System.Runtime.InteropServices;
 using System.Runtime.Serialization;
 using System.Xml.Serialization;
 
-using BuildingSmart.IFC.IfcExternalReferenceResource;
 using BuildingSmart.IFC.IfcGeometryResource;
 using BuildingSmart.IFC.IfcMeasureResource;
 
 namespace BuildingSmart.IFC.IfcProfileResource
 {
-	[Guid("0f127537-4dfb-420f-bcea-6637237ef8e4")]
+	[Guid("a4e8726c-0d47-4d13-bf40-bdc1d4df481a")]
 	public partial class IfcCircleProfileDef : IfcParameterizedProfileDef
 	{
 		[DataMember(Order = 0)] 
@@ -26,8 +25,8 @@ namespace BuildingSmart.IFC.IfcProfileResource
 		public IfcPositiveLengthMeasure Radius { get; set; }
 	
 	
-		public IfcCircleProfileDef(IfcProfileTypeEnum profileType, IfcPositiveLengthMeasure radius)
-			: base(profileType)
+		public IfcCircleProfileDef(IfcProfileTypeEnum profileType, IfcAxis2Placement2D position, IfcPositiveLengthMeasure radius)
+			: base(profileType, position)
 		{
 			this.Radius = radius;
 		}

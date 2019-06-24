@@ -18,20 +18,13 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcSharedComponentElements
 {
-	[Guid("572e4980-73f9-469a-bc9e-520a82f27b85")]
+	[Guid("669ba69d-b7e7-4808-bec7-45e62f8ef8ec")]
 	public partial class IfcFastenerType : IfcElementComponentType
 	{
-		[DataMember(Order = 0)] 
-		[XmlAttribute]
-		[Description("Subtype of fastener")]
-		[Required()]
-		public IfcFastenerTypeEnum PredefinedType { get; set; }
 	
-	
-		public IfcFastenerType(IfcGloballyUniqueId globalId, IfcFastenerTypeEnum predefinedType)
-			: base(globalId)
+		public IfcFastenerType(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory)
+			: base(globalId, ownerHistory)
 		{
-			this.PredefinedType = predefinedType;
 		}
 	
 	

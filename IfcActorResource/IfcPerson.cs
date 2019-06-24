@@ -10,36 +10,34 @@ using System.Runtime.InteropServices;
 using System.Runtime.Serialization;
 using System.Xml.Serialization;
 
-using BuildingSmart.IFC.IfcExternalReferenceResource;
 using BuildingSmart.IFC.IfcMeasureResource;
 using BuildingSmart.IFC.IfcPropertyResource;
 
 namespace BuildingSmart.IFC.IfcActorResource
 {
-	[Guid("444c7a43-9f92-48d5-9ff4-acdf38ead916")]
+	[Guid("d66b760f-317a-43ff-a022-4394078ac555")]
 	public partial class IfcPerson :
 		IfcActorSelect,
-		BuildingSmart.IFC.IfcPropertyResource.IfcObjectReferenceSelect,
-		BuildingSmart.IFC.IfcExternalReferenceResource.IfcResourceObjectSelect
+		BuildingSmart.IFC.IfcPropertyResource.IfcObjectReferenceSelect
 	{
 		[DataMember(Order = 0)] 
 		[XmlAttribute]
 		[Description("Identification of the person.")]
-		public IfcIdentifier? Identification { get; set; }
+		public IfcIdentifier? Id { get; set; }
 	
 		[DataMember(Order = 1)] 
 		[XmlAttribute]
-		[Description("The name by which the family identity of the person may be recognized.  <blockquote class=\"note\">NOTE&nbsp; Depending on geographical location and culture, family name may appear either as the first or last component of a name.</blockquote>")]
+		[Description("The name by which the family identity of the person may be recognized.  <EPM-HTML><BLOCKQUOTE><FONT SIZE=\"-1\">NOTE: Depending on geographical location and culture, family name may appear either as the first or last component of a name.</FONT></BLOCKQUOTE>  </EPM-HTML>")]
 		public IfcLabel? FamilyName { get; set; }
 	
 		[DataMember(Order = 2)] 
 		[XmlAttribute]
-		[Description("The name by which a person is known within a family and by which he or she may be familiarly recognized.  <blockquote class=\"note\">NOTE&nbsp; Depending on geographical location and culture, given name may appear either as the first or last component of a name.</blockquote>")]
+		[Description("The name by which a person is known within a family and by which he or she may be familiarly recognized.  <EPM-HTML>  <BLOCKQUOTE><FONT SIZE=\"-1\">NOTE: Depending on geographical location and culture, given name may appear either as the first or last component of a name.  </FONT></BLOCKQUOTE>  </EPM-HTML>")]
 		public IfcLabel? GivenName { get; set; }
 	
 		[DataMember(Order = 3)] 
 		[XmlAttribute]
-		[Description("Additional names given to a person that enable their identification apart from others who may have the same or similar family and given names.  <blockquote class=\"note\">NOTE&nbsp; Middle names are not normally used in familiar communication but may be asserted to provide additional   identification of a particular person if necessary. They may be particularly useful in situations where the person concerned has a   family name that occurs commonly in the geographical region.</blockquote>")]
+		[Description("Additional names given to a person that enable their identification apart from others who may have the same or similar family and given names.  <EPM-HTML>  <BLOCKQUOTE><FONT SIZE=\"-1\">NOTE: Middle names are not normally used in familiar communication but may be asserted to provide additional   identification of a particular person if necessary. They may be particularly useful in situations where the person concerned has a   family name that occurs commonly in the geographical region.  </FONT></BLOCKQUOTE>  </EPM-HTML>")]
 		[MinLength(1)]
 		public IList<IfcLabel> MiddleNames { get; protected set; }
 	
@@ -61,7 +59,7 @@ namespace BuildingSmart.IFC.IfcActorResource
 		public IList<IfcActorRole> Roles { get; protected set; }
 	
 		[DataMember(Order = 7)] 
-		[Description("Postal and telecommunication addresses of a person.  <blockquote class=\"note\">NOTE&nbsp; A person may have several addresses.</small></blockquote>")]
+		[Description("<EPM-HTML>Postal and telecommunication addresses of a person.  <BLOCKQUOTE><FONT SIZE=\"-1\">NOTE - A person may have several addresses.  </FONT></BLOCKQUOTE>  </EPM-HTML>")]
 		[MinLength(1)]
 		public IList<IfcAddress> Addresses { get; protected set; }
 	

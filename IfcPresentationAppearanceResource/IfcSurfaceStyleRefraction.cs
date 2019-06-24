@@ -11,12 +11,11 @@ using System.Runtime.Serialization;
 using System.Xml.Serialization;
 
 using BuildingSmart.IFC.IfcMeasureResource;
-using BuildingSmart.IFC.IfcPresentationDefinitionResource;
 
 namespace BuildingSmart.IFC.IfcPresentationAppearanceResource
 {
-	[Guid("c43b29f0-fa72-4a7c-a838-670ae11ec004")]
-	public partial class IfcSurfaceStyleRefraction : IfcPresentationItem,
+	[Guid("fd9b9608-7b01-45ab-adab-233fdb267839")]
+	public partial class IfcSurfaceStyleRefraction :
 		IfcSurfaceStyleElementSelect
 	{
 		[DataMember(Order = 0)] 

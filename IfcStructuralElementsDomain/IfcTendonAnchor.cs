@@ -15,24 +15,17 @@ using BuildingSmart.IFC.IfcKernel;
 using BuildingSmart.IFC.IfcMeasureResource;
 using BuildingSmart.IFC.IfcProductExtension;
 using BuildingSmart.IFC.IfcRepresentationResource;
-using BuildingSmart.IFC.IfcSharedBldgElements;
-using BuildingSmart.IFC.IfcSharedComponentElements;
 using BuildingSmart.IFC.IfcStructuralAnalysisDomain;
 using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcStructuralElementsDomain
 {
-	[Guid("55cbca4f-814f-47b4-890b-000cd85993b7")]
+	[Guid("72281940-b9f0-4daa-9c2b-fd6cba592db0")]
 	public partial class IfcTendonAnchor : IfcReinforcingElement
 	{
-		[DataMember(Order = 0)] 
-		[XmlAttribute]
-		[Description("Kind of tendon anchor.")]
-		public IfcTendonAnchorTypeEnum? PredefinedType { get; set; }
 	
-	
-		public IfcTendonAnchor(IfcGloballyUniqueId globalId)
-			: base(globalId)
+		public IfcTendonAnchor(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory)
+			: base(globalId, ownerHistory)
 		{
 		}
 	

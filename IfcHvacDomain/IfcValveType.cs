@@ -19,7 +19,7 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcHvacDomain
 {
-	[Guid("bc7e1649-6634-4653-947b-036b7b3af5bd")]
+	[Guid("e72a280d-8fe4-4131-8f6c-053b1ad17f56")]
 	public partial class IfcValveType : IfcFlowControllerType
 	{
 		[DataMember(Order = 0)] 
@@ -29,8 +29,8 @@ namespace BuildingSmart.IFC.IfcHvacDomain
 		public IfcValveTypeEnum PredefinedType { get; set; }
 	
 	
-		public IfcValveType(IfcGloballyUniqueId globalId, IfcValveTypeEnum predefinedType)
-			: base(globalId)
+		public IfcValveType(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcValveTypeEnum predefinedType)
+			: base(globalId, ownerHistory)
 		{
 			this.PredefinedType = predefinedType;
 		}

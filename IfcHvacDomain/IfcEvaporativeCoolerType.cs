@@ -19,7 +19,7 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcHvacDomain
 {
-	[Guid("1b538bfd-de8a-4443-a6f0-4c1aade608e4")]
+	[Guid("f39c5f42-74ab-4260-b6b3-02c1fef7d708")]
 	public partial class IfcEvaporativeCoolerType : IfcEnergyConversionDeviceType
 	{
 		[DataMember(Order = 0)] 
@@ -29,8 +29,8 @@ namespace BuildingSmart.IFC.IfcHvacDomain
 		public IfcEvaporativeCoolerTypeEnum PredefinedType { get; set; }
 	
 	
-		public IfcEvaporativeCoolerType(IfcGloballyUniqueId globalId, IfcEvaporativeCoolerTypeEnum predefinedType)
-			: base(globalId)
+		public IfcEvaporativeCoolerType(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcEvaporativeCoolerTypeEnum predefinedType)
+			: base(globalId, ownerHistory)
 		{
 			this.PredefinedType = predefinedType;
 		}

@@ -16,11 +16,10 @@ using BuildingSmart.IFC.IfcPresentationOrganizationResource;
 
 namespace BuildingSmart.IFC.IfcTopologyResource
 {
-	[Guid("492ce60a-9294-46dd-85f5-c8937e2f84fe")]
+	[Guid("be13b85b-d93e-42da-9d2d-6b12cb2d3f5a")]
 	public partial class IfcVertexLoop : IfcLoop
 	{
 		[DataMember(Order = 0)] 
-		[XmlElement]
 		[Description("The vertex which defines the entire loop.")]
 		[Required()]
 		public IfcVertex LoopVertex { get; set; }

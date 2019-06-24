@@ -19,11 +19,10 @@ using BuildingSmart.IFC.IfcProfileResource;
 
 namespace BuildingSmart.IFC.IfcGeometryResource
 {
-	[Guid("de606da2-a6cd-4560-a4c7-0e89276bc4ca")]
+	[Guid("401881db-55c5-4915-badf-e9a6e9d4517c")]
 	public partial class IfcSurfaceOfLinearExtrusion : IfcSweptSurface
 	{
 		[DataMember(Order = 0)] 
-		[XmlElement]
 		[Description("The direction of the extrusion.")]
 		[Required()]
 		public IfcDirection ExtrudedDirection { get; set; }
@@ -35,8 +34,8 @@ namespace BuildingSmart.IFC.IfcGeometryResource
 		public IfcLengthMeasure Depth { get; set; }
 	
 	
-		public IfcSurfaceOfLinearExtrusion(IfcProfileDef sweptCurve, IfcDirection extrudedDirection, IfcLengthMeasure depth)
-			: base(sweptCurve)
+		public IfcSurfaceOfLinearExtrusion(IfcProfileDef sweptCurve, IfcAxis2Placement3D position, IfcDirection extrudedDirection, IfcLengthMeasure depth)
+			: base(sweptCurve, position)
 		{
 			this.ExtrudedDirection = extrudedDirection;
 			this.Depth = depth;

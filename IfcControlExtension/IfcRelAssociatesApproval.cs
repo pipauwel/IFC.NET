@@ -17,18 +17,17 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcControlExtension
 {
-	[Guid("00707e05-63f5-4795-9e7a-2219254df92d")]
+	[Guid("196fb722-ac59-498f-8159-2eb6608566d6")]
 	public partial class IfcRelAssociatesApproval : IfcRelAssociates
 	{
 		[DataMember(Order = 0)] 
-		[XmlElement]
 		[Description("Reference to approval that is being applied using this relationship.")]
 		[Required()]
 		public IfcApproval RelatingApproval { get; set; }
 	
 	
-		public IfcRelAssociatesApproval(IfcGloballyUniqueId globalId, IfcDefinitionSelect[] relatedObjects, IfcApproval relatingApproval)
-			: base(globalId, relatedObjects)
+		public IfcRelAssociatesApproval(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcRoot[] relatedObjects, IfcApproval relatingApproval)
+			: base(globalId, ownerHistory, relatedObjects)
 		{
 			this.RelatingApproval = relatingApproval;
 		}

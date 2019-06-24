@@ -18,17 +18,12 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcProcessExtension
 {
-	[Guid("863af35b-d9f7-458e-816e-351ab24b707b")]
+	[Guid("0a7f7d22-a0d6-4988-b9ca-edacae24cc2a")]
 	public partial class IfcWorkSchedule : IfcWorkControl
 	{
-		[DataMember(Order = 0)] 
-		[XmlAttribute]
-		[Description("Identifies the predefined types of a work schedule from which       the type required may be set.")]
-		public IfcWorkScheduleTypeEnum? PredefinedType { get; set; }
 	
-	
-		public IfcWorkSchedule(IfcGloballyUniqueId globalId, IfcDateTime creationDate, IfcDateTime startTime)
-			: base(globalId, creationDate, startTime)
+		public IfcWorkSchedule(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcIdentifier identifier, IfcDateTimeSelect creationDate, IfcDateTimeSelect startTime)
+			: base(globalId, ownerHistory, identifier, creationDate, startTime)
 		{
 		}
 	

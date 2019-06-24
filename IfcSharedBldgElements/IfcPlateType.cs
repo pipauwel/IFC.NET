@@ -18,18 +18,18 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcSharedBldgElements
 {
-	[Guid("67bc5143-2c23-49ee-9fc3-422c27dd5452")]
+	[Guid("b25373d2-9735-46bb-a1e8-dcb20d602e21")]
 	public partial class IfcPlateType : IfcBuildingElementType
 	{
 		[DataMember(Order = 0)] 
 		[XmlAttribute]
-		[Description("Identifies the predefined types of a planar member element from which the type required may be set.")]
+		[Description("Identifies the predefined types of a planar structural member element from which the type required may be set.")]
 		[Required()]
 		public IfcPlateTypeEnum PredefinedType { get; set; }
 	
 	
-		public IfcPlateType(IfcGloballyUniqueId globalId, IfcPlateTypeEnum predefinedType)
-			: base(globalId)
+		public IfcPlateType(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcPlateTypeEnum predefinedType)
+			: base(globalId, ownerHistory)
 		{
 			this.PredefinedType = predefinedType;
 		}

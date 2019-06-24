@@ -15,7 +15,7 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcKernel
 {
-	[Guid("458cc135-db13-40d6-ab1b-64ba222632fe")]
+	[Guid("ebe9bf08-62e1-4ce5-8869-861d49604fdf")]
 	public abstract partial class IfcRelAssigns : IfcRelationship
 	{
 		[DataMember(Order = 0)] 
@@ -26,12 +26,12 @@ namespace BuildingSmart.IFC.IfcKernel
 	
 		[DataMember(Order = 1)] 
 		[XmlAttribute]
-		[Description("Particular type of the assignment relationship. It can constrain the applicable object types, used within the role of <em>RelatedObjects</em>.  <blockquote class=\"change-ifc2x4\">IFC4 CHANGE&nbsp; The attribute is deprecated and shall no longer be used. A NIL value should always be assigned.</blockquote>")]
+		[Description("Particular type of the assignment relationship. It can constrain the applicable object types, used within the role of RelatedObjects.")]
 		public IfcObjectTypeEnum? RelatedObjectsType { get; set; }
 	
 	
-		protected IfcRelAssigns(IfcGloballyUniqueId globalId, IfcObjectDefinition[] relatedObjects)
-			: base(globalId)
+		protected IfcRelAssigns(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcObjectDefinition[] relatedObjects)
+			: base(globalId, ownerHistory)
 		{
 			this.RelatedObjects = new HashSet<IfcObjectDefinition>(relatedObjects);
 		}

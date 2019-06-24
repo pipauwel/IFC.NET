@@ -13,7 +13,7 @@ using System.Xml.Serialization;
 
 namespace BuildingSmart.IFC.IfcMeasureResource
 {
-	[Guid("558b8c36-b267-49ff-8168-369ba3ce9a42")]
+	[Guid("de87fba8-a4bf-4214-8560-734217e4d451")]
 	public partial struct IfcLuminousIntensityDistributionMeasure :
 		IfcDerivedMeasureValue
 	{

@@ -13,8 +13,9 @@ using System.Xml.Serialization;
 
 namespace BuildingSmart.IFC.IfcMeasureResource
 {
-	[Guid("935aa483-3b1b-4ad4-a71a-8b7cbab78b8a")]
+	[Guid("f35610cd-065e-4917-84ec-747793b4f51e")]
 	public partial struct IfcText :
+		BuildingSmart.IFC.IfcConstraintResource.IfcMetricValueSelect,
 		IfcSimpleValue
 	{
 		[XmlText]

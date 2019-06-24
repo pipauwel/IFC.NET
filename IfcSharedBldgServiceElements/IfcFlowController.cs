@@ -15,18 +15,17 @@ using BuildingSmart.IFC.IfcKernel;
 using BuildingSmart.IFC.IfcMeasureResource;
 using BuildingSmart.IFC.IfcProductExtension;
 using BuildingSmart.IFC.IfcRepresentationResource;
-using BuildingSmart.IFC.IfcSharedBldgElements;
 using BuildingSmart.IFC.IfcStructuralAnalysisDomain;
 using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcSharedBldgServiceElements
 {
-	[Guid("dc35ad4d-f4ca-4a2a-a3c0-fc20a563ed38")]
+	[Guid("32b467a4-6be8-4155-8c47-8701ae8eba7b")]
 	public partial class IfcFlowController : IfcDistributionFlowElement
 	{
 	
-		public IfcFlowController(IfcGloballyUniqueId globalId)
-			: base(globalId)
+		public IfcFlowController(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory)
+			: base(globalId, ownerHistory)
 		{
 		}
 	

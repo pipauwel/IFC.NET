@@ -16,7 +16,7 @@ using BuildingSmart.IFC.IfcPresentationOrganizationResource;
 
 namespace BuildingSmart.IFC.IfcRepresentationResource
 {
-	[Guid("a1be0696-4986-4097-aad4-dc9d385d95b5")]
+	[Guid("55d288dc-b692-4e8f-bce7-00edbed0874a")]
 	public partial class IfcStyledRepresentation : IfcStyleModel
 	{
 	

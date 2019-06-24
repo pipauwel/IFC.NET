@@ -19,12 +19,12 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcStructuralAnalysisDomain
 {
-	[Guid("0eabb0d2-3913-4a31-90cd-48eaf1a17f6b")]
+	[Guid("6ff72af5-ffc4-46f2-b516-8bed670d0337")]
 	public partial class IfcStructuralPointReaction : IfcStructuralReaction
 	{
 	
-		public IfcStructuralPointReaction(IfcGloballyUniqueId globalId, IfcStructuralLoad appliedLoad, IfcGlobalOrLocalEnum globalOrLocal)
-			: base(globalId, appliedLoad, globalOrLocal)
+		public IfcStructuralPointReaction(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcStructuralLoad appliedLoad, IfcGlobalOrLocalEnum globalOrLocal)
+			: base(globalId, ownerHistory, appliedLoad, globalOrLocal)
 		{
 		}
 	

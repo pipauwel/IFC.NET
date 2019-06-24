@@ -11,7 +11,6 @@ using System.Runtime.Serialization;
 using System.Xml.Serialization;
 
 using BuildingSmart.IFC.IfcGeometricConstraintResource;
-using BuildingSmart.IFC.IfcGeometryResource;
 using BuildingSmart.IFC.IfcKernel;
 using BuildingSmart.IFC.IfcMeasureResource;
 using BuildingSmart.IFC.IfcRepresentationResource;
@@ -20,20 +19,13 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcStructuralAnalysisDomain
 {
-	[Guid("d75c0a83-a50e-4591-aa6f-d4c2dad98451")]
+	[Guid("e8ad1bc7-f8db-4950-afd7-beb79437c6b2")]
 	public partial class IfcStructuralCurveConnection : IfcStructuralConnection
 	{
-		[DataMember(Order = 0)] 
-		[XmlElement]
-		[Description("Direction which is used in the definition of the local z axis.  <em>Axis</em> is specified relative to the so-called global coordinate system, i.e. the <em>SELF\\IfcProduct.ObjectPlacement</em>.    <blockquote class=\"note\">NOTE&nbsp; It is desirable and usually possible that many instances of <em>IfcStructuralCurveConnection</em> and <em>IfcStructuralCurveMember</em> share a common instance of <em>IfcDirection</em> as their <em>Axis</em> attribute.</blockquote>")]
-		[Required()]
-		public IfcDirection Axis { get; set; }
 	
-	
-		public IfcStructuralCurveConnection(IfcGloballyUniqueId globalId, IfcDirection axis)
-			: base(globalId)
+		public IfcStructuralCurveConnection(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory)
+			: base(globalId, ownerHistory)
 		{
-			this.Axis = axis;
 		}
 	
 	

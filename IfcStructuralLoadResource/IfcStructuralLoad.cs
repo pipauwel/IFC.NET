@@ -14,7 +14,7 @@ using BuildingSmart.IFC.IfcMeasureResource;
 
 namespace BuildingSmart.IFC.IfcStructuralLoadResource
 {
-	[Guid("9f70562a-7269-4def-b7a9-f818ed6ce0cb")]
+	[Guid("bcadc0aa-5ebb-483e-9459-21fc0ce02806")]
 	public abstract partial class IfcStructuralLoad
 	{
 		[DataMember(Order = 0)] 

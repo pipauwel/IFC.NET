@@ -10,17 +10,15 @@ using System.Runtime.InteropServices;
 using System.Runtime.Serialization;
 using System.Xml.Serialization;
 
-using BuildingSmart.IFC.IfcExternalReferenceResource;
 using BuildingSmart.IFC.IfcGeometryResource;
 using BuildingSmart.IFC.IfcMeasureResource;
 
 namespace BuildingSmart.IFC.IfcProfileResource
 {
-	[Guid("b6ccca8d-998a-47ed-beac-ef1b44ee5681")]
+	[Guid("7bd49124-3b02-4378-9c53-cfe91d261947")]
 	public partial class IfcArbitraryClosedProfileDef : IfcProfileDef
 	{
 		[DataMember(Order = 0)] 
-		[XmlElement]
 		[Description("Bounded curve, defining the outer boundaries of the arbitrary profile.")]
 		[Required()]
 		public IfcCurve OuterCurve { get; set; }

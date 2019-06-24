@@ -13,7 +13,7 @@ using System.Xml.Serialization;
 
 namespace BuildingSmart.IFC.IfcMaterialResource
 {
-	[Guid("a93907b4-ef59-4f01-b47a-6ca30ea1b3df")]
+	[Guid("c0d373f6-098b-4ba1-91c0-ed4706dabe8a")]
 	public interface IfcMaterialSelect
 	{
 	}

@@ -15,11 +15,10 @@ using BuildingSmart.IFC.IfcPresentationOrganizationResource;
 
 namespace BuildingSmart.IFC.IfcGeometryResource
 {
-	[Guid("c8b3d74c-f4b5-470f-9869-a0abb477b699")]
+	[Guid("d1ae4b1d-77e6-4cca-89c2-90634a02431c")]
 	public partial class IfcAxis1Placement : IfcPlacement
 	{
 		[DataMember(Order = 0)] 
-		[XmlElement]
 		[Description("The direction of the local Z axis.")]
 		public IfcDirection Axis { get; set; }
 	

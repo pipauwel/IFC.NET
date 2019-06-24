@@ -17,11 +17,11 @@ using BuildingSmart.IFC.IfcPresentationOrganizationResource;
 
 namespace BuildingSmart.IFC.IfcGeometryResource
 {
-	[Guid("909fff33-8f74-4be4-83bc-536e4ed2404f")]
-	public abstract partial class IfcBoundedSurface : IfcSurface
+	[Guid("1ef91fe1-e4f0-41a1-a538-a75cb389af28")]
+	public partial class IfcBoundedSurface : IfcSurface
 	{
 	
-		protected IfcBoundedSurface()
+		public IfcBoundedSurface()
 		{
 		}
 	

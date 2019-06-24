@@ -19,18 +19,18 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcElectricalDomain
 {
-	[Guid("5b0765d7-22a3-4ba4-a259-32523ca4082c")]
+	[Guid("0fa61e63-6d67-4f35-8a1c-0d0f40e72556")]
 	public partial class IfcJunctionBoxType : IfcFlowFittingType
 	{
 		[DataMember(Order = 0)] 
 		[XmlAttribute]
-		[Description("<p>Identifies the predefined types of junction boxes from which the type required may be set.</p>")]
+		[Description("Identifies the predefined types of junction boxes from which the type required may be set.")]
 		[Required()]
 		public IfcJunctionBoxTypeEnum PredefinedType { get; set; }
 	
 	
-		public IfcJunctionBoxType(IfcGloballyUniqueId globalId, IfcJunctionBoxTypeEnum predefinedType)
-			: base(globalId)
+		public IfcJunctionBoxType(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcJunctionBoxTypeEnum predefinedType)
+			: base(globalId, ownerHistory)
 		{
 			this.PredefinedType = predefinedType;
 		}

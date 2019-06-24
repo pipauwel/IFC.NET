@@ -10,51 +10,45 @@ using System.Runtime.InteropServices;
 using System.Runtime.Serialization;
 using System.Xml.Serialization;
 
-using BuildingSmart.IFC.IfcDateTimeResource;
 using BuildingSmart.IFC.IfcKernel;
 using BuildingSmart.IFC.IfcMeasureResource;
 using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcProcessExtension
 {
-	[Guid("1cd0905c-9f60-44f9-9f06-d4cefbc96a5b")]
+	[Guid("3187e424-12c3-4090-9929-3f2543090b3f")]
 	public partial class IfcTask : IfcProcess
 	{
 		[DataMember(Order = 0)] 
 		[XmlAttribute]
-		[Description("Current status of the task.      <blockquote class=\"note\">NOTE&nbsp; Particular values for status are not        specified, these should be determined and agreed by local        usage. Examples of possible status values include 'Not Yet        Started', 'Started', 'Completed'.</blockquote>")]
-		public IfcLabel? Status { get; set; }
+		[Description("An identifying designation given to a task.")]
+		[Required()]
+		public IfcIdentifier TaskId { get; set; }
 	
 		[DataMember(Order = 1)] 
 		[XmlAttribute]
-		[Description("The method of work used in carrying out a task.      <blockquote class=\"note\">NOTE&nbsp; This attribute should        not be used if the work method is specified for the        <em>IfcTaskType</em>   </blockquote>")]
-		public IfcLabel? WorkMethod { get; set; }
+		[Description("Current status of the task.  NOTE: Particular values for status are not specified, these should be determined and agreed by local usage. Examples of possible status values include 'Not Yet Started', 'Started', 'Completed'.")]
+		public IfcLabel? Status { get; set; }
 	
 		[DataMember(Order = 2)] 
 		[XmlAttribute]
-		[Description("Identifies whether a task is a milestone task (=TRUE) or not      (= FALSE).      <blockquote class=\"note\">NOTE&nbsp; In small project planning applications,        a milestone task may be understood to be a task having no        duration. As such, it represents a singular point in time.</blockquote>")]
-		[Required()]
-		public IfcBoolean IsMilestone { get; set; }
+		[Description("The method of work used in carrying out a task.")]
+		public IfcLabel? WorkMethod { get; set; }
 	
 		[DataMember(Order = 3)] 
-		[XmlAttribute]
-		[Description("A value that indicates the relative priority of the task (in      comparison to the priorities of other tasks).")]
-		public IfcInteger? Priority { get; set; }
+		[Description("Identifies whether a task is a milestone task (=TRUE) or not (= FALSE).  NOTE: In small project planning applications, a milestone task may be understood to be a task having no duration. As such, it represents a singular point in time.")]
+		[Required()]
+		public Boolean IsMilestone { get; set; }
 	
 		[DataMember(Order = 4)] 
-		[XmlElement]
-		[Description("Time related information for the task.      <blockquote class=\"change-ifc2x4\">IFC4 CHANGE Attribute added</blockquote>")]
-		public IfcTaskTime TaskTime { get; set; }
-	
-		[DataMember(Order = 5)] 
-		[XmlAttribute]
-		[Description("Identifies the predefined types of a task from which       the type required may be set.      <blockquote class=\"change-ifc2x4\">IFC4 CHANGE  Attribute added</blockquote>")]
-		public IfcTaskTypeEnum? PredefinedType { get; set; }
+		[Description("A value that indicates the relative priority of the task (in comparison to the priorities of other tasks).")]
+		public Int64? Priority { get; set; }
 	
 	
-		public IfcTask(IfcGloballyUniqueId globalId, IfcBoolean isMilestone)
-			: base(globalId)
+		public IfcTask(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcIdentifier taskId, Boolean isMilestone)
+			: base(globalId, ownerHistory)
 		{
+			this.TaskId = taskId;
 			this.IsMilestone = isMilestone;
 		}
 	

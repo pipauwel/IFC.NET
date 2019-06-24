@@ -10,13 +10,12 @@ using System.Runtime.InteropServices;
 using System.Runtime.Serialization;
 using System.Xml.Serialization;
 
-using BuildingSmart.IFC.IfcExternalReferenceResource;
 using BuildingSmart.IFC.IfcGeometryResource;
 using BuildingSmart.IFC.IfcMeasureResource;
 
 namespace BuildingSmart.IFC.IfcProfileResource
 {
-	[Guid("254749ac-db77-4f69-a8a0-b4cc5d5e66fa")]
+	[Guid("78f8dd59-9152-46ea-a81c-33962e1055c3")]
 	public partial class IfcIShapeProfileDef : IfcParameterizedProfileDef
 	{
 		[DataMember(Order = 0)] 
@@ -45,22 +44,12 @@ namespace BuildingSmart.IFC.IfcProfileResource
 	
 		[DataMember(Order = 4)] 
 		[XmlAttribute]
-		[Description("The fillet between the web and the flange.  0 if sharp-edged, omitted if unknown.")]
-		public IfcNonNegativeLengthMeasure? FilletRadius { get; set; }
-	
-		[DataMember(Order = 5)] 
-		[XmlAttribute]
-		[Description("Radius of the lower edges of the top flange and the upper edges of the bottom flange.  0 if sharp-edged, omitted if unknown.")]
-		public IfcNonNegativeLengthMeasure? FlangeEdgeRadius { get; set; }
-	
-		[DataMember(Order = 6)] 
-		[XmlAttribute]
-		[Description("Slope of the lower faces of the top flange and of the upper faces of the bottom flange.  Non-zero in case of tapered flanges, 0 in case of parallel flanges, omitted if unknown.")]
-		public IfcPlaneAngleMeasure? FlangeSlope { get; set; }
+		[Description("The fillet between the web and the flange, if not given, zero is assumed.")]
+		public IfcPositiveLengthMeasure? FilletRadius { get; set; }
 	
 	
-		public IfcIShapeProfileDef(IfcProfileTypeEnum profileType, IfcPositiveLengthMeasure overallWidth, IfcPositiveLengthMeasure overallDepth, IfcPositiveLengthMeasure webThickness, IfcPositiveLengthMeasure flangeThickness)
-			: base(profileType)
+		public IfcIShapeProfileDef(IfcProfileTypeEnum profileType, IfcAxis2Placement2D position, IfcPositiveLengthMeasure overallWidth, IfcPositiveLengthMeasure overallDepth, IfcPositiveLengthMeasure webThickness, IfcPositiveLengthMeasure flangeThickness)
+			: base(profileType, position)
 		{
 			this.OverallWidth = overallWidth;
 			this.OverallDepth = overallDepth;

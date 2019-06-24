@@ -15,18 +15,17 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcKernel
 {
-	[Guid("20dee03b-bfd0-4795-923f-4619fc628b6c")]
+	[Guid("69a2f5df-0a6f-46a6-b8cd-5a91fed61989")]
 	public partial class IfcRelAssignsToGroup : IfcRelAssigns
 	{
 		[DataMember(Order = 0)] 
-		[XmlElement]
-		[Description("Reference to group that contains all assigned group members.")]
+		[Description("Reference to group that finally contains all assigned group members.")]
 		[Required()]
 		public IfcGroup RelatingGroup { get; set; }
 	
 	
-		public IfcRelAssignsToGroup(IfcGloballyUniqueId globalId, IfcObjectDefinition[] relatedObjects, IfcGroup relatingGroup)
-			: base(globalId, relatedObjects)
+		public IfcRelAssignsToGroup(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcObjectDefinition[] relatedObjects, IfcGroup relatingGroup)
+			: base(globalId, ownerHistory, relatedObjects)
 		{
 			this.RelatingGroup = relatingGroup;
 		}

@@ -13,7 +13,7 @@ using System.Xml.Serialization;
 
 namespace BuildingSmart.IFC.IfcPresentationAppearanceResource
 {
-	[Guid("d719fcc3-76f8-4af4-8967-dfa4ab9c8ce9")]
+	[Guid("6ad4a56e-ae7d-414b-ae89-68f1d24a89ec")]
 	public partial struct IfcSpecularRoughness :
 		IfcSpecularHighlightSelect
 	{

@@ -19,18 +19,18 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcElectricalDomain
 {
-	[Guid("041abe9f-f73b-471c-859c-c577d975198c")]
+	[Guid("f7094e16-a9fb-4663-9eff-c5b19156362b")]
 	public partial class IfcSwitchingDeviceType : IfcFlowControllerType
 	{
 		[DataMember(Order = 0)] 
 		[XmlAttribute]
-		[Description("<p>Identifies the predefined types of switch from which the type required may be set.</p>")]
+		[Description("Identifies the predefined types of switch from which the type required may be set.")]
 		[Required()]
 		public IfcSwitchingDeviceTypeEnum PredefinedType { get; set; }
 	
 	
-		public IfcSwitchingDeviceType(IfcGloballyUniqueId globalId, IfcSwitchingDeviceTypeEnum predefinedType)
-			: base(globalId)
+		public IfcSwitchingDeviceType(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcSwitchingDeviceTypeEnum predefinedType)
+			: base(globalId, ownerHistory)
 		{
 			this.PredefinedType = predefinedType;
 		}

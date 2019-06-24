@@ -19,18 +19,18 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcElectricalDomain
 {
-	[Guid("2bb86abe-9d7d-49e5-8a0e-89e7617eddf6")]
+	[Guid("4dd2dba6-a8a2-4a7c-b044-6f3840183c58")]
 	public partial class IfcElectricTimeControlType : IfcFlowControllerType
 	{
 		[DataMember(Order = 0)] 
 		[XmlAttribute]
-		[Description("<p>Identifies the predefined types of electrical time control from which the type required may be set.</p>")]
+		[Description("Identifies the predefined types of electrical time control from which the type required may be set.")]
 		[Required()]
 		public IfcElectricTimeControlTypeEnum PredefinedType { get; set; }
 	
 	
-		public IfcElectricTimeControlType(IfcGloballyUniqueId globalId, IfcElectricTimeControlTypeEnum predefinedType)
-			: base(globalId)
+		public IfcElectricTimeControlType(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcElectricTimeControlTypeEnum predefinedType)
+			: base(globalId, ownerHistory)
 		{
 			this.PredefinedType = predefinedType;
 		}

@@ -13,9 +13,8 @@ using System.Xml.Serialization;
 
 namespace BuildingSmart.IFC.IfcMeasureResource
 {
-	[Guid("5f499b56-7ed2-47e8-8f73-65e8da5ede24")]
+	[Guid("b1520def-7c27-40a0-aebc-1ad67cc3faa9")]
 	public partial struct IfcLengthMeasure :
-		BuildingSmart.IFC.IfcStructuralElementsDomain.IfcBendingParameterSelect,
 		IfcMeasureValue,
 		BuildingSmart.IFC.IfcPresentationAppearanceResource.IfcSizeSelect
 	{

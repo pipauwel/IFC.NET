@@ -18,12 +18,12 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcSharedComponentElements
 {
-	[Guid("7904437f-39fd-4ac3-a04b-cd4158e276b3")]
+	[Guid("cccfccf6-12e5-4906-9d55-bd6d5a5ba224")]
 	public abstract partial class IfcElementComponentType : IfcElementType
 	{
 	
-		protected IfcElementComponentType(IfcGloballyUniqueId globalId)
-			: base(globalId)
+		protected IfcElementComponentType(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory)
+			: base(globalId, ownerHistory)
 		{
 		}
 	

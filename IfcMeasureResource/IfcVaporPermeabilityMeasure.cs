@@ -13,7 +13,7 @@ using System.Xml.Serialization;
 
 namespace BuildingSmart.IFC.IfcMeasureResource
 {
-	[Guid("2158e9c2-7085-4b84-b9f7-d545f616de14")]
+	[Guid("e6669694-c503-4222-97a6-04b93e328dcd")]
 	public partial struct IfcVaporPermeabilityMeasure :
 		IfcDerivedMeasureValue
 	{

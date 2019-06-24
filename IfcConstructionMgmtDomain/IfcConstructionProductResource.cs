@@ -10,26 +10,18 @@ using System.Runtime.InteropServices;
 using System.Runtime.Serialization;
 using System.Xml.Serialization;
 
-using BuildingSmart.IFC.IfcCostResource;
-using BuildingSmart.IFC.IfcDateTimeResource;
 using BuildingSmart.IFC.IfcKernel;
 using BuildingSmart.IFC.IfcMeasureResource;
-using BuildingSmart.IFC.IfcQuantityResource;
 using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcConstructionMgmtDomain
 {
-	[Guid("686e69fb-789c-4cef-a1b2-e9bb3345a558")]
+	[Guid("77890ca9-5e99-4f7c-9ebb-4302d7237001")]
 	public partial class IfcConstructionProductResource : IfcConstructionResource
 	{
-		[DataMember(Order = 0)] 
-		[XmlAttribute]
-		[Description("Defines types of construction product resources.  <blockquote class=\"change-ifc2x4\">IFC4 New attribute.</blockquote>")]
-		public IfcConstructionProductResourceTypeEnum? PredefinedType { get; set; }
 	
-	
-		public IfcConstructionProductResource(IfcGloballyUniqueId globalId)
-			: base(globalId)
+		public IfcConstructionProductResource(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory)
+			: base(globalId, ownerHistory)
 		{
 		}
 	

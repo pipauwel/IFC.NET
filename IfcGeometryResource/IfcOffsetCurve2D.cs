@@ -17,11 +17,10 @@ using BuildingSmart.IFC.IfcPresentationOrganizationResource;
 
 namespace BuildingSmart.IFC.IfcGeometryResource
 {
-	[Guid("f5ea20e7-98db-4aeb-b0f8-03ac3e6d947c")]
+	[Guid("e8f3d058-54a6-4bc9-aeaf-91aca04f5777")]
 	public partial class IfcOffsetCurve2D : IfcCurve
 	{
 		[DataMember(Order = 0)] 
-		[XmlElement]
 		[Description("The curve that is being offset.")]
 		[Required()]
 		public IfcCurve BasisCurve { get; set; }
@@ -33,13 +32,12 @@ namespace BuildingSmart.IFC.IfcGeometryResource
 		public IfcLengthMeasure Distance { get; set; }
 	
 		[DataMember(Order = 2)] 
-		[XmlAttribute]
 		[Description("An indication of whether the offset curve self-intersects; this is for information only.")]
 		[Required()]
-		public IfcLogical SelfIntersect { get; set; }
+		public Boolean? SelfIntersect { get; set; }
 	
 	
-		public IfcOffsetCurve2D(IfcCurve basisCurve, IfcLengthMeasure distance, IfcLogical selfIntersect)
+		public IfcOffsetCurve2D(IfcCurve basisCurve, IfcLengthMeasure distance, Boolean? selfIntersect)
 		{
 			this.BasisCurve = basisCurve;
 			this.Distance = distance;

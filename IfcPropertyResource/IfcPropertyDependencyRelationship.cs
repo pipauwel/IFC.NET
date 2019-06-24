@@ -10,27 +10,34 @@ using System.Runtime.InteropServices;
 using System.Runtime.Serialization;
 using System.Xml.Serialization;
 
-using BuildingSmart.IFC.IfcExternalReferenceResource;
 using BuildingSmart.IFC.IfcMeasureResource;
 
 namespace BuildingSmart.IFC.IfcPropertyResource
 {
-	[Guid("0b79cf26-1901-47e3-beed-cf836b1c598d")]
-	public partial class IfcPropertyDependencyRelationship : IfcResourceLevelRelationship
+	[Guid("4af5da7c-70c1-4f95-ac34-f4bab2f900e2")]
+	public partial class IfcPropertyDependencyRelationship
 	{
 		[DataMember(Order = 0)] 
-		[XmlElement]
 		[Description("The property on which the relationship depends.")]
 		[Required()]
 		public IfcProperty DependingProperty { get; set; }
 	
 		[DataMember(Order = 1)] 
-		[XmlElement]
 		[Description("The dependant property.")]
 		[Required()]
 		public IfcProperty DependantProperty { get; set; }
 	
 		[DataMember(Order = 2)] 
+		[XmlAttribute]
+		[Description("Name of the relationship that provides additional meaning to the nature of the dependency.")]
+		public IfcLabel? Name { get; set; }
+	
+		[DataMember(Order = 3)] 
+		[XmlAttribute]
+		[Description("Additional description of the dependency.")]
+		public IfcText? Description { get; set; }
+	
+		[DataMember(Order = 4)] 
 		[XmlAttribute]
 		[Description("Expression that further describes the nature of the dependency relation.")]
 		public IfcText? Expression { get; set; }

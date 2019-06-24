@@ -19,7 +19,7 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcHvacDomain
 {
-	[Guid("cb200223-5993-48b1-9720-c4e9380a4074")]
+	[Guid("af8c4daa-5e29-40de-99dd-a1a3cf869178")]
 	public partial class IfcDuctFittingType : IfcFlowFittingType
 	{
 		[DataMember(Order = 0)] 
@@ -29,8 +29,8 @@ namespace BuildingSmart.IFC.IfcHvacDomain
 		public IfcDuctFittingTypeEnum PredefinedType { get; set; }
 	
 	
-		public IfcDuctFittingType(IfcGloballyUniqueId globalId, IfcDuctFittingTypeEnum predefinedType)
-			: base(globalId)
+		public IfcDuctFittingType(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcDuctFittingTypeEnum predefinedType)
+			: base(globalId, ownerHistory)
 		{
 			this.PredefinedType = predefinedType;
 		}

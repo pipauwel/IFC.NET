@@ -15,11 +15,10 @@ using BuildingSmart.IFC.IfcMeasureResource;
 
 namespace BuildingSmart.IFC.IfcRepresentationResource
 {
-	[Guid("482a3c86-3ce0-47c4-936b-b783f9502b01")]
+	[Guid("81a4cca3-7170-44c2-95ec-7a697d45e647")]
 	public partial class IfcMaterialDefinitionRepresentation : IfcProductRepresentation
 	{
 		[DataMember(Order = 0)] 
-		[XmlIgnore]
 		[Description("Reference to the material to which the representation applies.")]
 		[Required()]
 		public IfcMaterial RepresentedMaterial { get; set; }

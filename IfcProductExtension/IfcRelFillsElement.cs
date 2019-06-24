@@ -16,24 +16,22 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcProductExtension
 {
-	[Guid("38e3c74b-486e-4323-980b-6375977d83ae")]
+	[Guid("9a25a464-da5d-45c5-97ee-51a3a57ba941")]
 	public partial class IfcRelFillsElement : IfcRelConnects
 	{
 		[DataMember(Order = 0)] 
-		[XmlIgnore]
 		[Description("Opening Element being filled by virtue of this relationship.")]
 		[Required()]
 		public IfcOpeningElement RelatingOpeningElement { get; set; }
 	
 		[DataMember(Order = 1)] 
-		[XmlElement]
-		[Description("Reference to <strike>building</strike> element that occupies fully or partially the associated opening.  <blockquote class=\"change-ifc2x\">IFC2x CHANGE&nbsp; The data type has been changed from <em>IfcBuildingElement</em> to <em>IfcElement</em> with upward compatibility for file based exchange.</blockquote>")]
+		[Description("<EPM-HTML>  Reference to <strike>building</strike> element that occupies fully or partially the associated opening.  <blockquote><small><font color=\"#ff0000\">  IFC2x PLATFORM CHANGE: The data type has been changed from <i>IfcBuildingElement</i> to <i>IfcElement</i> with upward compatibility for file based exchange.  </font><small></blockquote>  </EPM-HTML>")]
 		[Required()]
 		public IfcElement RelatedBuildingElement { get; set; }
 	
 	
-		public IfcRelFillsElement(IfcGloballyUniqueId globalId, IfcOpeningElement relatingOpeningElement, IfcElement relatedBuildingElement)
-			: base(globalId)
+		public IfcRelFillsElement(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcOpeningElement relatingOpeningElement, IfcElement relatedBuildingElement)
+			: base(globalId, ownerHistory)
 		{
 			this.RelatingOpeningElement = relatingOpeningElement;
 			this.RelatedBuildingElement = relatedBuildingElement;

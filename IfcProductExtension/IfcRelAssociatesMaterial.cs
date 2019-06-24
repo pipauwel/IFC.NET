@@ -17,17 +17,17 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcProductExtension
 {
-	[Guid("68083c6e-1181-46f4-84da-7cd237846083")]
+	[Guid("157a4d8c-92d8-4c73-a181-a3fc355cb7a1")]
 	public partial class IfcRelAssociatesMaterial : IfcRelAssociates
 	{
 		[DataMember(Order = 0)] 
-		[Description("Material definition assigned to the elements or element types.")]
+		[Description("Material definition (either a single material, a list of materials, or a set of material layers) assigned to the elements.")]
 		[Required()]
 		public IfcMaterialSelect RelatingMaterial { get; set; }
 	
 	
-		public IfcRelAssociatesMaterial(IfcGloballyUniqueId globalId, IfcDefinitionSelect[] relatedObjects, IfcMaterialSelect relatingMaterial)
-			: base(globalId, relatedObjects)
+		public IfcRelAssociatesMaterial(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcRoot[] relatedObjects, IfcMaterialSelect relatingMaterial)
+			: base(globalId, ownerHistory, relatedObjects)
 		{
 			this.RelatingMaterial = relatingMaterial;
 		}

@@ -18,7 +18,7 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcSharedBldgServiceElements
 {
-	[Guid("e471c212-612d-4578-8f9e-e9623be892bf")]
+	[Guid("a7702505-0221-48db-9430-b9bde04dcbbd")]
 	public partial class IfcDistributionChamberElementType : IfcDistributionFlowElementType
 	{
 		[DataMember(Order = 0)] 
@@ -28,8 +28,8 @@ namespace BuildingSmart.IFC.IfcSharedBldgServiceElements
 		public IfcDistributionChamberElementTypeEnum PredefinedType { get; set; }
 	
 	
-		public IfcDistributionChamberElementType(IfcGloballyUniqueId globalId, IfcDistributionChamberElementTypeEnum predefinedType)
-			: base(globalId)
+		public IfcDistributionChamberElementType(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcDistributionChamberElementTypeEnum predefinedType)
+			: base(globalId, ownerHistory)
 		{
 			this.PredefinedType = predefinedType;
 		}

@@ -14,8 +14,8 @@ using BuildingSmart.IFC.IfcMeasureResource;
 
 namespace BuildingSmart.IFC.IfcRepresentationResource
 {
-	[Guid("38217e82-b534-4baa-87a6-49402ed0a52c")]
-	public abstract partial class IfcRepresentationContext
+	[Guid("01b34d06-5983-40a5-8525-5fa6d569967d")]
+	public partial class IfcRepresentationContext
 	{
 		[DataMember(Order = 0)] 
 		[XmlAttribute]
@@ -32,7 +32,7 @@ namespace BuildingSmart.IFC.IfcRepresentationResource
 		public ISet<IfcRepresentation> RepresentationsInContext { get; protected set; }
 	
 	
-		protected IfcRepresentationContext()
+		public IfcRepresentationContext()
 		{
 			this.RepresentationsInContext = new HashSet<IfcRepresentation>();
 		}

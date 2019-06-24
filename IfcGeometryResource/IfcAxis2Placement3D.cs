@@ -15,17 +15,15 @@ using BuildingSmart.IFC.IfcPresentationOrganizationResource;
 
 namespace BuildingSmart.IFC.IfcGeometryResource
 {
-	[Guid("26b1240c-4ac9-469d-8fd3-861653fa5f75")]
+	[Guid("610bae35-1be6-4a90-ad4e-102a28b67208")]
 	public partial class IfcAxis2Placement3D : IfcPlacement,
 		IfcAxis2Placement
 	{
 		[DataMember(Order = 0)] 
-		[XmlElement]
 		[Description("The exact direction of the local Z Axis.")]
 		public IfcDirection Axis { get; set; }
 	
 		[DataMember(Order = 1)] 
-		[XmlElement]
 		[Description("The direction used to determine the direction of the local X Axis. If necessary an adjustment is made to maintain orthogonality to the Axis direction. If Axis and/or RefDirection is omitted, these directions are taken from the geometric coordinate system.")]
 		public IfcDirection RefDirection { get; set; }
 	

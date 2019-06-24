@@ -16,24 +16,22 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcProductExtension
 {
-	[Guid("3a589d07-713f-4a7d-90a7-1b9c3b668e2b")]
-	public partial class IfcRelProjectsElement : IfcRelDecomposes
+	[Guid("521ef25f-3a02-4edc-9334-c735fc651c7d")]
+	public partial class IfcRelProjectsElement : IfcRelConnects
 	{
 		[DataMember(Order = 0)] 
-		[XmlIgnore]
-		[Description("Element at which a projection is created by the associated <em>IfcProjectionElement</em>.")]
+		[Description("<EPM-HTML>  Element at which a projection is created by the associated <I>IfcProjectionElement</I>.  </EPM-HTML>")]
 		[Required()]
 		public IfcElement RelatingElement { get; set; }
 	
 		[DataMember(Order = 1)] 
-		[XmlElement]
-		[Description("Reference to the <em>IfcFeatureElementAddition</em> that defines an addition to the volume of the element, by using a Boolean addition operation. An example is a projection at the associated element.")]
+		[Description("<EPM-HTML>  Reference to the <I>IfcFeatureElementAddition</I> that defines an addition to the volume of the element, by using a Boolean addition operation. An example is a projection at the associated element.  </EPM-HTML>")]
 		[Required()]
 		public IfcFeatureElementAddition RelatedFeatureElement { get; set; }
 	
 	
-		public IfcRelProjectsElement(IfcGloballyUniqueId globalId, IfcElement relatingElement, IfcFeatureElementAddition relatedFeatureElement)
-			: base(globalId)
+		public IfcRelProjectsElement(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcElement relatingElement, IfcFeatureElementAddition relatedFeatureElement)
+			: base(globalId, ownerHistory)
 		{
 			this.RelatingElement = relatingElement;
 			this.RelatedFeatureElement = relatedFeatureElement;

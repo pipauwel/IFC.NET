@@ -13,7 +13,7 @@ using System.Xml.Serialization;
 
 namespace BuildingSmart.IFC.IfcUtilityResource
 {
-	[Guid("e9b6fb13-a7da-4507-8419-59a1f5ac6441")]
+	[Guid("1a0a242b-d9b0-4745-977e-952dd13c838b")]
 	public partial struct IfcGloballyUniqueId
 	{
 		[XmlText]

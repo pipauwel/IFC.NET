@@ -18,7 +18,7 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcSharedBldgElements
 {
-	[Guid("4a38ac16-6674-455e-aa56-e24fd08b6444")]
+	[Guid("82de227f-805b-4ec8-8245-a8f49945bb9f")]
 	public partial class IfcRampFlightType : IfcBuildingElementType
 	{
 		[DataMember(Order = 0)] 
@@ -28,8 +28,8 @@ namespace BuildingSmart.IFC.IfcSharedBldgElements
 		public IfcRampFlightTypeEnum PredefinedType { get; set; }
 	
 	
-		public IfcRampFlightType(IfcGloballyUniqueId globalId, IfcRampFlightTypeEnum predefinedType)
-			: base(globalId)
+		public IfcRampFlightType(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcRampFlightTypeEnum predefinedType)
+			: base(globalId, ownerHistory)
 		{
 			this.PredefinedType = predefinedType;
 		}

@@ -13,7 +13,7 @@ using System.Xml.Serialization;
 
 namespace BuildingSmart.IFC.IfcMeasureResource
 {
-	[Guid("1d092ebd-fd80-4979-871d-731d3b9d9c80")]
+	[Guid("5a460a1e-52b9-4407-b331-9262494aa280")]
 	public partial struct IfcMassPerLengthMeasure :
 		IfcDerivedMeasureValue
 	{

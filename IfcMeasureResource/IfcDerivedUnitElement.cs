@@ -13,11 +13,10 @@ using System.Xml.Serialization;
 
 namespace BuildingSmart.IFC.IfcMeasureResource
 {
-	[Guid("27535f79-e61d-421d-a55b-ea63de53cc7b")]
+	[Guid("2129b759-b439-40db-bc00-5909784c9e63")]
 	public partial class IfcDerivedUnitElement
 	{
 		[DataMember(Order = 0)] 
-		[XmlElement]
 		[Description("The fixed quantity which is used as the mathematical factor.")]
 		[Required()]
 		public IfcNamedUnit Unit { get; set; }

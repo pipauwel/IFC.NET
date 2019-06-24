@@ -16,18 +16,18 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcStructuralAnalysisDomain
 {
-	[Guid("eda81530-0687-4842-bde0-d6567c6ba98b")]
+	[Guid("e3c9c714-198c-4207-bec8-0f12bc40d170")]
 	public partial class IfcStructuralLoadGroup : IfcGroup
 	{
 		[DataMember(Order = 0)] 
 		[XmlAttribute]
-		[Description("Selects a predefined type for the load group.  It can be differentiated between load groups, load cases, load combinations, or userdefined grouping levels.")]
+		[Description("Selects a predefined type for the load group. It can be differentiated between load groups, load cases, load combination groups (a necessary construct for the description of load combinations) and load combinations.")]
 		[Required()]
 		public IfcLoadGroupTypeEnum PredefinedType { get; set; }
 	
 		[DataMember(Order = 1)] 
 		[XmlAttribute]
-		[Description("Type of actions in the group. Normally needed if 'PredefinedType' specifies a LOAD_CASE.")]
+		[Description("Type of actions in the group. Normally needed if 'PredefinedType' specifies a LOAD_COMBINATION_GROUP.")]
 		[Required()]
 		public IfcActionTypeEnum ActionType { get; set; }
 	
@@ -57,8 +57,8 @@ namespace BuildingSmart.IFC.IfcStructuralAnalysisDomain
 		public ISet<IfcStructuralAnalysisModel> LoadGroupFor { get; protected set; }
 	
 	
-		public IfcStructuralLoadGroup(IfcGloballyUniqueId globalId, IfcLoadGroupTypeEnum predefinedType, IfcActionTypeEnum actionType, IfcActionSourceTypeEnum actionSource)
-			: base(globalId)
+		public IfcStructuralLoadGroup(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcLoadGroupTypeEnum predefinedType, IfcActionTypeEnum actionType, IfcActionSourceTypeEnum actionSource)
+			: base(globalId, ownerHistory)
 		{
 			this.PredefinedType = predefinedType;
 			this.ActionType = actionType;

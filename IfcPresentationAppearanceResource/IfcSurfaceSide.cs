@@ -13,18 +13,13 @@ using System.Xml.Serialization;
 
 namespace BuildingSmart.IFC.IfcPresentationAppearanceResource
 {
-	[Guid("ead0e11b-6c81-40f3-ac8b-50c6867c3ffb")]
+	[Guid("896942a6-a9ce-402c-abf0-83d8b70a4f80")]
 	public enum IfcSurfaceSide
 	{
-		[Description("The side of a surface which is in the same direction as the surface normal derive" +
-	    "d from the mathematical definition.")]
 		POSITIVE = 1,
 	
-		[Description("The side of a surface which is in the opposite direction than the surface normal " +
-	    "derived from the mathematical definition.")]
 		NEGATIVE = 2,
 	
-		[Description("Both, positive and negative side.")]
 		BOTH = 3,
 	
 	}

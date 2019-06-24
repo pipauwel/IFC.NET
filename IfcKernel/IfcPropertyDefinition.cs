@@ -15,23 +15,17 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcKernel
 {
-	[Guid("244ca500-edbb-46f5-9ab8-9560710b61a4")]
-	public abstract partial class IfcPropertyDefinition : IfcRoot,
-		IfcDefinitionSelect
+	[Guid("613ef451-122d-45b6-b80b-e7f78ee431c5")]
+	public abstract partial class IfcPropertyDefinition : IfcRoot
 	{
-		[InverseProperty("RelatedDefinitions")] 
-		[MaxLength(1)]
-		public ISet<IfcRelDeclares> HasContext { get; protected set; }
-	
 		[InverseProperty("RelatedObjects")] 
 		[Description("Reference to the relationship IfcRelAssociates and thus to those externally defined concepts, like classifications, documents, or library information, which are associated to the property definition.")]
 		public ISet<IfcRelAssociates> HasAssociations { get; protected set; }
 	
 	
-		protected IfcPropertyDefinition(IfcGloballyUniqueId globalId)
-			: base(globalId)
+		protected IfcPropertyDefinition(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory)
+			: base(globalId, ownerHistory)
 		{
-			this.HasContext = new HashSet<IfcRelDeclares>();
 			this.HasAssociations = new HashSet<IfcRelAssociates>();
 		}
 	

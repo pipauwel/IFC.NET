@@ -13,18 +13,18 @@ using System.Xml.Serialization;
 
 namespace BuildingSmart.IFC.IfcMeasureResource
 {
-	[Guid("0671cb13-dc5d-4349-956e-d3344b3f2781")]
+	[Guid("88524ab1-815c-4457-979a-bbc311fb5928")]
 	public partial class IfcMonetaryUnit :
 		IfcUnit
 	{
 		[DataMember(Order = 0)] 
 		[XmlAttribute]
-		[Description("Code or name of the currency.  Permissible values are the three-letter alphabetic currency codes as per <a target=\"_top\" href=\"http://www.iso.org/iso/support/faqs/faqs_widely_used_standards/widely_used_standards_other/currency_codes/currency_codes_list-1.htm\">ISO 4217</a>, for example CNY, EUR, GBP, JPY, USD.")]
+		[Description("The international enumeration name of the currency.")]
 		[Required()]
-		public IfcLabel Currency { get; set; }
+		public IfcCurrencyEnum Currency { get; set; }
 	
 	
-		public IfcMonetaryUnit(IfcLabel currency)
+		public IfcMonetaryUnit(IfcCurrencyEnum currency)
 		{
 			this.Currency = currency;
 		}

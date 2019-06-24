@@ -13,20 +13,19 @@ using System.Xml.Serialization;
 using BuildingSmart.IFC.IfcGeometryResource;
 using BuildingSmart.IFC.IfcMeasureResource;
 using BuildingSmart.IFC.IfcPresentationAppearanceResource;
+using BuildingSmart.IFC.IfcPresentationResource;
 
 namespace BuildingSmart.IFC.IfcPresentationOrganizationResource
 {
-	[Guid("50d32070-67dc-40a9-8ba3-9cf188f08490")]
+	[Guid("9a8a77f8-29db-492c-93d4-68dff5ec8aa6")]
 	public partial class IfcLightSourceGoniometric : IfcLightSource
 	{
 		[DataMember(Order = 0)] 
-		[XmlElement]
 		[Description("The position of the light source. It is used to orientate the light distribution curves.")]
 		[Required()]
 		public IfcAxis2Placement3D Position { get; set; }
 	
 		[DataMember(Order = 1)] 
-		[XmlElement]
 		[Description("Artificial light sources are classified in terms of their color appearance. To the human eye they all appear to be white; the difference can only be detected by direct comparison. Visual performance is not directly affected by differences in color appearance.")]
 		public IfcColourRgb ColourAppearance { get; set; }
 	

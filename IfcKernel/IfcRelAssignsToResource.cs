@@ -15,17 +15,17 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcKernel
 {
-	[Guid("8e3fe369-7b2f-42e1-ba03-10771a673e88")]
+	[Guid("7075b401-84d0-4d10-8662-bc5063a63bec")]
 	public partial class IfcRelAssignsToResource : IfcRelAssigns
 	{
 		[DataMember(Order = 0)] 
-		[Description("Reference to the resource to which the objects are assigned to.  <blockquote class=\"change-ifc2x4\">IFC4 CHANGE Datatype expanded to include <em>IfcResource</em> and <em>IfcTypeResource</em>.</blockquote>")]
+		[Description("Reference to the resource to which the objects are assigned to.")]
 		[Required()]
-		public IfcResourceSelect RelatingResource { get; set; }
+		public IfcResource RelatingResource { get; set; }
 	
 	
-		public IfcRelAssignsToResource(IfcGloballyUniqueId globalId, IfcObjectDefinition[] relatedObjects, IfcResourceSelect relatingResource)
-			: base(globalId, relatedObjects)
+		public IfcRelAssignsToResource(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcObjectDefinition[] relatedObjects, IfcResource relatingResource)
+			: base(globalId, ownerHistory, relatedObjects)
 		{
 			this.RelatingResource = relatingResource;
 		}

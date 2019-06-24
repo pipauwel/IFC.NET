@@ -15,17 +15,17 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcKernel
 {
-	[Guid("72eec376-bbab-40d5-9342-93108c172713")]
+	[Guid("55319343-8365-4a00-a7de-4cf13f760e2b")]
 	public partial class IfcRelAssignsToProduct : IfcRelAssigns
 	{
 		[DataMember(Order = 0)] 
-		[Description("Reference to the product or product type to which the objects are assigned to.  <blockquote class=\"change-ifc2x4\">IFC4 CHANGE Datatype expanded to include <em>IfcProduct</em> and <em>IfcTypeProduct</em>.</blockquote>")]
+		[Description("Reference to the Product to which the objects are assigned to.")]
 		[Required()]
-		public IfcProductSelect RelatingProduct { get; set; }
+		public IfcProduct RelatingProduct { get; set; }
 	
 	
-		public IfcRelAssignsToProduct(IfcGloballyUniqueId globalId, IfcObjectDefinition[] relatedObjects, IfcProductSelect relatingProduct)
-			: base(globalId, relatedObjects)
+		public IfcRelAssignsToProduct(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcObjectDefinition[] relatedObjects, IfcProduct relatingProduct)
+			: base(globalId, ownerHistory, relatedObjects)
 		{
 			this.RelatingProduct = relatingProduct;
 		}

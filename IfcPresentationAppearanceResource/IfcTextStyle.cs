@@ -11,32 +11,26 @@ using System.Runtime.Serialization;
 using System.Xml.Serialization;
 
 using BuildingSmart.IFC.IfcMeasureResource;
+using BuildingSmart.IFC.IfcPresentationResource;
 
 namespace BuildingSmart.IFC.IfcPresentationAppearanceResource
 {
-	[Guid("a79b1274-8b81-4827-baa7-03f278dc7a39")]
+	[Guid("5d06ae78-92d1-4cb2-8e64-2698b85168cf")]
 	public partial class IfcTextStyle : IfcPresentationStyle,
 		IfcPresentationStyleSelect
 	{
 		[DataMember(Order = 0)] 
-		[XmlElement]
-		[Description("A character style to be used for presented text.  <blockquote class=\"change-ifc2x4\">IFC4 CHANGE&nbsp; Superfluous select type IfcCharacterStyleSelect has been removed.  </blockquote>")]
-		public IfcTextStyleForDefinedFont TextCharacterAppearance { get; set; }
+		[Description("<EPM-HTML>  A character style to be used for presented text.  </EPM-HTML>")]
+		public IfcCharacterStyleSelect TextCharacterAppearance { get; set; }
 	
 		[DataMember(Order = 1)] 
-		[XmlElement]
-		[Description("The style applied to the text block for its visual appearance.  <blockquote class=\"change-ifc2x3\">IFC2x3 CHANGE&nbsp; The attribute <em>TextBlockStyle</em> has been changed from SET[1:?] to a non-aggregated optional and renamed into <em>TextStyles</em>.</blockquote>  <blockquote class=\"change-ifc2x4\">IFC4 CHANGE&nbsp; The IfcTextStyleWithBoxCharacteristics and the now superfluous select type IfcTextStyleSelect have been removed.  </blockquote>")]
-		public IfcTextStyleTextModel TextStyle { get; set; }
+		[Description("<EPM-HTML>  The style applied to the text block for its visual appearance.</br>  It defines the text block characteristics, either for vector based or monospace text fonts (see select item <i>IfcTextStyleWithBoxCharacteristics</i>), or for true type text fonts (see select item <i>IfcTextStyleTextModel</i>.    <blockquote><small><font color=\"#0000ff\">  IFC2x Edition 3 CHANGE&nbsp; The <i>attribute <i>TextBlockStyle</i> has been changed from SET[1:?] to a non-aggregated optional, it has been renamed from TextStyles.    </font></small></blockquote>  </EPM-HTML>")]
+		public IfcTextStyleSelect TextStyle { get; set; }
 	
 		[DataMember(Order = 2)] 
-		[Description("The style applied to the text font for its visual appearance. It defines the font family, font style, weight and size.    <blockquote class=\"change-ifc2x2\">IFC2x2 Add2 CHANGE The attribute <em>TextFontStyle</em> is a new attribute attached to <em>IfcTextStyle</em>.    </blockquote>")]
+		[Description("<EPM-HTML>  The style applied to the text font for its visual appearance.</br>  It defines the font family, font style, weight and size.    <blockquote><small><font color=\"#ff0000\">  IFC2x Edition 2 Addendum 2 CHANGE The attribute <i>TextFontStyle</i> is a new attribute attached to <i>IfcTextStyle</i>.    </font></small></blockquote>  </EPM-HTML>")]
 		[Required()]
 		public IfcTextFontSelect TextFontStyle { get; set; }
-	
-		[DataMember(Order = 3)] 
-		[XmlAttribute]
-		[Description("Indication whether the length measures provided for the presentation style are model based, or draughting based.  <blockquote class=\"change-ifc2x4\">IFC4 CHANGE&nbsp; New attribute.  </blockquote>")]
-		public IfcBoolean? ModelOrDraughting { get; set; }
 	
 	
 		public IfcTextStyle(IfcTextFontSelect textFontStyle)

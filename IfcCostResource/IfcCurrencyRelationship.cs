@@ -16,17 +16,15 @@ using BuildingSmart.IFC.IfcMeasureResource;
 
 namespace BuildingSmart.IFC.IfcCostResource
 {
-	[Guid("9369fbbe-c581-4604-aa77-92582aa9453c")]
-	public partial class IfcCurrencyRelationship : IfcResourceLevelRelationship
+	[Guid("115400f2-418f-418e-a2df-9cf7b052490b")]
+	public partial class IfcCurrencyRelationship
 	{
 		[DataMember(Order = 0)] 
-		[XmlElement]
 		[Description("The monetary unit from which an exchange is derived. For instance, in the case of a conversion from GBP to USD, the relating monetary unit is GBP.")]
 		[Required()]
 		public IfcMonetaryUnit RelatingMonetaryUnit { get; set; }
 	
 		[DataMember(Order = 1)] 
-		[XmlElement]
 		[Description("The monetary unit to which an exchange results. For instance, in the case of a conversion from GBP to USD, the related monetary unit is USD.")]
 		[Required()]
 		public IfcMonetaryUnit RelatedMonetaryUnit { get; set; }
@@ -38,21 +36,21 @@ namespace BuildingSmart.IFC.IfcCostResource
 		public IfcPositiveRatioMeasure ExchangeRate { get; set; }
 	
 		[DataMember(Order = 3)] 
-		[XmlAttribute]
-		[Description("The date and time at which an exchange rate applies.  <blockquote class=\"change-ifc2x4\">IFC4 CHANGE Type changed from IfcDateTimeSelect. Attribute made optional.</blockquote>")]
-		public IfcDateTime? RateDateTime { get; set; }
+		[Description("The date and time at which an exchange rate applies.")]
+		[Required()]
+		public IfcDateAndTime RateDateTime { get; set; }
 	
 		[DataMember(Order = 4)] 
-		[XmlElement]
 		[Description("The source from which an exchange rate is obtained.")]
 		public IfcLibraryInformation RateSource { get; set; }
 	
 	
-		public IfcCurrencyRelationship(IfcMonetaryUnit relatingMonetaryUnit, IfcMonetaryUnit relatedMonetaryUnit, IfcPositiveRatioMeasure exchangeRate)
+		public IfcCurrencyRelationship(IfcMonetaryUnit relatingMonetaryUnit, IfcMonetaryUnit relatedMonetaryUnit, IfcPositiveRatioMeasure exchangeRate, IfcDateAndTime rateDateTime)
 		{
 			this.RelatingMonetaryUnit = relatingMonetaryUnit;
 			this.RelatedMonetaryUnit = relatedMonetaryUnit;
 			this.ExchangeRate = exchangeRate;
+			this.RateDateTime = rateDateTime;
 		}
 	
 	

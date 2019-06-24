@@ -10,20 +10,21 @@ using System.Runtime.InteropServices;
 using System.Runtime.Serialization;
 using System.Xml.Serialization;
 
-using BuildingSmart.IFC.IfcPresentationDefinitionResource;
+using BuildingSmart.IFC.IfcPresentationResource;
 
 namespace BuildingSmart.IFC.IfcPresentationAppearanceResource
 {
-	[Guid("33ffc6a1-31d2-441f-99ed-c8775cef5eb5")]
-	public partial class IfcTextStyleForDefinedFont : IfcPresentationItem
+	[Guid("81ee382b-1d17-4541-94b0-d12f8d8ad706")]
+	public partial class IfcTextStyleForDefinedFont :
+		IfcCharacterStyleSelect
 	{
 		[DataMember(Order = 0)] 
-		[Description("This property describes the text color of an element (often referred to as the foreground color).")]
+		[Description("<EPM-HTML>  This property describes the text color of an element (often referred to as the foreground color).  </EPM-HTML>")]
 		[Required()]
 		public IfcColour Colour { get; set; }
 	
 		[DataMember(Order = 1)] 
-		[Description("This property sets the background color of an element.")]
+		[Description("<EPM-HTML>  This property sets the background color of an element.  </EPM-HTML>")]
 		public IfcColour BackgroundColour { get; set; }
 	
 	

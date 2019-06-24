@@ -13,7 +13,7 @@ using System.Xml.Serialization;
 
 namespace BuildingSmart.IFC.IfcMeasureResource
 {
-	[Guid("136dab93-c904-47cf-a447-d2c90c456f8d")]
+	[Guid("813d0bf9-2595-47ad-ba15-4b507837f4f4")]
 	public partial struct IfcWarpingConstantMeasure :
 		IfcDerivedMeasureValue
 	{

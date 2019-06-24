@@ -12,12 +12,14 @@ using System.Xml.Serialization;
 
 using BuildingSmart.IFC.IfcConstraintResource;
 using BuildingSmart.IFC.IfcCostResource;
+using BuildingSmart.IFC.IFCFACILITIESMGMTDOMAIN;
 
 namespace BuildingSmart.IFC.IfcMeasureResource
 {
-	[Guid("7d000d8f-2938-439d-93a8-c32b17a46db8")]
+	[Guid("0723c581-0348-47f4-bca7-0f9d95f046c0")]
 	public partial class IfcMeasureWithUnit :
 		BuildingSmart.IFC.IfcCostResource.IfcAppliedValueSelect,
+		BuildingSmart.IFC.IFCFACILITIESMGMTDOMAIN.IfcConditionCriterionSelect,
 		BuildingSmart.IFC.IfcConstraintResource.IfcMetricValueSelect
 	{
 		[DataMember(Order = 0)] 

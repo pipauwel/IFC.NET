@@ -17,7 +17,7 @@ using BuildingSmart.IFC.IfcUtilityResource;
 
 namespace BuildingSmart.IFC.IfcKernel
 {
-	[Guid("71ecd3f4-0c37-4779-a722-9dddefe6a6bf")]
+	[Guid("c6b74ea4-3bfd-40f2-93bd-c648a95e3516")]
 	public partial class IfcProxy : IfcProduct
 	{
 		[DataMember(Order = 0)] 
@@ -32,8 +32,8 @@ namespace BuildingSmart.IFC.IfcKernel
 		public IfcLabel? Tag { get; set; }
 	
 	
-		public IfcProxy(IfcGloballyUniqueId globalId, IfcObjectTypeEnum proxyType)
-			: base(globalId)
+		public IfcProxy(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcObjectTypeEnum proxyType)
+			: base(globalId, ownerHistory)
 		{
 			this.ProxyType = proxyType;
 		}
